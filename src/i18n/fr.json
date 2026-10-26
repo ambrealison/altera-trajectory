@@ -8,6 +8,16 @@
     "points": "points",
     "of": "sur"
   },
+  "cover": {
+    "eyebrow": "Coopérative U · Démonstration",
+    "title": "Trajectoire protéique",
+    "lead": "Partez de votre ratio protéique, activez des leviers et voyez jusqu'où ils vous mènent, levier par levier et année après année.",
+    "cta": "Let's go",
+    "meta": "4 étapes · données fictives",
+    "peekRef": "Référence {year}",
+    "peekTarget": "{name} · {year}",
+    "peekLevers": "{n} leviers actifs"
+  },
   "steps": {
     "label": "Étapes",
     "stepOf": "Étape {n} sur {total}",

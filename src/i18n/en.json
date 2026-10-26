@@ -8,6 +8,16 @@
     "points": "points",
     "of": "of"
   },
+  "cover": {
+    "eyebrow": "Coopérative U · Demonstration",
+    "title": "Protein trajectory",
+    "lead": "Start from your protein ratio, switch levers on and see how far they take you, lever by lever and year by year.",
+    "cta": "Let's go",
+    "meta": "4 steps · illustrative data",
+    "peekRef": "{year} reference",
+    "peekTarget": "{name} · {year}",
+    "peekLevers": "{n} active levers"
+  },
   "steps": {
     "label": "Steps",
     "stepOf": "Step {n} of {total}",

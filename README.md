@@ -8,6 +8,8 @@ En ligne : https://ambrealison.github.io/altera-trajectory/ (non indexé par les
 
 ## Ce que montre la démo
 
+À chaque arrivée, une page d'accueil présente la démo, avec un aperçu calculé du scénario d'ouverture et un bouton « Let's go ». La visite guidée démarre ensuite, à la première visite seulement.
+
 1. **Point de départ** : le ratio Protein Tracker de référence (32,0 % en 2025), décomposé sur les 4 plots, la part végétale des produits mixtes et les autres protéines végétales, chaque bloc détaillé catégorie par catégorie. Un sélecteur discret passe en WWF FG1.
 2. **Les leviers** : les 20 leviers du dossier, en liste ou en matrice impact / effort, filtrables par plot et par type, avec l'effet isolé de chacun à l'horizon.
 3. **Trajectoire** : leviers à cocher, quatre scénarios, part des magasins qui suivent, horizon 2028, 2030, 2035 ou 2040 ; lecture par levier (cascade) ou dans le temps (courbe avec fourchette, aire empilée des plots, rythme observé aux Pays-Bas jusqu'en 2030) ; épinglage d'un scénario pour comparer. Le garde-fou de réalisme n'est plus affiché : il se présente à l'oral (il reste calculé et testé dans `src/engine/guardrail.ts`).

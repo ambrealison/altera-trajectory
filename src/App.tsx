@@ -7,10 +7,12 @@ import { Baseline } from "./screens/Baseline";
 import { Levers } from "./screens/Levers";
 import { Trajectory } from "./screens/Trajectory";
 import { WithYourData } from "./screens/WithYourData";
+import { Cover } from "./screens/Cover";
 
 function Screens() {
   const { state } = useApp();
   useEffect(() => { document.getElementById("main")?.scrollTo({ top: 0 }); }, [state.screen]);
+  if (state.cover) return <Cover />;
   return (
     <Layout>
       {state.screen === "baseline" && <Baseline />}

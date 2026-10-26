@@ -22,6 +22,8 @@ export interface Pinned {
 }
 
 export interface AppState extends ScenarioFields {
+  /** Cover page, shown on every arrival until "Let's go". */
+  cover: boolean;
   lang: Lang;
   screen: ScreenId;
   visited: ScreenId[];

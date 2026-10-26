@@ -28,7 +28,6 @@ function initialState(): AppState {
   const lang: Lang = snap.lang ?? (query === "en" || query === "fr" ? query : null) ?? ((storage.get("lang") as Lang | null) ?? "fr");
   const fields: ScenarioFields = { ...presetFields(DEFAULT_PRESET), ...snap };
   const screen: ScreenId = fromUrl?.screen ?? "baseline";
-  const tourSeen = storage.get("tour") === "off" || storage.get("tour") === "seen";
   return {
     ...fields,
     lang: lang === "en" ? "en" : "fr",
@@ -38,7 +37,8 @@ function initialState(): AppState {
     leverView: "list",
     drawer: null,
     pinned: null,
-    tour: tourSeen ? null : 0,
+    cover: true,
+    tour: null,
   };
 }
 
@@ -58,6 +58,7 @@ export type Action =
   | { type: "pin" }
   | { type: "unpin" }
   | { type: "tour"; step: number | null }
+  | { type: "enter" }
   | { type: "load"; snap: Partial<Snapshot> };
 
 function reducer(s: AppState, a: Action): AppState {
@@ -99,6 +100,11 @@ function reducer(s: AppState, a: Action): AppState {
     }
     case "unpin": return { ...s, pinned: null };
     case "tour": return { ...s, tour: a.step };
+    case "enter": {
+      // the guided tour starts by itself on the first visit only
+      const seen = storage.get("tour") === "off" || storage.get("tour") === "seen";
+      return { ...s, cover: false, tour: seen ? null : 0 };
+    }
     case "load": {
       const { screen, lang, ...fields } = a.snap;
       const next = { ...s, ...fields, lang: lang ?? s.lang };

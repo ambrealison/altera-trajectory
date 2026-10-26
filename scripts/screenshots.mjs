@@ -12,6 +12,7 @@ const LABELS = {
   en: { matrix: "Impact / effort matrix", time: "Over time" },
 };
 const VIEWS = [
+  { name: "0-cover", hash: "v=baseline&sc=committed", cover: true },
   { name: "1-baseline", hash: "v=baseline&sc=committed" },
   { name: "1-baseline-fg1", hash: "v=baseline&sc=committed&m=fg1" },
   { name: "2-levers-list", hash: "v=levers&sc=committed" },
@@ -33,10 +34,14 @@ for (const lang of ["fr", "en"]) {
     for (const v of VIEWS) {
       await page.goto(`${BASE}#${v.hash}&lang=${lang}`);
       await page.reload();
-      await page.waitForSelector(".shead h1");
+      await page.waitForSelector(".cover-page");
+      if (!v.cover) {
+        await page.getByRole("button", { name: "Let's go" }).click();
+        await page.waitForSelector(".shead h1");
+      }
       if (v.click) await page.getByRole("button", { name: LABELS[lang][v.click], exact: true }).click();
       if (v.lever) await page.locator(".lever-mini .lname").first().click();
-      await page.waitForTimeout(450);
+      await page.waitForTimeout(v.cover ? 900 : 450);
       const check = await page.evaluate(() => {
         const badge = document.querySelector(".demo-badge")?.getBoundingClientRect();
         const main = document.getElementById("main");
@@ -57,9 +62,10 @@ for (const lang of ["fr", "en"]) {
     await page.close();
   }
 }
-// first visit: the guided tour starts by itself
+// first visit: cover, then the guided tour starts by itself after "Let's go"
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 await page.goto(`${BASE}?lang=fr`);
+await page.getByRole("button", { name: "Let's go" }).click();
 await page.waitForSelector(".tour-bubble");
 await page.screenshot({ path: `${OUT}/fr-1440-0-guided-tour.png` });
 await browser.close();
