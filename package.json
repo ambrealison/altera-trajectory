@@ -10,9 +10,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "report": "tsx scripts/report.ts",
-    "screenshots": "node scripts/screenshots.mjs",
-    "dev:real": "vite --mode real",
-    "build:real": "vite build --mode real"
+    "screenshots": "node scripts/screenshots.mjs"
   },
   "dependencies": {
     "@fontsource/archivo": "^5.3.0",

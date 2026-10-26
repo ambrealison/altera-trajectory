@@ -1,7 +1,6 @@
-import { categories, config, dataset } from "../data";
+import { categories, config } from "../data";
 import type { PlotId } from "../data/types";
 import { fmtNum, fmtPct, fmtTonnes } from "../engine/format";
-import { fg1Shares } from "../engine/simulate";
 import { useApp, REFERENCE } from "../state/store";
 import type { MetricKey } from "../state/types";
 import { useT } from "../i18n/useT";
@@ -16,8 +15,9 @@ const PLOTS: PlotId[] = ["1", "2", "3", "4"];
 /** Reference figures by plot, animal group and department, in the selected indicator's unit:
  *  tonnes of protein for the Protein Tracker, tonnes of protein-rich products for WWF FG1. */
 function breakdown(metric: MetricKey) {
-  const plant = (c: (typeof categories)[number]) => (metric === "pt" ? (c.tonnesProduct * c.proteinPer100g * c.plantProteinShare) / 100 : c.tonnesProduct * fg1Shares(c).plant);
-  const animal = (c: (typeof categories)[number]) => (metric === "pt" ? (c.tonnesProduct * c.proteinPer100g * (1 - c.plantProteinShare)) / 100 : c.tonnesProduct * fg1Shares(c).animal);
+  const inFg1 = (c: (typeof categories)[number]) => c.wwfGroup === "FG1" && !c.wwfComposite;
+  const plant = (c: (typeof categories)[number]) => (metric === "pt" ? (c.tonnesProduct * c.proteinPer100g * c.plantProteinShare) / 100 : inFg1(c) && c.proteinGroup !== "animal_core" ? c.tonnesProduct : 0);
+  const animal = (c: (typeof categories)[number]) => (metric === "pt" ? (c.tonnesProduct * c.proteinPer100g * (1 - c.plantProteinShare)) / 100 : inFg1(c) && c.proteinGroup === "animal_core" ? c.tonnesProduct : 0);
   const total = categories.reduce((a, c) => a + plant(c) + animal(c), 0);
   const byPlot: Record<string, number> = { "1": 0, "2": 0, "3": 0, "4": 0, composite: 0, other: 0 };
   const byCategory: { category: (typeof categories)[number]; key: string; value: number }[] = [];
@@ -150,17 +150,7 @@ export function Baseline() {
                 <tr><th>{t("baseline.colRayon")}</th><th className="r">{fg1 ? t("baseline.colProduct") : t("baseline.colProtein")}</th><th>{t("baseline.colPlantShare")}</th><th className="r">{t("baseline.colPoints")}</th></tr>
               </thead>
               <tbody>
-                {!fg1 && dataset.meta?.rayonTable ? dataset.meta.rayonTable.map((r) => (
-                  <tr key={r.id}>
-                    <td>{tx(r.label)}</td>
-                    <td className="r num">{unit(r.protein)}</td>
-                    <td>
-                      <span className="minisplit"><i style={{ width: `${r.plantShare * 100}%` }} /></span>
-                      <span className="num share">{fmtPct(r.plantShare, lang, 0)}</span>
-                    </td>
-                    <td className="r num">{fmtNum(r.points, lang, 1)}</td>
-                  </tr>
-                )) : rayonKeys.map((k) => {
+                {rayonKeys.map((k) => {
                   const r = B.rayons[k];
                   const tot = r.plant + r.animal;
                   const share = tot > 0 ? r.plant / tot : 0;
