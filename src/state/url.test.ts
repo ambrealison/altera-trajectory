@@ -29,6 +29,9 @@ describe("scenario in the URL hash", () => {
     expect(back.hypotheses?.L20).toEqual({ purchaseCut: 3 });
     expect(back.hypotheses?.L02).toEqual(base.hypotheses.L02);
   });
+  it("an old link to the removed 2040 horizon falls back to the default", () => {
+    expect(fromHash("#v=trajectory&sc=ambitious&h=2040")!.horizon).toBe(2035);
+  });
   it("ignores unknown levers, assumptions and out-of-range values", () => {
     const back = fromHash("#v=levers&l=1.99.3&hy=L01.conversion:500,L77.x:1,L02.nope:3")!;
     expect(back.activeLevers).toEqual([1, 3]);

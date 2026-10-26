@@ -144,8 +144,9 @@ describe("engine rules", () => {
 });
 
 describe("horizons beyond 2030", () => {
-  it("offers 2028, 2030, 2035 and 2040", () => {
-    expect(config.horizons).toEqual([2028, 2030, 2035, 2040]);
+  it("offers 2028, 2030 and 2035, with 2035 by default", () => {
+    expect(config.horizons).toEqual([2028, 2030, 2035]);
+    expect(config.defaultHorizon).toBe(2035);
   });
   it("effects keep growing after the extension year, and 2030 is unchanged", () => {
     for (const s of scenarios) {
@@ -153,7 +154,6 @@ describe("horizons beyond 2030", () => {
       const at = (y: number) => res.find((r) => r.year === y)!.pt;
       expect(at(2030)).toBeCloseTo(runYear(model, s, 2030).metrics.pt, 12);
       expect(at(2035)).toBeGreaterThan(at(2030));
-      expect(at(2040)).toBeGreaterThan(at(2035));
     }
   });
   it("revenue goes up in every predefined scenario, at every horizon (demo choice)", () => {

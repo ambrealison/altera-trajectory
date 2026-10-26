@@ -12,7 +12,7 @@ En ligne : https://ambrealison.github.io/altera-trajectory/ (non indexé par les
 
 1. **Point de départ** : le ratio Protein Tracker de référence (32,0 % en 2025), décomposé sur les 4 plots, la part végétale des produits mixtes et les autres protéines végétales, chaque bloc détaillé catégorie par catégorie. Un sélecteur discret passe en WWF FG1.
 2. **Les leviers** : les 20 leviers du dossier, en tableau ou en matrice impact / effort. Le tableau se trie par effet sur le ratio, CO2 ou marge, et se filtre par statut, type, plot ou recherche ; un bandeau met en avant le CO2 des leviers actifs.
-3. **Trajectoire** : leviers à cocher, quatre scénarios, part des magasins qui suivent, horizon 2028, 2030, 2035 (par défaut) ou 2040 ; lecture par levier (cascade) ou dans le temps (courbe avec fourchette, aire empilée des plots, rythme observé aux Pays-Bas jusqu'en 2030) ; épinglage d'un scénario pour comparer. Le garde-fou de réalisme n'est plus affiché : il se présente à l'oral (il reste calculé et testé dans `src/engine/guardrail.ts`).
+3. **Trajectoire** : leviers à cocher, quatre scénarios, part des magasins qui suivent, horizon 2028, 2030 ou 2035 (par défaut) ; lecture par levier (cascade) ou dans le temps (courbe avec fourchette, aire empilée des plots, rythme observé aux Pays-Bas jusqu'en 2030) ; épinglage d'un scénario pour comparer. Le garde-fou de réalisme n'est plus affiché : il se présente à l'oral (il reste calculé et testé dans `src/engine/guardrail.ts`).
 4. **Avec vos données** : les modules que des données réelles permettraient de construire.
 
 La démo s'ouvre sur le scénario « Volontaire ». La fiche levier (panneau de droite) montre la description, les hypothèses en curseurs, l'effet à l'horizon et le pilote proposé. Toute modification met la trajectoire à jour aussitôt. L'état complet (leviers, hypothèses, adoption, horizon, indicateur, langue) est encodé dans l'URL : un lien copié rouvre exactement le même scénario.
@@ -67,7 +67,7 @@ Après une modification, `npm test` vérifie la cohérence des données (catégo
 - Les leviers actifs s'appliquent l'un après l'autre, par numéro croissant, sur l'état courant de l'année.
 - Les hausses sont exprimées en part des ventes 2025 et partagent un même potentiel : deux hausses de 20 % sur la même catégorie donnent 36 %, pas 44 %.
 - Montée en charge : courbe en S (fonction « smoothstep ») entre l'année de lancement et la pleine charge, atteinte au plus tard en 2030. 2025 est la référence, sans aucun effet.
-- Au-delà de 2030 : hypothèse de diffusion, les effets des leviers progressent de 4 % par an (`extension` dans `config.json`). Les horizons 2035 et 2040 en dépendent.
+- Au-delà de 2030 : hypothèse de diffusion, les effets des leviers progressent de 4 % par an (`extension` dans `config.json`). L'horizon 2035 en dépend.
 - Adoption des magasins : effet réel = effet × (1 - dépendance + dépendance × adoption).
 - Fourchette : deux simulations de plus avec les multiplicateurs bas et haut de chaque levier. Le levier 3 (meilleures données) ne bouge pas le ratio et resserre ces fourchettes.
 - Cascade : effet isolé de chaque levier, réparti proportionnellement pour que la somme égale l'effet combiné. L'écart s'affiche comme « recouvrement entre leviers ».
