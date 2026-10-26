@@ -1,0 +1,2072 @@
+[
+  {
+    "id": "L01",
+    "number": 1,
+    "label": {
+      "fr": "Haché et burgers hybrides",
+      "en": "Hybrid mince and burgers"
+    },
+    "type": "central_stores",
+    "storeDependency": 0.5,
+    "plots": [
+      "outside"
+    ],
+    "deckEffort": 3.1,
+    "deckImpact": 9.0,
+    "provisional": false,
+    "description": {
+      "fr": "Remplacer une partie de la viande des hachés et des burgers par des protéines végétales (légumineuses, protéines texturées), pour un produit au goût et à l'usage comparables.",
+      "en": "Replace part of the meat in mince and burgers with plant protein (pulses, textured protein), for a product that tastes and cooks much the same."
+    },
+    "whyForU": {
+      "fr": "Le haché pèse lourd dans les protéines animales vendues. Une recette hybride change le contenu du panier sans demander au client de changer ses habitudes.",
+      "en": "Mince weighs heavily in the animal protein sold. A hybrid recipe changes what is in the basket without asking shoppers to change their habits."
+    },
+    "owner": {
+      "fr": "Offre MDD, boucherie libre-service et boucherie traditionnelle",
+      "en": "Private label, self-service and counter butchery"
+    },
+    "pilot": {
+      "fr": "Périmètre : une référence MDD de haché hybride dans 30 à 50 magasins volontaires. Durée : 6 mois. Indicateurs : part de l'hybride dans les ventes de haché, taux de réachat, volume total du rayon. Go si le rayon garde son volume et si le réachat atteint le seuil fixé avec l'équipe études.",
+      "en": "Scope: one private-label hybrid mince in 30 to 50 volunteer stores. Duration: 6 months. Indicators: hybrid share of mince sales, repeat purchase rate, total aisle volume. Go if the aisle keeps its volume and repeat purchase reaches the threshold agreed with the insights team."
+    },
+    "economics": {
+      "revenueEffect": 0,
+      "marginEffect": 1
+    },
+    "hypotheses": [
+      {
+        "id": "conversion",
+        "label": {
+          "fr": "Part du haché et des burgers passée en hybride",
+          "en": "Share of mince and burgers switched to hybrid"
+        },
+        "value": 35,
+        "min": 0,
+        "max": 60,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "En volume, sur tout le rayon (MDD, marques, boucherie des magasins), à pleine montée en charge.",
+          "en": "By volume, across the whole aisle (private label, brands, in-store butchery), at full ramp-up."
+        }
+      },
+      {
+        "id": "plantShare",
+        "label": {
+          "fr": "Part végétale des protéines dans la recette hybride",
+          "en": "Plant share of protein in the hybrid recipe"
+        },
+        "value": 30,
+        "min": 10,
+        "max": 50,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Ordre de grandeur à confirmer avec la R&D MDD et les tests consommateurs.",
+          "en": "Order of magnitude to confirm with private-label R&D and consumer tests."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "transfer",
+        "from": [
+          "minced_meat"
+        ],
+        "to": "hybrid_mince",
+        "basis": "product",
+        "x": "conversion",
+        "receiverPlantShare": "plantShare"
+      }
+    ],
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 5
+    },
+    "uncertainty": {
+      "low": 0.6,
+      "high": 1.4
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L02",
+    "number": 2,
+    "label": {
+      "fr": "Charcuterie et traiteur hybrides, MDD",
+      "en": "Hybrid cooked meats and deli, private label"
+    },
+    "type": "central_stores",
+    "storeDependency": 0.5,
+    "plots": [
+      "outside"
+    ],
+    "deckEffort": 4.5,
+    "deckImpact": 7.1,
+    "provisional": false,
+    "description": {
+      "fr": "Proposer en MDD des versions hybrides de charcuterie et de traiteur (saucisses, knacks, cordons bleus, boulettes) où une partie de la viande est remplacée par des protéines végétales.",
+      "en": "Offer private-label hybrid versions of cooked meats and deli (sausages, frankfurters, breaded escalopes, meatballs) where part of the meat is replaced with plant protein."
+    },
+    "whyForU": {
+      "fr": "La MDD donne la main sur la recette, et les produits élaborés se prêtent mieux à l'hybridation que la viande piécée.",
+      "en": "Private label gives control over the recipe, and processed products lend themselves to blending better than whole cuts."
+    },
+    "owner": {
+      "fr": "Offre MDD charcuterie-traiteur",
+      "en": "Private label, cooked meats and deli"
+    },
+    "pilot": {
+      "fr": "Périmètre : 3 à 5 références MDD hybrides, à côté ou à la place des recettes actuelles. Durée : 6 mois. Indicateurs : ventes des hybrides, report depuis les recettes classiques, retours clients. Go si les ventes de la famille se maintiennent.",
+      "en": "Scope: 3 to 5 private-label hybrid items, alongside or instead of current recipes. Duration: 6 months. Indicators: hybrid sales, switching from classic recipes, customer feedback. Go if the family's sales hold."
+    },
+    "economics": {
+      "revenueEffect": 0,
+      "marginEffect": 1
+    },
+    "hypotheses": [
+      {
+        "id": "mddShare",
+        "label": {
+          "fr": "Part de la MDD dans la charcuterie et le traiteur",
+          "en": "Private-label share of cooked meats and deli"
+        },
+        "value": 50,
+        "min": 30,
+        "max": 70,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Donnée fictive, à remplacer par la vôtre.",
+          "en": "Fictitious figure, to replace with your own."
+        }
+      },
+      {
+        "id": "conversion",
+        "label": {
+          "fr": "Part des volumes MDD passée en recette hybride",
+          "en": "Share of private-label volume switched to a hybrid recipe"
+        },
+        "value": 50,
+        "min": 0,
+        "max": 70,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "À pleine montée en charge.",
+          "en": "At full ramp-up."
+        }
+      },
+      {
+        "id": "plantShare",
+        "label": {
+          "fr": "Part végétale des protéines dans la recette hybride",
+          "en": "Plant share of protein in the hybrid recipe"
+        },
+        "value": 40,
+        "min": 10,
+        "max": 50,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Ordre de grandeur à confirmer avec la R&D MDD.",
+          "en": "Order of magnitude to confirm with private-label R&D."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "transfer",
+        "from": [
+          "charcuterie"
+        ],
+        "to": "hybrid_charcuterie",
+        "basis": "product",
+        "x": "mddShare * conversion",
+        "receiverPlantShare": "plantShare"
+      }
+    ],
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 5
+    },
+    "uncertainty": {
+      "low": 0.6,
+      "high": 1.4
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L03",
+    "number": 3,
+    "label": {
+      "fr": "Meilleures données (reporting seul)",
+      "en": "Better data (reporting only)"
+    },
+    "type": "central",
+    "storeDependency": 0,
+    "plots": [
+      "transverse"
+    ],
+    "deckEffort": 1.1,
+    "deckImpact": 6.0,
+    "provisional": false,
+    "description": {
+      "fr": "Mesurer chaque année le ratio sur l'ensemble des ventes, avec des données produit complètes (teneur en protéines, composition).",
+      "en": "Measure the ratio every year across all sales, with complete product data (protein content, composition)."
+    },
+    "whyForU": {
+      "fr": "Ce levier ne fait pas bouger le ratio, il rend la mesure plus fiable. Les autres leviers se pilotent alors sur une fourchette plus resserrée.",
+      "en": "This lever does not move the ratio, it makes the measurement more reliable. The other levers can then be steered on a narrower range."
+    },
+    "owner": {
+      "fr": "RSE et études",
+      "en": "CSR and insights"
+    },
+    "pilot": {
+      "fr": "Périmètre : une mesure complète sur douze mois de ventes. Durée : 3 mois. Indicateurs : part des ventes couverte, écart entre bornes basse et haute. Go si la couverture atteint le niveau fixé avec l'équipe RSE.",
+      "en": "Scope: a full measurement over twelve months of sales. Duration: 3 months. Indicators: share of sales covered, gap between low and high bounds. Go if coverage reaches the level agreed with the CSR team."
+    },
+    "economics": {
+      "revenueEffect": 0,
+      "marginEffect": 0
+    },
+    "hypotheses": [
+      {
+        "id": "coverage",
+        "label": {
+          "fr": "Part des ventes couverte par la mesure",
+          "en": "Share of sales covered by the measurement"
+        },
+        "value": 100,
+        "min": 50,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Avec une couverture partielle, le gain de fiabilité est réduit d'autant.",
+          "en": "With partial coverage, the reliability gain shrinks accordingly."
+        }
+      },
+      {
+        "id": "remaining",
+        "label": {
+          "fr": "Écart restant entre bornes basse et haute",
+          "en": "Remaining gap between low and high bounds"
+        },
+        "value": 60,
+        "min": 30,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "60 % : l'écart de chaque levier est multiplié par 0,6.",
+          "en": "60%: the gap of every lever is multiplied by 0.6."
+        }
+      }
+    ],
+    "effects": [],
+    "tightensUncertainty": "1 - coverage * (1 - remaining)",
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 1
+    },
+    "uncertainty": {
+      "low": 1,
+      "high": 1
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L04",
+    "number": 4,
+    "label": {
+      "fr": "Légumineuses, fruits à coque, tofu : offre, visibilité",
+      "en": "Pulses, nuts, tofu: range and visibility"
+    },
+    "type": "central_stores",
+    "storeDependency": 0.5,
+    "plots": [
+      "3"
+    ],
+    "deckEffort": 4.0,
+    "deckImpact": 5.9,
+    "provisional": false,
+    "description": {
+      "fr": "Élargir et rendre visible l'offre de légumineuses et de tofu : têtes de gondole, signalétique, formats prêts à l'emploi.",
+      "en": "Widen and showcase the range of pulses and tofu: end caps, signage, ready-to-use formats."
+    },
+    "whyForU": {
+      "fr": "Les légumineuses sont déjà en rayon et peu chères. Les rendre visibles et faciles à cuisiner demande peu de développement produit.",
+      "en": "Pulses are already on the shelf and inexpensive. Making them visible and easy to cook needs little product development."
+    },
+    "owner": {
+      "fr": "Marché épicerie et animation commerciale",
+      "en": "Grocery category and in-store marketing"
+    },
+    "pilot": {
+      "fr": "Périmètre : un espace légumineuses et tofu dans 30 magasins volontaires. Durée : 4 mois. Indicateurs : ventes du plot 3, ventes de viande des mêmes magasins. Go si la hausse dépasse le seuil fixé avec l'équipe études.",
+      "en": "Scope: a pulses and tofu area in 30 volunteer stores. Duration: 4 months. Indicators: plot 3 sales, meat sales in the same stores. Go if the increase exceeds the threshold agreed with the insights team."
+    },
+    "economics": {
+      "revenueEffect": 0,
+      "marginEffect": 0
+    },
+    "hypotheses": [
+      {
+        "id": "salesGain",
+        "label": {
+          "fr": "Hausse des ventes du plot 3",
+          "en": "Sales increase of plot 3"
+        },
+        "value": 40,
+        "min": 0,
+        "max": 80,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Légumineuses et tofu. Les fruits à coque restent dans « Autres protéines végétales ».",
+          "en": "Pulses and tofu. Nuts stay in \"Other plant protein\"."
+        }
+      },
+      {
+        "id": "fromMeat",
+        "label": {
+          "fr": "Part de ce gain prise sur la viande",
+          "en": "Share of this gain taken from meat"
+        },
+        "value": 50,
+        "min": 0,
+        "max": 80,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "En volume : une portion de légumineuses remplace une portion de viande.",
+          "en": "By volume: a portion of pulses replaces a portion of meat."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "scale",
+        "targets": [
+          "pulses",
+          "tofu"
+        ],
+        "x": "salesGain",
+        "substitution": {
+          "from": [
+            "minced_meat",
+            "red_meat",
+            "poultry",
+            "charcuterie"
+          ],
+          "share": "fromMeat",
+          "basis": "product"
+        }
+      }
+    ],
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 4
+    },
+    "uncertainty": {
+      "low": 0.6,
+      "high": 1.4
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L05",
+    "number": 5,
+    "label": {
+      "fr": "Promotions diversifiées, viande et végétal",
+      "en": "Balanced promotions, meat and plant"
+    },
+    "type": "stores",
+    "storeDependency": 1,
+    "plots": [
+      "transverse"
+    ],
+    "deckEffort": 5.4,
+    "deckImpact": 5.7,
+    "provisional": false,
+    "description": {
+      "fr": "Réorienter une partie des promotions de la viande vers les alternatives végétales et les légumineuses, et associer les deux dans les mêmes opérations.",
+      "en": "Redirect part of meat promotions towards plant-based alternatives and pulses, and pair both in the same campaigns."
+    },
+    "whyForU": {
+      "fr": "Les promotions se décident en grande partie en magasin. La centrale peut proposer un plan, chaque magasin choisit de le suivre.",
+      "en": "Promotions are largely decided in store. The central office can propose a plan, each store chooses whether to follow it."
+    },
+    "owner": {
+      "fr": "Animation commerciale",
+      "en": "Promotions and trade marketing"
+    },
+    "pilot": {
+      "fr": "Périmètre : deux vagues promotionnelles rééquilibrées dans 40 magasins volontaires. Durée : 6 mois. Indicateurs : volumes de viande et des 4 plots, chiffre d'affaires par magasin. Go si le chiffre d'affaires des magasins pilotes reste dans la marge fixée.",
+      "en": "Scope: two rebalanced promotional waves in 40 volunteer stores. Duration: 6 months. Indicators: meat and 4-plot volumes, revenue per store. Go if pilot store revenue stays within the agreed margin."
+    },
+    "economics": {
+      "revenueEffect": -1,
+      "marginEffect": 0
+    },
+    "hypotheses": [
+      {
+        "id": "meatCut",
+        "label": {
+          "fr": "Baisse des volumes de viande liée aux promotions réorientées",
+          "en": "Drop in meat volume from redirected promotions"
+        },
+        "value": 3,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "%",
+        "note": {
+          "fr": "Viande fraîche et charcuterie, en moyenne sur l'année.",
+          "en": "Fresh meat and cooked meats, averaged over the year."
+        }
+      },
+      {
+        "id": "plantGain",
+        "label": {
+          "fr": "Hausse des ventes des 4 plots grâce aux promotions",
+          "en": "Sales increase of the 4 plots from promotions"
+        },
+        "value": 30,
+        "min": 0,
+        "max": 60,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Effet moyen sur l'année, pas pendant la seule semaine de promotion.",
+          "en": "Average effect over the year, not only during the promotion week."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "scale",
+        "targets": [
+          "minced_meat",
+          "red_meat",
+          "poultry",
+          "charcuterie"
+        ],
+        "x": "-meatCut"
+      },
+      {
+        "op": "scale",
+        "targets": [
+          "plant_steaks",
+          "plant_breaded",
+          "plant_ready_meals",
+          "pulses",
+          "tofu",
+          "plant_drinks",
+          "plant_yoghurts"
+        ],
+        "x": "plantGain"
+      }
+    ],
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 3
+    },
+    "uncertainty": {
+      "low": 0.5,
+      "high": 1.5
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L06",
+    "number": 6,
+    "label": {
+      "fr": "Barquettes et portions de viande plus petites",
+      "en": "Smaller meat packs and portions"
+    },
+    "type": "central",
+    "storeDependency": 0,
+    "plots": [
+      "outside"
+    ],
+    "deckEffort": 4.4,
+    "deckImpact": 5.5,
+    "provisional": false,
+    "description": {
+      "fr": "Réduire le grammage des barquettes de viande MDD et proposer des portions plus petites, à prix au kilo comparable.",
+      "en": "Reduce the weight of private-label meat packs and offer smaller portions, at a comparable price per kilo."
+    },
+    "whyForU": {
+      "fr": "C'est une décision de la centrale sur la MDD, sans dépendre des magasins, qui touche directement les volumes de protéines animales.",
+      "en": "It is a central decision on private label, independent of stores, and it acts directly on animal protein volumes."
+    },
+    "owner": {
+      "fr": "Offre MDD boucherie et emballage",
+      "en": "Private-label meat and packaging"
+    },
+    "pilot": {
+      "fr": "Périmètre : 5 références de viande en grammage réduit. Durée : 3 mois. Indicateurs : volumes vendus, nombre d'unités par panier, réclamations. Go si le nombre d'unités par panier n'augmente pas au point d'annuler la baisse.",
+      "en": "Scope: 5 meat items in a smaller pack. Duration: 3 months. Indicators: volume sold, units per basket, complaints. Go if units per basket do not rise enough to cancel the drop."
+    },
+    "economics": {
+      "revenueEffect": -1,
+      "marginEffect": 0
+    },
+    "hypotheses": [
+      {
+        "id": "gramCut",
+        "label": {
+          "fr": "Baisse du grammage moyen des barquettes",
+          "en": "Average pack weight reduction"
+        },
+        "value": 10,
+        "min": 0,
+        "max": 25,
+        "step": 1,
+        "unit": "%",
+        "note": {
+          "fr": "Sur les références concernées.",
+          "en": "On the items concerned."
+        }
+      },
+      {
+        "id": "shelfShare",
+        "label": {
+          "fr": "Part des volumes de viande concernés",
+          "en": "Share of meat volume concerned"
+        },
+        "value": 50,
+        "min": 0,
+        "max": 80,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Viande fraîche et charcuterie en libre-service.",
+          "en": "Self-service fresh meat and cooked meats."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "scale",
+        "targets": [
+          "minced_meat",
+          "red_meat",
+          "poultry",
+          "charcuterie"
+        ],
+        "x": "-gramCut * shelfShare"
+      }
+    ],
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 4
+    },
+    "uncertainty": {
+      "low": 0.6,
+      "high": 1.4
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L07",
+    "number": 7,
+    "label": {
+      "fr": "Reformulation vegan, MDD",
+      "en": "Vegan reformulation, private label"
+    },
+    "type": "central",
+    "storeDependency": 0,
+    "plots": [
+      "2"
+    ],
+    "deckEffort": 3.5,
+    "deckImpact": 5.4,
+    "provisional": false,
+    "description": {
+      "fr": "Proposer des versions végétales des plats cuisinés MDD les plus vendus (lasagnes, bolognaises, pizzas, raviolis).",
+      "en": "Offer plant-based versions of the best-selling private-label ready meals (lasagne, bolognese, pizza, ravioli)."
+    },
+    "whyForU": {
+      "fr": "La centrale maîtrise la recette et l'implantation de la MDD : le plot 2 grandit sans attendre les marques.",
+      "en": "The central office controls private-label recipes and placement: plot 2 grows without waiting for brands."
+    },
+    "owner": {
+      "fr": "Offre MDD traiteur",
+      "en": "Private-label ready meals"
+    },
+    "pilot": {
+      "fr": "Périmètre : 4 recettes MDD en version végétale. Durée : 6 mois. Indicateurs : ventes, réachat, report depuis la version carnée. Go si le réachat atteint le seuil fixé.",
+      "en": "Scope: 4 private-label recipes in a plant-based version. Duration: 6 months. Indicators: sales, repeat purchase, switching from the meat version. Go if repeat purchase reaches the agreed threshold."
+    },
+    "economics": {
+      "revenueEffect": 0,
+      "marginEffect": 0
+    },
+    "hypotheses": [
+      {
+        "id": "mddShare",
+        "label": {
+          "fr": "Part de la MDD dans les plats cuisinés",
+          "en": "Private-label share of ready meals"
+        },
+        "value": 50,
+        "min": 30,
+        "max": 70,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Donnée fictive, à remplacer par la vôtre.",
+          "en": "Fictitious figure, to replace with your own."
+        }
+      },
+      {
+        "id": "conversion",
+        "label": {
+          "fr": "Part des volumes MDD passée en version végétale",
+          "en": "Share of private-label volume moved to plant-based versions"
+        },
+        "value": 40,
+        "min": 0,
+        "max": 70,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Report depuis la version carnée, à pleine montée en charge.",
+          "en": "Switching from the meat version, at full ramp-up."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "transfer",
+        "from": [
+          "meat_ready_meals"
+        ],
+        "to": "plant_ready_meals",
+        "basis": "product",
+        "x": "mddShare * conversion"
+      }
+    ],
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 5
+    },
+    "uncertainty": {
+      "low": 0.6,
+      "high": 1.4
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L08",
+    "number": 8,
+    "label": {
+      "fr": "Meilleur goût (parité gustative)",
+      "en": "Better taste (taste parity)"
+    },
+    "type": "central",
+    "storeDependency": 0,
+    "plots": [
+      "1",
+      "4"
+    ],
+    "deckEffort": 5.0,
+    "deckImpact": 4.9,
+    "provisional": true,
+    "description": {
+      "fr": "Améliorer les recettes MDD des alternatives végétales jusqu'à la parité de goût avec les produits animaux, tests consommateurs à l'appui.",
+      "en": "Improve private-label plant-based recipes up to taste parity with animal products, backed by consumer tests."
+    },
+    "whyForU": {
+      "fr": "Le goût reste un frein fréquent au réachat. La MDD permet de travailler la recette sans dépendre des fournisseurs de marque.",
+      "en": "Taste remains a common barrier to repeat purchase. Private label allows work on the recipe without depending on branded suppliers."
+    },
+    "owner": {
+      "fr": "Qualité et R&D MDD",
+      "en": "Private-label quality and R&D"
+    },
+    "pilot": {
+      "fr": "Périmètre : 3 recettes retravaillées, testées à l'aveugle contre leur équivalent animal. Durée : 9 mois. Indicateurs : score de goût, réachat. Go si les recettes atteignent la parité au test aveugle.",
+      "en": "Scope: 3 reworked recipes, blind-tested against their animal equivalent. Duration: 9 months. Indicators: taste score, repeat purchase. Go if the recipes reach parity in the blind test."
+    },
+    "economics": {
+      "revenueEffect": 1,
+      "marginEffect": 0
+    },
+    "hypotheses": [
+      {
+        "id": "salesGain",
+        "label": {
+          "fr": "Hausse des ventes des plots 1 et 4 après amélioration des recettes",
+          "en": "Sales increase of plots 1 and 4 after recipe improvement"
+        },
+        "value": 30,
+        "min": 0,
+        "max": 80,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "À pleine montée en charge.",
+          "en": "At full ramp-up."
+        }
+      },
+      {
+        "id": "substitution",
+        "label": {
+          "fr": "Part du gain prise sur la viande et les produits laitiers",
+          "en": "Share of the gain taken from meat and dairy"
+        },
+        "value": 50,
+        "min": 0,
+        "max": 80,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "En volume : un steak pour un steak, un litre pour un litre.",
+          "en": "By volume: a steak for a steak, a litre for a litre."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "scale",
+        "targets": [
+          "plant_steaks",
+          "plant_breaded"
+        ],
+        "x": "salesGain",
+        "substitution": {
+          "from": [
+            "minced_meat",
+            "red_meat",
+            "poultry",
+            "charcuterie"
+          ],
+          "share": "substitution",
+          "basis": "product"
+        }
+      },
+      {
+        "op": "scale",
+        "targets": [
+          "plant_drinks",
+          "plant_yoghurts"
+        ],
+        "x": "salesGain",
+        "substitution": {
+          "from": [
+            "milk_yoghurt"
+          ],
+          "share": "substitution",
+          "basis": "product"
+        }
+      }
+    ],
+    "ramp": {
+      "startYear": 2027,
+      "yearsToFull": 4
+    },
+    "uncertainty": {
+      "low": 0.5,
+      "high": 1.5
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L09",
+    "number": 9,
+    "label": {
+      "fr": "Produits de base enrichis en légumineuses",
+      "en": "Staples enriched with pulses"
+    },
+    "type": "central",
+    "storeDependency": 0,
+    "plots": [
+      "3",
+      "other"
+    ],
+    "deckEffort": 9.0,
+    "deckImpact": 4.7,
+    "provisional": false,
+    "description": {
+      "fr": "Remplacer une partie des pâtes, riz et céréales MDD par des versions à base de légumineuses ou enrichies en légumineuses, plus riches en protéines.",
+      "en": "Replace part of private-label pasta, rice and cereals with pulse-based or pulse-enriched versions, richer in protein."
+    },
+    "whyForU": {
+      "fr": "Les produits de base pèsent lourd dans les protéines végétales. Les enrichir fait monter le ratio sans changer les habitudes, mais demande un gros travail de développement.",
+      "en": "Staples weigh heavily in plant protein. Enriching them raises the ratio without changing habits, but takes substantial development work."
+    },
+    "owner": {
+      "fr": "Offre MDD épicerie",
+      "en": "Private-label grocery"
+    },
+    "pilot": {
+      "fr": "Périmètre : une gamme de pâtes enrichies en légumineuses dans tous les magasins. Durée : 12 mois. Indicateurs : part de la gamme dans les pâtes MDD, réachat. Go si la gamme garde sa part après six mois.",
+      "en": "Scope: a range of pulse-enriched pasta in all stores. Duration: 12 months. Indicators: share of the range in private-label pasta, repeat purchase. Go if the range keeps its share after six months."
+    },
+    "economics": {
+      "revenueEffect": 1,
+      "marginEffect": 0
+    },
+    "hypotheses": [
+      {
+        "id": "mddShare",
+        "label": {
+          "fr": "Part de la MDD dans les pâtes, riz et céréales",
+          "en": "Private-label share of pasta, rice and cereals"
+        },
+        "value": 40,
+        "min": 30,
+        "max": 70,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Donnée fictive, à remplacer par la vôtre.",
+          "en": "Fictitious figure, to replace with your own."
+        }
+      },
+      {
+        "id": "conversion",
+        "label": {
+          "fr": "Part des volumes MDD passée en version aux légumineuses",
+          "en": "Share of private-label volume moved to pulse-based versions"
+        },
+        "value": 12,
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Teneur en protéines reprise de la catégorie « Produits de base aux légumineuses ».",
+          "en": "Protein content taken from the \"Pulse-based staples\" category."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "transfer",
+        "from": [
+          "grains_pasta"
+        ],
+        "to": "pulse_staples",
+        "basis": "product",
+        "x": "mddShare * conversion"
+      }
+    ],
+    "ramp": {
+      "startYear": 2027,
+      "yearsToFull": 4
+    },
+    "uncertainty": {
+      "low": 0.6,
+      "high": 1.4
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L10",
+    "number": 10,
+    "label": {
+      "fr": "Assortiment végétal élargi",
+      "en": "Wider plant-based range"
+    },
+    "type": "central_stores",
+    "storeDependency": 0.5,
+    "plots": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "deckEffort": 6.6,
+    "deckImpact": 4.3,
+    "provisional": true,
+    "description": {
+      "fr": "Référencer plus d'alternatives végétales dans les 4 plots et les rendre disponibles dans tous les formats de magasins.",
+      "en": "List more plant-based alternatives across the 4 plots and make them available in every store format."
+    },
+    "whyForU": {
+      "fr": "La centrale référence, chaque magasin choisit ce qu'il met en rayon. Un assortiment de base commun limite les écarts entre magasins.",
+      "en": "The central office lists, each store chooses what goes on its shelves. A common core range limits gaps between stores."
+    },
+    "owner": {
+      "fr": "Achats et marchés",
+      "en": "Buying and category management"
+    },
+    "pilot": {
+      "fr": "Périmètre : un assortiment végétal de base dans 50 magasins volontaires. Durée : 6 mois. Indicateurs : ventes des 4 plots, rotation par référence. Go si la rotation reste au-dessus du seuil de déréférencement.",
+      "en": "Scope: a core plant-based range in 50 volunteer stores. Duration: 6 months. Indicators: 4-plot sales, rotation per item. Go if rotation stays above the delisting threshold."
+    },
+    "economics": {
+      "revenueEffect": 1,
+      "marginEffect": 0
+    },
+    "hypotheses": [
+      {
+        "id": "salesGain",
+        "label": {
+          "fr": "Hausse des ventes des 4 plots liée aux nouvelles références",
+          "en": "Sales increase of the 4 plots from new listings"
+        },
+        "value": 12,
+        "min": 0,
+        "max": 50,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "À pleine montée en charge.",
+          "en": "At full ramp-up."
+        }
+      },
+      {
+        "id": "substitution",
+        "label": {
+          "fr": "Part du gain prise sur les produits animaux",
+          "en": "Share of the gain taken from animal products"
+        },
+        "value": 25,
+        "min": 0,
+        "max": 60,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "En volume.",
+          "en": "By volume."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "scale",
+        "targets": [
+          "plant_steaks",
+          "plant_breaded",
+          "plant_ready_meals",
+          "pulses",
+          "tofu"
+        ],
+        "x": "salesGain",
+        "substitution": {
+          "from": [
+            "minced_meat",
+            "red_meat",
+            "poultry",
+            "charcuterie",
+            "meat_ready_meals"
+          ],
+          "share": "substitution",
+          "basis": "product"
+        }
+      },
+      {
+        "op": "scale",
+        "targets": [
+          "plant_drinks",
+          "plant_yoghurts"
+        ],
+        "x": "salesGain",
+        "substitution": {
+          "from": [
+            "milk_yoghurt"
+          ],
+          "share": "substitution",
+          "basis": "product"
+        }
+      }
+    ],
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 4
+    },
+    "uncertainty": {
+      "low": 0.5,
+      "high": 1.5
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L11",
+    "number": 11,
+    "label": {
+      "fr": "Parité prix, alternatives laitières végétales",
+      "en": "Price parity, plant-based dairy alternatives"
+    },
+    "type": "stores",
+    "storeDependency": 1,
+    "plots": [
+      "4"
+    ],
+    "deckEffort": 5.0,
+    "deckImpact": 3.7,
+    "provisional": false,
+    "description": {
+      "fr": "Rapprocher le prix au litre ou au kilo des boissons et yaourts végétaux de celui de leurs équivalents laitiers, en commençant par la MDD.",
+      "en": "Bring the price per litre or kilo of plant-based drinks and yoghurts closer to their dairy equivalents, starting with private label."
+    },
+    "whyForU": {
+      "fr": "Dans un réseau d'indépendants, le prix en rayon se décide en magasin. Une recommandation de parité suivie magasin par magasin permet de mesurer ce que le prix change vraiment.",
+      "en": "In a network of independent stores, shelf prices are set in store. A parity recommendation tracked store by store shows what price really changes."
+    },
+    "owner": {
+      "fr": "Pricing et marché crèmerie",
+      "en": "Pricing and dairy category"
+    },
+    "pilot": {
+      "fr": "Périmètre : 5 à 10 références végétales à parité dans 20 magasins volontaires, comparés à 20 magasins témoins. Durée : 3 mois. Indicateurs : volumes des alternatives, volumes de lait et de yaourts, chiffre d'affaires du rayon. Go si l'élasticité observée atteint le seuil fixé avant le test.",
+      "en": "Scope: 5 to 10 plant-based items at parity in 20 volunteer stores, compared with 20 control stores. Duration: 3 months. Indicators: volumes of the alternatives, milk and yoghurt volumes, aisle revenue. Go if the observed elasticity reaches the threshold set before the test."
+    },
+    "economics": {
+      "revenueEffect": 0,
+      "marginEffect": -1
+    },
+    "hypotheses": [
+      {
+        "id": "priceCut",
+        "label": {
+          "fr": "Baisse de prix moyenne sur les références concernées",
+          "en": "Average price cut on the items concerned"
+        },
+        "value": 20,
+        "min": 0,
+        "max": 35,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Écart à combler jusqu'à l'équivalent laitier de même gamme.",
+          "en": "Gap to close to the dairy equivalent in the same range."
+        }
+      },
+      {
+        "id": "elasticity",
+        "label": {
+          "fr": "Élasticité-prix des volumes (valeur absolue)",
+          "en": "Price elasticity of volume (absolute value)"
+        },
+        "value": 1.2,
+        "min": 0.5,
+        "max": 2.0,
+        "step": 0.1,
+        "unit": "",
+        "note": {
+          "fr": "1,0 : une baisse de prix de 10 % donne environ 10 % de volume en plus. À estimer sur l'historique des ventes.",
+          "en": "1.0: a 10% price cut gives about 10% more volume. To estimate from sales history."
+        }
+      },
+      {
+        "id": "fromDairy",
+        "label": {
+          "fr": "Part du gain prise sur les produits laitiers",
+          "en": "Share of the gain taken from dairy"
+        },
+        "value": 50,
+        "min": 0,
+        "max": 80,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "En volume, un litre pour un litre. Le reste est de la consommation en plus.",
+          "en": "By volume, litre for litre. The rest is extra consumption."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "scale",
+        "targets": [
+          "plant_drinks",
+          "plant_yoghurts"
+        ],
+        "x": "priceCut * elasticity",
+        "substitution": {
+          "from": [
+            "milk_yoghurt"
+          ],
+          "share": "fromDairy",
+          "basis": "product"
+        }
+      },
+      {
+        "op": "price",
+        "targets": [
+          "plant_drinks",
+          "plant_yoghurts"
+        ],
+        "x": "-priceCut"
+      }
+    ],
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 3
+    },
+    "uncertainty": {
+      "low": 0.5,
+      "high": 1.5
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L12",
+    "number": 12,
+    "label": {
+      "fr": "Implantation intégrée en rayon",
+      "en": "Integrated shelf placement"
+    },
+    "type": "stores",
+    "storeDependency": 1,
+    "plots": [
+      "1",
+      "4"
+    ],
+    "deckEffort": 8.6,
+    "deckImpact": 3.6,
+    "provisional": false,
+    "description": {
+      "fr": "Placer les alternatives végétales à côté de leurs équivalents animaux : steaks végétaux au rayon boucherie, boissons végétales au rayon lait.",
+      "en": "Place plant-based alternatives next to their animal equivalents: plant-based steaks in the meat aisle, plant-based drinks next to milk."
+    },
+    "whyForU": {
+      "fr": "L'implantation se décide en magasin et demande de revoir les planogrammes : l'effet dépend directement des magasins qui suivent.",
+      "en": "Shelf placement is decided in store and means redrawing planograms: the effect depends directly on the stores that follow."
+    },
+    "owner": {
+      "fr": "Merchandising et magasins",
+      "en": "Merchandising and stores"
+    },
+    "pilot": {
+      "fr": "Périmètre : implantation intégrée dans 20 magasins, comparés à 20 magasins témoins. Durée : 6 mois. Indicateurs : ventes des plots 1 et 4, ventes des produits animaux voisins. Go si l'écart avec les témoins dépasse le seuil fixé.",
+      "en": "Scope: integrated placement in 20 stores, compared with 20 control stores. Duration: 6 months. Indicators: plot 1 and 4 sales, sales of nearby animal products. Go if the gap with control stores exceeds the agreed threshold."
+    },
+    "economics": {
+      "revenueEffect": 0,
+      "marginEffect": 0
+    },
+    "hypotheses": [
+      {
+        "id": "salesGain",
+        "label": {
+          "fr": "Hausse des ventes des alternatives implantées",
+          "en": "Sales increase of the alternatives moved"
+        },
+        "value": 35,
+        "min": 0,
+        "max": 60,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Plots 1 et 4.",
+          "en": "Plots 1 and 4."
+        }
+      },
+      {
+        "id": "substitution",
+        "label": {
+          "fr": "Part du gain prise sur les produits animaux voisins",
+          "en": "Share of the gain taken from nearby animal products"
+        },
+        "value": 40,
+        "min": 0,
+        "max": 70,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "En volume.",
+          "en": "By volume."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "scale",
+        "targets": [
+          "plant_steaks",
+          "plant_breaded"
+        ],
+        "x": "salesGain",
+        "substitution": {
+          "from": [
+            "minced_meat",
+            "red_meat",
+            "poultry",
+            "charcuterie"
+          ],
+          "share": "substitution",
+          "basis": "product"
+        }
+      },
+      {
+        "op": "scale",
+        "targets": [
+          "plant_drinks",
+          "plant_yoghurts"
+        ],
+        "x": "salesGain",
+        "substitution": {
+          "from": [
+            "milk_yoghurt"
+          ],
+          "share": "substitution",
+          "basis": "product"
+        }
+      }
+    ],
+    "ramp": {
+      "startYear": 2027,
+      "yearsToFull": 4
+    },
+    "uncertainty": {
+      "low": 0.5,
+      "high": 1.5
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L13",
+    "number": 13,
+    "label": {
+      "fr": "Recettes moins carnées, MDD",
+      "en": "Less meat in private-label recipes"
+    },
+    "type": "central",
+    "storeDependency": 0,
+    "plots": [
+      "2",
+      "outside"
+    ],
+    "deckEffort": 7.0,
+    "deckImpact": 3.4,
+    "provisional": false,
+    "description": {
+      "fr": "Baisser la part de viande dans les recettes MDD de plats cuisinés au profit de légumineuses et de légumes, et passer certaines recettes en version végétarienne.",
+      "en": "Lower the meat content of private-label ready-meal recipes in favour of pulses and vegetables, and move some recipes to a vegetarian version."
+    },
+    "whyForU": {
+      "fr": "Une évolution progressive de recette passe souvent inaperçue pour le client et reste entre les mains de la centrale.",
+      "en": "A gradual recipe change often goes unnoticed by shoppers and stays in the hands of the central office."
+    },
+    "owner": {
+      "fr": "Offre MDD traiteur",
+      "en": "Private-label ready meals"
+    },
+    "pilot": {
+      "fr": "Périmètre : 5 recettes MDD reformulées. Durée : 6 mois. Indicateurs : ventes, notes consommateurs. Go si les ventes se maintiennent.",
+      "en": "Scope: 5 reformulated private-label recipes. Duration: 6 months. Indicators: sales, consumer ratings. Go if sales hold."
+    },
+    "economics": {
+      "revenueEffect": 0,
+      "marginEffect": 1
+    },
+    "hypotheses": [
+      {
+        "id": "mddShare",
+        "label": {
+          "fr": "Part de la MDD dans les plats cuisinés",
+          "en": "Private-label share of ready meals"
+        },
+        "value": 45,
+        "min": 30,
+        "max": 70,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Donnée fictive, à remplacer par la vôtre.",
+          "en": "Fictitious figure, to replace with your own."
+        }
+      },
+      {
+        "id": "plantShareGain",
+        "label": {
+          "fr": "Hausse de la part végétale des protéines dans les recettes MDD",
+          "en": "Increase in the plant share of protein in private-label recipes"
+        },
+        "value": 10,
+        "min": 0,
+        "max": 25,
+        "step": 1,
+        "unit": "pts",
+        "note": {
+          "fr": "En points : 10 points font passer la part végétale de 30 à 40 %.",
+          "en": "In points: 10 points take the plant share from 30 to 40%."
+        }
+      },
+      {
+        "id": "vegetarian",
+        "label": {
+          "fr": "Part des volumes MDD passée en recette végétarienne",
+          "en": "Share of private-label volume moved to vegetarian recipes"
+        },
+        "value": 5,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "%",
+        "note": {
+          "fr": "Ces volumes rejoignent le plot 2.",
+          "en": "These volumes join plot 2."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "composition",
+        "targets": [
+          "meat_ready_meals"
+        ],
+        "x": "mddShare * plantShareGain"
+      },
+      {
+        "op": "transfer",
+        "from": [
+          "meat_ready_meals"
+        ],
+        "to": "plant_ready_meals",
+        "basis": "product",
+        "x": "mddShare * vegetarian"
+      }
+    ],
+    "ramp": {
+      "startYear": 2027,
+      "yearsToFull": 4
+    },
+    "uncertainty": {
+      "low": 0.6,
+      "high": 1.4
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L14",
+    "number": 14,
+    "label": {
+      "fr": "Parité prix, toutes alternatives à la viande",
+      "en": "Price parity, all meat alternatives"
+    },
+    "type": "central_stores",
+    "storeDependency": 0.5,
+    "plots": [
+      "1"
+    ],
+    "deckEffort": 7.7,
+    "deckImpact": 3.1,
+    "provisional": false,
+    "description": {
+      "fr": "Aligner le prix au kilo des alternatives végétales à la viande, MDD et marques, sur celui des produits carnés équivalents.",
+      "en": "Align the price per kilo of plant-based meat alternatives, private label and brands, with equivalent meat products."
+    },
+    "whyForU": {
+      "fr": "La centrale négocie avec les marques et fixe les prix conseillés, les magasins décident du prix final.",
+      "en": "The central office negotiates with brands and sets recommended prices, stores decide the final price."
+    },
+    "owner": {
+      "fr": "Pricing et achats",
+      "en": "Pricing and buying"
+    },
+    "pilot": {
+      "fr": "Périmètre : parité de prix sur 10 références dans 20 magasins volontaires et 20 témoins. Durée : 3 mois. Indicateurs : volumes, report depuis la viande, marge du rayon. Go si l'élasticité observée atteint le seuil fixé.",
+      "en": "Scope: price parity on 10 items in 20 volunteer stores and 20 control stores. Duration: 3 months. Indicators: volumes, switching from meat, aisle margin. Go if the observed elasticity reaches the agreed threshold."
+    },
+    "economics": {
+      "revenueEffect": 0,
+      "marginEffect": -2
+    },
+    "hypotheses": [
+      {
+        "id": "priceCut",
+        "label": {
+          "fr": "Baisse de prix moyenne sur les alternatives",
+          "en": "Average price cut on the alternatives"
+        },
+        "value": 20,
+        "min": 0,
+        "max": 35,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Écart à combler jusqu'au produit carné équivalent.",
+          "en": "Gap to close to the equivalent meat product."
+        }
+      },
+      {
+        "id": "elasticity",
+        "label": {
+          "fr": "Élasticité-prix des volumes (valeur absolue)",
+          "en": "Price elasticity of volume (absolute value)"
+        },
+        "value": 1.5,
+        "min": 0.5,
+        "max": 2.5,
+        "step": 0.1,
+        "unit": "",
+        "note": {
+          "fr": "1,2 : une baisse de prix de 10 % donne environ 12 % de volume en plus.",
+          "en": "1.2: a 10% price cut gives about 12% more volume."
+        }
+      },
+      {
+        "id": "fromMeat",
+        "label": {
+          "fr": "Part du gain prise sur la viande",
+          "en": "Share of the gain taken from meat"
+        },
+        "value": 50,
+        "min": 0,
+        "max": 80,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "En volume.",
+          "en": "By volume."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "scale",
+        "targets": [
+          "plant_steaks",
+          "plant_breaded"
+        ],
+        "x": "priceCut * elasticity",
+        "substitution": {
+          "from": [
+            "minced_meat",
+            "red_meat",
+            "poultry",
+            "charcuterie"
+          ],
+          "share": "fromMeat",
+          "basis": "product"
+        }
+      },
+      {
+        "op": "price",
+        "targets": [
+          "plant_steaks",
+          "plant_breaded"
+        ],
+        "x": "-priceCut"
+      }
+    ],
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 3
+    },
+    "uncertainty": {
+      "low": 0.5,
+      "high": 1.5
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L15",
+    "number": 15,
+    "label": {
+      "fr": "Dénomination et étiquetage (retrait des termes vegan)",
+      "en": "Naming and labelling (dropping \"vegan\" wording)"
+    },
+    "type": "central",
+    "storeDependency": 0,
+    "plots": [
+      "1",
+      "4"
+    ],
+    "deckEffort": 2.3,
+    "deckImpact": 2.5,
+    "provisional": false,
+    "description": {
+      "fr": "Présenter les alternatives par leur usage et leur goût plutôt que par la mention « vegan », qui peut éloigner une partie des clients.",
+      "en": "Present alternatives by use and taste rather than with the word \"vegan\", which can put off some shoppers."
+    },
+    "whyForU": {
+      "fr": "Un changement d'emballage MDD, rapide et peu coûteux, décidé par la centrale.",
+      "en": "A quick, low-cost private-label packaging change, decided by the central office."
+    },
+    "owner": {
+      "fr": "Marketing de l'offre MDD",
+      "en": "Private-label marketing"
+    },
+    "pilot": {
+      "fr": "Périmètre : 4 références renommées. Durée : 4 mois. Indicateurs : ventes, part de nouveaux acheteurs. Go si la part de nouveaux acheteurs progresse.",
+      "en": "Scope: 4 renamed items. Duration: 4 months. Indicators: sales, share of new buyers. Go if the share of new buyers rises."
+    },
+    "economics": {
+      "revenueEffect": 0,
+      "marginEffect": 0
+    },
+    "hypotheses": [
+      {
+        "id": "salesGain",
+        "label": {
+          "fr": "Hausse des ventes des plots 1 et 4",
+          "en": "Sales increase of plots 1 and 4"
+        },
+        "value": 10,
+        "min": 0,
+        "max": 25,
+        "step": 1,
+        "unit": "%",
+        "note": {
+          "fr": "Effet moyen sur l'année.",
+          "en": "Average effect over the year."
+        }
+      },
+      {
+        "id": "substitution",
+        "label": {
+          "fr": "Part du gain prise sur les produits animaux",
+          "en": "Share of the gain taken from animal products"
+        },
+        "value": 30,
+        "min": 0,
+        "max": 60,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "En volume.",
+          "en": "By volume."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "scale",
+        "targets": [
+          "plant_steaks",
+          "plant_breaded"
+        ],
+        "x": "salesGain",
+        "substitution": {
+          "from": [
+            "minced_meat",
+            "red_meat",
+            "poultry",
+            "charcuterie"
+          ],
+          "share": "substitution",
+          "basis": "product"
+        }
+      },
+      {
+        "op": "scale",
+        "targets": [
+          "plant_drinks",
+          "plant_yoghurts"
+        ],
+        "x": "salesGain",
+        "substitution": {
+          "from": [
+            "milk_yoghurt"
+          ],
+          "share": "substitution",
+          "basis": "product"
+        }
+      }
+    ],
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 2
+    },
+    "uncertainty": {
+      "low": 0.4,
+      "high": 1.6
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L16",
+    "number": 16,
+    "label": {
+      "fr": "Baisse de prix, alternatives à la viande MDD U seules",
+      "en": "Price cut, U private-label meat alternatives only"
+    },
+    "type": "central_stores",
+    "storeDependency": 0.5,
+    "plots": [
+      "1"
+    ],
+    "deckEffort": 3.8,
+    "deckImpact": 2.1,
+    "provisional": false,
+    "description": {
+      "fr": "Baisser le prix des seules alternatives à la viande MDD, sans toucher aux marques.",
+      "en": "Cut the price of private-label meat alternatives only, leaving brands unchanged."
+    },
+    "whyForU": {
+      "fr": "La centrale maîtrise le prix conseillé de sa MDD : c'est une version plus ciblée et moins coûteuse de la parité prix.",
+      "en": "The central office controls its private-label recommended price: this is a narrower, cheaper version of price parity."
+    },
+    "owner": {
+      "fr": "Pricing MDD",
+      "en": "Private-label pricing"
+    },
+    "pilot": {
+      "fr": "Périmètre : baisse de prix sur la gamme MDD dans 20 magasins volontaires et 20 témoins. Durée : 3 mois. Indicateurs : volumes MDD, report depuis les marques. Go si les volumes MDD progressent au-delà du seuil fixé.",
+      "en": "Scope: price cut on the private-label range in 20 volunteer stores and 20 control stores. Duration: 3 months. Indicators: private-label volumes, switching from brands. Go if private-label volumes grow beyond the agreed threshold."
+    },
+    "economics": {
+      "revenueEffect": 0,
+      "marginEffect": -1
+    },
+    "hypotheses": [
+      {
+        "id": "mddShare",
+        "label": {
+          "fr": "Part de la MDD dans les alternatives à la viande",
+          "en": "Private-label share of meat alternatives"
+        },
+        "value": 50,
+        "min": 20,
+        "max": 70,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Donnée fictive, à remplacer par la vôtre.",
+          "en": "Fictitious figure, to replace with your own."
+        }
+      },
+      {
+        "id": "priceCut",
+        "label": {
+          "fr": "Baisse de prix sur la gamme MDD",
+          "en": "Price cut on the private-label range"
+        },
+        "value": 20,
+        "min": 0,
+        "max": 35,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Prix conseillé.",
+          "en": "Recommended price."
+        }
+      },
+      {
+        "id": "elasticity",
+        "label": {
+          "fr": "Élasticité-prix des volumes (valeur absolue)",
+          "en": "Price elasticity of volume (absolute value)"
+        },
+        "value": 1.5,
+        "min": 0.5,
+        "max": 2.5,
+        "step": 0.1,
+        "unit": "",
+        "note": {
+          "fr": "Hypothèse prudente : le gain s'ajoute aux ventes de viande sans les remplacer.",
+          "en": "Cautious assumption: the gain adds to meat sales without replacing them."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "scale",
+        "targets": [
+          "plant_steaks",
+          "plant_breaded"
+        ],
+        "x": "mddShare * priceCut * elasticity"
+      },
+      {
+        "op": "price",
+        "targets": [
+          "plant_steaks",
+          "plant_breaded"
+        ],
+        "x": "-mddShare * priceCut"
+      }
+    ],
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 2
+    },
+    "uncertainty": {
+      "low": 0.5,
+      "high": 1.5
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L17",
+    "number": 17,
+    "label": {
+      "fr": "Nudges e-commerce",
+      "en": "E-commerce nudges"
+    },
+    "type": "central",
+    "storeDependency": 0,
+    "plots": [
+      "transverse"
+    ],
+    "deckEffort": 3.1,
+    "deckImpact": 1.8,
+    "provisional": false,
+    "description": {
+      "fr": "Suggérer des alternatives végétales dans le parcours en ligne : recherche, fiches produit, paniers types.",
+      "en": "Suggest plant-based alternatives along the online journey: search, product pages, ready-made baskets."
+    },
+    "whyForU": {
+      "fr": "Le site est géré par la centrale : une modification touche tous les clients en ligne d'un coup.",
+      "en": "The website is run centrally: one change reaches every online shopper at once."
+    },
+    "owner": {
+      "fr": "E-commerce",
+      "en": "E-commerce"
+    },
+    "pilot": {
+      "fr": "Périmètre : test A/B sur les suggestions en ligne. Durée : 2 mois. Indicateurs : taux d'ajout au panier des alternatives. Go si la hausse est significative.",
+      "en": "Scope: A/B test on online suggestions. Duration: 2 months. Indicators: add-to-basket rate of the alternatives. Go if the increase is significant."
+    },
+    "economics": {
+      "revenueEffect": 0,
+      "marginEffect": 0
+    },
+    "hypotheses": [
+      {
+        "id": "onlineShare",
+        "label": {
+          "fr": "Part du e-commerce dans les ventes",
+          "en": "E-commerce share of sales"
+        },
+        "value": 10,
+        "min": 3,
+        "max": 20,
+        "step": 1,
+        "unit": "%",
+        "note": {
+          "fr": "Donnée fictive, à remplacer par la vôtre.",
+          "en": "Fictitious figure, to replace with your own."
+        }
+      },
+      {
+        "id": "nudgeGain",
+        "label": {
+          "fr": "Hausse des ventes végétales en ligne",
+          "en": "Online plant-based sales increase"
+        },
+        "value": 25,
+        "min": 0,
+        "max": 50,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Plots 1 à 4.",
+          "en": "Plots 1 to 4."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "scale",
+        "targets": [
+          "plant_steaks",
+          "plant_breaded",
+          "plant_ready_meals",
+          "pulses",
+          "tofu",
+          "plant_drinks",
+          "plant_yoghurts"
+        ],
+        "x": "onlineShare * nudgeGain"
+      }
+    ],
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 3
+    },
+    "uncertainty": {
+      "low": 0.5,
+      "high": 1.5
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L18",
+    "number": 18,
+    "label": {
+      "fr": "Choix par défaut en ligne",
+      "en": "Online default choices"
+    },
+    "type": "central",
+    "storeDependency": 0,
+    "plots": [
+      "transverse"
+    ],
+    "deckEffort": 3.7,
+    "deckImpact": 1.4,
+    "provisional": false,
+    "description": {
+      "fr": "Proposer par défaut une option végétale ou hybride dans les recettes et paniers en ligne, le client gardant le choix.",
+      "en": "Offer a plant-based or hybrid option by default in online recipes and baskets, with shoppers keeping the choice."
+    },
+    "whyForU": {
+      "fr": "Un réglage du site, décidé par la centrale, sans coût de production.",
+      "en": "A website setting, decided centrally, with no production cost."
+    },
+    "owner": {
+      "fr": "E-commerce",
+      "en": "E-commerce"
+    },
+    "pilot": {
+      "fr": "Périmètre : paniers recettes avec option végétale par défaut. Durée : 2 mois. Indicateurs : part des paniers qui gardent l'option. Go si cette part atteint le seuil fixé.",
+      "en": "Scope: recipe baskets with a plant-based option by default. Duration: 2 months. Indicators: share of baskets keeping the option. Go if that share reaches the agreed threshold."
+    },
+    "economics": {
+      "revenueEffect": 0,
+      "marginEffect": 0
+    },
+    "hypotheses": [
+      {
+        "id": "onlineShare",
+        "label": {
+          "fr": "Part du e-commerce dans les ventes",
+          "en": "E-commerce share of sales"
+        },
+        "value": 10,
+        "min": 3,
+        "max": 20,
+        "step": 1,
+        "unit": "%",
+        "note": {
+          "fr": "Donnée fictive, à remplacer par la vôtre.",
+          "en": "Fictitious figure, to replace with your own."
+        }
+      },
+      {
+        "id": "defaultShift",
+        "label": {
+          "fr": "Part des achats de viande en ligne remplacés par l'option par défaut",
+          "en": "Share of online meat purchases replaced by the default option"
+        },
+        "value": 2,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "%",
+        "note": {
+          "fr": "En volume.",
+          "en": "By volume."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "transfer",
+        "from": [
+          "minced_meat",
+          "red_meat",
+          "poultry",
+          "charcuterie"
+        ],
+        "to": "plant_steaks",
+        "basis": "product",
+        "x": "onlineShare * defaultShift"
+      }
+    ],
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 3
+    },
+    "uncertainty": {
+      "low": 0.5,
+      "high": 1.5
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L19",
+    "number": 19,
+    "label": {
+      "fr": "Fiches recettes et lots",
+      "en": "Recipe cards and bundles"
+    },
+    "type": "stores",
+    "storeDependency": 1,
+    "plots": [
+      "2",
+      "3"
+    ],
+    "deckEffort": 1.5,
+    "deckImpact": 1.1,
+    "provisional": false,
+    "description": {
+      "fr": "Mettre à disposition des magasins des fiches recettes et des lots associant légumineuses, plats végétaux et légumes.",
+      "en": "Provide stores with recipe cards and bundles combining pulses, plant-based meals and vegetables."
+    },
+    "whyForU": {
+      "fr": "La centrale fournit les supports, chaque magasin choisit de les utiliser.",
+      "en": "The central office provides the material, each store chooses whether to use it."
+    },
+    "owner": {
+      "fr": "Animation commerciale",
+      "en": "Promotions and trade marketing"
+    },
+    "pilot": {
+      "fr": "Périmètre : 3 fiches recettes avec lots dans 30 magasins. Durée : 2 mois. Indicateurs : ventes des produits mis en avant. Go si les ventes progressent au-delà du seuil fixé.",
+      "en": "Scope: 3 recipe cards with bundles in 30 stores. Duration: 2 months. Indicators: sales of featured products. Go if sales grow beyond the agreed threshold."
+    },
+    "economics": {
+      "revenueEffect": 1,
+      "marginEffect": 0
+    },
+    "hypotheses": [
+      {
+        "id": "salesGain",
+        "label": {
+          "fr": "Hausse des ventes des produits mis en avant",
+          "en": "Sales increase of featured products"
+        },
+        "value": 5,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "%",
+        "note": {
+          "fr": "Plots 2 et 3.",
+          "en": "Plots 2 and 3."
+        }
+      },
+      {
+        "id": "substitution",
+        "label": {
+          "fr": "Part du gain prise sur la viande",
+          "en": "Share of the gain taken from meat"
+        },
+        "value": 20,
+        "min": 0,
+        "max": 50,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "En volume.",
+          "en": "By volume."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "scale",
+        "targets": [
+          "plant_ready_meals",
+          "pulses",
+          "tofu"
+        ],
+        "x": "salesGain",
+        "substitution": {
+          "from": [
+            "minced_meat",
+            "red_meat",
+            "poultry",
+            "charcuterie"
+          ],
+          "share": "substitution",
+          "basis": "product"
+        }
+      }
+    ],
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 2
+    },
+    "uncertainty": {
+      "low": 0.4,
+      "high": 1.6
+    },
+    "status": "draft"
+  },
+  {
+    "id": "L20",
+    "number": 20,
+    "label": {
+      "fr": "Réduction du gaspillage",
+      "en": "Food waste reduction"
+    },
+    "type": "stores",
+    "storeDependency": 1,
+    "plots": [
+      "outside"
+    ],
+    "deckEffort": 3.0,
+    "deckImpact": 1.0,
+    "provisional": false,
+    "description": {
+      "fr": "Aider les clients à acheter au plus près de leurs besoins : vente à la coupe, petits formats, conseils de conservation.",
+      "en": "Help shoppers buy closer to their needs: cut-to-order counters, small formats, storage advice."
+    },
+    "whyForU": {
+      "fr": "Ces actions se mènent au rayon, magasin par magasin.",
+      "en": "These actions happen at the counter, store by store."
+    },
+    "owner": {
+      "fr": "Magasins et boucherie traditionnelle",
+      "en": "Stores and counter butchery"
+    },
+    "pilot": {
+      "fr": "Périmètre : 10 magasins volontaires. Durée : 6 mois. Indicateurs : volumes de viande, démarque. Go si la démarque baisse sans perte de chiffre d'affaires.",
+      "en": "Scope: 10 volunteer stores. Duration: 6 months. Indicators: meat volumes, markdowns. Go if markdowns fall with no loss of revenue."
+    },
+    "economics": {
+      "revenueEffect": -1,
+      "marginEffect": 1
+    },
+    "hypotheses": [
+      {
+        "id": "purchaseCut",
+        "label": {
+          "fr": "Baisse des achats de viande et de poisson",
+          "en": "Drop in meat and fish purchases"
+        },
+        "value": 1.5,
+        "min": 0,
+        "max": 5,
+        "step": 0.5,
+        "unit": "%",
+        "note": {
+          "fr": "Achats évités parce qu'ils auraient été jetés.",
+          "en": "Purchases avoided because they would have been thrown away."
+        }
+      },
+      {
+        "id": "covered",
+        "label": {
+          "fr": "Part des volumes concernés",
+          "en": "Share of volume concerned"
+        },
+        "value": 40,
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "%",
+        "note": {
+          "fr": "Rayons à la coupe et libre-service.",
+          "en": "Counters and self-service."
+        }
+      }
+    ],
+    "effects": [
+      {
+        "op": "scale",
+        "targets": [
+          "minced_meat",
+          "red_meat",
+          "poultry",
+          "charcuterie",
+          "fish"
+        ],
+        "x": "-purchaseCut * covered"
+      }
+    ],
+    "ramp": {
+      "startYear": 2026,
+      "yearsToFull": 3
+    },
+    "uncertainty": {
+      "low": 0.5,
+      "high": 1.5
+    },
+    "status": "draft"
+  }
+]

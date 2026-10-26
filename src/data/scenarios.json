@@ -1,0 +1,300 @@
+[
+  {
+    "id": "central",
+    "label": {
+      "fr": "Centrale seule",
+      "en": "Central only"
+    },
+    "description": {
+      "fr": "Les leviers que la centrale décide et applique seule.",
+      "en": "The levers the central office decides and applies on its own."
+    },
+    "activeLevers": [
+      3,
+      6,
+      7,
+      8,
+      9,
+      13,
+      15,
+      17,
+      18
+    ],
+    "adoption": 0.5,
+    "hypotheses": {
+      "L06": {
+        "gramCut": 12,
+        "shelfShare": 55
+      },
+      "L07": {
+        "conversion": 45
+      },
+      "L08": {
+        "salesGain": 35,
+        "substitution": 55
+      },
+      "L09": {
+        "conversion": 15
+      },
+      "L13": {
+        "plantShareGain": 12,
+        "vegetarian": 7
+      },
+      "L15": {
+        "salesGain": 12,
+        "substitution": 35
+      },
+      "L17": {
+        "nudgeGain": 30
+      },
+      "L18": {
+        "defaultShift": 4
+      }
+    },
+    "target2030": 0.35,
+    "expectedGuardrail": "within"
+  },
+  {
+    "id": "committed",
+    "label": {
+      "fr": "Volontaire",
+      "en": "Committed"
+    },
+    "description": {
+      "fr": "Huit leviers à faible effort, suivis par 30 % des magasins.",
+      "en": "Eight low-effort levers, followed by 30% of stores."
+    },
+    "activeLevers": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      15,
+      17
+    ],
+    "adoption": 0.3,
+    "hypotheses": {
+      "L01": {
+        "conversion": 45,
+        "plantShare": 40
+      },
+      "L02": {
+        "conversion": 60,
+        "plantShare": 45
+      },
+      "L04": {
+        "salesGain": 60,
+        "fromMeat": 65
+      },
+      "L06": {
+        "gramCut": 17,
+        "shelfShare": 65
+      },
+      "L07": {
+        "conversion": 55
+      },
+      "L15": {
+        "salesGain": 17,
+        "substitution": 45
+      },
+      "L17": {
+        "nudgeGain": 35
+      }
+    },
+    "target2030": 0.375,
+    "expectedGuardrail": "above"
+  },
+  {
+    "id": "ambitious",
+    "label": {
+      "fr": "Ambitieux",
+      "en": "Ambitious"
+    },
+    "description": {
+      "fr": "Treize leviers, suivis par 60 % des magasins.",
+      "en": "Thirteen levers, followed by 60% of stores."
+    },
+    "activeLevers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      14,
+      15
+    ],
+    "adoption": 0.6,
+    "hypotheses": {
+      "L01": {
+        "conversion": 45,
+        "plantShare": 35
+      },
+      "L02": {
+        "conversion": 55,
+        "plantShare": 45
+      },
+      "L04": {
+        "salesGain": 55,
+        "fromMeat": 60
+      },
+      "L05": {
+        "meatCut": 5,
+        "plantGain": 40
+      },
+      "L06": {
+        "gramCut": 15,
+        "shelfShare": 60
+      },
+      "L07": {
+        "conversion": 50
+      },
+      "L08": {
+        "salesGain": 50,
+        "substitution": 60
+      },
+      "L09": {
+        "conversion": 20
+      },
+      "L10": {
+        "salesGain": 25,
+        "substitution": 35
+      },
+      "L11": {
+        "priceCut": 25,
+        "fromDairy": 60
+      },
+      "L14": {
+        "priceCut": 25,
+        "fromMeat": 60
+      },
+      "L15": {
+        "salesGain": 15,
+        "substitution": 40
+      }
+    },
+    "target2030": 0.4,
+    "expectedGuardrail": "well_above"
+  },
+  {
+    "id": "ceiling",
+    "label": {
+      "fr": "Plafond théorique",
+      "en": "Theoretical ceiling"
+    },
+    "description": {
+      "fr": "Les vingt leviers, suivis par tous les magasins, hypothèses hautes.",
+      "en": "All twenty levers, followed by every store, high assumptions."
+    },
+    "activeLevers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "adoption": 1,
+    "hypotheses": {
+      "L01": {
+        "conversion": 50,
+        "plantShare": 45
+      },
+      "L02": {
+        "conversion": 65,
+        "plantShare": 45
+      },
+      "L04": {
+        "salesGain": 65,
+        "fromMeat": 70
+      },
+      "L05": {
+        "meatCut": 8,
+        "plantGain": 50
+      },
+      "L06": {
+        "gramCut": 20,
+        "shelfShare": 70
+      },
+      "L07": {
+        "conversion": 60
+      },
+      "L08": {
+        "salesGain": 65,
+        "substitution": 70
+      },
+      "L09": {
+        "conversion": 30
+      },
+      "L10": {
+        "salesGain": 35,
+        "substitution": 50
+      },
+      "L11": {
+        "priceCut": 30,
+        "elasticity": 1.7,
+        "fromDairy": 70
+      },
+      "L12": {
+        "salesGain": 50,
+        "substitution": 60
+      },
+      "L13": {
+        "plantShareGain": 20,
+        "vegetarian": 15
+      },
+      "L14": {
+        "priceCut": 30,
+        "elasticity": 2.1,
+        "fromMeat": 70
+      },
+      "L15": {
+        "salesGain": 20,
+        "substitution": 50
+      },
+      "L16": {
+        "priceCut": 30,
+        "elasticity": 2.1
+      },
+      "L17": {
+        "onlineShare": 17,
+        "nudgeGain": 40
+      },
+      "L18": {
+        "onlineShare": 17,
+        "defaultShift": 14
+      },
+      "L19": {
+        "salesGain": 15,
+        "substitution": 40
+      },
+      "L20": {
+        "purchaseCut": 4,
+        "covered": 80
+      }
+    },
+    "target2030": 0.45,
+    "expectedGuardrail": "well_above"
+  }
+]
