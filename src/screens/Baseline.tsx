@@ -20,17 +20,20 @@ function breakdown(metric: MetricKey) {
   const animal = (c: (typeof categories)[number]) => (metric === "pt" ? (c.tonnesProduct * c.proteinPer100g * (1 - c.plantProteinShare)) / 100 : inFg1(c) && c.proteinGroup === "animal_core" ? c.tonnesProduct : 0);
   const total = categories.reduce((a, c) => a + plant(c) + animal(c), 0);
   const byPlot: Record<string, number> = { "1": 0, "2": 0, "3": 0, "4": 0, composite: 0, other: 0 };
+  const byCategory: { category: (typeof categories)[number]; key: string; value: number }[] = [];
   const groups: Record<string, number> = {};
   const rayons: Record<string, { plant: number; animal: number }> = {};
   for (const c of categories) {
     const key = c.plot === null ? "composite" : c.plot === "other_plant" ? "other" : String(c.plot);
     byPlot[key] += plant(c);
+    if (plant(c) > 0) byCategory.push({ category: c, key, value: plant(c) });
     if (c.animalGroup) groups[c.animalGroup] = (groups[c.animalGroup] ?? 0) + animal(c);
     const r = (rayons[c.rayon] ??= { plant: 0, animal: 0 });
     r.plant += plant(c);
     r.animal += animal(c);
   }
-  return { total, byPlot, groups, rayons };
+  byCategory.sort((a, b) => b.value - a.value);
+  return { total, byPlot, byCategory, groups, rayons };
 }
 
 export function Baseline() {
@@ -95,7 +98,7 @@ export function Baseline() {
         <Card title={t("baseline.plantTitle")} right={<span className="small">{fg1 ? t("baseline.plantNoteFg1") : t("baseline.plantNotePt")}</span>} data-tour="plots" fictitious>
           <div className="drows">
             <div className="drow dhead"><span /><span /><span>{t("baseline.colPoints")}</span><span>{fg1 ? t("baseline.colProduct") : t("baseline.colProtein")}</span></div>
-            {rows.map((r, i) => (
+            {rows.flatMap((r, i) => [
               <div key={r.key} className={`drow ${i === 4 ? "sep" : ""} ${r.key === "other" ? "other" : ""}`}>
                 <span className="dl">
                   <b>{r.label}</b>
@@ -108,8 +111,19 @@ export function Baseline() {
                 )}
                 <b className="num dv">{r.status && r.value === 0 ? "" : fmtNum(pts(r.value), lang, 1)}</b>
                 <span className="num dt">{r.status && r.value === 0 ? "" : unit(r.value)}</span>
-              </div>
-            ))}
+              </div>,
+              // mixed products and other plant protein are aggregates: show every category inside them
+              ...(r.key === "composite" || r.key === "other"
+                ? B.byCategory.filter((c) => c.key === r.key).map((c) => (
+                    <div key={`${r.key}-${c.category.id}`} className="drow sub">
+                      <span className="dl">{tx(c.category.label)}</span>
+                      <HBar value={c.value / maxRow} color={r.color} height={5} />
+                      <span className="num dv">{fmtNum(pts(c.value), lang, 1)}</span>
+                      <span className="num dt">{unit(c.value)}</span>
+                    </div>
+                  ))
+                : []),
+            ])}
             <div className="drow total">
               <span className="dl"><b>{t("baseline.total")}</b></span>
               <span />

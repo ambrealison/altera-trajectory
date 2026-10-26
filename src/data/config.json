@@ -94,6 +94,10 @@
       "fr": "Épicerie",
       "en": "Grocery"
     },
+    "produce": {
+      "fr": "Fruits et légumes",
+      "en": "Fruit and vegetables"
+    },
     "frozen": {
       "fr": "Surgelés",
       "en": "Frozen"

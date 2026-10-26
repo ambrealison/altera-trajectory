@@ -379,19 +379,35 @@
     "co2PerKg": 2.5
   },
   {
-    "id": "other_plant",
+    "id": "fruit_vegetables",
     "label": {
-      "fr": "Autres produits végétaux (légumes, biscuits, sauces)",
-      "en": "Other plant products (vegetables, biscuits, sauces)"
+      "fr": "Fruits, légumes et pommes de terre",
+      "en": "Fruit, vegetables and potatoes"
+    },
+    "rayon": "produce",
+    "plot": "other_plant",
+    "proteinGroup": "plant_noncore",
+    "wwfGroup": "FG4",
+    "tonnesProduct": 78824,
+    "proteinPer100g": 1.6,
+    "plantProteinShare": 1,
+    "pricePerKg": 2.8,
+    "co2PerKg": 0.8
+  },
+  {
+    "id": "sauces_soups",
+    "label": {
+      "fr": "Sauces, soupes et condiments",
+      "en": "Sauces, soups and condiments"
     },
     "rayon": "grocery",
     "plot": "other_plant",
     "proteinGroup": "plant_noncore",
     "wwfGroup": "FG4",
-    "tonnesProduct": 67537,
-    "proteinPer100g": 3.2,
+    "tonnesProduct": 30000,
+    "proteinPer100g": 3,
     "plantProteinShare": 1,
-    "pricePerKg": 3.5,
-    "co2PerKg": 1.0
+    "pricePerKg": 5,
+    "co2PerKg": 1.4
   }
 ]

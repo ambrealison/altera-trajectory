@@ -150,6 +150,9 @@ p { margin: 0; }
 .drow .dt { text-align: right; color: var(--muted); font-size: 12px; }
 .drow.sep { border-top: 1px dashed var(--line); }
 .drow.other .dv { font-size: 20px; }
+.drow.sub { padding: 4px 0 4px 14px; font-size: 12.5px; color: var(--text); border-bottom: 1px dashed var(--line-2); }
+.drow.sub .dv { font-family: var(--sans); font-size: 12.5px; font-weight: 600; }
+.drow.sub .dt { font-size: 11.5px; }
 .drow.total { border-bottom: 0; }
 .drow.total .dv { color: var(--green); }
 .drow.dhead { padding: 0 0 6px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); }

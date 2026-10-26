@@ -29,7 +29,7 @@ Audience: the retailer's commercial, insights, range marketing and CSR teams. Pa
 
 ## Code map
 
-- `src/data/`: `config.json`, `categories.json` (23 categories, reference calibrated at exactly 32.0 %), `levers.json` (20 draft levers), `scenarios.json`, types in `types.ts`.
+- `src/data/`: `config.json`, `categories.json` (24 named categories, no catch-all; fruit and vegetables carry the calibration so the reference is exactly 32.0 %), `levers.json` (20 draft levers), `scenarios.json`, types in `types.ts`.
 - `src/engine/`: pure functions. `simulate.ts` (yearly volumes, ratios, plots, CO2, revenue, low and high bands), `contributions.ts` (isolated effects and waterfall), `guardrail.ts`, `format.ts` (Intl), `expr.ts` (effect expressions), `stats.ts` (Spearman).
 - `src/state/`: reducer store, URL hash serialisation (`url.ts`).
 - `src/components/`, `src/screens/` (Baseline, Levers, Trajectory, WithYourData), `src/styles/`.
