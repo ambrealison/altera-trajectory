@@ -1,7 +1,9 @@
 {
   "app": {
     "demoBadge": "Demo · illustrative data",
+    "demoBadgeReal": "Coopérative U 2025 data · confidential",
     "fictitious": "Illustrative data",
+    "fictitiousReal": "Coopérative U 2025 data",
     "tour": "Guided tour",
     "language": "Language",
     "close": "Close",
@@ -14,6 +16,7 @@
     "lead": "Start from your protein ratio, switch levers on and see how far they take you, lever by lever and year by year.",
     "cta": "Let's go",
     "meta": "4 steps · illustrative data",
+    "metaReal": "4 steps · Coopérative U 2025 data",
     "peekRef": "{year} reference",
     "peekTarget": "{name} · {year}",
     "peekLevers": "{n} active levers"
@@ -26,7 +29,8 @@
     "levers": "Levers",
     "trajectory": "Trajectory",
     "data": "With your data",
-    "sideNote": "All data in this demonstration is illustrative. This is not a production tool."
+    "sideNote": "All data in this demonstration is illustrative. This is not a production tool.",
+    "sideNoteReal": "Reference measured by Altera on Coopérative U 2025 sales. Levers, assumptions, prices and CO2 remain illustrative."
   },
   "metric": {
     "label": "Indicator",
@@ -51,6 +55,7 @@
     "desc": "The reference protein ratio, broken down over your 4 plots and the rest of the protein sold.",
     "status": "2025 reference",
     "kpiNote": "2025 reference, illustrative data",
+    "kpiNoteReal": "2025 reference, Altera measurement of Coopérative U sales",
     "keyMessage": "Your 4 plots weigh {x} out of {total}",
     "keyMessageText": "Most of the plant protein sold comes from pasta, bread and cereals. The 4 plots are where action happens, not yet where the volume is.",
     "keyMessageFg1": "In WWF FG1, only {plot1} and {plot3} count: {plot2} are mixed products, set apart, and {plot4} belong to group FG2.",

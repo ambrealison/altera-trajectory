@@ -172,6 +172,13 @@ function applyEffects(st: State, cats: Record<string, Category>, effects: Effect
   }
 }
 
+/** Shares of a category's tonnes that are whole FG1 products, of plant and of animal origin. */
+export function fg1Shares(c: Category): { plant: number; animal: number } {
+  if (c.fg1) return c.fg1;
+  const whole = c.wwfGroup === "FG1" && !c.wwfComposite;
+  return { plant: whole && c.proteinGroup !== "animal_core" ? 1 : 0, animal: whole && c.proteinGroup === "animal_core" ? 1 : 0 };
+}
+
 const emptySplit = (): PlotSplit => ({ "1": 0, "2": 0, "3": 0, "4": 0, composite: 0, other: 0, animal: 0 });
 
 export const co2PerKg = (c: Category, plantShare: number) =>
@@ -190,10 +197,11 @@ function metricsOf(st: State, categories: Category[]): Metrics {
     plots.animal += protein - p;
     const key = c.plot === null ? "composite" : c.plot === "other_plant" ? "other" : (String(c.plot) as keyof PlotSplit);
     plots[key] += p;
-    if (c.wwfGroup === "FG1" && !c.wwfComposite) {
-      if (c.proteinGroup === "animal_core") { fg1Animal += v.t; fg1Plots.animal += v.t; }
-      else { fg1Plant += v.t; fg1Plots[key] += v.t; }
-    }
+    const f = fg1Shares(c);
+    fg1Plant += v.t * f.plant;
+    fg1Plots[key] += v.t * f.plant;
+    fg1Animal += v.t * f.animal;
+    fg1Plots.animal += v.t * f.animal;
     co2 += v.t * co2PerKg(c, v.s);
     revenue += v.t * 1000 * v.price;
   }

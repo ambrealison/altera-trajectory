@@ -4,7 +4,7 @@ import { useCallback } from "react";
 import fr from "./fr.json";
 import en from "./en.json";
 import type { Lang, Text } from "../data/types";
-import { config } from "../data";
+import { config, dataset } from "../data";
 import { useApp } from "../state/store";
 
 const DICTS: Record<Lang, unknown> = { fr, en };
@@ -18,8 +18,12 @@ const lowerFirst = (s: string) => s.charAt(0).toLocaleLowerCase() + s.slice(1);
 export const plotVars = (lang: Lang) =>
   Object.fromEntries((["1", "2", "3", "4"] as const).map((k) => [`plot${k}`, lowerFirst(config.plots[k][lang])]));
 
+const lookup = (lang: Lang, key: string) =>
+  key.split(".").reduce<unknown>((o, k) => (o && typeof o === "object" ? (o as Record<string, unknown>)[k] : undefined), DICTS[lang]);
+
 export function translate(lang: Lang, key: string, vars?: Record<string, string | number>): string {
-  const v = key.split(".").reduce<unknown>((o, k) => (o && typeof o === "object" ? (o as Record<string, unknown>)[k] : undefined), DICTS[lang]);
+  // a private build on real data uses the "…Real" variant of a string when there is one
+  const v = (dataset.kind === "real" ? lookup(lang, `${key}Real`) : undefined) ?? lookup(lang, key);
   return typeof v === "string" ? fill(v, { ...plotVars(lang), ...vars }) : key;
 }
 

@@ -1,7 +1,9 @@
 {
   "app": {
     "demoBadge": "Démo · données fictives",
+    "demoBadgeReal": "Données Coopérative U 2025 · confidentiel",
     "fictitious": "Données fictives",
+    "fictitiousReal": "Données Coopérative U 2025",
     "tour": "Visite guidée",
     "language": "Langue",
     "close": "Fermer",
@@ -14,6 +16,7 @@
     "lead": "Partez de votre ratio protéique, activez des leviers et voyez jusqu'où ils vous mènent, levier par levier et année après année.",
     "cta": "Let's go",
     "meta": "4 étapes · données fictives",
+    "metaReal": "4 étapes · données Coopérative U 2025",
     "peekRef": "Référence {year}",
     "peekTarget": "{name} · {year}",
     "peekLevers": "{n} leviers actifs"
@@ -26,7 +29,8 @@
     "levers": "Les leviers",
     "trajectory": "Trajectoire",
     "data": "Avec vos données",
-    "sideNote": "Toutes les données de cette démonstration sont fictives. Ce n'est pas un outil de production."
+    "sideNote": "Toutes les données de cette démonstration sont fictives. Ce n'est pas un outil de production.",
+    "sideNoteReal": "Référence mesurée par Altera sur les ventes Coopérative U 2025. Leviers, hypothèses, prix et CO2 restent illustratifs."
   },
   "metric": {
     "label": "Indicateur",
@@ -51,6 +55,7 @@
     "desc": "Le ratio protéique de référence, décomposé sur vos 4 plots et sur le reste des protéines vendues.",
     "status": "Référence 2025",
     "kpiNote": "Référence 2025, données fictives",
+    "kpiNoteReal": "Référence 2025, mesure Altera sur les ventes Coopérative U",
     "keyMessage": "Vos 4 plots pèsent {x} sur {total}",
     "keyMessageText": "L'essentiel des protéines végétales vendues vient des pâtes, du pain et des céréales. Les 4 plots sont le levier d'action, pas encore le volume.",
     "keyMessageFg1": "En WWF FG1, seules les {plot1} et les {plot3} comptent\u00a0: les {plot2} sont des produits mixtes, mis à part, et les {plot4} relèvent du groupe FG2.",

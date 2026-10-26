@@ -3,3 +3,8 @@ dist
 *.tsbuildinfo
 .DS_Store
 screenshots/
+
+# real client data: never committed
+private/
+src/data/real/
+dist-real/

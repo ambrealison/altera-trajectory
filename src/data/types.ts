@@ -42,6 +42,9 @@ export interface Category {
   wwfGroup: WwfGroup;
   /** Multi-ingredient products are set apart from the WWF food-group ratios, as in the Altera tool. */
   wwfComposite?: boolean;
+  /** Real data: shares of the category's tonnes that are whole FG1 products of plant and of animal origin
+   *  (override wwfGroup and wwfComposite). */
+  fg1?: { plant: number; animal: number };
   tonnesProduct: number;
   proteinPer100g: number;
   plantProteinShare: number;
@@ -126,4 +129,19 @@ export interface Scenario {
   hypotheses: Record<string, Record<string, number>>;
   target2030: number;
   expectedGuardrail: GuardrailState;
+}
+
+/** A set of categories and scenarios, with what the interface needs to know about its origin. */
+export interface Dataset {
+  kind: "fictitious" | "real";
+  categories: Category[];
+  scenarios: Scenario[];
+  /** Real data only: source line, department table computed from the products, label overrides. */
+  meta?: {
+    products: number;
+    source: Text;
+    rayons?: Record<string, Text>;
+    animalGroups?: Record<string, Text>;
+    rayonTable?: { id: string; label: Text; protein: number; plantShare: number; points: number }[];
+  };
 }
