@@ -34,7 +34,7 @@ export function Levers() {
           <span className="flabel">{t("levers.filterPlots")}</span>
           <button type="button" className={`fchip ${plot === "all" ? "on" : ""}`} onClick={() => setPlot("all")}>{t("levers.all")}</button>
           {PLOT_FILTERS.map((p) => (
-            <button key={p} type="button" className={`fchip ${plot === p ? "on" : ""} ${p === "outside" ? "outside" : ""}`} onClick={() => setPlot(p)}>{plotLabel(p, t)}</button>
+            <button key={p} type="button" className={`fchip ${plot === p ? "on" : ""} ${p === "outside" ? "outside" : ""}`} onClick={() => setPlot(p)}>{plotLabel(p, t, lang)}</button>
           ))}
         </div>
         <div className="filters" role="group" aria-label={t("levers.filterTypes")}>

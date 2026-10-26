@@ -3,6 +3,7 @@ import { area, curveMonotoneX, stack } from "d3-shape";
 import { fmtNum } from "../engine/format";
 import { useT } from "../i18n/useT";
 import { useWidth } from "./useWidth";
+import { showYear } from "./TrajectoryChart";
 
 export interface Layer { key: string; label: string; color: string }
 
@@ -11,7 +12,7 @@ export function StackedArea({ rows, layers }: { rows: ({ year: number } & Record
   const { lang } = useT();
   const [ref, width] = useWidth<HTMLDivElement>();
   const H = 220;
-  const m = { top: 10, right: 185, bottom: 28, left: 44 };
+  const m = { top: 10, right: 235, bottom: 28, left: 44 };
   const x0 = rows[0].year, x1 = rows[rows.length - 1].year;
   const x = scaleLinear().domain([x0, x1]).range([m.left, Math.max(m.left + 200, width - m.right)]);
   const series = stack<Record<string, number>>().keys(layers.map((l) => l.key))(rows as Record<string, number>[]);
@@ -35,7 +36,7 @@ export function StackedArea({ rows, layers }: { rows: ({ year: number } & Record
             <text x={m.left - 8} y={y(v)} dy="0.32em" textAnchor="end" className="axis">{fmtNum(v, lang, 0)}</text>
           </g>
         ))}
-        {rows.map((r) => (
+        {rows.filter((r) => showYear(r.year, x0, x1, x)).map((r) => (
           <text key={r.year} x={x(r.year)} y={H - 8} textAnchor="middle" className="axis">{r.year}</text>
         ))}
         {series.map((s, i) => (

@@ -32,7 +32,6 @@
     "stores": "Dépend des magasins"
   },
   "plots": {
-    "plot": "Plot {n}",
     "outside": "Hors 4 plots",
     "transverse": "Transverse",
     "other": "Autres"
@@ -44,7 +43,7 @@
     "kpiNote": "Référence 2025, données fictives",
     "keyMessage": "Vos 4 plots pèsent {x} sur {total}",
     "keyMessageText": "L'essentiel des protéines végétales vendues vient des pâtes, du pain et des céréales. Les 4 plots sont le levier d'action, pas encore le volume.",
-    "keyMessageFg1": "En WWF FG1, seuls les plots 1 et 3 comptent\u00a0: les plats cuisinés sont des produits mixtes, mis à part, et les alternatives laitières relèvent du groupe FG2.",
+    "keyMessageFg1": "En WWF FG1, seules les {plot1} et les {plot3} comptent\u00a0: les {plot2} sont des produits mixtes, mis à part, et les {plot4} relèvent du groupe FG2.",
     "plantTitle": "Décomposition du végétal",
     "plantNotePt": "En points de ratio et en tonnes de protéines",
     "plantNoteFg1": "En points de ratio et en tonnes de produit, aliments riches en protéines (FG1)",
@@ -104,7 +103,7 @@
     "kpiCo2": "CO2 en {year}",
     "kpiCo2Note": "Ordre de grandeur",
     "kpiRevenue": "Chiffre d'affaires en {year}",
-    "kpiRevenueNote": "Variation indicative, à prix et périmètre constants",
+    "kpiRevenueNote": "Variation indicative, à périmètre constant",
     "vsRef": "par rapport à 2025",
     "byLever": "Par levier",
     "overTime": "Dans le temps",
@@ -123,19 +122,9 @@
     "chartTitleLever": "De la référence {from} à {to}, levier par levier",
     "chartTitleTime": "Ratio année par année",
     "noLever": "Aucun levier actif. Choisissez un scénario ou cochez des leviers.",
-    "ghost": "Scénario épinglé"
-  },
-  "guardrail": {
-    "title": "Garde-fou de réalisme",
-    "within": "Dans le rythme observé",
-    "above": "Au-dessus du rythme observé aux Pays-Bas",
-    "well_above": "Nettement au-dessus du rythme observé",
-    "withinText": "Atteignable au rythme déjà observé ailleurs.",
-    "aboveText": "Demande d'aller plus vite que les supermarchés néerlandais.",
-    "well_aboveText": "Demande d'aller nettement plus vite que les supermarchés les plus avancés d'Europe.",
-    "gain": "Gain moyen\u00a0: {gain} par an, soit {multiple} le rythme observé aux Pays-Bas.",
-    "times": "{x} fois",
-    "source": "Source\u00a0: {source}"
+    "ghost": "Scénario épinglé",
+    "extensionNote": "Au-delà de {year}\u00a0: hypothèse de diffusion, les effets des leviers progressent de {rate} par an.",
+    "dutchSource": "Rythme observé aux Pays-Bas\u00a0: {text} Source\u00a0: {source}."
   },
   "data": {
     "title": "Avec vos données",
@@ -209,8 +198,6 @@
     "s4Title": "Les magasins qui suivent",
     "s4Text": "La centrale recommande, les magasins décident\u00a0: ce curseur règle la part qui applique les leviers.",
     "s5Title": "Par levier ou dans le temps",
-    "s5Text": "La cascade montre ce que chaque levier apporte, la courbe montre le rythme année par année.",
-    "s6Title": "Le garde-fou",
-    "s6Text": "Le gain annuel est comparé au rythme des supermarchés néerlandais, les plus avancés d'Europe."
+    "s5Text": "La cascade montre ce que chaque levier apporte, la courbe montre le rythme année par année."
   }
 }

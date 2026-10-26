@@ -5,7 +5,6 @@ import { config, levers, model, scenarios } from "../data";
 import type { Lang } from "../data/types";
 import { baseline, simulate, type Metrics, type YearResult } from "../engine/simulate";
 import { contributions, isolatedEffect, type Contributions, type Range } from "../engine/contributions";
-import { guardrail, type Guardrail } from "../engine/guardrail";
 import { fromHash, matchingPreset, presetFields, toHash, type Snapshot } from "./url";
 import type { AppState, MetricKey, Pinned, ScenarioFields, ScreenId } from "./types";
 
@@ -19,7 +18,7 @@ export const storage = {
   },
 };
 
-const DEFAULT_PRESET = "central";
+const DEFAULT_PRESET = "committed";
 
 function initialState(): AppState {
   const fromUrl = fromHash(window.location.hash);
@@ -151,7 +150,6 @@ export interface Results {
   final: YearResult;
   contrib: Contributions;
   isolated: Record<number, Range>;
-  guard: Guardrail;
   pinnedSeries: YearResult[] | null;
 }
 
@@ -163,7 +161,7 @@ export function useResults(): Results {
   const { activeLevers, adoption, hypotheses, horizon, metric, pinned } = state;
   return useMemo(() => {
     const scen = scenarioOf({ activeLevers, adoption, hypotheses });
-    const series = simulate(model.categories, model.levers, scen, { horizon, baseYear: config.baseYear });
+    const series = simulate(model.categories, model.levers, scen, { horizon, baseYear: config.baseYear, extension: config.extension });
     const final = series[series.length - 1];
     const isolated: Record<number, Range> = {};
     for (const l of levers) isolated[l.number] = isolatedEffect(model, scen, l.number, horizon, metric);
@@ -172,8 +170,7 @@ export function useResults(): Results {
       final,
       contrib: contributions(model, scen, horizon, metric),
       isolated,
-      guard: guardrail(REFERENCE.pt, final.pt, config.baseYear, horizon, config.benchmark.pointsPerYear),
-      pinnedSeries: pinned ? simulate(model.categories, model.levers, scenarioOf(pinned.fields), { horizon, baseYear: config.baseYear }) : null,
+      pinnedSeries: pinned ? simulate(model.categories, model.levers, scenarioOf(pinned.fields), { horizon, baseYear: config.baseYear, extension: config.extension }) : null,
     };
   }, [activeLevers, adoption, hypotheses, horizon, metric, pinned]);
 }

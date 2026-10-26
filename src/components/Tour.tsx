@@ -9,11 +9,10 @@ const STEPS: { screen: ScreenId; target: string }[] = [
   { screen: "levers", target: "levers" },
   { screen: "trajectory", target: "adoption" },
   { screen: "trajectory", target: "chart" },
-  { screen: "trajectory", target: "guardrail" },
 ];
 const W = 420;
 
-/** Guided tour: six short bubbles, two lines each. Starts on the first visit only (remembered). */
+/** Guided tour: five short bubbles, two lines each. Starts on the first visit only (remembered). */
 export function Tour() {
   const { state, dispatch } = useApp();
   const { t } = useT();

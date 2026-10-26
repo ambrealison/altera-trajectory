@@ -54,14 +54,6 @@
   --type-stores-bg: var(--peach-soft);
   --type-stores-ink: var(--animal-ink);
 
-  /* guardrail */
-  --guard-within: var(--green);
-  --guard-within-bg: var(--green-soft);
-  --guard-above: var(--amber);
-  --guard-above-bg: var(--amber-soft);
-  --guard-well: var(--animal-ink);
-  --guard-well-bg: var(--peach-soft);
-
   /* type */
   --display: "Archivo", "Inter", system-ui, sans-serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;

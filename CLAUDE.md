@@ -10,8 +10,11 @@ Audience: the retailer's commercial, insights, range marketing and CSR teams. Pa
 - The retailer thinks of plant protein as 4 "plots" (labels in `src/data/config.json`): processed plant proteins, plant-based ready meals, whole plant proteins, plant-based dairy alternatives. The rest of plant protein (cereals, pasta, bread) is "other plant protein" and weighs far more; the demo makes this visible.
 - Levers outside the 4 plots (hybrids, portions, waste) carry a visible "outside the 4 plots" tag.
 - Lever types: central only (green), central and stores (violet), depends on stores (peach ringed with orange). Real effect = effect × (1 - storeDependency + storeDependency × adoption).
-- Realism benchmark, always shown with its source: Dutch supermarkets gained 1.7 points in two years (Protein Tracker 2025, ProVeg and GPA, March 2026), about 0.85 point a year. Guardrail states: within the observed pace; above the Dutch pace; well above (more than 1.5 times). Never change these thresholds to suit a scenario; wording stays neutral.
-- Four scenarios: Central only (35.0 % in 2030), Committed (37.5 %), Ambitious (40.0 %), Theoretical ceiling (45.0 %). No scenario is called "realistic".
+- Realism benchmark: Dutch supermarkets gained 1.7 points in two years (Protein Tracker 2025, ProVeg and GPA, March 2026), about 0.85 point a year. Its dotted line and source show on the time chart up to the 2030 horizon only. The guardrail (within / above / well above 1.5 times that pace) is still computed and tested but no longer displayed: the user presents it orally (decision of 2026-10-26). Never change its thresholds to suit a scenario.
+- Four scenarios: Central only (35.0 % in 2030), Committed (37.5 %), Ambitious (40.0 %), Theoretical ceiling (45.0 %). No scenario is called "realistic". The app opens on Committed.
+- Horizons 2028, 2030, 2035, 2040. Levers reach full effect by 2030; beyond, a diffusion assumption (`extension` in config.json, +4 % of effect a year) keeps the trajectory rising.
+- Demo choice: revenue goes up in every scenario (plant and hybrid products priced higher per kilo, explicit value assumptions on levers 4, 6, 20) and lever financial scores are never negative. A test checks it.
+- Plot names live only in config.json; texts refer to them as {plot1} to {plot4}, never "plot 1".
 
 ## Rules
 

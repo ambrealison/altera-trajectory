@@ -18,6 +18,7 @@ const VIEWS = [
   { name: "2-levers-matrix", hash: "v=levers&sc=committed", click: "matrix" },
   { name: "3-trajectory-by-lever", hash: "v=trajectory&sc=ambitious" },
   { name: "3-trajectory-over-time", hash: "v=trajectory&sc=ambitious", click: "time" },
+  { name: "3-trajectory-2040", hash: "v=trajectory&sc=ambitious&h=2040", click: "time" },
   { name: "3-lever-sheet", hash: "v=trajectory&sc=ambitious", lever: true },
   { name: "4-with-your-data", hash: "v=data&sc=committed" },
 ];

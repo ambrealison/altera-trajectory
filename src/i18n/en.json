@@ -32,7 +32,6 @@
     "stores": "Depends on stores"
   },
   "plots": {
-    "plot": "Plot {n}",
     "outside": "Outside the 4 plots",
     "transverse": "Cross-cutting",
     "other": "Other"
@@ -44,7 +43,7 @@
     "kpiNote": "2025 reference, illustrative data",
     "keyMessage": "Your 4 plots weigh {x} out of {total}",
     "keyMessageText": "Most of the plant protein sold comes from pasta, bread and cereals. The 4 plots are where action happens, not yet where the volume is.",
-    "keyMessageFg1": "In WWF FG1, only plots 1 and 3 count: ready meals are mixed products, set apart, and dairy alternatives belong to group FG2.",
+    "keyMessageFg1": "In WWF FG1, only {plot1} and {plot3} count: {plot2} are mixed products, set apart, and {plot4} belong to group FG2.",
     "plantTitle": "Plant protein breakdown",
     "plantNotePt": "In ratio points and tonnes of protein",
     "plantNoteFg1": "In ratio points and tonnes of product, protein-rich foods (FG1)",
@@ -104,7 +103,7 @@
     "kpiCo2": "CO2 in {year}",
     "kpiCo2Note": "Order of magnitude",
     "kpiRevenue": "Revenue in {year}",
-    "kpiRevenueNote": "Indicative change, constant prices and scope",
+    "kpiRevenueNote": "Indicative change, constant scope",
     "vsRef": "compared with 2025",
     "byLever": "By lever",
     "overTime": "Over time",
@@ -123,19 +122,9 @@
     "chartTitleLever": "From the {from} reference to {to}, lever by lever",
     "chartTitleTime": "Ratio year by year",
     "noLever": "No active lever. Choose a scenario or tick some levers.",
-    "ghost": "Pinned scenario"
-  },
-  "guardrail": {
-    "title": "Realism check",
-    "within": "Within the observed pace",
-    "above": "Above the pace observed in the Netherlands",
-    "well_above": "Well above the observed pace",
-    "withinText": "Reachable at the pace already observed elsewhere.",
-    "aboveText": "Calls for moving faster than Dutch supermarkets.",
-    "well_aboveText": "Calls for moving much faster than the most advanced supermarkets in Europe.",
-    "gain": "Average gain: {gain} a year, {multiple} the pace observed in the Netherlands.",
-    "times": "{x} times",
-    "source": "Source: {source}"
+    "ghost": "Pinned scenario",
+    "extensionNote": "Beyond {year}: diffusion assumption, lever effects grow by {rate} a year.",
+    "dutchSource": "Pace observed in the Netherlands: {text} Source: {source}."
   },
   "data": {
     "title": "With your data",
@@ -209,8 +198,6 @@
     "s4Title": "Stores that follow",
     "s4Text": "The central office recommends, stores decide: this slider sets the share that applies the levers.",
     "s5Title": "By lever or over time",
-    "s5Text": "The waterfall shows what each lever brings, the curve shows the pace year by year.",
-    "s6Title": "The realism check",
-    "s6Text": "The yearly gain is compared with the pace of Dutch supermarkets, the most advanced in Europe."
+    "s5Text": "The waterfall shows what each lever brings, the curve shows the pace year by year."
   }
 }

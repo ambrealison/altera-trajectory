@@ -49,7 +49,7 @@ export function Baseline() {
   const rows: { key: string; label: string; detail?: string; color: string; value: number; status?: string }[] = [
     ...PLOTS.map((k) => ({
       key: k,
-      label: `${t("plots.plot", { n: k })} · ${tx(config.plots[k])}`,
+      label: tx(config.plots[k]),
       detail: tx(config.plotDetails[k]),
       color: "var(--plant)",
       value: B.byPlot[k],

@@ -54,10 +54,12 @@ export function Trajectory() {
   const scenarioName = current ? tx(scenarios.find((s) => s.id === current)!.label) : t("trajectory.custom");
 
   const points = R.series.map((r) => ({ year: r.year, v: r[metric], lo: Math.min(r.low[metric], r.high[metric]), hi: Math.max(r.low[metric], r.high[metric]) }));
-  const dutch = metric === "pt" ? R.series.map((r) => ({ year: r.year, v: REFERENCE.pt + (config.benchmark.pointsPerYear / 100) * (r.year - config.baseYear) })) : undefined;
+  // the observed Dutch pace is only drawn up to 2030: extrapolating two observed years further would mislead
+  const showDutch = metric === "pt" && state.horizon <= config.extension.fromYear;
+  const dutch = showDutch ? R.series.map((r) => ({ year: r.year, v: REFERENCE.pt + (config.benchmark.pointsPerYear / 100) * (r.year - config.baseYear) })) : undefined;
   const ghost = R.pinnedSeries?.map((r) => ({ year: r.year, v: r[metric] }));
   const layers: Layer[] = PLOT_LAYERS
-    .map((k) => ({ key: k, label: k === "other" ? tx(config.plots.other) : k === "composite" ? t("trajectory.stackComposite") : `${t("plots.plot", { n: k })}`, color: LAYER_COLOR[k] }))
+    .map((k) => ({ key: k, label: k === "composite" ? t("trajectory.stackComposite") : tx(config.plots[k]), color: LAYER_COLOR[k] }))
     .filter((l) => metric === "pt" || R.series.some((r) => plotPoints(r, metric)[l.key] > 0));
   const rows = R.series.map((r) => ({ year: r.year, ...plotPoints(r, metric) }));
   const co2Delta = fin.co2 - REFERENCE.co2;
@@ -107,6 +109,9 @@ export function Trajectory() {
               <Segmented label={t("trajectory.horizon")} size="sm" value={state.horizon} onChange={(h) => dispatch({ type: "horizon", horizon: h })}
                 options={config.horizons.map((h) => ({ value: h, label: String(h) }))} />
             </div>
+            {state.horizon > config.extension.fromYear && (
+              <p className="small-note">{t("trajectory.extensionNote", { year: config.extension.fromYear, rate: fmtPct(config.extension.ratePerYear, lang, 0) })}</p>
+            )}
           </Card>
 
           <Card title={t("trajectory.leversTitle")} right={<span className="count">{t("trajectory.leversCount", { n: state.activeLevers.length, total: levers.length })}</span>}>
@@ -147,26 +152,6 @@ export function Trajectory() {
             </div>
           </div>
 
-          <div className={`guard ${R.guard.state}`} data-tour="guardrail">
-            <div className="guard-l">
-              <span className="m">{t("guardrail.title")}</span>
-              <StatusPill tone={R.guard.state}>{t(`guardrail.${R.guard.state}`)}</StatusPill>
-            </div>
-            <div className="guard-r">
-            <p>
-              <b>{t(`guardrail.${R.guard.state}Text`)}</b>{" "}
-              {t("guardrail.gain", {
-                gain: fmtPoints(R.guard.annualGain / 100, lang, 2, false),
-                multiple: t("guardrail.times", { x: new Intl.NumberFormat(lang === "fr" ? "fr-FR" : "en-GB", { maximumFractionDigits: 1, minimumFractionDigits: 1 }).format(Math.max(0, R.guard.multiple)) }),
-              })}
-            </p>
-            <p className="src">
-              {tx(config.benchmark.text)} {t("guardrail.source", { source: tx(config.benchmark.source) })}
-              {metric === "fg1" && <> · {t("metric.ptOnly")}</>}
-            </p>
-            </div>
-          </div>
-
           <Card className="chart-card" data-tour="chart" fictitious
             title={state.chartView === "lever" ? t("trajectory.chartTitleLever", { from: config.baseYear, to: state.horizon }) : t("trajectory.chartTitleTime")}
             right={
@@ -177,7 +162,9 @@ export function Trajectory() {
                   options={[{ value: "lever", label: t("trajectory.byLever") }, { value: "time", label: t("trajectory.overTime") }]} />
               </>
             }
-            note={metric === "pt" ? t("metric.ptLong") : t("metric.fg1Long")}>
+            note={showDutch && state.chartView === "time"
+              ? t("trajectory.dutchSource", { text: tx(config.benchmark.text), source: tx(config.benchmark.source) })
+              : metric === "pt" ? t("metric.ptLong") : t("metric.fg1Long")}>
             {state.activeLevers.length === 0 && <p className="empty">{t("trajectory.noLever")}</p>}
             {state.chartView === "lever" ? (
               <>

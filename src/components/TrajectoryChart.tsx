@@ -6,13 +6,17 @@ import { useWidth } from "./useWidth";
 
 export interface Point { year: number; v: number; lo: number; hi: number }
 
+/** Year labels: all of them when there is room, otherwise every five years and the last one. */
+export const showYear = (year: number, first: number, last: number, x: (v: number) => number) =>
+  x(first + 1) - x(first) >= 44 || year === last || (year - first) % 5 === 0;
+
 /** Yearly ratio with its uncertainty band, the Dutch pace from the reference (dotted) and the pinned
  *  scenario as a ghost line. */
 export function TrajectoryChart({ points, dutch, ghost, ghostName }: { points: Point[]; dutch?: { year: number; v: number }[]; ghost?: { year: number; v: number }[]; ghostName?: string }) {
   const { t, lang } = useT();
   const [ref, width] = useWidth<HTMLDivElement>();
   const H = 270;
-  const m = { top: 18, right: 185, bottom: 30, left: 44 };
+  const m = { top: 18, right: 235, bottom: 30, left: 44 };
   const x0 = points[0].year, x1 = points[points.length - 1].year;
   const x = scaleLinear().domain([x0, x1]).range([m.left, Math.max(m.left + 200, width - m.right)]);
   const all = [...points.flatMap((p) => [p.lo, p.hi, p.v]), ...(dutch ?? []).map((d) => d.v), ...(ghost ?? []).map((d) => d.v)];
@@ -42,7 +46,7 @@ export function TrajectoryChart({ points, dutch, ghost, ghostName }: { points: P
             <text x={m.left - 8} y={y(v)} dy="0.32em" textAnchor="end" className="axis">{fmtPct(v, lang, 0)}</text>
           </g>
         ))}
-        {points.map((p) => (
+        {points.filter((p) => showYear(p.year, x0, x1, x)).map((p) => (
           <text key={p.year} x={x(p.year)} y={H - 8} textAnchor="middle" className="axis">{p.year}</text>
         ))}
         <path d={band} className="band" />
