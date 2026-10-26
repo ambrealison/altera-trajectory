@@ -4,7 +4,7 @@ const KEYS: Record<number, string> = { [-2]: "drawer.harveyM2", [-1]: "drawer.ha
 
 /** Qualitative score from -2 to +2: the share of the disc filled is |score| / 2, green when positive,
  *  terracotta when negative, an empty ring when neutral. Never a figure in euros. */
-export function HarveyBall({ score, size = 22 }: { score: number; size?: number }) {
+export function HarveyBall({ score, size = 22, compact }: { score: number; size?: number; compact?: boolean }) {
   const { t } = useT();
   const s = Math.max(-2, Math.min(2, Math.round(score)));
   const r = size / 2 - 1.5;
@@ -25,7 +25,7 @@ export function HarveyBall({ score, size = 22 }: { score: number; size?: number 
         <circle cx={c} cy={c} r={r} fill="var(--white)" stroke={s === 0 ? "var(--faint)" : color} strokeWidth="1.5" />
         {fill}
       </svg>
-      <span>{label}</span>
+      {!compact && <span>{label}</span>}
     </span>
   );
 }

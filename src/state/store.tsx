@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useMemo, useReducer, type Dispatch, type ReactNode } from "react";
 import { config, levers, model, scenarios } from "../data";
 import type { Lang } from "../data/types";
-import { baseline, simulate, type Metrics, type YearResult } from "../engine/simulate";
+import { baseline, runYear, simulate, type Metrics, type YearResult } from "../engine/simulate";
 import { contributions, isolatedEffect, type Contributions, type Range } from "../engine/contributions";
 import { fromHash, matchingPreset, presetFields, toHash, type Snapshot } from "./url";
 import type { AppState, MetricKey, Pinned, ScenarioFields, ScreenId } from "./types";
@@ -22,11 +22,13 @@ const DEFAULT_PRESET = "committed";
 
 function initialState(): AppState {
   const fromUrl = fromHash(window.location.hash);
-  const fromLast = fromUrl ? null : fromHash(storage.get("last") ?? "");
+  // the last scenario comes back without its horizon, indicator or screen: arrivals start on the defaults
+  const last = fromUrl ? null : fromHash(storage.get("last") ?? "");
+  const fromLast = last ? { ...last, horizon: undefined, metric: undefined, screen: undefined } : null;
   const snap = fromUrl ?? fromLast ?? {};
   const query = new URLSearchParams(window.location.search).get("lang");
   const lang: Lang = snap.lang ?? (query === "en" || query === "fr" ? query : null) ?? ((storage.get("lang") as Lang | null) ?? "fr");
-  const fields: ScenarioFields = { ...presetFields(DEFAULT_PRESET), ...snap };
+  const fields: ScenarioFields = { ...presetFields(DEFAULT_PRESET), ...Object.fromEntries(Object.entries(snap).filter(([, v]) => v !== undefined)) };
   const screen: ScreenId = fromUrl?.screen ?? "baseline";
   return {
     ...fields,
@@ -156,6 +158,8 @@ export interface Results {
   final: YearResult;
   contrib: Contributions;
   isolated: Record<number, Range>;
+  /** Each lever alone at the horizon: CO2 and revenue changes against 2025 (shares and tonnes). */
+  leverImpact: Record<number, { co2: number; co2t: number; revenue: number }>;
   pinnedSeries: YearResult[] | null;
 }
 
@@ -170,12 +174,18 @@ export function useResults(): Results {
     const series = simulate(model.categories, model.levers, scen, { horizon, baseYear: config.baseYear, extension: config.extension });
     const final = series[series.length - 1];
     const isolated: Record<number, Range> = {};
-    for (const l of levers) isolated[l.number] = isolatedEffect(model, scen, l.number, horizon, metric);
+    const leverImpact: Results["leverImpact"] = {};
+    for (const l of levers) {
+      isolated[l.number] = isolatedEffect(model, scen, l.number, horizon, metric);
+      const m = runYear(model, scen, horizon, "mid", l.number).metrics;
+      leverImpact[l.number] = { co2: m.co2 / REFERENCE.co2 - 1, co2t: m.co2 - REFERENCE.co2, revenue: m.revenue / REFERENCE.revenue - 1 };
+    }
     return {
       series,
       final,
       contrib: contributions(model, scen, horizon, metric),
       isolated,
+      leverImpact,
       pinnedSeries: pinned ? simulate(model.categories, model.levers, scenarioOf(pinned.fields), { horizon, baseYear: config.baseYear, extension: config.extension }) : null,
     };
   }, [activeLevers, adoption, hypotheses, horizon, metric, pinned]);
