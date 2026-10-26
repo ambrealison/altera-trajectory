@@ -18,7 +18,7 @@ Audience: the retailer's commercial, insights, range marketing and CSR teams. Pa
 
 ## Rules
 
-- **Fictitious data only.** Never put real retailer data, names of people or internal client details in code, data or docs.
+- **Fictitious data only in the repo.** Never commit real retailer data, names of people or internal client details. Real Coopérative U data (Altera results workbook) lives only in git-ignored `private/` (build script) and `src/data/real/` (dataset), and ships only as the private single-file build `npm run build:real` (dist-real/, git-ignored), never on GitHub Pages unless the user explicitly decides otherwise.
 - **No em dash or en dash** (U+2014, U+2013) and no minus sign U+2212 anywhere in texts, in either language. Rewrite with a comma, a colon or parentheses. Negative numbers use the hyphen-minus.
 - French: « » quotes, a non-breaking space before : ; ? ! % » and after «, formal "vous".
 - Short, cautious sentences ("estimate", "order of magnitude"). Never "guaranteed" / « garanti ».

@@ -75,6 +75,17 @@ Après une modification, `npm test` vérifie la cohérence des données (catégo
 - Chiffre d'affaires : volumes × prix au kilo, à périmètre constant. Pour la démonstration, les produits végétaux et hybrides sont valorisés plus cher au kilo, et les leviers 4, 6 et 20 portent une hypothèse de valorisation explicite : le chiffre d'affaires progresse dans les quatre scénarios (un test le vérifie).
 - WWF FG1 : part végétale des aliments riches en protéines, en tonnes de produit ; les produits mixtes (hybrides, plats cuisinés) sont mis à part.
 
+## Version privée sur données réelles
+
+Le dépôt et le site public ne contiennent que des données fictives. Une version privée peut être compilée sur un jeu de données réel placé dans `src/data/real/` (exclu de git, comme le dossier `private/` qui le produit) :
+
+```bash
+npm run dev:real     # aperçu local
+npm run build:real   # un seul fichier dist-real/index.html, à ouvrir sans serveur et à partager en privé
+```
+
+Ce fichier ne se publie jamais sur GitHub Pages.
+
 ## Déployer
 
 Chaque push sur `main` lance `.github/workflows/deploy.yml` : tests, build, puis publication sur GitHub Pages (source « GitHub Actions » dans les réglages Pages du dépôt). Le chemin de base `/altera-trajectory/` est fixé dans `vite.config.ts`. Pages garde les fichiers en cache une dizaine de minutes : forcez le rechargement si une modification n'apparaît pas.
