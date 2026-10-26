@@ -21,12 +21,16 @@ const ranked = rows.filter((r) => r.l.number !== 3);
 console.log(`\nSpearman (19 levers, lever 3 excluded): ${spearman(ranked.map((r) => r.l.deckImpact), ranked.map((r) => r.e.mid)).toFixed(3)}`);
 console.log(`Spearman (20 levers): ${spearman(rows.map((r) => r.l.deckImpact), rows.map((r) => r.e.mid)).toFixed(3)}\n`);
 for (const s of scenarios) {
-  const res = simulate(model.categories, model.levers, s, { horizon: 2030 });
+  const res = simulate(model.categories, model.levers, s, { horizon: 2040, extension: config.extension });
   const line = (y: number) => {
     const r = res.find((x) => x.year === y)!;
     const g = guardrail(base.pt, r.pt, 2025, y, config.benchmark.pointsPerYear);
     return `${y}: ${pts(r.pt)} % [${pts(r.low.pt)} to ${pts(r.high.pt)}] ${g.annualGain.toFixed(2)} pt/yr ${g.state}`;
   };
-  const r30 = res[res.length - 1];
-  console.log(`${s.label.fr.padEnd(18)} target ${pts(s.target2030)}  ${line(2028)}  |  ${line(2030)}  CO2 ${(100 * (r30.co2 / base.co2 - 1)).toFixed(1)} %  CA ${(100 * (r30.revenue / base.revenue - 1)).toFixed(1)} %`);
+  const fin = (y: number) => {
+    const r = res.find((x) => x.year === y)!;
+    return `${y}: ${pts(r.pt)} %, CO2 ${(100 * (r.co2 / base.co2 - 1)).toFixed(1)} %, CA ${(100 * (r.revenue / base.revenue - 1)).toFixed(1)} %`;
+  };
+  console.log(`${s.label.fr.padEnd(18)} target ${pts(s.target2030)}  ${line(2028)}  |  ${line(2030)}`);
+  console.log(`${"".padEnd(18)} ${[2028, 2030, 2035, 2040].map(fin).join("  |  ")}`);
 }

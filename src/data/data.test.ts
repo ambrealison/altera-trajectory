@@ -59,6 +59,15 @@ describe("i18n and bilingual data", () => {
       expect(/[^\s  (][;?!%»]/.test(t.s.replace(/https?:\S+/g, "")), `${t.path}: ${t.s}`).toBe(false);
     }
   });
+  it("data texts only use the {plot1} to {plot4} placeholders", () => {
+    for (const t of strings(DATA, "")) for (const m of t.s.matchAll(/\{(\w+)\}/g)) expect(["plot1", "plot2", "plot3", "plot4"], `${t.path}`).toContain(m[1]);
+  });
+  it("economics are qualitative scores from -2 to +2, never negative in this demo", () => {
+    for (const l of levers) for (const v of [l.economics.revenueEffect, l.economics.marginEffect]) {
+      expect(v).toBeGreaterThanOrEqual(0);
+      expect(v).toBeLessThanOrEqual(2);
+    }
+  });
   it("texts never promise: no « garanti » and no « réaliste » scenario", () => {
     for (const t of ALL_TEXT) expect(/garanti|guarantee/i.test(t.s), `${t.path}`).toBe(false);
     for (const s of scenariosJson) expect(/réaliste|realistic/i.test(s.label.fr + s.label.en)).toBe(false);

@@ -31,7 +31,7 @@
       "en": "Scope: one private-label hybrid mince in 30 to 50 volunteer stores. Duration: 6 months. Indicators: hybrid share of mince sales, repeat purchase rate, total aisle volume. Go if the aisle keeps its volume and repeat purchase reaches the threshold agreed with the insights team."
     },
     "economics": {
-      "revenueEffect": 0,
+      "revenueEffect": 1,
       "marginEffect": 1
     },
     "hypotheses": [
@@ -122,7 +122,7 @@
       "en": "Scope: 3 to 5 private-label hybrid items, alongside or instead of current recipes. Duration: 6 months. Indicators: hybrid sales, switching from classic recipes, customer feedback. Go if the family's sales hold."
     },
     "economics": {
-      "revenueEffect": 0,
+      "revenueEffect": 1,
       "marginEffect": 1
     },
     "hypotheses": [
@@ -306,19 +306,19 @@
       "en": "Grocery category and in-store marketing"
     },
     "pilot": {
-      "fr": "Périmètre : un espace légumineuses et tofu dans 30 magasins volontaires. Durée : 4 mois. Indicateurs : ventes du plot 3, ventes de viande des mêmes magasins. Go si la hausse dépasse le seuil fixé avec l'équipe études.",
-      "en": "Scope: a pulses and tofu area in 30 volunteer stores. Duration: 4 months. Indicators: plot 3 sales, meat sales in the same stores. Go if the increase exceeds the threshold agreed with the insights team."
+      "fr": "Périmètre : un espace légumineuses et tofu dans 30 magasins volontaires. Durée : 4 mois. Indicateurs : ventes de {plot3}, ventes de viande des mêmes magasins. Go si la hausse dépasse le seuil fixé avec l'équipe études.",
+      "en": "Scope: a pulses and tofu area in 30 volunteer stores. Duration: 4 months. Indicators: sales of {plot3}, meat sales in the same stores. Go if the increase exceeds the threshold agreed with the insights team."
     },
     "economics": {
-      "revenueEffect": 0,
-      "marginEffect": 0
+      "revenueEffect": 1,
+      "marginEffect": 1
     },
     "hypotheses": [
       {
         "id": "salesGain",
         "label": {
-          "fr": "Hausse des ventes du plot 3",
-          "en": "Sales increase of plot 3"
+          "fr": "Hausse des ventes de {plot3}",
+          "en": "Sales increase of {plot3}"
         },
         "value": 40,
         "min": 0,
@@ -345,6 +345,22 @@
           "fr": "En volume : une portion de légumineuses remplace une portion de viande.",
           "en": "By volume: a portion of pulses replaces a portion of meat."
         }
+      },
+      {
+        "id": "pricePremium",
+        "label": {
+          "fr": "Hausse du prix moyen au kilo (formats prêts à l'emploi)",
+          "en": "Average price per kilo increase (ready-to-eat formats)"
+        },
+        "value": 25,
+        "min": 0,
+        "max": 50,
+        "step": 5,
+        "unit": "%",
+        "note": {
+          "fr": "Montée en gamme de l'offre : bocaux, salades, plats à cuisiner.",
+          "en": "Upgraded range: jars, salads, ready-to-cook dishes."
+        }
       }
     ],
     "effects": [
@@ -365,6 +381,14 @@
           "share": "fromMeat",
           "basis": "product"
         }
+      },
+      {
+        "op": "price",
+        "targets": [
+          "pulses",
+          "tofu"
+        ],
+        "x": "pricePremium"
       }
     ],
     "ramp": {
@@ -409,7 +433,7 @@
       "en": "Scope: two rebalanced promotional waves in 40 volunteer stores. Duration: 6 months. Indicators: meat and 4-plot volumes, revenue per store. Go if pilot store revenue stays within the agreed margin."
     },
     "economics": {
-      "revenueEffect": -1,
+      "revenueEffect": 1,
       "marginEffect": 0
     },
     "hypotheses": [
@@ -497,8 +521,8 @@
     "deckImpact": 5.5,
     "provisional": false,
     "description": {
-      "fr": "Réduire le grammage des barquettes de viande MDD et proposer des portions plus petites, à prix au kilo comparable.",
-      "en": "Reduce the weight of private-label meat packs and offer smaller portions, at a comparable price per kilo."
+      "fr": "Réduire le grammage des barquettes de viande MDD et proposer des portions plus petites, mieux valorisées au kilo.",
+      "en": "Reduce the weight of private-label meat packs and offer smaller portions, priced higher per kilo."
     },
     "whyForU": {
       "fr": "C'est une décision de la centrale sur la MDD, sans dépendre des magasins, qui touche directement les volumes de protéines animales.",
@@ -513,8 +537,8 @@
       "en": "Scope: 5 meat items in a smaller pack. Duration: 3 months. Indicators: volume sold, units per basket, complaints. Go if units per basket do not rise enough to cancel the drop."
     },
     "economics": {
-      "revenueEffect": -1,
-      "marginEffect": 0
+      "revenueEffect": 1,
+      "marginEffect": 1
     },
     "hypotheses": [
       {
@@ -548,6 +572,22 @@
           "fr": "Viande fraîche et charcuterie en libre-service.",
           "en": "Self-service fresh meat and cooked meats."
         }
+      },
+      {
+        "id": "pricePremium",
+        "label": {
+          "fr": "Hausse du prix au kilo pour 1 % de grammage en moins",
+          "en": "Price per kilo increase per 1% of pack weight removed"
+        },
+        "value": 1.5,
+        "min": 0,
+        "max": 2.5,
+        "step": 0.1,
+        "unit": "",
+        "note": {
+          "fr": "1,5 : une barquette 10 % plus légère se vend 15 % plus cher au kilo.",
+          "en": "1.5: a pack 10% lighter sells 15% dearer per kilo."
+        }
       }
     ],
     "effects": [
@@ -560,6 +600,16 @@
           "charcuterie"
         ],
         "x": "-gramCut * shelfShare"
+      },
+      {
+        "op": "price",
+        "targets": [
+          "minced_meat",
+          "red_meat",
+          "poultry",
+          "charcuterie"
+        ],
+        "x": "shelfShare * gramCut * pricePremium"
       }
     ],
     "ramp": {
@@ -592,8 +642,8 @@
       "en": "Offer plant-based versions of the best-selling private-label ready meals (lasagne, bolognese, pizza, ravioli)."
     },
     "whyForU": {
-      "fr": "La centrale maîtrise la recette et l'implantation de la MDD : le plot 2 grandit sans attendre les marques.",
-      "en": "The central office controls private-label recipes and placement: plot 2 grows without waiting for brands."
+      "fr": "La centrale maîtrise la recette et l'implantation de la MDD : l'offre de {plot2} grandit sans attendre les marques.",
+      "en": "The central office controls private-label recipes and placement: the {plot2} range grows without waiting for brands."
     },
     "owner": {
       "fr": "Offre MDD traiteur",
@@ -604,8 +654,8 @@
       "en": "Scope: 4 private-label recipes in a plant-based version. Duration: 6 months. Indicators: sales, repeat purchase, switching from the meat version. Go if repeat purchase reaches the agreed threshold."
     },
     "economics": {
-      "revenueEffect": 0,
-      "marginEffect": 0
+      "revenueEffect": 1,
+      "marginEffect": 1
     },
     "hypotheses": [
       {
@@ -696,14 +746,14 @@
     },
     "economics": {
       "revenueEffect": 1,
-      "marginEffect": 0
+      "marginEffect": 1
     },
     "hypotheses": [
       {
         "id": "salesGain",
         "label": {
-          "fr": "Hausse des ventes des plots 1 et 4 après amélioration des recettes",
-          "en": "Sales increase of plots 1 and 4 after recipe improvement"
+          "fr": "Hausse des ventes après amélioration des recettes ({plot1}, {plot4})",
+          "en": "Sales increase after recipe improvement ({plot1}, {plot4})"
         },
         "value": 30,
         "min": 0,
@@ -810,8 +860,8 @@
       "en": "Scope: a range of pulse-enriched pasta in all stores. Duration: 12 months. Indicators: share of the range in private-label pasta, repeat purchase. Go if the range keeps its share after six months."
     },
     "economics": {
-      "revenueEffect": 1,
-      "marginEffect": 0
+      "revenueEffect": 2,
+      "marginEffect": 1
     },
     "hypotheses": [
       {
@@ -903,8 +953,8 @@
       "en": "Scope: a core plant-based range in 50 volunteer stores. Duration: 6 months. Indicators: 4-plot sales, rotation per item. Go if rotation stays above the delisting threshold."
     },
     "economics": {
-      "revenueEffect": 1,
-      "marginEffect": 0
+      "revenueEffect": 2,
+      "marginEffect": 1
     },
     "hypotheses": [
       {
@@ -1021,8 +1071,8 @@
       "en": "Scope: 5 to 10 plant-based items at parity in 20 volunteer stores, compared with 20 control stores. Duration: 3 months. Indicators: volumes of the alternatives, milk and yoghurt volumes, aisle revenue. Go if the observed elasticity reaches the threshold set before the test."
     },
     "economics": {
-      "revenueEffect": 0,
-      "marginEffect": -1
+      "revenueEffect": 1,
+      "marginEffect": 0
     },
     "hypotheses": [
       {
@@ -1138,12 +1188,12 @@
       "en": "Merchandising and stores"
     },
     "pilot": {
-      "fr": "Périmètre : implantation intégrée dans 20 magasins, comparés à 20 magasins témoins. Durée : 6 mois. Indicateurs : ventes des plots 1 et 4, ventes des produits animaux voisins. Go si l'écart avec les témoins dépasse le seuil fixé.",
-      "en": "Scope: integrated placement in 20 stores, compared with 20 control stores. Duration: 6 months. Indicators: plot 1 and 4 sales, sales of nearby animal products. Go if the gap with control stores exceeds the agreed threshold."
+      "fr": "Périmètre : implantation intégrée dans 20 magasins, comparés à 20 magasins témoins. Durée : 6 mois. Indicateurs : ventes des alternatives ({plot1}, {plot4}), ventes des produits animaux voisins. Go si l'écart avec les témoins dépasse le seuil fixé.",
+      "en": "Scope: integrated placement in 20 stores, compared with 20 control stores. Duration: 6 months. Indicators: sales of the alternatives ({plot1}, {plot4}), sales of nearby animal products. Go if the gap with control stores exceeds the agreed threshold."
     },
     "economics": {
-      "revenueEffect": 0,
-      "marginEffect": 0
+      "revenueEffect": 1,
+      "marginEffect": 1
     },
     "hypotheses": [
       {
@@ -1158,8 +1208,8 @@
         "step": 5,
         "unit": "%",
         "note": {
-          "fr": "Plots 1 et 4.",
-          "en": "Plots 1 and 4."
+          "fr": "Concerne les {plot1} et les {plot4}.",
+          "en": "Covers {plot1} and {plot4}."
         }
       },
       {
@@ -1305,8 +1355,8 @@
         "step": 1,
         "unit": "%",
         "note": {
-          "fr": "Ces volumes rejoignent le plot 2.",
-          "en": "These volumes join plot 2."
+          "fr": "Ces volumes rejoignent les {plot2}.",
+          "en": "These volumes join {plot2}."
         }
       }
     ],
@@ -1370,8 +1420,8 @@
       "en": "Scope: price parity on 10 items in 20 volunteer stores and 20 control stores. Duration: 3 months. Indicators: volumes, switching from meat, aisle margin. Go if the observed elasticity reaches the agreed threshold."
     },
     "economics": {
-      "revenueEffect": 0,
-      "marginEffect": -2
+      "revenueEffect": 1,
+      "marginEffect": 0
     },
     "hypotheses": [
       {
@@ -1494,15 +1544,15 @@
       "en": "Scope: 4 renamed items. Duration: 4 months. Indicators: sales, share of new buyers. Go if the share of new buyers rises."
     },
     "economics": {
-      "revenueEffect": 0,
-      "marginEffect": 0
+      "revenueEffect": 1,
+      "marginEffect": 1
     },
     "hypotheses": [
       {
         "id": "salesGain",
         "label": {
-          "fr": "Hausse des ventes des plots 1 et 4",
-          "en": "Sales increase of plots 1 and 4"
+          "fr": "Hausse des ventes ({plot1}, {plot4})",
+          "en": "Sales increase ({plot1}, {plot4})"
         },
         "value": 10,
         "min": 0,
@@ -1608,8 +1658,8 @@
       "en": "Scope: price cut on the private-label range in 20 volunteer stores and 20 control stores. Duration: 3 months. Indicators: private-label volumes, switching from brands. Go if private-label volumes grow beyond the agreed threshold."
     },
     "economics": {
-      "revenueEffect": 0,
-      "marginEffect": -1
+      "revenueEffect": 1,
+      "marginEffect": 0
     },
     "hypotheses": [
       {
@@ -1721,8 +1771,8 @@
       "en": "Scope: A/B test on online suggestions. Duration: 2 months. Indicators: add-to-basket rate of the alternatives. Go if the increase is significant."
     },
     "economics": {
-      "revenueEffect": 0,
-      "marginEffect": 0
+      "revenueEffect": 1,
+      "marginEffect": 1
     },
     "hypotheses": [
       {
@@ -1753,8 +1803,8 @@
         "step": 5,
         "unit": "%",
         "note": {
-          "fr": "Plots 1 à 4.",
-          "en": "Plots 1 to 4."
+          "fr": "Sur les 4 plots.",
+          "en": "Across the 4 plots."
         }
       }
     ],
@@ -1815,8 +1865,8 @@
       "en": "Scope: recipe baskets with a plant-based option by default. Duration: 2 months. Indicators: share of baskets keeping the option. Go if that share reaches the agreed threshold."
     },
     "economics": {
-      "revenueEffect": 0,
-      "marginEffect": 0
+      "revenueEffect": 1,
+      "marginEffect": 1
     },
     "hypotheses": [
       {
@@ -1910,7 +1960,7 @@
     },
     "economics": {
       "revenueEffect": 1,
-      "marginEffect": 0
+      "marginEffect": 1
     },
     "hypotheses": [
       {
@@ -1925,8 +1975,8 @@
         "step": 1,
         "unit": "%",
         "note": {
-          "fr": "Plots 2 et 3.",
-          "en": "Plots 2 and 3."
+          "fr": "Concerne les {plot2} et les {plot3}.",
+          "en": "Covers {plot2} and {plot3}."
         }
       },
       {
@@ -2009,7 +2059,7 @@
       "en": "Scope: 10 volunteer stores. Duration: 6 months. Indicators: meat volumes, markdowns. Go if markdowns fall with no loss of revenue."
     },
     "economics": {
-      "revenueEffect": -1,
+      "revenueEffect": 0,
       "marginEffect": 1
     },
     "hypotheses": [
@@ -2044,6 +2094,22 @@
           "fr": "Rayons à la coupe et libre-service.",
           "en": "Counters and self-service."
         }
+      },
+      {
+        "id": "markdown",
+        "label": {
+          "fr": "Démarque évitée, en part de la baisse des achats",
+          "en": "Markdown avoided, as a share of the purchase drop"
+        },
+        "value": 120,
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "unit": "%",
+        "note": {
+          "fr": "Moins de produits soldés ou jetés : le prix moyen réalisé remonte.",
+          "en": "Fewer products discounted or thrown away: the average realised price goes up."
+        }
       }
     ],
     "effects": [
@@ -2057,6 +2123,17 @@
           "fish"
         ],
         "x": "-purchaseCut * covered"
+      },
+      {
+        "op": "price",
+        "targets": [
+          "minced_meat",
+          "red_meat",
+          "poultry",
+          "charcuterie",
+          "fish"
+        ],
+        "x": "purchaseCut * covered * markdown"
       }
     ],
     "ramp": {

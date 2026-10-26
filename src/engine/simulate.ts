@@ -8,10 +8,11 @@
 //   +20 % then +20 % gives +36 %, not +44 %. Reductions apply to the current volume.
 // - Ramp-up is an S-curve (smoothstep) between startYear and startYear + yearsToFull. 2025 is the
 //   reference: no lever has any effect on it.
+// - Beyond the extension year (2030), effects keep growing linearly (diffusion assumption, config.json).
 // - Store adoption: effect × (1 - storeDependency + storeDependency × adoption).
 // - Bands: two more runs with each lever's low and high multipliers, narrowed by lever 3.
 
-import type { Category, Effect, Hypothesis, Lever, Scenario } from "../data/types";
+import type { Category, Effect, Extension, Hypothesis, Lever, Scenario } from "../data/types";
 import { evaluate } from "./expr";
 
 export type ScenarioState = Pick<Scenario, "activeLevers" | "adoption" | "hypotheses">;
@@ -63,6 +64,10 @@ export const smoothstep = (t: number) => {
 /** Share of a lever's full effect reached in a given year. */
 export const rampAt = (lever: Pick<Lever, "ramp">, year: number) =>
   smoothstep((year - lever.ramp.startYear + 1) / lever.ramp.yearsToFull);
+
+/** Growth of lever effects after the extension year: 1 until then, then 1 + rate per year. */
+export const extensionFactor = (ext: Extension | undefined, year: number) =>
+  ext ? 1 + ext.ratePerYear * Math.max(0, year - ext.fromYear) : 1;
 
 export const adoptionFactor = (lever: Pick<Lever, "storeDependency">, adoption: number) =>
   1 - lever.storeDependency + lever.storeDependency * adoption;
@@ -206,6 +211,7 @@ function metricsOf(st: State, categories: Category[]): Metrics {
 export interface Model {
   categories: Category[];
   levers: Lever[];
+  extension?: Extension;
 }
 
 /** State of every category in one year, for one band. */
@@ -217,7 +223,7 @@ export function runYear(model: Model, state: ScenarioState, year: number, band: 
     .filter((l) => (only === undefined ? state.activeLevers.includes(l.number) : l.number === only))
     .sort((a, b) => a.number - b.number);
   for (const l of active) {
-    const f = rampAt(l, year) * adoptionFactor(l, state.adoption) * bandMultiplier(l, band, tightening);
+    const f = rampAt(l, year) * extensionFactor(model.extension, year) * adoptionFactor(l, state.adoption) * bandMultiplier(l, band, tightening);
     if (f > 0 && l.effects.length) applyEffects(st, cats, l.effects, expressionVars(l, state.hypotheses[l.id]), f);
   }
   return { st, metrics: metricsOf(st, model.categories) };
@@ -227,8 +233,8 @@ export function baseline(model: Model): Metrics {
   return metricsOf(initialState(model.categories), model.categories);
 }
 
-export function simulate(categories: Category[], levers: Lever[], scenario: ScenarioState, opts: { horizon: number; baseYear?: number }): YearResult[] {
-  const model = { categories, levers };
+export function simulate(categories: Category[], levers: Lever[], scenario: ScenarioState, opts: { horizon: number; baseYear?: number; extension?: Extension }): YearResult[] {
+  const model = { categories, levers, extension: opts.extension };
   const from = opts.baseYear ?? 2025;
   const out: YearResult[] = [];
   for (let year = from; year <= opts.horizon; year++) {

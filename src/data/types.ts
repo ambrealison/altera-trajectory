@@ -15,12 +15,19 @@ export interface Config {
   baseYear: number;
   horizons: number[];
   defaultHorizon: number;
+  /** Beyond fromYear, lever effects keep growing by ratePerYear (diffusion assumption). */
+  extension: Extension;
   defaultAdoption: number;
   plots: Record<PlotId, Text> & { other: Text; composite: Text; animal: Text };
   plotDetails: Record<PlotId, Text>;
   rayons: Record<string, Text>;
   animalGroups: Record<string, Text>;
   benchmark: { text: Text; source: Text; pointsPerYear: number };
+}
+
+export interface Extension {
+  fromYear: number;
+  ratePerYear: number;
 }
 
 export interface Category {

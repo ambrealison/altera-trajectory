@@ -7,6 +7,7 @@ import { guardrail } from "./guardrail";
 import { spearman } from "./stats";
 
 const HORIZON = 2030;
+const LAST = Math.max(...config.horizons);
 const BASE_YEAR = config.baseYear;
 const ref = baseline(model);
 const defaults = (active: number[], adoption = config.defaultAdoption): ScenarioState => ({ activeLevers: active, adoption, hypotheses: {} });
@@ -122,7 +123,7 @@ describe("engine rules", () => {
     const all = levers.map((l) => l.number);
     const states: ScenarioState[] = [...scenarios, { activeLevers: all, adoption: 1, hypotheses: maxed }, { activeLevers: all, adoption: 1, hypotheses: mined }];
     for (const s of states) {
-      for (const y of simulate(categories, levers, s, { horizon: HORIZON })) {
+      for (const y of simulate(categories, levers, s, { horizon: LAST, extension: config.extension })) {
         for (const m of [y, y.low, y.high]) {
           for (const r of [m.pt, m.fg1]) {
             expect(r).toBeGreaterThanOrEqual(0);
@@ -136,8 +137,31 @@ describe("engine rules", () => {
 
   it("ramp-up is monotonic: the ratio never falls from one year to the next in the predefined scenarios", () => {
     for (const s of scenarios) {
-      const res = simulate(categories, levers, s, { horizon: HORIZON });
+      const res = simulate(categories, levers, s, { horizon: LAST, extension: config.extension });
       for (let i = 1; i < res.length; i++) expect(res[i].pt).toBeGreaterThanOrEqual(res[i - 1].pt - 1e-12);
+    }
+  });
+});
+
+describe("horizons beyond 2030", () => {
+  it("offers 2028, 2030, 2035 and 2040", () => {
+    expect(config.horizons).toEqual([2028, 2030, 2035, 2040]);
+  });
+  it("effects keep growing after the extension year, and 2030 is unchanged", () => {
+    for (const s of scenarios) {
+      const res = simulate(categories, levers, s, { horizon: LAST, extension: config.extension });
+      const at = (y: number) => res.find((r) => r.year === y)!.pt;
+      expect(at(2030)).toBeCloseTo(runYear(model, s, 2030).metrics.pt, 12);
+      expect(at(2035)).toBeGreaterThan(at(2030));
+      expect(at(2040)).toBeGreaterThan(at(2035));
+    }
+  });
+  it("revenue goes up in every predefined scenario, at every horizon (demo choice)", () => {
+    for (const s of scenarios) {
+      for (const y of simulate(categories, levers, s, { horizon: LAST, extension: config.extension }).slice(1)) {
+        expect(y.revenue, `${s.id} ${y.year}`).toBeGreaterThan(ref.revenue);
+        expect(y.co2, `${s.id} ${y.year}`).toBeLessThan(ref.co2);
+      }
     }
   });
 });

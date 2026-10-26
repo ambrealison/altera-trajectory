@@ -172,7 +172,7 @@
     "tonnesProduct": 600,
     "proteinPer100g": 17,
     "plantProteinShare": 0.25,
-    "pricePerKg": 12,
+    "pricePerKg": 13,
     "co2PerKg": 17,
     "co2Anchors": {
       "animal": 22,
@@ -194,7 +194,7 @@
     "tonnesProduct": 300,
     "proteinPer100g": 14.5,
     "plantProteinShare": 0.3,
-    "pricePerKg": 15,
+    "pricePerKg": 16,
     "co2PerKg": 5,
     "co2Anchors": {
       "animal": 6.5,
@@ -214,7 +214,7 @@
     "tonnesProduct": 5000,
     "proteinPer100g": 16,
     "plantProteinShare": 1,
-    "pricePerKg": 14,
+    "pricePerKg": 18,
     "co2PerKg": 2.5
   },
   {
@@ -230,7 +230,7 @@
     "tonnesProduct": 3000,
     "proteinPer100g": 13,
     "plantProteinShare": 1,
-    "pricePerKg": 12,
+    "pricePerKg": 15,
     "co2PerKg": 2.5
   },
   {
@@ -247,7 +247,7 @@
     "tonnesProduct": 9000,
     "proteinPer100g": 7,
     "plantProteinShare": 1,
-    "pricePerKg": 9,
+    "pricePerKg": 11,
     "co2PerKg": 2.0
   },
   {
@@ -263,7 +263,7 @@
     "tonnesProduct": 25000,
     "proteinPer100g": 9,
     "plantProteinShare": 1,
-    "pricePerKg": 3.5,
+    "pricePerKg": 5,
     "co2PerKg": 1.0
   },
   {
@@ -279,7 +279,7 @@
     "tonnesProduct": 2000,
     "proteinPer100g": 14,
     "plantProteinShare": 1,
-    "pricePerKg": 11,
+    "pricePerKg": 14,
     "co2PerKg": 2.0
   },
   {
@@ -295,7 +295,7 @@
     "tonnesProduct": 1500,
     "proteinPer100g": 20,
     "plantProteinShare": 1,
-    "pricePerKg": 6,
+    "pricePerKg": 7,
     "co2PerKg": 1.2
   },
   {
@@ -311,7 +311,7 @@
     "tonnesProduct": 40000,
     "proteinPer100g": 1.5,
     "plantProteinShare": 1,
-    "pricePerKg": 2.2,
+    "pricePerKg": 2.6,
     "co2PerKg": 0.5
   },
   {
@@ -327,7 +327,7 @@
     "tonnesProduct": 8000,
     "proteinPer100g": 3.5,
     "plantProteinShare": 1,
-    "pricePerKg": 5,
+    "pricePerKg": 6.5,
     "co2PerKg": 1.0
   },
   {

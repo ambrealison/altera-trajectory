@@ -9,5 +9,5 @@ export const config = configJson as Config;
 export const categories = categoriesJson as Category[];
 export const levers = (leversJson as Lever[]).slice().sort((a, b) => a.number - b.number);
 export const scenarios = scenariosJson as Scenario[];
-export const model = { categories, levers };
+export const model = { categories, levers, extension: config.extension };
 export const leverByNumber = (n: number) => levers.find((l) => l.number === n)!;
