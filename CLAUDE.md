@@ -14,7 +14,7 @@ Audience: the retailer's commercial, insights, range marketing and CSR teams. Pa
 - Four scenarios: Central only (35.0 % in 2030), Committed (37.5 %), Ambitious (40.0 %), Theoretical ceiling (45.0 %). No scenario is called "realistic". The app opens on Committed.
 - Horizons 2028, 2030, 2035, 2040. Levers reach full effect by 2030; beyond, a diffusion assumption (`extension` in config.json, +4 % of effect a year) keeps the trajectory rising.
 - Demo choice: revenue goes up in every scenario (plant and hybrid products priced higher per kilo, explicit value assumptions on levers 4, 6, 20) and lever financial scores are never negative. A test checks it.
-- Plot names live only in config.json; texts refer to them as {plot1} to {plot4}, never "plot 1".
+- Every category belongs to a named block: the 4 plots (nuts are in whole plant proteins), mixed products, or other plant protein; no catch-all. Plot names live only in config.json; texts refer to them as {plot1} to {plot4}, never "plot 1".
 
 ## Rules
 

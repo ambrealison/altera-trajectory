@@ -148,7 +148,7 @@
           "fr": "Part des volumes MDD passée en recette hybride",
           "en": "Share of private-label volume switched to a hybrid recipe"
         },
-        "value": 50,
+        "value": 60,
         "min": 0,
         "max": 70,
         "step": 5,
@@ -294,8 +294,8 @@
     "deckImpact": 5.9,
     "provisional": false,
     "description": {
-      "fr": "Élargir et rendre visible l'offre de légumineuses et de tofu : têtes de gondole, signalétique, formats prêts à l'emploi.",
-      "en": "Widen and showcase the range of pulses and tofu: end caps, signage, ready-to-use formats."
+      "fr": "Élargir et rendre visible l'offre de légumineuses, de tofu et de fruits à coque : têtes de gondole, signalétique, formats prêts à l'emploi.",
+      "en": "Widen and showcase the range of pulses, tofu and nuts: end caps, signage, ready-to-use formats."
     },
     "whyForU": {
       "fr": "Les légumineuses sont déjà en rayon et peu chères. Les rendre visibles et faciles à cuisiner demande peu de développement produit.",
@@ -320,14 +320,14 @@
           "fr": "Hausse des ventes de {plot3}",
           "en": "Sales increase of {plot3}"
         },
-        "value": 40,
+        "value": 35,
         "min": 0,
         "max": 80,
         "step": 5,
         "unit": "%",
         "note": {
-          "fr": "Légumineuses et tofu. Les fruits à coque restent dans « Autres protéines végétales ».",
-          "en": "Pulses and tofu. Nuts stay in \"Other plant protein\"."
+          "fr": "Légumineuses, tofu et fruits à coque.",
+          "en": "Pulses, tofu and nuts."
         }
       },
       {
@@ -368,7 +368,8 @@
         "op": "scale",
         "targets": [
           "pulses",
-          "tofu"
+          "tofu",
+          "nuts_seeds"
         ],
         "x": "salesGain",
         "substitution": {
@@ -386,7 +387,8 @@
         "op": "price",
         "targets": [
           "pulses",
-          "tofu"
+          "tofu",
+          "nuts_seeds"
         ],
         "x": "pricePremium"
       }
@@ -489,6 +491,7 @@
           "plant_ready_meals",
           "pulses",
           "tofu",
+          "nuts_seeds",
           "plant_drinks",
           "plant_yoghurts"
         ],
@@ -998,7 +1001,8 @@
           "plant_breaded",
           "plant_ready_meals",
           "pulses",
-          "tofu"
+          "tofu",
+          "nuts_seeds"
         ],
         "x": "salesGain",
         "substitution": {
@@ -1817,6 +1821,7 @@
           "plant_ready_meals",
           "pulses",
           "tofu",
+          "nuts_seeds",
           "plant_drinks",
           "plant_yoghurts"
         ],
@@ -2002,7 +2007,8 @@
         "targets": [
           "plant_ready_meals",
           "pulses",
-          "tofu"
+          "tofu",
+          "nuts_seeds"
         ],
         "x": "salesGain",
         "substitution": {

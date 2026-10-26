@@ -299,6 +299,22 @@
     "co2PerKg": 1.2
   },
   {
+    "id": "nuts_seeds",
+    "label": {
+      "fr": "Fruits à coque et graines",
+      "en": "Nuts and seeds"
+    },
+    "rayon": "grocery",
+    "plot": 3,
+    "proteinGroup": "plant_core",
+    "wwfGroup": "FG1",
+    "tonnesProduct": 5000,
+    "proteinPer100g": 20,
+    "plantProteinShare": 1,
+    "pricePerKg": 16,
+    "co2PerKg": 2.5
+  },
+  {
     "id": "plant_drinks",
     "label": {
       "fr": "Boissons végétales",
@@ -363,22 +379,6 @@
     "co2PerKg": 1.0
   },
   {
-    "id": "nuts_seeds",
-    "label": {
-      "fr": "Fruits à coque et graines",
-      "en": "Nuts and seeds"
-    },
-    "rayon": "grocery",
-    "plot": "other_plant",
-    "proteinGroup": "plant_core",
-    "wwfGroup": "FG1",
-    "tonnesProduct": 8000,
-    "proteinPer100g": 20,
-    "plantProteinShare": 1,
-    "pricePerKg": 16,
-    "co2PerKg": 2.5
-  },
-  {
     "id": "fruit_vegetables",
     "label": {
       "fr": "Fruits, légumes et pommes de terre",
@@ -388,7 +388,7 @@
     "plot": "other_plant",
     "proteinGroup": "plant_noncore",
     "wwfGroup": "FG4",
-    "tonnesProduct": 78824,
+    "tonnesProduct": 116324,
     "proteinPer100g": 1.6,
     "plantProteinShare": 1,
     "pricePerKg": 2.8,

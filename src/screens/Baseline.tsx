@@ -59,7 +59,7 @@ export function Baseline() {
       status: fg1 && k === "2" ? t("baseline.apartFg1") : fg1 && k === "4" ? t("baseline.outFg1") : undefined,
     })),
     { key: "composite", label: tx(config.plots.composite), color: "var(--comp)", value: B.byPlot.composite, status: fg1 ? t("baseline.apartFg1") : undefined },
-    { key: "other", label: tx(config.plots.other), color: "var(--plant-2)", value: B.byPlot.other },
+    { key: "other", label: tx(config.plots.other), color: "var(--plant-2)", value: B.byPlot.other, status: fg1 ? t("baseline.outFg1") : undefined },
   ];
   const maxRow = Math.max(...rows.map((r) => r.value));
 
@@ -100,9 +100,8 @@ export function Baseline() {
             <div className="drow dhead"><span /><span /><span>{t("baseline.colPoints")}</span><span>{fg1 ? t("baseline.colProduct") : t("baseline.colProtein")}</span></div>
             {rows.flatMap((r, i) => [
               <div key={r.key} className={`drow ${i === 4 ? "sep" : ""} ${r.key === "other" ? "other" : ""}`}>
-                <span className="dl">
+                <span className="dl" title={r.detail}>
                   <b>{r.label}</b>
-                  {r.detail && <small>{r.detail}</small>}
                 </span>
                 {r.status && r.value === 0 ? (
                   <span className="dstatus">{r.status}</span>
@@ -112,17 +111,15 @@ export function Baseline() {
                 <b className="num dv">{r.status && r.value === 0 ? "" : fmtNum(pts(r.value), lang, 1)}</b>
                 <span className="num dt">{r.status && r.value === 0 ? "" : unit(r.value)}</span>
               </div>,
-              // mixed products and other plant protein are aggregates: show every category inside them
-              ...(r.key === "composite" || r.key === "other"
-                ? B.byCategory.filter((c) => c.key === r.key).map((c) => (
+              // every block lists the categories it holds
+              ...B.byCategory.filter((c) => c.key === r.key).map((c) => (
                     <div key={`${r.key}-${c.category.id}`} className="drow sub">
                       <span className="dl">{tx(c.category.label)}</span>
                       <HBar value={c.value / maxRow} color={r.color} height={5} />
                       <span className="num dv">{fmtNum(pts(c.value), lang, 1)}</span>
                       <span className="num dt">{unit(c.value)}</span>
                     </div>
-                  ))
-                : []),
+                  )),
             ])}
             <div className="drow total">
               <span className="dl"><b>{t("baseline.total")}</b></span>
