@@ -6,7 +6,7 @@ import type { Lang } from "../data/types";
 import { baseline, simulate, type Metrics, type YearResult } from "../engine/simulate";
 import { contributions, isolatedEffect, type Contributions, type Range } from "../engine/contributions";
 import { guardrail, type Guardrail } from "../engine/guardrail";
-import { fromHash, presetFields, toHash, type Snapshot } from "./url";
+import { fromHash, matchingPreset, presetFields, toHash, type Snapshot } from "./url";
 import type { AppState, MetricKey, Pinned, ScenarioFields, ScreenId } from "./types";
 
 const KEY = "altera-trajectory:";
@@ -56,7 +56,7 @@ export type Action =
   | { type: "chartView"; view: AppState["chartView"] }
   | { type: "leverView"; view: AppState["leverView"] }
   | { type: "drawer"; lever: string | null }
-  | { type: "pin"; name: string }
+  | { type: "pin" }
   | { type: "unpin" }
   | { type: "tour"; step: number | null }
   | { type: "load"; snap: Partial<Snapshot> };
@@ -96,7 +96,7 @@ function reducer(s: AppState, a: Action): AppState {
     case "drawer": return { ...s, drawer: a.lever };
     case "pin": {
       const fields: ScenarioFields = { preset: s.preset, activeLevers: s.activeLevers, adoption: s.adoption, hypotheses: s.hypotheses, horizon: s.horizon, metric: s.metric };
-      return { ...s, pinned: { name: a.name, fields } satisfies Pinned };
+      return { ...s, pinned: { preset: matchingPreset(fields), fields } satisfies Pinned };
     }
     case "unpin": return { ...s, pinned: null };
     case "tour": return { ...s, tour: a.step };
@@ -115,6 +115,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = state.lang;
+    document.title = `Altera.ai · ${config.title[state.lang]}`;
     storage.set("lang", state.lang);
   }, [state.lang]);
 

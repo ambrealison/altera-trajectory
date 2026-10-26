@@ -51,7 +51,7 @@ describe("i18n and bilingual data", () => {
     }
   });
   it("no em dash, en dash or minus sign anywhere in the texts", () => {
-    for (const t of ALL_TEXT) expect(/[–—−]/.test(t.s), `${t.path}: ${t.s}`).toBe(false);
+    for (const t of ALL_TEXT) expect(/[\u2013\u2014\u2212]/.test(t.s), `${t.path}: ${t.s}`).toBe(false);
   });
   it("French texts put a non-breaking space before : ; ? ! % » and after «", () => {
     for (const t of ALL_TEXT.filter((x) => x.lang === "fr")) {

@@ -16,7 +16,8 @@ export interface ScenarioFields {
 }
 
 export interface Pinned {
-  name: string;
+  /** Preset the pinned scenario matched exactly, null for a custom scenario. */
+  preset: string | null;
   fields: ScenarioFields;
 }
 

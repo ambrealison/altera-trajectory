@@ -17,3 +17,11 @@ describe("localised formats", () => {
     expect(fmtPoints(-0.0234, "en")).toBe("-2.3 pts");
   });
 });
+
+describe("orders of magnitude", () => {
+  it("signed tonnes keep two significant figures", async () => {
+    const { fmtSignedTonnes } = await import("./format");
+    expect(fmtSignedTonnes(-722445, "fr")).toBe("-720 000 t");
+    expect(fmtSignedTonnes(1234, "en")).toBe("+1,200 t");
+  });
+});

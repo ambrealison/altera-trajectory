@@ -49,7 +49,7 @@ export function Trajectory() {
     [state.horizon, metric],
   );
 
-  const pinnedName = state.pinned?.name;
+  const pinnedName = state.pinned ? (state.pinned.preset ? tx(scenarios.find((x) => x.id === state.pinned!.preset)!.label) : t("trajectory.custom")) : undefined;
   const pinnedFinal = R.pinnedSeries ? R.pinnedSeries[R.pinnedSeries.length - 1][metric] : null;
   const scenarioName = current ? tx(scenarios.find((s) => s.id === current)!.label) : t("trajectory.custom");
 
@@ -86,7 +86,7 @@ export function Trajectory() {
                   <button type="button" onClick={() => dispatch({ type: "unpin" })}>{t("trajectory.unpin")}</button>
                 </span>
               ) : (
-                <PillButton variant="secondary" small onClick={() => dispatch({ type: "pin", name: scenarioName })}>
+                <PillButton variant="secondary" small onClick={() => dispatch({ type: "pin" })}>
                   <Icon name="pin" size={13} /> {t("trajectory.pin")}
                 </PillButton>
               )}

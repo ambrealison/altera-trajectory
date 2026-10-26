@@ -32,17 +32,17 @@ export function fmtPoints(delta: number, lang: Lang, digits = 1, signed = true) 
   return `${s} ${abs === 1 ? "pt" : "pts"}`;
 }
 
-/** Tonnes with an adaptive unit: "1 102 t", "48 kt", "4,8 Mt". */
+/** Tonnes: "1 102 t", and "4,8 Mt" from a million tonnes. */
 export function fmtTonnes(t: number, lang: Lang) {
-  const a = Math.abs(t);
-  const sep = NBSP;
-  if (a >= 1e6) return `${fmtNum(t / 1e6, lang, 1)}${sep}Mt`;
-  if (a >= 1e5) return `${fmtNum(t / 1e3, lang, 0)}${sep}kt`;
-  return `${fmtNum(t, lang, 0)}${sep}t`;
+  if (Math.abs(t) >= 1e6) return `${fmtNum(t / 1e6, lang, 1)}${NBSP}Mt`;
+  return `${fmtNum(t, lang, 0)}${NBSP}t`;
 }
 
+/** Signed tonnes rounded to two significant figures: an order of magnitude, not a measurement. */
 export function fmtSignedTonnes(t: number, lang: Lang) {
-  const s = fmtTonnes(t, lang);
+  const mag = t === 0 ? 0 : Math.floor(Math.log10(Math.abs(t)));
+  const step = 10 ** Math.max(0, mag - 1);
+  const s = fmtTonnes(Math.round(t / step) * step, lang);
   return t > 0 ? `+${s}` : s;
 }
 

@@ -12,7 +12,7 @@ export function Slider({ h, value, reference, onChange }: { h: Hypothesis; value
     <div className="hyp">
       <div className="hyp-top">
         <label htmlFor={`h-${h.id}`}>{tx(h.label)}</label>
-        <b className={`mono ${changed ? "changed" : ""}`}>{fmt(value)}</b>
+        <b className={changed ? "changed" : ""}>{fmt(value)}</b>
       </div>
       <div className="range-wrap">
         <input id={`h-${h.id}`} type="range" min={h.min} max={h.max} step={h.step} value={value}
