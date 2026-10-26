@@ -65,3 +65,11 @@ export function fmtValue(v: number, unit: string, lang: Lang, step = 1) {
   if (unit === "pts") return lang === "fr" ? `${n}${NBSP}pts` : `${n} pts`;
   return n;
 }
+
+/** Range of ratio points: "+0,8 à +1,3 pt", "+0.8 to +1.3 pts". */
+export function fmtRangePoints(lo: number, hi: number, lang: Lang, digits = 1) {
+  const f = (v: number) => nf(lang, { minimumFractionDigits: digits, maximumFractionDigits: digits, signDisplay: "exceptZero" }).format(v * 100);
+  const abs = Math.abs(Number((hi * 100).toFixed(digits)));
+  if (lang === "fr") return `${f(lo)} à ${f(hi)}${NBSP}${abs >= 2 ? "pts" : "pt"}`;
+  return `${f(lo)} to ${f(hi)} ${abs === 1 ? "pt" : "pts"}`;
+}

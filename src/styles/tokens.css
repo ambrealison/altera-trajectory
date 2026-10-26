@@ -1,0 +1,92 @@
+/* Design tokens, taken from the Altera demo tool (ambrealison.github.io/Altera-demo-tool, src/styles.css).
+   Warm paper, ink, Archivo display, Inter text. Plant = green, animal = terracotta, mixed = lavender.
+   This is the only file that defines colours, fonts, radii and spacing. */
+:root {
+  /* surfaces and ink */
+  --bg: #faf8f5;
+  --paper: #f4f1ec;
+  --side: #fbfaf7;
+  --white: #ffffff;
+  --ink: #151b1e;
+  --ink-2: #1e2529;
+  --text: #3d4549;
+  --muted: #6b7377;
+  --faint: #9aa1a4;
+  --line: rgba(21, 27, 30, 0.1);
+  --line-2: rgba(21, 27, 30, 0.06);
+
+  /* accents */
+  --lav: #c3adf5;
+  --lav-soft: #efe8fd;
+  --lav-ink: #5b43b5;
+  --peach: #f9cea9;
+  --peach-soft: #fdeee1;
+  --green: #476b56;
+  --green-2: #5f8a70;
+  --green-soft: #e4eee7;
+  --amber: #b7791f;
+  --amber-soft: #fdf3dd;
+  --red: #c2412f;
+  --red-soft: #fbe4df;
+
+  /* meaning */
+  --plant: #476b56;
+  --plant-2: #9cc1a8;
+  --animal: #d9824f;
+  --animal-ink: #a3532a;
+  --comp: #9a83e3;
+  --plot-1: #1f3a2b;
+  --plot-2: #355a45;
+  --plot-3: #4e7560;
+  --plot-4: #6b917b;
+  --plot-composite: #9a83e3;
+  --plot-other: #9cc1a8;
+
+  /* lever types: central green, central and stores violet, stores peach ringed with orange */
+  --type-central: var(--green);
+  --type-central-bg: var(--green-soft);
+  --type-central-ink: var(--green);
+  --type-cs: var(--comp);
+  --type-cs-bg: var(--lav-soft);
+  --type-cs-ink: var(--lav-ink);
+  --type-stores: var(--peach);
+  --type-stores-ring: var(--animal);
+  --type-stores-bg: var(--peach-soft);
+  --type-stores-ink: var(--animal-ink);
+
+  /* guardrail */
+  --guard-within: var(--green);
+  --guard-within-bg: var(--green-soft);
+  --guard-above: var(--amber);
+  --guard-above-bg: var(--amber-soft);
+  --guard-well: var(--animal-ink);
+  --guard-well-bg: var(--peach-soft);
+
+  /* type */
+  --display: "Archivo", "Inter", system-ui, sans-serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;
+  --fs-body: 15px;
+  --fs-small: 13px;
+  --fs-label: 11px;
+  --fs-h1: 30px;
+  --fs-kpi: 46px;
+  --track-label: 0.14em;
+  --track-kicker: 0.16em;
+
+  /* shape and space */
+  --r-card: 18px;
+  --r-inset: 16px;
+  --r-cta: 22px;
+  --r-step: 12px;
+  --r-chip: 999px;
+  --gap: 14px;
+  --pad-card: 18px 20px;
+  --header-h: 60px;
+  --footer-h: 34px;
+  --side-w: 232px;
+  --drawer-w: 460px;
+  --ease: cubic-bezier(0.22, 0.8, 0.24, 1);
+
+  color-scheme: light;
+}
