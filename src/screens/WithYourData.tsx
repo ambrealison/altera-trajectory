@@ -34,18 +34,19 @@ export function WithYourData() {
         {MODULES.map((k) => (
           <article key={k} className="module">
             <Preview kind={k} />
+            <span className="chip locked"><Icon name="lock" size={12} />{t("data.locked")}</span>
             <div className="module-body">
-              <div className="module-h">
-                <h3>{t(`data.${k}Title`)}</h3>
-                <span className="chip locked"><Icon name="lock" size={12} />{t("data.locked")}</span>
-              </div>
+              <h3>{t(`data.${k}Title`)}</h3>
               <p><span className="lbl">{t("data.with")}</span>{t(`data.${k}With`)}</p>
               <p><span className="lbl get">{t("data.get")}</span>{t(`data.${k}Get`)}</p>
             </div>
           </article>
         ))}
+        <article className="module note">
+          <p>{t("data.note")}</p>
+          <p className="sub">{t("drawer.footer")}</p>
+        </article>
       </div>
-      <p className="modules-note">{t("data.note")}</p>
     </>
   );
 }

@@ -7,7 +7,7 @@ import { useWidth } from "./useWidth";
 export function Matrix({ levers, active, onOpen }: { levers: Lever[]; active: number[]; onOpen: (id: string) => void }) {
   const { t, tx } = useT();
   const [ref, width] = useWidth<HTMLDivElement>();
-  const H = Math.max(420, Math.min(560, width * 0.62));
+  const H = Math.max(380, Math.min(470, width * 0.46));
   const m = { top: 16, right: 18, bottom: 44, left: 52 };
   const x = scaleLinear().domain([0, 10]).range([m.left, width - m.right]);
   const y = scaleLinear().domain([0, 10]).range([H - m.bottom, m.top]);

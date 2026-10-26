@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { levers, model } from "../data";
-import { hypothesisValues, runYear } from "../engine/simulate";
+import { adoptionFactor, hypothesisValues, runYear } from "../engine/simulate";
 import { evaluate } from "../engine/expr";
 import { expressionVars } from "../engine/simulate";
 import { fmtNum, fmtPct, fmtRangePoints, fmtSignedPct } from "../engine/format";
@@ -88,7 +88,9 @@ export function LeverDrawer() {
             ))}
             <p className="meta mono">
               {t("drawer.ramp", { start: lever.ramp.startYear, end })}
-              {lever.storeDependency > 0 && <><br />{t("drawer.storeShare")} ({fmtPct(lever.storeDependency, lang, 0)} · {fmtPct(state.adoption, lang, 0)})</>}
+              {lever.storeDependency > 0 && (
+                <><br />{t("drawer.storeShare", { dep: fmtPct(lever.storeDependency, lang, 0), adoption: fmtPct(state.adoption, lang, 0), factor: fmtPct(adoptionFactor(lever, state.adoption), lang, 0) })}</>
+              )}
             </p>
           </section>
 
@@ -122,7 +124,9 @@ export function LeverDrawer() {
             <h3>{t("drawer.owner")}</h3>
             <p>{tx(lever.owner)}</p>
             <h3>{t("drawer.pilot")}</h3>
-            <p>{tx(lever.pilot)}</p>
+            <ul className="pilot">
+              {tx(lever.pilot).split(/\s(?=(?:Durée|Indicateurs|Go si|Duration|Indicators|Go if)\b)/).map((line) => <li key={line}>{line}</li>)}
+            </ul>
           </section>
         </div>
         <footer className="drawer-foot">{t("drawer.footer")}</footer>

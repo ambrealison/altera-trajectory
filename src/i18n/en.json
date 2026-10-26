@@ -182,7 +182,7 @@
     "owner": "Who owns it",
     "pilot": "Suggested pilot",
     "ramp": "Ramp-up from {start} to {end}",
-    "storeShare": "Effect proportional to the share of stores that follow",
+    "storeShare": "Store dependency {dep}: with {adoption} of stores following, {factor} of the full effect.",
     "provisional": "Provisional position in the deck",
     "noRatioEffect": "Does not move the ratio, makes the measurement more reliable.",
     "tightening": "Gap between low and high bounds of every other lever multiplied by {k}.",

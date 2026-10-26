@@ -182,7 +182,7 @@
     "owner": "Qui le porte",
     "pilot": "Pilote proposé",
     "ramp": "Montée en charge de {start} à {end}",
-    "storeShare": "Effet proportionnel à la part des magasins qui suivent",
+    "storeShare": "Dépendance aux magasins {dep}\u00a0: avec {adoption} des magasins qui suivent, {factor} de l'effet plein.",
     "provisional": "Position provisoire dans le dossier",
     "noRatioEffect": "Ne fait pas bouger le ratio, rend la mesure plus fiable.",
     "tightening": "Écart entre bornes basse et haute de tous les autres leviers multiplié par {k}.",

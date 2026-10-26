@@ -11,7 +11,7 @@ const STEPS: { screen: ScreenId; target: string }[] = [
   { screen: "trajectory", target: "chart" },
   { screen: "trajectory", target: "guardrail" },
 ];
-const W = 340;
+const W = 420;
 
 /** Guided tour: six short bubbles, two lines each. Starts on the first visit only (remembered). */
 export function Tour() {
@@ -49,14 +49,17 @@ export function Tour() {
   const last = step === STEPS.length - 1;
   const close = () => dispatch({ type: "tour", step: null });
   const vw = window.innerWidth, vh = window.innerHeight;
-  let top = 120, left = vw / 2 - W / 2;
+  const BH = 180;
+  const minTop = 72, maxTop = vh - BH - 44;
+  const clampTop = (v: number) => Math.min(maxTop, Math.max(minTop, v));
+  let top = clampTop(vh / 2 - BH / 2), left = vw / 2 - W / 2;
   if (rect) {
-    const below = rect.bottom + 14;
-    const above = rect.top - 14;
-    if (below + 170 < vh) top = below;
-    else if (above - 170 > 0) top = above - 170;
-    else top = Math.max(76, Math.min(vh - 190, rect.top + 20));
-    left = Math.min(vw - W - 16, Math.max(16, rect.left + Math.min(rect.width / 2, 200) - W / 2));
+    left = Math.min(vw - W - 16, Math.max(16, rect.left));
+    if (rect.bottom + 14 + BH <= vh - 40) top = rect.bottom + 14;
+    else if (rect.top - 14 - BH >= minTop) top = rect.top - 14 - BH;
+    else if (rect.right + 14 + W <= vw - 16) { left = rect.right + 14; top = clampTop(rect.top); }
+    else if (rect.left - 14 - W >= 16) { left = rect.left - 14 - W; top = clampTop(rect.top); }
+    else { top = maxTop; left = Math.min(vw - W - 16, Math.max(16, rect.left + 24)); }
   }
 
   return (

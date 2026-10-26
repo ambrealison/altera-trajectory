@@ -61,6 +61,10 @@ export function matchingPreset(f: ScenarioFields): string | null {
   return null;
 }
 
+/** Value of every assumption, lever defaults filled in. */
+const effective = (h: Record<string, Record<string, number>>) =>
+  levers.flatMap((l) => l.hypotheses.map((x) => ({ lid: l.id, hid: x.id, v: h[l.id]?.[x.id] ?? x.value })));
+
 export function toHash(s: Snapshot): string {
   const p: string[] = [`v=${s.screen}`];
   if (s.preset) p.push(`sc=${s.preset}`);
@@ -68,7 +72,9 @@ export function toHash(s: Snapshot): string {
   if (!exact) {
     p.push(`l=${s.activeLevers.join(".")}`);
     p.push(`a=${Math.round(s.adoption * 100)}`);
-    const hy = Object.entries(clean(s.hypotheses)).flatMap(([lid, hs]) => Object.entries(hs).map(([hid, v]) => `${lid}.${hid}:${v}`));
+    // only the assumptions that differ from the preset (or from the lever defaults without a preset)
+    const base = effective(s.preset ? presetFields(s.preset).hypotheses : {});
+    const hy = effective(s.hypotheses).filter((x, i) => x.v !== base[i].v).map((x) => `${x.lid}.${x.hid}:${x.v}`);
     if (hy.length) p.push(`hy=${hy.join(",")}`);
   }
   if (s.horizon !== config.defaultHorizon) p.push(`h=${s.horizon}`);
@@ -96,7 +102,7 @@ export function fromHash(hash: string): Partial<Snapshot> | null {
   if (a !== null && !Number.isNaN(Number(a))) out.adoption = Math.min(1, Math.max(0, Math.round(Number(a) / 10) / 10));
   const hy = q.get("hy");
   if (hy !== null) {
-    const h: Record<string, Record<string, number>> = {};
+    const h: Record<string, Record<string, number>> = structuredClone(base?.hypotheses ?? {});
     for (const part of hy.split(",")) {
       const m = part.match(/^(L\d{2})\.(\w+):(-?[\d.]+)$/);
       if (!m) continue;
@@ -105,7 +111,7 @@ export function fromHash(hash: string): Partial<Snapshot> | null {
       if (!lever || !hyp) continue;
       (h[lever.id] ??= {})[hyp.id] = Math.min(hyp.max, Math.max(hyp.min, Number(m[3])));
     }
-    out.hypotheses = h;
+    out.hypotheses = clean(h);
   }
   const hz = Number(q.get("h"));
   if (config.horizons.includes(hz)) out.horizon = hz;
