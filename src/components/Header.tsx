@@ -4,6 +4,7 @@ import { useT } from "../i18n/useT";
 import { DemoBadge } from "./DemoBadge";
 import { Segmented } from "./Segmented";
 import { Icon } from "./Icon";
+import { tourFor } from "./Tour";
 
 export function Header() {
   const { state, dispatch } = useApp();
@@ -16,7 +17,7 @@ export function Header() {
       </div>
       <div className="top-r">
         <DemoBadge />
-        <button type="button" className="ghost" onClick={() => dispatch({ type: "tour", step: 0 })}>
+        <button type="button" className="ghost" data-tour="tour-button" title={t("tour.buttonTitle")} onClick={() => dispatch({ type: "tour", step: 0, id: tourFor(state) })}>
           <Icon name="play" size={12} />{t("app.tour")}
         </button>
         <Segmented label={t("app.language")} size="sm" value={state.lang} onChange={(lang) => dispatch({ type: "lang", lang })}

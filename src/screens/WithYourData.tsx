@@ -30,7 +30,7 @@ export function WithYourData() {
   return (
     <>
       <ScreenHead id="data" status={<StatusPill>{t("data.status")}</StatusPill>} />
-      <div className="modules">
+      <div className="modules" data-tour="data-modules">
         {MODULES.map((k) => (
           <article key={k} className="module">
             <Preview kind={k} />
@@ -42,7 +42,7 @@ export function WithYourData() {
             </div>
           </article>
         ))}
-        <article className="module note">
+        <article className="module note" data-tour="data-note">
           <p>{t("data.note")}</p>
           <p className="sub">{t("drawer.footer")}</p>
         </article>

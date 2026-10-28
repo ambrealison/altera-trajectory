@@ -21,7 +21,7 @@ export function ScreenHead({ id, status }: { id: ScreenId; status?: ReactNode })
       <div className="shead-r">
         {status}
         {next && (
-          <PillButton variant="next" onClick={() => dispatch({ type: "go", screen: next })}>
+          <PillButton variant="next" data-tour="next-step" onClick={() => dispatch({ type: "go", screen: next })}>
             {t("steps.next")} <Icon name="arrow" size={15} />
           </PillButton>
         )}
