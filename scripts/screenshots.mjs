@@ -1,4 +1,5 @@
-// Screenshots of every screen in French and English at 1280, 1440 and 1920 px, with automatic checks:
+// Screenshots of every screen (and of the lever pages) in French and English at 1280, 1440 and 1920 px,
+// with automatic checks:
 // the "illustrative data" badge is visible and nothing overflows horizontally.
 // Usage: npm run dev (in another terminal), then npm run screenshots. Uses the installed Google Chrome.
 import { mkdirSync } from "node:fs";
@@ -20,8 +21,17 @@ const VIEWS = [
   { name: "3-trajectory-by-lever", hash: "v=trajectory&sc=ambitious" },
   { name: "3-trajectory-over-time", hash: "v=trajectory&sc=ambitious", click: "time" },
   { name: "3-trajectory-2030", hash: "v=trajectory&sc=ambitious&h=2030", click: "time" },
-  { name: "3-lever-sheet", hash: "v=trajectory&sc=ambitious", lever: true },
+  { name: "3-trajectory-co2", hash: "v=trajectory&sc=ambitious&k=co2" },
+  { name: "3-trajectory-revenue", hash: "v=trajectory&sc=ambitious&k=revenue", click: "time" },
+  { name: "3-lever-card", hash: "v=trajectory&sc=ambitious", lever: true },
   { name: "4-with-your-data", hash: "v=data&sc=committed" },
+  // full lever pages open straight from a link, without the cover
+  { name: "5-lever-page", hash: "v=levers&sc=committed&lp=L01&lt=assumptions", page: true },
+  { name: "5-i2-summary", hash: "v=levers&sc=committed&lp=L12", page: true },
+  { name: "5-i2-model", hash: "v=levers&sc=committed&lp=L12&lt=model", page: true },
+  { name: "5-i2-uncertainty", hash: "v=levers&sc=committed&lp=L12&lt=uncertainty", page: true },
+  { name: "5-i2-register", hash: "v=levers&sc=committed&lp=L12&lt=register", page: true },
+  { name: "5-i2-evidence", hash: "v=levers&sc=committed&lp=L12&lt=evidence", page: true },
 ];
 
 mkdirSync(OUT, { recursive: true });
@@ -34,8 +44,9 @@ for (const lang of ["fr", "en"]) {
     for (const v of VIEWS) {
       await page.goto(`${BASE}#${v.hash}&lang=${lang}`);
       await page.reload();
-      await page.waitForSelector(".cover-page");
-      if (!v.cover) {
+      if (v.page) await page.waitForSelector(".lp-head");
+      else await page.waitForSelector(".cover-page");
+      if (!v.cover && !v.page) {
         await page.getByRole("button", { name: "Let's go" }).click();
         await page.waitForSelector(".shead h1");
       }
