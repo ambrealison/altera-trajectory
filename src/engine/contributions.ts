@@ -5,6 +5,8 @@
 import { baseline, runYear, type Metrics, type Model, type ScenarioState } from "./simulate";
 
 export type MetricKey = "pt" | "fg1";
+/** Any scalar metric the waterfall can split by lever. */
+export type ContribKey = MetricKey | "co2" | "revenue";
 
 export interface Range { mid: number; low: number; high: number }
 
@@ -28,22 +30,26 @@ export interface Contributions {
   steps: Contribution[];
 }
 
-export function contributions(model: Model, state: ScenarioState, year: number, metric: MetricKey = "pt"): Contributions {
-  const base = baseline(model)[metric];
-  const final = runYear(model, state, year).metrics[metric];
-  const combined = final - base;
+/** Waterfall splits of several metrics from the same runs (one run per active lever). */
+export function contributionsMulti<K extends ContribKey>(model: Model, state: ScenarioState, year: number, keys: K[]): Record<K, Contributions> {
+  const ref = baseline(model);
+  const fin = runYear(model, state, year).metrics;
   const active = [...state.activeLevers].sort((a, b) => a - b);
-  const iso = active.map((n) => ({ number: n, isolated: runYear(model, state, year, "mid", n).metrics[metric] - base }));
-  const sumIsolated = iso.reduce((a, c) => a + c.isolated, 0);
-  const scale = sumIsolated !== 0 ? combined / sumIsolated : 0;
-  return {
-    base,
-    final,
-    combined,
-    sumIsolated,
-    overlap: sumIsolated - combined,
-    steps: iso.map((c) => ({ ...c, value: c.isolated * scale })),
-  };
+  const alone = active.map((n) => ({ number: n, m: runYear(model, state, year, "mid", n).metrics }));
+  const out = {} as Record<K, Contributions>;
+  for (const k of keys) {
+    const base = ref[k];
+    const combined = fin[k] - base;
+    const iso = alone.map((c) => ({ number: c.number, isolated: c.m[k] - base }));
+    const sumIsolated = iso.reduce((a, c) => a + c.isolated, 0);
+    const scale = sumIsolated !== 0 ? combined / sumIsolated : 0;
+    out[k] = { base, final: fin[k], combined, sumIsolated, overlap: sumIsolated - combined, steps: iso.map((c) => ({ ...c, value: c.isolated * scale })) };
+  }
+  return out;
+}
+
+export function contributions(model: Model, state: ScenarioState, year: number, metric: ContribKey = "pt"): Contributions {
+  return contributionsMulti(model, state, year, [metric])[metric];
 }
 
 /** Change of a metric between the reference and a year, as a share of the reference. */

@@ -73,3 +73,32 @@ export function fmtRangePoints(lo: number, hi: number, lang: Lang, digits = 1) {
   if (lang === "fr") return `${f(lo)} à ${f(hi)}${NBSP}${abs >= 2 ? "pts" : "pt"}`;
   return `${f(lo)} to ${f(hi)} ${abs === 1 ? "pt" : "pts"}`;
 }
+
+/** Signed number: "+1,2", "-0,4". */
+export const fmtSignedNum = (v: number, lang: Lang, digits = 1) =>
+  nf(lang, { minimumFractionDigits: digits, maximumFractionDigits: digits, signDisplay: "exceptZero" }).format(v);
+
+/** Signed euros with an adaptive unit: "+2,1 M€", "-350 k€" ("+€2.1m", "-€350k"). */
+export function fmtSignedEuros(v: number, lang: Lang, digits?: number) {
+  const a = Math.abs(v);
+  const [div, fr, en] = a >= 1e9 ? [1e9, "Md€", "bn"] : a >= 1e6 ? [1e6, "M€", "m"] : a >= 1e3 ? [1e3, "k€", "k"] : [1, "€", ""];
+  const d = digits ?? (a / div >= 100 ? 0 : a / div >= 10 ? 1 : 2);
+  const n = fmtSignedNum(v / div, lang, d);
+  if (lang === "fr") return `${n}${NBSP}${fr}`;
+  const sign = n.startsWith("-") ? "-" : n.startsWith("+") ? "+" : "";
+  return `${sign}€${n.replace(/^[+-]/, "")}${en}`;
+}
+
+/** Kilotonnes of CO2e: "7 566 kt"; small values keep decimals. */
+export function fmtKt(kt: number, lang: Lang, digits?: number) {
+  const a = Math.abs(kt);
+  return `${fmtNum(kt, lang, digits ?? (a >= 100 ? 0 : a >= 1 ? 1 : 2))}${NBSP}kt`;
+}
+
+export function fmtSignedKt(kt: number, lang: Lang, digits?: number) {
+  const a = Math.abs(kt);
+  return `${fmtSignedNum(kt, lang, digits ?? (a >= 100 ? 0 : a >= 1 ? 1 : 2))}${NBSP}kt`;
+}
+
+/** Millions of euros, no decimals: "14 847 M€" ("€14,847m"). */
+export const fmtMEuros = (m: number, lang: Lang) => (lang === "fr" ? `${fmtNum(m, lang, 0)}${NBSP}M€` : `€${fmtNum(m, lang, 0)}m`);
