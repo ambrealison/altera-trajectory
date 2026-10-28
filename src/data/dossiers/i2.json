@@ -1,0 +1,1946 @@
+{
+ "definition": {
+  "fr": "Les alternatives végétales à la viande vendues au rayon frais (steaks, haché, nuggets, saucisses, tranches) sont présentées dans une baie dédiée du rayon boucherie libre-service. Le rayon végétal reste en place : les clients trouvent les produits aux deux endroits.",
+  "en": "Chilled plant-based meat alternatives (burgers, mince, nuggets, sausages, slices) are shown in a dedicated bay of the self-service meat aisle. The plant shelf stays: shoppers find the products in both places."
+ },
+ "counterfactual": {
+  "fr": "Point de comparaison : l'implantation actuelle, avec la gamme végétale sur son rayon et rien dans le rayon viande. Chaque effet est mesuré comme l'écart à ce cas, pour les mêmes magasins et la même année.",
+  "en": "Comparison case: today's layout, with the plant range on its own shelf and nothing in the meat aisle. Every effect is measured as the difference to that case, for the same stores and the same year."
+ },
+ "leavesOut": {
+  "fr": "I2 ne change ni les prix, ni les promotions, ni les recettes, ni le nombre de références. Le coût de l'élargissement de gamme (version B) relève d'une étape distincte du programme. Les achats déplacés depuis d'autres produits végétaux ne sont pas retirés : tout le gain végétal est compté comme nouveau.",
+  "en": "I2 changes no prices, promotions, recipes or number of products. The cost of the range build (version B) sits in a separate programme step. Purchases moved from other plant products are not taken off: the whole plant gain is counted as new."
+ },
+ "versions": {
+  "A": {
+   "fr": "A. Gamme actuelle",
+   "en": "A. Today's range"
+  },
+  "B": {
+   "fr": "B. Gamme élargie et meilleur goût",
+   "en": "B. Grown range and better taste"
+  }
+ },
+ "versionNote": {
+  "A": {
+   "fr": "La gamme reste celle d'aujourd'hui ({nNow} références de type viande).",
+   "en": "The range stays as it is today ({nNow} meat-style products)."
+  },
+  "B": {
+   "fr": "La gamme passe de {nNow} à {nTarget} références de type viande, le niveau d'un distributeur européen de référence, en {rgYears} ans à partir de {rgStart}, avec un gain de volume lié au goût de {taste}.",
+   "en": "The range grows from {nNow} to {nTarget} meat-style products, the level of a reference European retailer, over {rgYears} years from {rgStart}, with a volume gain from taste of {taste}."
+  }
+ },
+ "scenario": [
+  {
+   "k": {
+    "fr": "Ce qui change en magasin",
+    "en": "What changes in the store"
+   },
+   "v": {
+    "fr": "Les références existantes sont déplacées dans une baie signalée du rayon viande. Le rayon végétal reste. Aucune nouvelle référence n'est développée.",
+    "en": "Existing products move to a signed bay in the meat aisle. The plant shelf stays. No new product is developed."
+   },
+   "s": {
+    "fr": "Conception reprise de l'essai Piernas (déplacement de références existantes). Niveau P.",
+    "en": "Design taken from the Piernas trial (existing products relocated). Tier P."
+   }
+  },
+  {
+   "k": {
+    "fr": "Combien de références",
+    "en": "How many products"
+   },
+   "v": {
+    "fr": "Toute la gamme végétale de type viande du référencement central : {v0} par an. À titre de comparaison, l'essai Piernas a déplacé 26 produits et l'essai néerlandais 4 meilleures ventes.",
+    "en": "The whole meat-style plant range of the central listing: {v0} a year. For comparison, the Piernas trial moved 26 products and the Dutch trial 4 best-sellers."
+   },
+   "s": {
+    "fr": "Tableau de gamme fournisseurs. La définition de « type viande » reste à vérifier.",
+    "en": "Supplier range table. The definition of 'meat-style' is still to be checked."
+   }
+  },
+  {
+   "k": {
+    "fr": "Quels magasins",
+    "en": "Which stores"
+   },
+   "v": {
+    "fr": "Les {stores} magasins dotés d'un rayon boucherie libre-service (plein potentiel, adoption à 100 %). Le nombre de magasins ne sert qu'au calcul de l'effort. Une adoption plus faible se lit comme une part proportionnelle de chaque résultat.",
+    "en": "The {stores} stores with a self-service meat aisle (full potential, 100% adoption). The store count only drives the effort. A lower adoption reads as a proportional share of every result."
+   },
+   "s": {
+    "fr": "Dans une coopérative de magasins indépendants, l'adoption relève du choix de chaque associé.",
+    "en": "In a cooperative of independent stores, adoption is each member's choice."
+   }
+  },
+  {
+   "k": {
+    "fr": "Calendrier",
+    "en": "Timing"
+   },
+   "v": {
+    "fr": "Première mise en rayon mi-2027 (de 2027,25 à 2028), déploiement sur 2 ans (1 à 3), tous les magasins actifs mi-2029. La catégorie progresse de 6 % par an (0 à 13 %).",
+    "en": "First shelf mid-2027 (2027.25 to 2028), rollout over 2 years (1 to 3), all stores live from mid-2029. The category grows 6% a year (0 to 13%)."
+   },
+   "s": {
+    "fr": "Jugement ; croissance ancrée sur GFI (+13,1 % en 2024, +16,8 % en 2025).",
+    "en": "Judgement; growth anchored on GFI (+13.1% in 2024, +16.8% in 2025)."
+   }
+  },
+  {
+   "k": {
+    "fr": "Hausse des ventes végétales",
+    "en": "Plant-meat sales uplift"
+   },
+   "v": {
+    "fr": "+16 % du volume dans les magasins qui appliquent (+6,3 % à +24 %), maintenu au niveau des essais.",
+    "en": "+16% of volume in applying stores (+6.3% to +24%), held at its trial level."
+   },
+   "s": {
+    "fr": "Deux essais contrôlés (Royaume-Uni et Pays-Bas). Niveau P, aucun n'est français.",
+    "en": "Two controlled trials (UK and Netherlands). Tier P, neither is French."
+   }
+  },
+  {
+   "k": {
+    "fr": "Viande, canal 1 : substitution",
+    "en": "Meat, channel 1: substitution"
+   },
+   "v": {
+    "fr": "Pour 1 kg de protéines végétales gagné, 0,10 kg de protéines animales est perdu (0 à 0,25).",
+    "en": "For every kg of plant protein gained, 0.10 kg of animal protein is lost (0 to 0.25)."
+   },
+   "s": {
+    "fr": "Borné par l'effet de contrepartie néerlandais ; le central relève du jugement.",
+    "en": "Bounded by the Dutch counterpart effect; the central value is judgement."
+   }
+  },
+  {
+   "k": {
+    "fr": "Viande, canal 2 : place en rayon",
+    "en": "Meat, channel 2: shelf space"
+   },
+   "v": {
+    "fr": "Les ventes de viande voisines de la baie varient de 0 % (central), -2,9 % (bas) à +1 % (haut).",
+    "en": "Meat sales next to the bay change by 0% (central), -2.9% (low) and +1% (high)."
+   },
+   "s": {
+    "fr": "Piernas : IRR 1,01 [0,95 ; 1,07]. Van der Meer : -2,9 % sur six produits. Le central à 0 est une hypothèse.",
+    "en": "Piernas: IRR 1.01 [0.95, 1.07]. Van der Meer: -2.9% on six products. The central 0 is a hypothesis."
+   }
+  },
+  {
+   "k": {
+    "fr": "Périmètre",
+    "en": "Perimeter"
+   },
+   "v": {
+    "fr": "Produits référencés en central, volumes sortie entrepôt : {pool} de protéines, {r0} de végétal.",
+    "en": "Centrally listed products, warehouse-exit volumes: {pool} of protein, {r0} plant."
+   },
+   "s": {
+    "fr": "Feuille Protein Tracker d'Altera.",
+    "en": "Altera's Protein Tracker sheet."
+   }
+  }
+ ],
+ "findings": [
+  {
+   "id": "F1",
+   "t": {
+    "fr": "L'implantation intégrée avec rayon végétal maintenu augmente les ventes végétales.",
+    "en": "Integrated placement with the plant section kept raises plant-based sales."
+   },
+   "dir": "pos",
+   "conf": {
+    "fr": "Moyenne à forte",
+    "en": "Medium to high"
+   },
+   "basis": "E1, E2, E3, C1, C3, C5"
+  },
+  {
+   "id": "F2",
+   "t": {
+    "fr": "L'implantation seule ne réduit pas significativement les ventes de viande.",
+    "en": "Placement alone does not significantly reduce meat sales."
+   },
+   "dir": "null",
+   "conf": {
+    "fr": "Moyenne (puissance incertaine)",
+    "en": "Medium (power unclear)"
+   },
+   "basis": "E1, E2, E3, E4"
+  },
+  {
+   "id": "F3",
+   "t": {
+    "fr": "L'intégration complète, sans rayon végétal, peut se retourner contre l'objectif.",
+    "en": "Full integration without a separate section can backfire."
+   },
+   "dir": "neg",
+   "conf": {
+    "fr": "Faible à moyenne (une étude, résumé)",
+    "en": "Low to medium (one study, abstract level)"
+   },
+   "basis": "E2"
+  },
+  {
+   "id": "F4",
+   "t": {
+    "fr": "La parité de prix est un levier de substitution plus prometteur que l'implantation.",
+    "en": "Price parity is a stronger candidate lever for displacement than placement."
+   },
+   "dir": "pos",
+   "conf": {
+    "fr": "Faible à moyenne",
+    "en": "Low to medium"
+   },
+   "basis": "E9, C9, C10"
+  },
+  {
+   "id": "F5",
+   "t": {
+    "fr": "Le doublement des fiches en ligne n'a pas d'effet démontré.",
+    "en": "Online catalogue duplication has no demonstrated effect."
+   },
+   "dir": "null",
+   "conf": {
+    "fr": "Faible (puissance insuffisante)",
+    "en": "Low (underpowered)"
+   },
+   "basis": "E4"
+  },
+  {
+   "id": "F6",
+   "t": {
+    "fr": "Les gains peuvent s'estomper après la fin des essais.",
+    "en": "Gains may fade after trials end."
+   },
+   "dir": "neg",
+   "conf": {
+    "fr": "Faible",
+    "en": "Low"
+   },
+   "basis": "C6, E5"
+  },
+  {
+   "id": "F7",
+   "t": {
+    "fr": "L'effet sur le profit n'est pas mesuré.",
+    "en": "The profit effect is unknown."
+   },
+   "dir": "unk",
+   "conf": {
+    "fr": "Non évalué",
+    "en": "Not rated"
+   },
+   "basis": ""
+  },
+  {
+   "id": "F8",
+   "t": {
+    "fr": "Retirer la viande des têtes de gondole a réduit les ventes animales du rayon sans augmenter les ventes végétales.",
+    "en": "Removing meat from end-caps cut the section's animal sales without raising plant sales."
+   },
+   "dir": "mix",
+   "conf": {
+    "fr": "Faible (document de travail, petit échantillon)",
+    "en": "Low (small working paper)"
+   },
+   "basis": "E7"
+  },
+  {
+   "id": "F9",
+   "t": {
+    "fr": "Les clients acceptent le changement quand il est expliqué.",
+    "en": "Shoppers accept the change when it is explained."
+   },
+   "dir": "pos",
+   "conf": {
+    "fr": "Faible à moyenne",
+    "en": "Low to medium"
+   },
+   "basis": "E7, C6"
+  }
+ ],
+ "variants": {
+  "V1": {
+   "fr": "Intégration complète : tout passe au rayon viande, le rayon végétal disparaît",
+   "en": "Full integration: everything moves to the meat shelf, the plant section goes"
+  },
+  "V2": {
+   "fr": "Double implantation : une sélection dans le rayon viande, le rayon végétal reste",
+   "en": "Dual placement: a selection in the meat aisle, the plant section stays"
+  },
+  "V3": {
+   "fr": "Baie végétale créée dans le rayon viande",
+   "en": "Meat-free bay created in the meat aisle"
+  },
+  "V4": {
+   "fr": "Gamme végétale au comptoir boucherie",
+   "en": "Plant range at the meat counter"
+  },
+  "V5": {
+   "fr": "Placement par paires, à côté de l'équivalent animal",
+   "en": "Pairwise placement next to the animal equivalent"
+  },
+  "V6": {
+   "fr": "Produit hybride au rayon viande (intervention distincte)",
+   "en": "Blended product on the meat shelf (a separate intervention)"
+  },
+  "V7": {
+   "fr": "Fiches en ligne doublées sur la page de la catégorie animale",
+   "en": "Online listings shown on the animal category page too"
+  },
+  "V8": {
+   "fr": "Boissons végétales déplacées au rayon frais laitier",
+   "en": "Plant drinks moved to the chilled dairy fixture"
+  },
+  "V9": {
+   "fr": "Têtes de gondole et emplacements en vue",
+   "en": "End-caps and prominent locations"
+  }
+ },
+ "evidence": [
+  {
+   "id": "E1",
+   "tier": "P",
+   "title": "Piernas et al. 2021, PLOS Medicine",
+   "country": "UK",
+   "variant": "V3",
+   "status": "primary",
+   "text": {
+    "fr": "Intervention contrôlée non randomisée dans une grande chaîne britannique : 20 magasins ont déplacé 26 produits sans viande dans une nouvelle baie du rayon viande, face à 88 magasins témoins appariés, sur 123 semaines de ventes réelles. D'après le tableau des moyennes, l'effet agrégé est d'environ +24 % sur les ventes végétales. Ventes de viande : IRR 1,01 [0,95 ; 1,07], pas de changement significatif.",
+    "en": "Non-randomised controlled intervention in a large UK chain: 20 stores moved 26 meat-free products into a new bay in the meat aisle, against 88 matched controls, over 123 weeks of real sales. From the table of means, the aggregate effect is about +24% on plant sales. Meat sales: IRR 1.01 [0.95, 1.07], no significant change."
+   },
+   "flags": {
+    "fr": "Magasins choisis là où l'espace viande était peu productif ; la baie a remplacé une baie viande dans 16 magasins sur 20. L'IRR de 1,43 du résumé ne correspond pas au tableau de l'article, d'où l'usage de +24 %. La presse nomme la chaîne (Sainsbury's).",
+    "en": "Stores chosen where meat-aisle space was unproductive; the bay replaced a meat bay in 16 of 20 stores. The abstract's IRR of 1.43 does not match the paper's table, hence the use of +24%. Press names the chain (Sainsbury's)."
+   },
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8321099/"
+  },
+  {
+   "id": "E2",
+   "tier": "P",
+   "title": "van der Meer et al. 2025, Journal of Retailing and Consumer Services",
+   "country": "NL",
+   "variant": "V1, V2",
+   "status": "abstract",
+   "text": {
+    "fr": "Deux expériences de terrain dans deux grandes chaînes néerlandaises et une expérience en laboratoire. Étude 1a (intégration complète, sans rayon végétal) : les ventes de substituts baissent, les clients les reclassent comme produits carnés. Étude 2 (double implantation) : +6,3 % en période 1 et +8,5 % en période 2, surtout chez les mangeurs de viande et les flexitariens ; -2,9 % significatif sur six produits carnés équivalents dans le bras rayon viande.",
+    "en": "Two field experiments in two large Dutch chains and one lab experiment. Study 1a (full integration, no plant section): substitute sales fall, shoppers re-categorise them as meat. Study 2 (dual placement): +6.3% in period 1 and +8.5% in period 2, mostly among meat-eaters and flexitarians; a significant -2.9% on six matched meat products in the meat-shelf arm."
+   },
+   "flags": {
+    "fr": "Nouvelles références en grand format, pas un simple déplacement. Chaque bras couvre une zone de distribution différente. Les effectifs de magasins diffèrent selon les sources. Texte intégral non lu.",
+    "en": "New larger-pack products, not a pure relocation. Each arm covers a different distribution area. Store counts differ across sources. Full text unread."
+   },
+   "url": "https://doi.org/10.1016/j.jretconser.2025.104223"
+  },
+  {
+   "id": "E3",
+   "tier": "P",
+   "title": "Vandenbroele et al. 2021, Organizational Behavior and Human Decision Processes",
+   "country": "BE",
+   "variant": "V5",
+   "status": "notRetained",
+   "text": {
+    "fr": "Expérience de terrain dans un magasin belge : trois tartinades carnées associées à leurs équivalents végétaux au rayon boucherie, en plus du rayon végétarien. Les achats d'alternatives augmentent ; pas d'effet sur les ventes de viande.",
+    "en": "Field experiment in one Belgian store: three meat spreads paired with plant counterparts in the butchery, on top of the vegetarian section. Purchases of the alternatives rise; no effect on meat sales."
+   },
+   "flags": {
+    "fr": "Un seul magasin, un mois. Taille d'effet non conservée.",
+    "en": "One store, one month. Effect size not retained."
+   },
+   "url": null
+  },
+  {
+   "id": "E4",
+   "tier": "P",
+   "title": "van der Vliet et al. 2024, Appetite",
+   "country": "NL",
+   "variant": "V7",
+   "status": "abstract",
+   "text": {
+    "fr": "Essai randomisé à deux bras dans un supermarché en ligne néerlandais (8 488 transactions) : un ensemble de nudges (placement, description, normes sociales). Alternatives viande et lait IRR 1,10 (0,99 à 1,23), viande IRR 0,97 : aucun résultat significatif.",
+    "en": "Two-arm randomised trial in a Dutch online supermarket (8,488 transactions): a bundle of nudges (placement, description, social norms). Meat and dairy alternatives IRR 1.10 (0.99 to 1.23), meat IRR 0.97: no significant result."
+   },
+   "flags": {
+    "fr": "Puissance insuffisante ; les trois nudges sont groupés.",
+    "en": "Underpowered; the three nudges are bundled."
+   },
+   "url": null
+  },
+  {
+   "id": "E5",
+   "tier": "P",
+   "title": "Trewern et al. 2022, Public Health Nutrition",
+   "country": "UK",
+   "variant": "V9",
+   "status": "primary",
+   "text": {
+    "fr": "Expérience naturelle pendant le Veganuary 2021 (154 magasins) : visibilité, têtes de gondole, parité de prix sur la marque propre, nouveaux produits. Ventes végétales +57 % pendant la campagne, +15 % après ; viande sans changement significatif.",
+    "en": "Natural experiment during Veganuary 2021 (154 stores): visibility, end-caps, own-brand price parity, new products. Plant sales +57% during the campaign, +15% afterwards; meat with no significant change."
+   },
+   "flags": {
+    "fr": "Confondu : plusieurs leviers en même temps, pas de magasins témoins, chevauchement avec un confinement.",
+    "en": "Confounded: several levers at once, no control stores, overlap with a lockdown."
+   },
+   "url": "https://doi.org/10.1017/S1368980022001914"
+  },
+  {
+   "id": "E6",
+   "tier": "P",
+   "title": "Luick et al. 2024, BMC Public Health",
+   "country": "UK",
+   "variant": "V9",
+   "status": "notRetained",
+   "text": {
+    "fr": "Réanalyse préenregistrée d'expériences naturelles chez le même distributeur que E5 : les références promues se vendent plus, mais les catégories d'alternatives dans leur ensemble ne progressent pas significativement.",
+    "en": "Pre-registered reanalysis of natural experiments at the same retailer as E5: promoted products sell more, but the alternative categories as a whole do not rise significantly."
+   },
+   "flags": {
+    "fr": "Données en partie communes avec E5 : une seule source indépendante.",
+    "en": "Data partly shared with E5: one independent source."
+   },
+   "url": null
+  },
+  {
+   "id": "E7",
+   "tier": "P",
+   "title": "de Lint et al., document de travail (Pays-Bas)",
+   "country": "NL",
+   "variant": "V9",
+   "status": "notRetained",
+   "text": {
+    "fr": "Quasi-expérience appariée dans une chaîne discount (10 magasins test, 10 témoins, 11 semaines) : retirer la viande des têtes de gondole réduit les ventes animales du rayon de 4,75 % à 6,37 % ; les ventes végétales ne bougent pas significativement ; chiffre d'affaires du magasin sans changement significatif. Accueil : 75 % positif une fois le changement expliqué.",
+    "en": "Matched quasi-experiment in a discount chain (10 test stores, 10 controls, 11 weeks): removing meat from end-caps cut the section's animal sales by 4.75% to 6.37%; plant sales did not move significantly; store revenue with no significant change. Reception: 75% positive once the change was explained."
+   },
+   "flags": {
+    "fr": "Préenregistré mais non relu par les pairs ; fidélité de mise en œuvre de 59 %.",
+    "en": "Pre-registered but not peer-reviewed; implementation fidelity of 59%."
+   },
+   "url": null
+  },
+  {
+   "id": "E8",
+   "tier": "P",
+   "title": "Slade 2023 (États-Unis)",
+   "country": "US",
+   "variant": "V8",
+   "status": "secondary",
+   "text": {
+    "fr": "Chaque gallon de boisson végétale vendu en plus est associé à 0,43 à 0,60 gallon de lait en moins.",
+    "en": "Each extra gallon of plant milk sold is associated with 0.43 to 0.60 gallon less dairy milk."
+   },
+   "flags": {
+    "fr": "Le placement n'est pas isolé : lien indirect.",
+    "en": "Placement is not isolated: an indirect link."
+   },
+   "url": null
+  },
+  {
+   "id": "E9",
+   "tier": "P",
+   "title": "PNAS 2024, substitution et prix des alternatives végétales",
+   "country": "US",
+   "variant": "",
+   "status": "abstract",
+   "text": {
+    "fr": "Expériences de choix hypothétiques (n = 1 003 et 1 123) : élasticité-prix propre du burger végétal d'environ -1,4 ; passer de la parité à moitié prix fait baisser le choix du burger viande de 74 % à 57 %.",
+    "en": "Hypothetical choice experiments (n = 1,003 and 1,123): own-price elasticity of the plant burger of about -1.4; moving from parity to half price cuts the meat burger choice from 74% to 57%."
+   },
+   "flags": {
+    "fr": "Pas de ventes réelles. Premier auteur noté de façon incohérente.",
+    "en": "No real sales. First author recorded inconsistently."
+   },
+   "url": null
+  },
+  {
+   "id": "E10",
+   "tier": "P",
+   "title": "Vellinga et al. 2022, BMC Public Health",
+   "country": "NL",
+   "variant": "",
+   "status": "secondary",
+   "text": {
+    "fr": "Supermarché virtuel : une hausse de 30 % du prix de la viande avec une information environnementale réduit les achats de viande de 386 g par rapport au témoin.",
+    "en": "Virtual supermarket: a 30% meat price rise with environmental information cut meat bought by 386 g against control."
+   },
+   "flags": {
+    "fr": "Cadre simulé.",
+    "en": "Simulated setting."
+   },
+   "url": null
+  },
+  {
+   "id": "E11",
+   "tier": "P",
+   "title": "Vandenbroele et al. 2018, Food Quality and Preference",
+   "country": "BE",
+   "variant": "V5",
+   "status": "notRetained",
+   "text": {
+    "fr": "Placer des portions de saucisse plus petites à côté du format habituel réduit les portions achetées, sans rebond.",
+    "en": "Placing smaller sausage portions next to the default reduces the portions bought, with no rebound."
+   },
+   "flags": {
+    "fr": "Source non conservée.",
+    "en": "Source not retained."
+   },
+   "url": null
+  },
+  {
+   "id": "E12",
+   "tier": "P",
+   "title": "Hartmann-Boyce et al. 2018, American Journal of Clinical Nutrition",
+   "country": "",
+   "variant": "",
+   "status": "secondary",
+   "text": {
+    "fr": "Revue systématique : en magasin, la position en rayon et la mise en avant augmentent de façon fiable les achats des produits concernés.",
+    "en": "Systematic review: in stores, shelf position and prominence reliably raise purchases of the featured items."
+   },
+   "flags": {
+    "fr": "Lu via d'autres travaux.",
+    "en": "Read through other work."
+   },
+   "url": null
+  },
+  {
+   "id": "E13",
+   "tier": "P",
+   "title": "Mertens et al. 2022, PNAS",
+   "country": "",
+   "variant": "",
+   "status": "secondary",
+   "text": {
+    "fr": "Méta-analyse : les choix alimentaires répondent jusqu'à 2,5 fois plus aux nudges d'architecture du choix que les autres domaines.",
+    "en": "Meta-analysis: food choices respond up to 2.5 times more to choice-architecture nudges than other domains."
+   },
+   "flags": {
+    "fr": "Effets plus faibles en magasin qu'en restauration.",
+    "en": "Effects are smaller in stores than in cafeterias."
+   },
+   "url": null
+  },
+  {
+   "id": "E14",
+   "tier": "P",
+   "title": "Springer 2020, Agriculture and Human Values",
+   "country": "UK",
+   "variant": "V8",
+   "status": "secondary",
+   "text": {
+    "fr": "Étude de cas : les boissons végétales en allées périphériques étaient peu vues ; certaines marques ont payé pour le rayon frais laitier.",
+    "en": "Case study: plant drinks in peripheral aisles were rarely seen; some brands paid for the chilled dairy aisle."
+   },
+   "flags": {
+    "fr": "Récit, aucun effet de vente isolé.",
+    "en": "Narrative, no sales effect isolated."
+   },
+   "url": null
+  },
+  {
+   "id": "E15",
+   "tier": "P",
+   "title": "Têtes de gondole et intensité visuelle (trois supermarchés européens)",
+   "country": "",
+   "variant": "V9",
+   "status": "notRetained",
+   "text": {
+    "fr": "Des présentations moyennement vives attirent plus l'attention et la probabilité d'achat que des présentations sobres ou très vives.",
+    "en": "Moderately vivid displays draw more attention and purchase likelihood than plain or very vivid ones."
+   },
+   "flags": {
+    "fr": "Science générale du commerce, sans catégorie alimentaire.",
+    "en": "General retail science, no food category."
+   },
+   "url": null
+  },
+  {
+   "id": "E16",
+   "tier": "P",
+   "title": "Étude d'implantation plus saine (Angleterre)",
+   "country": "UK",
+   "variant": "V9",
+   "status": "notRetained",
+   "text": {
+    "fr": "Dans des supermarchés discount, déplacer confiseries et non-alimentaire des caisses et têtes de gondole fait baisser la confiserie et monter les fruits et légumes.",
+    "en": "In discount supermarkets, moving confectionery and non-food from checkouts and end-caps lowered confectionery and raised fruit and vegetables."
+   },
+   "flags": {
+    "fr": "Confirme que l'emplacement déplace les ventes.",
+    "en": "Confirms that location shifts sales."
+   },
+   "url": null
+  },
+  {
+   "id": "E17",
+   "tier": "P",
+   "title": "Jaeger et al. 2024, PNAS",
+   "country": "US",
+   "variant": "V7",
+   "status": "secondary",
+   "text": {
+    "fr": "Courses en ligne simulées (n = 2 359) : les étiquettes carbone augmentent le choix végétal de 37 %, le reclassement des produits par objectif de 25 %.",
+    "en": "Simulated online grocery (n = 2,359): carbon labels raise plant-based choice by 37%, re-categorising products by goal by 25%."
+   },
+   "flags": {
+    "fr": "Pas une plateforme réelle. Premier auteur à vérifier.",
+    "en": "Not a live platform. First author unverified."
+   },
+   "url": null
+  },
+  {
+   "id": "E18",
+   "tier": "P",
+   "title": "Wolfswinkel 2025 (Pays-Bas, marquages au sol)",
+   "country": "NL",
+   "variant": "",
+   "status": "notRetained",
+   "text": {
+    "fr": "Six magasins, marquages au sol groupés avec cinq autres changements : pas d'effet sur les ventes végétales ni carnées.",
+    "en": "Six stores, floor markings bundled with five other changes: no effect on plant or meat sales."
+   },
+   "flags": {
+    "fr": "Fidélité de mise en œuvre faible.",
+    "en": "Poor implementation fidelity."
+   },
+   "url": null
+  },
+  {
+   "id": "C1",
+   "tier": "C",
+   "title": "Kroger avec PBFA et 84.51",
+   "country": "US",
+   "variant": "V3",
+   "status": "secondary",
+   "text": {
+    "fr": "Produits végétaux placés dans les rayons viande et laitiers de 60 magasins : ventes +23 % (+32 % dans le Midwest, +13 % à Denver).",
+    "en": "Plant products placed in the meat and dairy sets of 60 stores: sales +23% (+32% in the Midwest, +13% in Denver)."
+   },
+   "flags": {
+    "fr": "Ventes de viande non mesurées ; étude commandée par une organisation professionnelle ; rapport complet introuvable.",
+    "en": "Meat sales not measured; commissioned by an industry body; full report not located."
+   },
+   "url": null
+  },
+  {
+   "id": "C2",
+   "tier": "C",
+   "title": "Heinen's",
+   "country": "US",
+   "variant": "V3",
+   "status": "secondary",
+   "text": {
+    "fr": "Produits végétaux déplacés au rayon viande, ventes végétales en hausse.",
+    "en": "Plant products moved into the meat aisle, plant sales up."
+   },
+   "flags": {
+    "fr": "Déclaration du distributeur relayée par une association ; taille d'effet non conservée.",
+    "en": "Retailer self-report relayed by an advocacy group; effect size not retained."
+   },
+   "url": null
+  },
+  {
+   "id": "C3",
+   "tier": "C",
+   "title": "Lidl Pays-Bas, pilote 2023",
+   "country": "NL",
+   "variant": "V2",
+   "status": "secondary",
+   "text": {
+    "fr": "Pilote dans 70 magasins sur 440, de juin à décembre 2023, avec l'université de Wageningen : +7 % (6,29 % selon une autre source) ; pas de baisse de la viande rapportée.",
+    "en": "Pilot in 70 of 440 stores, June to December 2023, with Wageningen University: +7% (6.29% in another report); no meat decrease reported."
+   },
+   "flags": {
+    "fr": "Très probablement la même étude que E2 (étude 2) : une seule source indépendante. L'extension aux 440 magasins concerne les grands formats, pas l'implantation.",
+    "en": "Most likely the same study as E2 (study 2): one independent source. The extension to 440 stores concerns larger packs, not placement."
+   },
+   "url": "https://vegconomist.com/retail-e-commerce/lidl-netherlands-study-placing-meat-alternatives-conventional-meat/"
+  },
+  {
+   "id": "C4",
+   "tier": "C",
+   "title": "Lidl Allemagne, implantation et parité de prix",
+   "country": "DE",
+   "variant": "V2",
+   "status": "secondary",
+   "text": {
+    "fr": "Depuis octobre 2023, environ 3 250 magasins combinent changements d'implantation et parité de prix sur la marque propre végétale : gamme +30 % environ.",
+    "en": "Since October 2023, about 3,250 stores combine placement changes with own-label plant price parity: range sales about +30%."
+   },
+   "flags": {
+    "fr": "Confondu : implantation et prix changent ensemble ; pas de groupe témoin.",
+    "en": "Confounded: placement and price change together; no control group."
+   },
+   "url": null
+  },
+  {
+   "id": "C5",
+   "tier": "C",
+   "title": "Carrefour Espagne, double implantation",
+   "country": "ES",
+   "variant": "V2",
+   "status": "secondary",
+   "text": {
+    "fr": "26 magasins en 2023 placent les produits végétaux à la fois sur leur rayon et à côté de la viande : ventes +26 %.",
+    "en": "26 stores in 2023 placed plant products both on their own shelf and beside meat: sales +26%."
+   },
+   "flags": {
+    "fr": "Presse professionnelle ; ni groupe témoin ni effet viande conservés.",
+    "en": "Trade press; neither control design nor meat effect retained."
+   },
+   "url": null
+  },
+  {
+   "id": "C6",
+   "tier": "C",
+   "title": "IGD et Asda",
+   "country": "UK",
+   "variant": "V1, V3",
+   "status": "secondary",
+   "text": {
+    "fr": "IGD : les gains des essais d'implantation retombent après l'essai ; 57 % des clients favorables. Asda : l'implantation à côté de la viande aurait vendu 30 % de moins qu'une baie végétale séparée.",
+    "en": "IGD: gains from placement trials fell back after the trial; 57% of shoppers in favour. Asda: placement beside meat reportedly sold 30% less than a separate plant bay."
+   },
+   "flags": {
+    "fr": "Contre-preuve, relayée par la presse seulement ; à montrer à côté de E1 et E2.",
+    "en": "Counter-evidence, press relay only; to be shown alongside E1 and E2."
+   },
+   "url": null
+  },
+  {
+   "id": "C7",
+   "tier": "C",
+   "title": "Beyond Meat et Safeway",
+   "country": "US",
+   "variant": "V3",
+   "status": "secondary",
+   "text": {
+    "fr": "Entrée au rayon viande de Safeway en 2016, dans environ 280 magasins, souvent citée comme le décollage commercial du produit.",
+    "en": "Entry into the Safeway meat case in 2016, in about 280 stores, often cited as the product's commercial breakthrough."
+   },
+   "flags": {
+    "fr": "Récit du fournisseur, sans témoin.",
+    "en": "Supplier narrative, no control."
+   },
+   "url": null
+  },
+  {
+   "id": "C8",
+   "tier": "C",
+   "title": "Kroger, recouvrement des acheteurs",
+   "country": "US",
+   "variant": "",
+   "status": "secondary",
+   "text": {
+    "fr": "93 % des acheteurs d'un burger végétal leader achètent aussi de la viande.",
+    "en": "93% of buyers of a leading plant burger also bought meat."
+   },
+   "flags": {
+    "fr": "Montre que la substitution n'est pas le cas par défaut.",
+    "en": "Shows that substitution is not the default."
+   },
+   "url": null
+  },
+  {
+   "id": "C9",
+   "tier": "C",
+   "title": "Jumbo, parité de prix",
+   "country": "NL",
+   "variant": "",
+   "status": "secondary",
+   "text": {
+    "fr": "Après le passage à la parité de prix : ventes végétales +15 %, viande -3 %.",
+    "en": "After the move to price parity: plant sales +15%, meat -3%."
+   },
+   "flags": {
+    "fr": "Confondu ; seul cas commercial associant hausse végétale et baisse de la viande, sans témoin documenté.",
+    "en": "Confounded; the only commercial case pairing a plant gain with a meat fall, no documented control."
+   },
+   "url": null
+  },
+  {
+   "id": "C10",
+   "tier": "C",
+   "title": "Distributeur autrichien, parité de prix et zones végétales séparées",
+   "country": "AT",
+   "variant": "",
+   "status": "secondary",
+   "text": {
+    "fr": "Ventes végétales +33 % puis +47 % sous parité de prix, avec des zones végétales séparées.",
+    "en": "Plant sales +33% then +47% under price parity, with separate plant zones."
+   },
+   "flags": {
+    "fr": "Presse ; montre que la parité peut jouer sans implantation intégrée.",
+    "en": "Press; shows that parity can work without integrated placement."
+   },
+   "url": null,
+   "titleEn": "Austrian retailer, price parity and separate plant zones"
+  },
+  {
+   "id": "C11",
+   "tier": "C",
+   "title": "Lidl Pays-Bas, haché hybride au rayon viande",
+   "country": "NL",
+   "variant": "V6",
+   "status": "secondary",
+   "text": {
+    "fr": "Lancement en août 2024 d'un haché viande et protéine de pois au rayon viande.",
+    "en": "Launch in August 2024 of a meat and pea protein mince on the meat shelf."
+   },
+   "flags": {
+    "fr": "Intervention distincte ; ventes non conservées.",
+    "en": "A separate intervention; sales not retained."
+   },
+   "url": null
+  },
+  {
+   "id": "G1",
+   "tier": "G",
+   "title": "Wageningen, Protein Monitor 2024",
+   "country": "NL",
+   "variant": "",
+   "status": "secondary",
+   "text": {
+    "fr": "Les supermarchés néerlandais référencent plus de produits végétaux alors que la consommation suit moins vite.",
+    "en": "Dutch supermarkets stock more plant products while consumption lags."
+   },
+   "flags": {
+    "fr": "Chiffres à revérifier sur la page.",
+    "en": "Figures to recheck against the page."
+   },
+   "url": null
+  },
+  {
+   "id": "G2",
+   "tier": "G",
+   "title": "Restrictions d'emplacement des produits gras, salés, sucrés (Royaume-Uni)",
+   "country": "UK",
+   "variant": "",
+   "status": "notRetained",
+   "text": {
+    "fr": "Précédent réglementaire d'une implantation imposée par l'État, pour des produits peu sains.",
+    "en": "Regulatory precedent for a government-mandated layout, for unhealthy products."
+   },
+   "flags": {
+    "fr": "Pertinence par analogie seulement.",
+    "en": "Relevance by analogy only."
+   },
+   "url": null
+  },
+  {
+   "id": "G3",
+   "tier": "G",
+   "title": "Frais de référencement et allocation de l'espace",
+   "country": "",
+   "variant": "",
+   "status": "notRetained",
+   "text": {
+    "fr": "Contexte sur la vente de l'espace en rayon aux fournisseurs, utile pour savoir qui décide de l'implantation.",
+    "en": "Background on how shelf space is sold to suppliers, useful to know who controls placement."
+   },
+   "flags": {
+    "fr": "Source non conservée.",
+    "en": "Source not retained."
+   },
+   "url": null
+  },
+  {
+   "id": "I1",
+   "tier": "I",
+   "title": "Good Food Institute, guide de merchandising",
+   "country": "US",
+   "variant": "V3",
+   "status": "secondary",
+   "text": {
+    "fr": "65 % des 15 premiers distributeurs américains présentent au moins un produit végétal au rayon viande ; l'intégration toucherait les flexitariens qui ne vont pas au rayon végétal.",
+    "en": "65% of the top 15 US retailers show at least one plant meat product in the meat aisle; integration would reach flexitarians who skip the plant section."
+   },
+   "flags": {
+    "fr": "Méthode de l'enquête non vérifiée ; organisation engagée.",
+    "en": "Survey method unchecked; advocacy organisation."
+   },
+   "url": null
+  },
+  {
+   "id": "I2",
+   "tier": "I",
+   "title": "Good Food Institute, analyse des ventes",
+   "country": "US",
+   "variant": "",
+   "status": "secondary",
+   "text": {
+    "fr": "Taille de marché et tendances de la viande végétale aux États-Unis, pour le contexte.",
+    "en": "Market size and trends for US plant-based meat, for context."
+   },
+   "flags": {
+    "fr": "Contexte seulement.",
+    "en": "Context only."
+   },
+   "url": null
+  },
+  {
+   "id": "I3",
+   "tier": "I",
+   "title": "Rethink Priorities, cas de distributeurs allemands",
+   "country": "DE",
+   "variant": "",
+   "status": "secondary",
+   "text": {
+    "fr": "Études de cas qualitatives de transitions chez des distributeurs allemands, dont Lidl (voir C4).",
+    "en": "Qualitative case studies of German retailer transitions, including Lidl (see C4)."
+   },
+   "flags": {
+    "fr": "Qualitatif.",
+    "en": "Qualitative."
+   },
+   "url": null
+  },
+  {
+   "id": "I4",
+   "tier": "I",
+   "title": "ProVeg, comparaison de prix aux Pays-Bas",
+   "country": "NL",
+   "variant": "",
+   "status": "secondary",
+   "text": {
+    "fr": "Les produits végétaux sont moins chers que leurs équivalents dans presque tous les supermarchés néerlandais.",
+    "en": "Plant products are priced below their equivalents in almost all Dutch supermarkets."
+   },
+   "flags": {
+    "fr": "Contexte prix pour l'interaction implantation et parité.",
+    "en": "Price context for the placement and parity interaction."
+   },
+   "url": null
+  },
+  {
+   "id": "I5",
+   "tier": "I",
+   "title": "Food Dive, parité de prix",
+   "country": "US",
+   "variant": "",
+   "status": "secondary",
+   "text": {
+    "fr": "Synthèse professionnelle d'une étude selon laquelle la parité de prix tire la croissance.",
+    "en": "Trade summary of a study arguing that price parity drives growth."
+   },
+   "flags": {
+    "fr": "Étude sous-jacente introuvable.",
+    "en": "Underlying study not traced."
+   },
+   "url": null
+  },
+  {
+   "id": "I6",
+   "tier": "I",
+   "title": "Systemiq, Taking Root",
+   "country": "",
+   "variant": "",
+   "status": "notRetained",
+   "text": {
+    "fr": "Cité dans des travaux antérieurs pour le contexte des transitions de distributeurs.",
+    "en": "Cited in earlier research for retailer-transition context."
+   },
+   "flags": {
+    "fr": "Source non conservée.",
+    "en": "Source not retained."
+   },
+   "url": null
+  },
+  {
+   "id": "I7",
+   "tier": "I",
+   "title": "Oatly, via FoodNavigator",
+   "country": "",
+   "variant": "V8",
+   "status": "secondary",
+   "text": {
+    "fr": "Récit d'un fournisseur sur le passage de la boisson végétale du rayon ambiant au frais laitier.",
+    "en": "Supplier account of moving plant drinks from ambient to the chilled dairy aisle."
+   },
+   "flags": {
+    "fr": "Récit sans données de vente.",
+    "en": "Narrative with no sales data."
+   },
+   "url": null
+  },
+  {
+   "id": "I8",
+   "tier": "I",
+   "title": "Canary Media, viande végétale",
+   "country": "US",
+   "variant": "",
+   "status": "secondary",
+   "text": {
+    "fr": "Contexte sur le ralentissement de la catégorie après 2020 : les gains d'implantation jouent sur une catégorie plate ou en baisse dans plusieurs marchés.",
+    "en": "Context on the category slowdown after 2020: placement gains work against a flat or falling category in several markets."
+   },
+   "flags": {
+    "fr": "Contexte.",
+    "en": "Context."
+   },
+   "url": null
+  },
+  {
+   "id": "PR1",
+   "tier": "PR",
+   "title": "The Grocer et FoodPeople",
+   "country": "UK",
+   "variant": "V3",
+   "status": "press",
+   "text": {
+    "fr": "Sainsbury's a testé 26 références au rayon viande en 2019, puis étendu à environ 400 magasins.",
+    "en": "Sainsbury's trialled 26 lines in the meat aisle in 2019, then extended to about 400 stores."
+   },
+   "flags": {
+    "fr": "Attribution par la presse ; base pour nommer la chaîne de E1.",
+    "en": "Press attribution; the basis for naming the chain in E1."
+   },
+   "url": null
+  },
+  {
+   "id": "PR2",
+   "tier": "PR",
+   "title": "VeganFoodAndLiving",
+   "country": "UK",
+   "variant": "",
+   "status": "press",
+   "text": {
+    "fr": "Lidl Royaume-Uni a triplé sa gamme végétale et s'est fixé un objectif de ventes de protéines végétales ; rayon végétal séparé.",
+    "en": "Lidl UK tripled its plant range and set a plant protein sales goal; separate plant fixture."
+   },
+   "flags": {
+    "fr": "Annonce.",
+    "en": "Announcement."
+   },
+   "url": null
+  },
+  {
+   "id": "PR3",
+   "tier": "PR",
+   "title": "GreenQueen, Rewe",
+   "country": "DE",
+   "variant": "V4",
+   "status": "press",
+   "text": {
+    "fr": "Rewe a ouvert un supermarché entièrement végétal en Allemagne ; un essai au comptoir viande est aussi noté.",
+    "en": "Rewe opened a fully plant-based supermarket in Germany; a meat counter trial is also noted."
+   },
+   "flags": {
+    "fr": "Contexte d'un modèle séparé.",
+    "en": "Context for a segregated model."
+   },
+   "url": null
+  },
+  {
+   "id": "PR4",
+   "tier": "PR",
+   "title": "GreenQueen, Albert Heijn",
+   "country": "NL",
+   "variant": "V6",
+   "status": "press",
+   "text": {
+    "fr": "Albert Heijn a lancé des produits hybrides viande et lait.",
+    "en": "Albert Heijn launched blended meat and hybrid dairy products."
+   },
+   "flags": {
+    "fr": "Contexte hybride.",
+    "en": "Hybrid context."
+   },
+   "url": null
+  },
+  {
+   "id": "PR5",
+   "tier": "PR",
+   "title": "Wageningen, communiqué du Protein Monitor",
+   "country": "NL",
+   "variant": "",
+   "status": "press",
+   "text": {
+    "fr": "Communiqué de l'université pour le Protein Monitor (voir G1).",
+    "en": "The university's press release for the monitor (see G1)."
+   },
+   "flags": {
+    "fr": "Voir G1.",
+    "en": "See G1."
+   },
+   "url": null
+  }
+ ],
+ "counter": [
+  {
+   "fr": "L'intégration complète peut se retourner contre l'objectif : sans rayon végétal, les ventes de substituts ont baissé (E2, étude 1a). Ne pas copier une implantation qui supprime le rayon végétal.",
+   "en": "Full integration can backfire: with no plant section, substitute sales fell (E2, study 1a). Do not copy a layout that removes the plant section."
+  },
+  {
+   "fr": "Aucune étude ne montre de baisse significative des ventes de viande due à l'implantation seule (E1 à E4) : c'est le principal argument contre une promesse de substitution.",
+   "en": "No study shows a significant meat-sales fall from placement alone (E1 to E4): the main counter to a displacement claim."
+  },
+  {
+   "fr": "Les gains peuvent s'estomper après les essais (C6) ; la persistance au-delà des périodes étudiées n'est pas mesurée.",
+   "en": "Gains may fade after trials (C6); persistence beyond the studied windows is unmeasured."
+  },
+  {
+   "fr": "L'implantation à côté de la viande pourrait faire moins bien qu'une baie séparée (C6, relayé par la presse seulement).",
+   "en": "Placement beside meat may underperform a separate bay (C6, press relay only)."
+  },
+  {
+   "fr": "Les clients ne basculent pas entièrement : 93 % des acheteurs d'un burger végétal leader achètent aussi de la viande (C8).",
+   "en": "Shoppers do not switch fully: 93% of buyers of a leading plant burger also buy meat (C8)."
+  },
+  {
+   "fr": "Le prix pèse sans doute plus que l'implantation pour la substitution (E9, C9) ; des zones séparées avec parité ont aussi donné de fortes hausses (C10).",
+   "en": "Price likely matters more than placement for displacement (E9, C9); separate zones with parity also gave large gains (C10)."
+  },
+  {
+   "fr": "Plusieurs résultats commerciaux sont confondus avec un changement de prix (C4, C9, C10) ou de multiples leviers (E5).",
+   "en": "Several commercial results are confounded by a price change (C4, C9, C10) or many levers (E5)."
+  },
+  {
+   "fr": "La catégorie ralentit dans plusieurs marchés depuis 2020 (I8).",
+   "en": "The category has slowed in several markets since 2020 (I8)."
+  }
+ ],
+ "risks": [
+  {
+   "fr": "Effet sur le profit non mesuré : aucune étude ne publie de marge ; les marges de 35 à 50 % citées pour le végétal ne sont pas sourcées.",
+   "en": "Profit effect unmeasured: no study reports margin; the 35% to 50% plant margins quoted are untraced."
+  },
+  {
+   "fr": "Arbitrage d'espace : la baie prend des facings à la viande ou à d'autres produits ; aucune étude ne publie le profit au mètre de la catégorie.",
+   "en": "Shelf-space trade-off: the bay takes facings from meat or other lines; no study reports category profit per metre."
+  },
+  {
+   "fr": "Exécution : fidélité de 59 % dans E7, faible dans E18 ; une mauvaise exécution affaiblit l'effet.",
+   "en": "Execution: 59% fidelity in E7, poor in E18; poor execution weakens the effect."
+  },
+  {
+   "fr": "Accueil des clients : 75 % positif après explication (E7), majorité favorable (C6).",
+   "en": "Shopper acceptance: 75% positive after explanation (E7), majority support (C6)."
+  },
+  {
+   "fr": "Accords fournisseurs : les marques paient des emplacements ; l'implantation intégrée peut heurter des accords existants (hypothèse).",
+   "en": "Supplier agreements: brands pay for positions; integrated placement may clash with existing agreements (hypothesis)."
+  }
+ ],
+ "barriers": [
+  {
+   "fr": "Sécurité sanitaire et meubles froids : les produits végétaux réfrigérés peuvent partager les meubles de la viande ; les règles de chaque marché restent à vérifier.",
+   "en": "Food safety and fixtures: chilled plant products can share meat fixtures; each market's rules are still to check."
+  },
+  {
+   "fr": "Gestion par catégorie : le végétal et la viande relèvent souvent de deux acheteurs différents (hypothèse).",
+   "en": "Category management: plant and meat often sit with two different buyers (hypothesis)."
+  },
+  {
+   "fr": "Relations avec les fournisseurs de viande : réticences possibles à la proximité du végétal (hypothèse).",
+   "en": "Meat-supplier relationships: possible resistance to plant adjacency (hypothesis)."
+  },
+  {
+   "fr": "Règles de dénomination des produits végétaux, variables selon les pays.",
+   "en": "Plant product naming rules, which vary by country."
+  }
+ ],
+ "retailers": [
+  {
+   "country": "UK",
+   "retailer": "Sainsbury's",
+   "activity": {
+    "fr": "Essai de 26 références au rayon viande en 2019, puis environ 400 magasins (presse)",
+    "en": "2019 trial of 26 lines in the meat aisle, then about 400 stores (press)"
+   },
+   "variant": "V3",
+   "ids": "E1, PR1"
+  },
+  {
+   "country": "UK",
+   "retailer": "Asda",
+   "activity": {
+    "fr": "Implantation adjacente testée face à une baie séparée",
+    "en": "Adjacent placement tested against a separate bay"
+   },
+   "variant": "V1, V3",
+   "ids": "C6"
+  },
+  {
+   "country": "UK",
+   "retailer": "Lidl",
+   "activity": {
+    "fr": "Rayon végétal séparé",
+    "en": "Separate plant fixture"
+   },
+   "variant": "",
+   "ids": "PR2"
+  },
+  {
+   "country": "UK",
+   "retailer": "Tesco",
+   "activity": {
+    "fr": "Boisson végétale au rayon frais laitier (2016) ; têtes de gondole du Veganuary non confirmées",
+    "en": "Chilled plant milk in dairy (2016); Veganuary end-caps unconfirmed"
+   },
+   "variant": "V8, V9",
+   "ids": "E14, E5"
+  },
+  {
+   "country": "NL",
+   "retailer": "Lidl",
+   "activity": {
+    "fr": "Pilote dans 70 magasins sur 440 (2023), haché hybride au rayon viande (2024)",
+    "en": "Pilot in 70 of 440 stores (2023), blended mince on the meat shelf (2024)"
+   },
+   "variant": "V2, V6",
+   "ids": "E2, C3, C11"
+  },
+  {
+   "country": "NL",
+   "retailer": "Dirk",
+   "activity": {
+    "fr": "Produits hybrides ; étude de retrait de la viande des têtes de gondole",
+    "en": "Hybrid products; meat end-cap removal study"
+   },
+   "variant": "V6, V9",
+   "ids": "E7"
+  },
+  {
+   "country": "NL",
+   "retailer": "Albert Heijn",
+   "activity": {
+    "fr": "Lancements hybrides seulement",
+    "en": "Hybrid launches only"
+   },
+   "variant": "V6",
+   "ids": "PR4"
+  },
+  {
+   "country": "NL",
+   "retailer": "Jumbo",
+   "activity": {
+    "fr": "Parité de prix seulement",
+    "en": "Price parity only"
+   },
+   "variant": "",
+   "ids": "C9"
+  },
+  {
+   "country": "DE",
+   "retailer": "Lidl",
+   "activity": {
+    "fr": "Implantation et parité de prix dans tout le réseau depuis octobre 2023 (environ 3 250 magasins)",
+    "en": "Chain-wide placement with price parity from October 2023 (about 3,250 stores)"
+   },
+   "variant": "V2",
+   "ids": "C4"
+  },
+  {
+   "country": "DE",
+   "retailer": "Rewe",
+   "activity": {
+    "fr": "Magasin entièrement végétal et essai au comptoir",
+    "en": "Plant-based store and a counter trial"
+   },
+   "variant": "V4",
+   "ids": "PR3"
+  },
+  {
+   "country": "ES",
+   "retailer": "Carrefour",
+   "activity": {
+    "fr": "Double implantation dans 26 magasins (2023)",
+    "en": "Double placement in 26 stores (2023)"
+   },
+   "variant": "V2",
+   "ids": "C5"
+  },
+  {
+   "country": "FR",
+   "retailer": "",
+   "activity": {
+    "fr": "Aucun distributeur n'a annoncé d'implantation intégrée à ce jour (une note antérieure évoquait un pilote, non confirmé)",
+    "en": "No retailer has announced integrated placement so far (an earlier note mentioned a pilot, unconfirmed)"
+   },
+   "variant": "",
+   "ids": ""
+  },
+  {
+   "country": "BE",
+   "retailer": "Colruyt",
+   "activity": {
+    "fr": "Étude dans un magasin",
+    "en": "Single-store study"
+   },
+   "variant": "V5",
+   "ids": "E3"
+  },
+  {
+   "country": "AT",
+   "retailer": {
+    "fr": "Un distributeur",
+    "en": "One retailer"
+   },
+   "activity": {
+    "fr": "Zones végétales séparées avec parité de prix",
+    "en": "Separate plant zones with price parity"
+   },
+   "variant": "",
+   "ids": "C10"
+  },
+  {
+   "country": "US",
+   "retailer": "Kroger",
+   "activity": {
+    "fr": "Analyse dans 60 magasins",
+    "en": "60-store placement analysis"
+   },
+   "variant": "V3",
+   "ids": "C1, C8"
+  },
+  {
+   "country": "US",
+   "retailer": "Heinen's",
+   "activity": {
+    "fr": "Végétal au rayon viande",
+    "en": "Plant-based in the meat aisle"
+   },
+   "variant": "V3",
+   "ids": "C2"
+  },
+  {
+   "country": "US",
+   "retailer": "Safeway",
+   "activity": {
+    "fr": "Beyond Meat au rayon viande, 2016, environ 280 magasins",
+    "en": "Beyond Meat in the meat case, 2016, about 280 stores"
+   },
+   "variant": "V3",
+   "ids": "C7"
+  }
+ ],
+ "scorecards": {
+  "volume": {
+   "score": 13,
+   "max": 15,
+   "rating": {
+    "fr": "Élevé",
+    "en": "High"
+   }
+  },
+  "quality": {
+   "score": 22,
+   "max": 30,
+   "rating": {
+    "fr": "Moyen",
+    "en": "Medium"
+   }
+  },
+  "framing": [
+   {
+    "k": {
+     "fr": "Implantation seule, objectif de substitution",
+     "en": "Placement alone, displacement goal"
+    },
+    "prom": "-4",
+    "negl": "-1"
+   },
+   {
+    "k": {
+     "fr": "Implantation seule, objectif de ventes végétales",
+     "en": "Placement alone, plant sales goal"
+    },
+    "prom": "+4 à +6",
+    "negl": "-1"
+   },
+   {
+    "k": {
+     "fr": "Implantation et parité de prix",
+     "en": "Placement with price parity"
+    },
+    "prom": "+2",
+    "negl": "+1"
+   }
+  ],
+  "note": {
+   "fr": "Notes internes d'Altera, pas des références externes. L'implantation seule augmente de façon fiable les ventes végétales sans baisse significative de la viande ; la combinaison avec la parité de prix reste à tester.",
+   "en": "Altera's internal judgements, not external benchmarks. Placement alone reliably lifts plant sales with no significant meat fall; the combination with price parity is still to test."
+  }
+ },
+ "commercial": [
+  {
+   "fr": "Effet attendu sur les ventes végétales : positif dans les études sur ventes réelles et dans les pilotes commerciaux ; les tailles d'effet varient beaucoup.",
+   "en": "Expected plant sales effect: positive in the real-sales studies and commercial pilots; effect sizes vary widely."
+  },
+  {
+   "fr": "Effet attendu sur la viande : aucun changement significatif dans les études contrôlées. Ne pas prévoir de substitution par l'implantation seule.",
+   "en": "Expected meat effect: no significant change in controlled studies. Do not forecast displacement from placement alone."
+  },
+  {
+   "fr": "Conception : garder un rayon végétal tout en ajoutant les produits au rayon viande.",
+   "en": "Design: keep a plant section while adding products to the meat aisle."
+  },
+  {
+   "fr": "Interaction avec le prix : la parité augmente les ventes végétales sans implantation intégrée ; la combinaison n'a pas été testée avec un témoin.",
+   "en": "Price interaction: parity raises plant sales without integrated placement; the combination has not been tested with a control."
+  },
+  {
+   "fr": "Mise en œuvre : la fidélité d'exécution est le principal problème observé ; briefing des équipes et contrôles en magasin comptent (hypothèse).",
+   "en": "Implementation: execution fidelity is the main problem observed; staff briefing and store checks matter (hypothesis)."
+  },
+  {
+   "fr": "Format : les grandes surfaces réagissent plus que la proximité ; les mangeurs de viande et les flexitariens portent l'essentiel du gain.",
+   "en": "Format: large stores respond more than convenience stores; meat-eaters and flexitarians drive most of the gain."
+  },
+  {
+   "fr": "Étapes : pilote dans un sous-ensemble de magasins avec témoins appariés, en mesurant ensemble la viande, le végétal et le panier total.",
+   "en": "Staging: pilot in a subset of stores with matched controls, measuring meat, plant and the total basket together."
+  }
+ ],
+ "notHeld": [
+  {
+   "fr": "L'IRR de 1,43 de Piernas : le tableau de l'article donne environ +24 %.",
+   "en": "Piernas' IRR of 1.43: the paper's table gives about +24%."
+  },
+  {
+   "fr": "Lidl Pays-Bas et van der Meer comptés comme deux études : conception, dates et résultat concordent, c'est très probablement une seule source.",
+   "en": "Lidl NL and van der Meer counted as two studies: design, dates and result match, most likely one source."
+  },
+  {
+   "fr": "« Ventes de viande inchangées » dans l'essai néerlandais : le bras rayon viande montre -2,9 % significatif sur six produits.",
+   "en": "'Meat sales unchanged' in the Dutch trial: the meat-shelf arm shows a significant -2.9% on six products."
+  },
+  {
+   "fr": "Kroger +23 % : presse professionnelle seulement.",
+   "en": "Kroger +23%: trade press only."
+  },
+  {
+   "fr": "Marge végétale de 35 à 50 % : un seul entretien anonyme.",
+   "en": "Plant margin of 35% to 50%: one anonymous interview."
+  },
+  {
+   "fr": "Marge GMS de 18,2 % sur le haché (OFPM) : les graphiques du rapport donnent 21,6 % pour les supermarchés.",
+   "en": "Supermarket margin of 18.2% on mince (OFPM): the report's charts give 21.6% for supermarkets."
+  }
+ ],
+ "gaps": [
+  {
+   "fr": "Effet côté viande : le central à 0 et la fourchette de -2,9 % à +1 % viennent d'un résultat nul britannique et d'un bras néerlandais sur six produits ; appliqués à tout le rayon viande, ils décident du signe de la marge et du carbone. Une mesure française, ou au moins un pilote avec témoins appariés, manque.",
+   "en": "Meat-side effect: the central 0 and the -2.9% to +1% range come from one UK null result and one Dutch arm on six products; applied to the whole meat aisle they decide the sign of margin and carbon. A French measurement, or at least a pilot with matched controls, is missing."
+  },
+  {
+   "fr": "Hypothèses sans source : croissance de la catégorie (6 %), substitution (0,10), calendrier, heures en magasin, jours siège, coût de signalétique, taux de marge végétal, exposant de gamme (0,5), gain de goût (8 %), et le fait que tout le gain végétal soit nouveau.",
+   "en": "Hypotheses with no source: category growth (6%), displacement (0.10), timing, store hours, head-office days, signage cost, plant margin rate, range exponent (0.5), taste gain (8%), and counting all plant gain as new."
+  },
+  {
+   "fr": "Volume de départ : la définition des produits « de type viande » n'est pas vérifiée, et les ventes en direct magasin n'ont pas de volume.",
+   "en": "Base volume: the definition of 'meat-style' products is unverified, and direct-to-store sales carry no volume."
+  },
+  {
+   "fr": "Périmètre : seuls les produits référencés en central sont comptés, ce qui grossit un peu l'effet en points ; un périmètre plus large est le cas haut.",
+   "en": "Perimeter: only centrally listed products are counted, which slightly inflates the effect in points; a wider pool is the high case."
+  },
+  {
+   "fr": "Marge : marge du réseau ou de la centrale, question ouverte ; TVA des alternatives végétales à confirmer ; le prix moyen de la catégorie peut dépasser celui de la gamme réelle.",
+   "en": "Margin: network or central entity margin, an open question; VAT of plant alternatives to confirm; the category average price may exceed the actual range's."
+  },
+  {
+   "fr": "Double compte possible : la même étude néerlandaise borne la substitution et l'effet côté viande, tirés indépendamment dans le Monte Carlo.",
+   "en": "Possible double count: the same Dutch study bounds displacement and the meat-side effect, drawn independently in the Monte Carlo."
+  },
+  {
+   "fr": "Facteur carbone : le facteur du haché (17,5 kg CO2e par kg) est appliqué à toute la viande voisine ; la volaille et le porc sont bien plus bas, le bœuf bien plus haut.",
+   "en": "Carbon factor: the mince factor (17.5 kg CO2e per kg) is applied to all neighbouring meat; poultry and pork are far lower, beef far higher."
+  },
+  {
+   "fr": "Cannibalisation : les essais mesurent toute la catégorie ; le report depuis d'autres produits végétaux n'est pas modélisé.",
+   "en": "Cannibalisation: trials measure the whole category; switching from other plant products is not modelled."
+  },
+  {
+   "fr": "Persistance : les essais durent de quelques semaines à deux ans ; 2030 et au-delà sont une extrapolation.",
+   "en": "Persistence: trials run from weeks to two years; 2030 and beyond are an extrapolation."
+  },
+  {
+   "fr": "Pas de preuve pour les plats cuisinés végétaux au rayon traiteur, ni pour la France.",
+   "en": "No evidence for plant ready meals in the general ready-meal section, nor for France."
+  }
+ ],
+ "messages": {
+  "headline": {
+   "fr": "L'implantation intégrée fait bouger la répartition protéique de quelques centièmes de point. Son intérêt est d'abord commercial : elle augmente les ventes végétales dans tous les essais, sans preuve de baisse de la viande.",
+   "en": "Integrated placement moves the protein split by hundredths of a point. Its case is first commercial: it raises plant sales in every trial, with no evidence of a meat fall."
+  },
+  "scale": {
+   "fr": "Le périmètre pèse {pool} de protéines : gagner 1 point demande environ {need} de protéines végétales en plus, soit {multiple} fois ce qu'apporte I2.",
+   "en": "The pool weighs {pool} of protein: one extra point needs about {need} more plant protein, {multiple} times what I2 adds."
+  },
+  "median": {
+   "fr": "La valeur centrale fixe chaque hypothèse à son point central ; la médiane est le milieu de {draws} tirages. Présentez la médiane avec sa fourchette P10 à P90.",
+   "en": "The central value sets every input at its central point; the median is the middle of {draws} draws. Present the median with its P10 to P90 range."
+  },
+  "margin": {
+   "fr": "À valeurs centrales, I2 est rentable : la viande végétale se vend environ {plantPrice} HT le kilo contre {meatPrice} pour la viande, avec le même taux de marge de 25 %. Ce taux n'a pas de source mesurée. La fourchette large vient de l'effet côté viande : une baisse de 2,9 % des ventes de viande voisines coûte beaucoup plus de marge que le végétal n'en apporte.",
+   "en": "At central values I2 is profitable: plant meat sells at about {plantPrice} a kilo excluding VAT against {meatPrice} for meat, with the same 25% margin rate. That rate has no measured source. The wide range comes from the meat-side effect: a 2.9% fall in neighbouring meat sales costs far more margin than plant brings."
+  },
+  "carbon": {
+   "fr": "Le signe du carbone dépend de la viande perdue : à valeurs centrales, la viande voisine ne bouge pas et seuls 10 % des protéines végétales remplacent des protéines animales, donc I2 ajoute un peu d'émissions. Le seuil de bascule est d'environ {breakEven} kg de protéines animales perdues par kg de protéines végétales gagné.",
+   "en": "The sign of carbon depends on meat lost: at central values neighbouring meat does not move and only 10% of plant protein replaces animal protein, so I2 adds a little emissions. The break-even is about {breakEven} kg of animal protein lost per kg of plant protein gained."
+  },
+  "effort": {
+   "fr": "L'essentiel de l'effort (environ {storeShare}) se fait en magasin, pas au siège : réimplantation puis entretien hebdomadaire de la baie. La médiane dépasse la valeur centrale car la fourchette d'entretien (0 à 0,5 h par semaine) penche vers le haut.",
+   "en": "Most of the effort (about {storeShare}) sits in the stores, not at head office: the reset, then weekly upkeep of the bay. The median exceeds the central value because the upkeep range (0 to 0.5 h a week) leans upwards."
+  },
+  "meatZero": {
+   "fr": "Si les ventes de viande voisines ne bougent pas, le gain végétal est plus petit et plus stable, et la marge reste positive dans presque tous les tirages : la largeur des fourchettes vient surtout de l'effet côté viande.",
+   "en": "If neighbouring meat sales do not move, the plant gain is smaller and steadier, and margin stays positive in almost every draw: the width of the ranges comes mostly from the meat-side effect."
+  }
+ },
+ "register": [
+  {
+   "group": {
+    "fr": "Volume de départ, marché et périmètre",
+    "en": "Base volume, market and perimeter"
+   },
+   "rows": [
+    {
+     "key": "I2.V0_T",
+     "label": {
+      "fr": "Alternatives végétales à la viande vendues (2025)",
+      "en": "Plant-based meat alternatives sold (2025)"
+     },
+     "unit": "t"
+    },
+    {
+     "key": "G.PBM_GROWTH",
+     "label": {
+      "fr": "Croissance annuelle de la catégorie",
+      "en": "Annual category growth"
+     },
+     "unit": "pct"
+    },
+    {
+     "key": "G.PBM_KG_FR",
+     "label": {
+      "fr": "Marché français, volume 2025",
+      "en": "French market, volume 2025"
+     },
+     "unit": "Mkg"
+    },
+    {
+     "key": "G.PBM_EUR_FR",
+     "label": {
+      "fr": "Marché français, valeur 2025",
+      "en": "French market, value 2025"
+     },
+     "unit": "MEUR"
+    },
+    {
+     "key": "G.VAT",
+     "label": {
+      "fr": "TVA alimentaire",
+      "en": "Food VAT"
+     },
+     "unit": "pct"
+    },
+    {
+     "key": "G.POOL_T",
+     "label": {
+      "fr": "Protéines du périmètre Protein Tracker",
+      "en": "Protein in the Protein Tracker perimeter"
+     },
+     "unit": "tprot"
+    },
+    {
+     "key": "G.R0",
+     "label": {
+      "fr": "Répartition protéique de départ",
+      "en": "Starting protein split"
+     },
+     "unit": "pct"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "Effet des essais, adoption et calendrier",
+    "en": "Trial effect, adoption and timing"
+   },
+   "rows": [
+    {
+     "key": "I2.UPLIFT",
+     "label": {
+      "fr": "Hausse des ventes végétales dans les magasins qui appliquent",
+      "en": "Plant sales uplift in applying stores"
+     },
+     "unit": "pct"
+    },
+    {
+     "key": "I2.ALPHA",
+     "label": {
+      "fr": "Part des magasins actifs après déploiement",
+      "en": "Share of stores live after rollout"
+     },
+     "unit": "pct"
+    },
+    {
+     "key": "I2.FID",
+     "label": {
+      "fr": "Fidélité par rapport aux essais",
+      "en": "Fidelity against trial conditions"
+     },
+     "unit": "pct"
+    },
+    {
+     "key": "I2.RET",
+     "label": {
+      "fr": "Rétention annuelle de l'effet après six mois",
+      "en": "Annual retention of the effect after six months"
+     },
+     "unit": "pct"
+    },
+    {
+     "key": "I2.W_SCOPE",
+     "label": {
+      "fr": "Part du volume vendue dans les magasins concernés",
+      "en": "Share of volume sold in stores in scope"
+     },
+     "unit": "pct"
+    },
+    {
+     "key": "I2.T_FIRST",
+     "label": {
+      "fr": "Première mise en rayon",
+      "en": "First shelf date"
+     },
+     "unit": "year"
+    },
+    {
+     "key": "I2.ROLLOUT_Y",
+     "label": {
+      "fr": "Durée du déploiement",
+      "en": "Rollout duration"
+     },
+     "unit": "years"
+    },
+    {
+     "key": "G.N_STORES_SCOPE",
+     "label": {
+      "fr": "Magasins avec rayon boucherie libre-service",
+      "en": "Stores with a self-service meat aisle"
+     },
+     "unit": "stores"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "Côté viande",
+    "en": "Meat side"
+   },
+   "rows": [
+    {
+     "key": "I2.DISPL",
+     "label": {
+      "fr": "Protéines animales perdues par kg de protéines végétales gagné",
+      "en": "Animal protein lost per kg of plant protein gained"
+     },
+     "unit": "coef"
+    },
+    {
+     "key": "I2.MEAT_EFFECT",
+     "label": {
+      "fr": "Variation des ventes de viande voisines de la baie",
+      "en": "Change in meat sales next to the bay"
+     },
+     "unit": "pct"
+    },
+    {
+     "key": "I2.MEAT_POOL_T",
+     "label": {
+      "fr": "Protéines animales des rayons voisins",
+      "en": "Animal protein in the neighbouring sections"
+     },
+     "unit": "tprot"
+    },
+    {
+     "key": "G.MEAT_PROT",
+     "label": {
+      "fr": "Densité protéique de la viande hachée",
+      "en": "Protein density of minced meat"
+     },
+     "unit": "g100"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "Densité protéique",
+    "en": "Protein density"
+   },
+   "rows": [
+    {
+     "key": "G.PBM_PROT",
+     "label": {
+      "fr": "Densité protéique des alternatives végétales",
+      "en": "Protein density of plant alternatives"
+     },
+     "unit": "g100"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "Marge",
+    "en": "Margin"
+   },
+   "rows": [
+    {
+     "key": "G.MEAT_PRICE_HT",
+     "label": {
+      "fr": "Prix de la viande préemballée, HT",
+      "en": "Prepacked meat price, excl. VAT"
+     },
+     "unit": "eurkg"
+    },
+    {
+     "key": "G.MEAT_GM",
+     "label": {
+      "fr": "Taux de marge de la viande",
+      "en": "Meat gross margin rate"
+     },
+     "unit": "pct"
+    },
+    {
+     "key": "G.PBM_GM",
+     "label": {
+      "fr": "Taux de marge des alternatives végétales",
+      "en": "Plant alternatives gross margin rate"
+     },
+     "unit": "pct"
+    },
+    {
+     "key": "G.LABOUR_EUR_H",
+     "label": {
+      "fr": "Coût horaire en magasin",
+      "en": "Hourly store labour cost"
+     },
+     "unit": "eurh"
+    },
+    {
+     "key": "G.HQ_EUR_DAY",
+     "label": {
+      "fr": "Coût journalier au siège",
+      "en": "Daily head-office cost"
+     },
+     "unit": "eurday"
+    },
+    {
+     "key": "I2.MAT_EUR_STORE",
+     "label": {
+      "fr": "Signalétique par magasin",
+      "en": "Signage per store"
+     },
+     "unit": "eur"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "Carbone",
+    "en": "Carbon"
+   },
+   "rows": [
+    {
+     "key": "G.E_PBM",
+     "label": {
+      "fr": "Facteur d'émission, alternatives végétales",
+      "en": "Emission factor, plant alternatives"
+     },
+     "unit": "kgco2"
+    },
+    {
+     "key": "G.E_MEAT",
+     "label": {
+      "fr": "Facteur d'émission, viande remplacée",
+      "en": "Emission factor, meat displaced"
+     },
+     "unit": "kgco2"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "Effort",
+    "en": "Effort"
+   },
+   "rows": [
+    {
+     "key": "I2.H_STORE_SETUP",
+     "label": {
+      "fr": "Heures par magasin pour la réimplantation",
+      "en": "Store hours for the reset"
+     },
+     "unit": "h"
+    },
+    {
+     "key": "I2.H_STORE_WEEK",
+     "label": {
+      "fr": "Heures par magasin et par semaine d'entretien",
+      "en": "Store hours per week of upkeep"
+     },
+     "unit": "hweek"
+    },
+    {
+     "key": "I2.DAYS_HQ_ONEOFF",
+     "label": {
+      "fr": "Jours siège, une fois",
+      "en": "Head-office days, one-off"
+     },
+     "unit": "days"
+    },
+    {
+     "key": "I2.DAYS_HQ_ANNUAL",
+     "label": {
+      "fr": "Jours siège par an après lancement",
+      "en": "Head-office days per year after launch"
+     },
+     "unit": "days"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "Élargissement de gamme (version B)",
+    "en": "Range build (version B)"
+   },
+   "rows": [
+    {
+     "key": "RG.N_NOW",
+     "label": {
+      "fr": "Références de type viande aujourd'hui",
+      "en": "Meat-style products today"
+     },
+     "unit": "sku"
+    },
+    {
+     "key": "RG.N_TARGET",
+     "label": {
+      "fr": "Références visées",
+      "en": "Target number of products"
+     },
+     "unit": "sku"
+    },
+    {
+     "key": "RG.ETA",
+     "label": {
+      "fr": "Élasticité du volume au nombre de références",
+      "en": "Volume elasticity to the number of products"
+     },
+     "unit": "coef"
+    },
+    {
+     "key": "RG.TASTE",
+     "label": {
+      "fr": "Gain de volume lié au goût",
+      "en": "Volume gain from taste"
+     },
+     "unit": "pct"
+    },
+    {
+     "key": "RG.T_FIRST",
+     "label": {
+      "fr": "Début de l'élargissement",
+      "en": "Start of the range build"
+     },
+     "unit": "year"
+    },
+    {
+     "key": "RG.ROLLOUT_Y",
+     "label": {
+      "fr": "Durée de l'élargissement",
+      "en": "Duration of the range build"
+     },
+     "unit": "years"
+    }
+   ]
+  }
+ ],
+ "tiers": {
+  "P": {
+   "fr": "Études relues par les pairs",
+   "en": "Peer-reviewed studies"
+  },
+  "C": {
+   "fr": "Données de distributeurs et d'entreprises",
+   "en": "Retailer and company data"
+  },
+  "G": {
+   "fr": "Sources publiques",
+   "en": "Public bodies"
+  },
+  "I": {
+   "fr": "Industrie et associations",
+   "en": "Industry and advocacy"
+  },
+  "PR": {
+   "fr": "Presse et annonces",
+   "en": "Press and announcements"
+  }
+ },
+ "statuses": {
+  "primary": {
+   "fr": "Source primaire lue",
+   "en": "Primary source read"
+  },
+  "abstract": {
+   "fr": "Résumé seulement",
+   "en": "Abstract only"
+  },
+  "secondary": {
+   "fr": "Source secondaire",
+   "en": "Secondary source"
+  },
+  "notRetained": {
+   "fr": "Lien non conservé",
+   "en": "Link not retained"
+  },
+  "press": {
+   "fr": "Presse",
+   "en": "Press"
+  }
+ },
+ "countries": {
+  "UK": {
+   "fr": "Royaume-Uni",
+   "en": "United Kingdom"
+  },
+  "NL": {
+   "fr": "Pays-Bas",
+   "en": "Netherlands"
+  },
+  "BE": {
+   "fr": "Belgique",
+   "en": "Belgium"
+  },
+  "DE": {
+   "fr": "Allemagne",
+   "en": "Germany"
+  },
+  "ES": {
+   "fr": "Espagne",
+   "en": "Spain"
+  },
+  "FR": {
+   "fr": "France",
+   "en": "France"
+  },
+  "AT": {
+   "fr": "Autriche",
+   "en": "Austria"
+  },
+  "US": {
+   "fr": "États-Unis",
+   "en": "United States"
+  }
+ }
+}

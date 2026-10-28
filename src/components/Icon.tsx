@@ -7,6 +7,10 @@ const PATHS = {
   lock: "M6 11h12v9H6zM8.5 11V8a3.5 3.5 0 0 1 7 0v3",
   info: "M12 11v6M12 7.5v.5M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z",
   play: "M8 5l11 7-11 7z",
+  edit: "M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4",
+  back: "M19 12H5M11 6l-6 6 6 6",
+  link: "M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1",
+  external: "M14 4h6v6M20 4l-9 9M18 14v5H5V6h5",
 };
 export type IconName = keyof typeof PATHS;
 
