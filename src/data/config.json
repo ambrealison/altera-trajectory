@@ -23,104 +23,26 @@
     "ratePerYear": 0.04
   },
   "defaultAdoption": 0.5,
-  "plots": {
-    "1": {
-      "fr": "Protéines végétales transformées",
-      "en": "Processed plant proteins"
-    },
-    "2": {
-      "fr": "Plats cuisinés végétaux",
-      "en": "Plant-based ready meals"
-    },
-    "3": {
-      "fr": "Protéines végétales brutes",
-      "en": "Whole plant proteins"
-    },
-    "4": {
-      "fr": "Alternatives laitières végétales",
-      "en": "Plant-based dairy alternatives"
-    },
-    "other": {
-      "fr": "Autres protéines végétales",
-      "en": "Other plant protein"
-    },
-    "composite": {
-      "fr": "Part végétale des produits mixtes",
-      "en": "Plant part of mixed products"
-    },
-    "animal": {
-      "fr": "Protéines animales",
-      "en": "Animal protein"
-    }
-  },
-  "plotDetails": {
-    "1": {
-      "fr": "Steaks, hachés et panés végétaux",
-      "en": "Plant-based steaks, mince and breaded"
-    },
-    "2": {
-      "fr": "Pizzas, lasagnes, bolognaises, raviolis végétaux",
-      "en": "Plant-based pizzas, lasagne, bolognese, ravioli"
-    },
-    "3": {
-      "fr": "Légumineuses sèches et en conserve, pois chiches, tofu, fruits à coque",
-      "en": "Dried and canned pulses, chickpeas, tofu, nuts"
-    },
-    "4": {
-      "fr": "Boissons, yaourts et desserts végétaux",
-      "en": "Plant-based drinks, yoghurts and desserts"
-    }
-  },
-  "rayons": {
-    "butchery": {
-      "fr": "Boucherie-volaille",
-      "en": "Butchery and poultry"
-    },
-    "seafood": {
-      "fr": "Marée",
-      "en": "Fish counter"
-    },
-    "deli": {
-      "fr": "Charcuterie-traiteur",
-      "en": "Cooked meats and deli"
-    },
-    "dairy": {
-      "fr": "Crèmerie",
-      "en": "Dairy"
-    },
-    "grocery": {
-      "fr": "Épicerie",
-      "en": "Grocery"
-    },
-    "produce": {
-      "fr": "Fruits et légumes",
-      "en": "Fruit and vegetables"
-    },
-    "frozen": {
-      "fr": "Surgelés",
-      "en": "Frozen"
-    },
-    "bakery": {
-      "fr": "Boulangerie-céréales",
-      "en": "Bakery and cereals"
-    }
-  },
   "animalGroups": {
     "meat": {
       "fr": "Viandes",
       "en": "Meat"
     },
     "deli": {
-      "fr": "Charcuterie et plats carnés",
-      "en": "Cooked meats and meat meals"
+      "fr": "Charcuterie",
+      "en": "Cooked meats"
     },
     "fish_eggs": {
       "fr": "Poissons et œufs",
       "en": "Fish and eggs"
     },
     "dairy": {
-      "fr": "Lait et fromages",
-      "en": "Milk and cheese"
+      "fr": "Lait, fromages et beurre",
+      "en": "Milk, cheese and butter"
+    },
+    "composite": {
+      "fr": "Part animale des produits composites",
+      "en": "Animal part of composite products"
     }
   },
   "benchmark": {

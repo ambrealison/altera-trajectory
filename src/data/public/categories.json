@@ -1,0 +1,617 @@
+[
+  {
+    "id": "minced_meat",
+    "label": {
+      "fr": "Viande hachée et burgers",
+      "en": "Minced meat and burgers"
+    },
+    "group": "animal",
+    "proteinGroup": "animal_core",
+    "animalGroup": "meat",
+    "wwfGroup": "FG1",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 1.0
+    },
+    "tonnesProduct": 34700,
+    "proteinPer100g": 19.3,
+    "plantProteinShare": 0.00185,
+    "pricePerKg": 12,
+    "co2PerKg": 24
+  },
+  {
+    "id": "red_meat",
+    "label": {
+      "fr": "Viande rouge piécée (bœuf, veau, porc, agneau)",
+      "en": "Red meat cuts (beef, veal, pork, lamb)"
+    },
+    "group": "animal",
+    "proteinGroup": "animal_core",
+    "animalGroup": "meat",
+    "wwfGroup": "FG1",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 1.0
+    },
+    "tonnesProduct": 26700,
+    "proteinPer100g": 20.2,
+    "plantProteinShare": 0.00224,
+    "pricePerKg": 17,
+    "co2PerKg": 18
+  },
+  {
+    "id": "poultry",
+    "label": {
+      "fr": "Volaille et lapin",
+      "en": "Poultry and rabbit"
+    },
+    "group": "animal",
+    "proteinGroup": "animal_core",
+    "animalGroup": "meat",
+    "wwfGroup": "FG1",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 1.0
+    },
+    "tonnesProduct": 52200,
+    "proteinPer100g": 19.3,
+    "plantProteinShare": 0.00219,
+    "pricePerKg": 10,
+    "co2PerKg": 6
+  },
+  {
+    "id": "charcuterie",
+    "label": {
+      "fr": "Charcuterie",
+      "en": "Cooked and cured meats"
+    },
+    "group": "animal",
+    "proteinGroup": "animal_core",
+    "animalGroup": "deli",
+    "wwfGroup": "FG1",
+    "fg1": {
+      "plant": 0.000358,
+      "animal": 0.98584
+    },
+    "tonnesProduct": 64500,
+    "proteinPer100g": 19.0,
+    "plantProteinShare": 0.00127,
+    "pricePerKg": 15,
+    "co2PerKg": 7
+  },
+  {
+    "id": "fish",
+    "label": {
+      "fr": "Poissons et produits de la mer",
+      "en": "Fish and seafood"
+    },
+    "group": "animal",
+    "proteinGroup": "animal_core",
+    "animalGroup": "fish_eggs",
+    "wwfGroup": "FG1",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 1.0
+    },
+    "tonnesProduct": 34300,
+    "proteinPer100g": 17.5,
+    "plantProteinShare": 0.00211,
+    "pricePerKg": 20,
+    "co2PerKg": 7
+  },
+  {
+    "id": "eggs",
+    "label": {
+      "fr": "Œufs",
+      "en": "Eggs"
+    },
+    "group": "animal",
+    "proteinGroup": "animal_core",
+    "animalGroup": "fish_eggs",
+    "wwfGroup": "FG1",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 1.0
+    },
+    "tonnesProduct": 30700,
+    "proteinPer100g": 13.3,
+    "plantProteinShare": 0.00203,
+    "pricePerKg": 5,
+    "co2PerKg": 3
+  },
+  {
+    "id": "milk_yoghurt",
+    "label": {
+      "fr": "Lait, yaourts, crèmes et desserts lactés",
+      "en": "Milk, yoghurts, cream and dairy desserts"
+    },
+    "group": "animal",
+    "proteinGroup": "animal_core",
+    "animalGroup": "dairy",
+    "wwfGroup": "FG2",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 0.0
+    },
+    "tonnesProduct": 425000,
+    "proteinPer100g": 3.8,
+    "plantProteinShare": 0.00076,
+    "pricePerKg": 2.4,
+    "co2PerKg": 1.8
+  },
+  {
+    "id": "cheese",
+    "label": {
+      "fr": "Fromages",
+      "en": "Cheese"
+    },
+    "group": "animal",
+    "proteinGroup": "animal_core",
+    "animalGroup": "dairy",
+    "wwfGroup": "FG2",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 0.0
+    },
+    "tonnesProduct": 102000,
+    "proteinPer100g": 18.5,
+    "plantProteinShare": 0.00052,
+    "pricePerKg": 14,
+    "co2PerKg": 8.5
+  },
+  {
+    "id": "other_animal",
+    "label": {
+      "fr": "Beurre, glaces et autres produits animaux",
+      "en": "Butter, ice cream and other animal products"
+    },
+    "group": "animal",
+    "proteinGroup": "animal_core",
+    "animalGroup": "dairy",
+    "wwfGroup": "FG3",
+    "fg1": {
+      "plant": 0.000975,
+      "animal": 0.0
+    },
+    "tonnesProduct": 113000,
+    "proteinPer100g": 4.0,
+    "plantProteinShare": 0.15662,
+    "pricePerKg": 9,
+    "co2PerKg": 7
+  },
+  {
+    "id": "meat_ready_meals",
+    "label": {
+      "fr": "Plats à base de viande ou de poisson",
+      "en": "Meat and fish ready meals"
+    },
+    "group": "composite",
+    "proteinGroup": "composite",
+    "animalGroup": "composite",
+    "wwfGroup": "FG1",
+    "wwfComposite": true,
+    "fg1": {
+      "plant": 0.0,
+      "animal": 0.0
+    },
+    "tonnesProduct": 85700,
+    "proteinPer100g": 7.6,
+    "plantProteinShare": 0.41211,
+    "pricePerKg": 9,
+    "co2PerKg": 4.439,
+    "co2Anchors": {
+      "animal": 6.5,
+      "plant": 1.5
+    }
+  },
+  {
+    "id": "vegetarian_meals",
+    "label": {
+      "fr": "Plats végétariens (avec lait ou œufs)",
+      "en": "Vegetarian ready meals (with dairy or eggs)"
+    },
+    "group": "composite",
+    "proteinGroup": "composite",
+    "animalGroup": "composite",
+    "wwfGroup": "FG1",
+    "wwfComposite": true,
+    "fg1": {
+      "plant": 0.009462,
+      "animal": 0.0
+    },
+    "tonnesProduct": 31900,
+    "proteinPer100g": 5.9,
+    "plantProteinShare": 0.80139,
+    "pricePerKg": 8,
+    "co2PerKg": 2.436,
+    "co2Anchors": {
+      "animal": 5.0,
+      "plant": 1.8
+    }
+  },
+  {
+    "id": "plant_ready_meals",
+    "label": {
+      "fr": "Plats végétaliens",
+      "en": "Vegan ready meals"
+    },
+    "group": "composite",
+    "proteinGroup": "composite",
+    "animalGroup": "composite",
+    "wwfGroup": "FG1",
+    "wwfComposite": true,
+    "fg1": {
+      "plant": 0.0,
+      "animal": 0.0
+    },
+    "tonnesProduct": 2750,
+    "proteinPer100g": 8.4,
+    "plantProteinShare": 1.0,
+    "pricePerKg": 11,
+    "co2PerKg": 2.0,
+    "co2Anchors": {
+      "animal": 2.0,
+      "plant": 2.0
+    }
+  },
+  {
+    "id": "pastries",
+    "label": {
+      "fr": "Viennoiseries, biscuits et pains enrichis",
+      "en": "Pastries, biscuits and enriched breads"
+    },
+    "group": "composite",
+    "proteinGroup": "composite",
+    "animalGroup": "composite",
+    "wwfGroup": "FG7",
+    "wwfComposite": true,
+    "fg1": {
+      "plant": 0.000188,
+      "animal": 0.023219
+    },
+    "tonnesProduct": 140000,
+    "proteinPer100g": 7.1,
+    "plantProteinShare": 0.62392,
+    "pricePerKg": 7,
+    "co2PerKg": 2.816,
+    "co2Anchors": {
+      "animal": 5.0,
+      "plant": 1.5
+    }
+  },
+  {
+    "id": "hybrid_mince",
+    "label": {
+      "fr": "Haché et burgers hybrides",
+      "en": "Hybrid mince and burgers"
+    },
+    "group": "composite",
+    "proteinGroup": "composite",
+    "animalGroup": "meat",
+    "wwfGroup": "FG1",
+    "wwfComposite": true,
+    "fg1": {
+      "plant": 0,
+      "animal": 0
+    },
+    "tonnesProduct": 420,
+    "proteinPer100g": 16.4,
+    "plantProteinShare": 0.23566,
+    "pricePerKg": 13,
+    "co2PerKg": 17.287,
+    "co2Anchors": {
+      "animal": 22.0,
+      "plant": 2.0
+    }
+  },
+  {
+    "id": "hybrid_charcuterie",
+    "label": {
+      "fr": "Charcuterie et traiteur hybrides",
+      "en": "Hybrid cooked meats and deli"
+    },
+    "group": "composite",
+    "proteinGroup": "composite",
+    "animalGroup": "deli",
+    "wwfGroup": "FG1",
+    "wwfComposite": true,
+    "fg1": {
+      "plant": 0,
+      "animal": 0
+    },
+    "tonnesProduct": 180,
+    "proteinPer100g": 14.8,
+    "plantProteinShare": 0.3148,
+    "pricePerKg": 16,
+    "co2PerKg": 4.926,
+    "co2Anchors": {
+      "animal": 6.5,
+      "plant": 1.5
+    }
+  },
+  {
+    "id": "plant_steaks",
+    "label": {
+      "fr": "Steaks, hachés et saucisses végétaux",
+      "en": "Plant-based steaks, mince and sausages"
+    },
+    "group": "meat_alt",
+    "proteinGroup": "plant_core",
+    "wwfGroup": "FG1",
+    "fg1": {
+      "plant": 1.0,
+      "animal": 0.0
+    },
+    "tonnesProduct": 527,
+    "proteinPer100g": 14.8,
+    "plantProteinShare": 1.0,
+    "pricePerKg": 18,
+    "co2PerKg": 2.5
+  },
+  {
+    "id": "plant_breaded",
+    "label": {
+      "fr": "Panés et nuggets végétaux",
+      "en": "Plant-based nuggets and breaded"
+    },
+    "group": "meat_alt",
+    "proteinGroup": "plant_core",
+    "wwfGroup": "FG1",
+    "fg1": {
+      "plant": 1.0,
+      "animal": 0.0
+    },
+    "tonnesProduct": 189,
+    "proteinPer100g": 11.9,
+    "plantProteinShare": 1.0,
+    "pricePerKg": 15,
+    "co2PerKg": 2.5
+  },
+  {
+    "id": "pulses",
+    "label": {
+      "fr": "Légumineuses sèches et en conserve",
+      "en": "Dried and canned pulses"
+    },
+    "group": "pulses_g",
+    "proteinGroup": "plant_core",
+    "wwfGroup": "FG1",
+    "fg1": {
+      "plant": 0.861997,
+      "animal": 0.004639
+    },
+    "tonnesProduct": 22300,
+    "proteinPer100g": 7.8,
+    "plantProteinShare": 1.0,
+    "pricePerKg": 5,
+    "co2PerKg": 1.0
+  },
+  {
+    "id": "pulse_staples",
+    "label": {
+      "fr": "Produits de base aux légumineuses",
+      "en": "Pulse-based staples"
+    },
+    "group": "pulses_g",
+    "proteinGroup": "plant_core",
+    "wwfGroup": "FG5",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 0.0
+    },
+    "tonnesProduct": 26.8,
+    "proteinPer100g": 19.2,
+    "plantProteinShare": 1.0,
+    "pricePerKg": 7,
+    "co2PerKg": 1.2
+  },
+  {
+    "id": "nuts",
+    "label": {
+      "fr": "Fruits à coque",
+      "en": "Nuts"
+    },
+    "group": "nuts_g",
+    "proteinGroup": "plant_core",
+    "wwfGroup": "FG1",
+    "fg1": {
+      "plant": 0.929288,
+      "animal": 0.000353
+    },
+    "tonnesProduct": 10700,
+    "proteinPer100g": 21.7,
+    "plantProteinShare": 0.99421,
+    "pricePerKg": 16,
+    "co2PerKg": 2.5
+  },
+  {
+    "id": "seeds",
+    "label": {
+      "fr": "Graines",
+      "en": "Seeds"
+    },
+    "group": "seeds_g",
+    "proteinGroup": "plant_core",
+    "wwfGroup": "FG1",
+    "fg1": {
+      "plant": 1.0,
+      "animal": 0.0
+    },
+    "tonnesProduct": 646,
+    "proteinPer100g": 17.3,
+    "plantProteinShare": 1.0,
+    "pricePerKg": 12,
+    "co2PerKg": 1.8
+  },
+  {
+    "id": "tofu",
+    "label": {
+      "fr": "Tofu, tempeh et seitan",
+      "en": "Tofu, tempeh and seitan"
+    },
+    "group": "tofu_g",
+    "proteinGroup": "plant_core",
+    "wwfGroup": "FG1",
+    "fg1": {
+      "plant": 1.0,
+      "animal": 0.0
+    },
+    "tonnesProduct": 169,
+    "proteinPer100g": 16.8,
+    "plantProteinShare": 1.0,
+    "pricePerKg": 14,
+    "co2PerKg": 2.0
+  },
+  {
+    "id": "plant_drinks",
+    "label": {
+      "fr": "Boissons végétales",
+      "en": "Plant-based drinks"
+    },
+    "group": "dairy_alt",
+    "proteinGroup": "plant_core",
+    "wwfGroup": "FG2",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 0.0
+    },
+    "tonnesProduct": 18800,
+    "proteinPer100g": 1.7,
+    "plantProteinShare": 1.0,
+    "pricePerKg": 2.6,
+    "co2PerKg": 0.5
+  },
+  {
+    "id": "plant_yoghurts",
+    "label": {
+      "fr": "Yaourts et desserts végétaux",
+      "en": "Plant-based yoghurts and desserts"
+    },
+    "group": "dairy_alt",
+    "proteinGroup": "plant_core",
+    "wwfGroup": "FG2",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 0.0
+    },
+    "tonnesProduct": 925,
+    "proteinPer100g": 1.7,
+    "plantProteinShare": 1.0,
+    "pricePerKg": 6.5,
+    "co2PerKg": 1.0
+  },
+  {
+    "id": "other_core",
+    "label": {
+      "fr": "Chocolat noir, barres et autres végétaux riches en protéines",
+      "en": "Dark chocolate, bars and other protein-rich plant foods"
+    },
+    "group": "other_core_g",
+    "proteinGroup": "plant_core",
+    "wwfGroup": "FG7",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 0.001462
+    },
+    "tonnesProduct": 9070,
+    "proteinPer100g": 3.0,
+    "plantProteinShare": 0.99433,
+    "pricePerKg": 12,
+    "co2PerKg": 3.0
+  },
+  {
+    "id": "grains_pasta",
+    "label": {
+      "fr": "Pâtes, riz et céréales",
+      "en": "Pasta, rice and cereals"
+    },
+    "group": "noncore",
+    "proteinGroup": "plant_noncore",
+    "wwfGroup": "FG5",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 0.0
+    },
+    "tonnesProduct": 94600,
+    "proteinPer100g": 10.7,
+    "plantProteinShare": 1.0,
+    "pricePerKg": 2.8,
+    "co2PerKg": 1.5
+  },
+  {
+    "id": "bread",
+    "label": {
+      "fr": "Pain et viennoiserie végétale",
+      "en": "Bread and plant-based pastries"
+    },
+    "group": "noncore",
+    "proteinGroup": "plant_noncore",
+    "wwfGroup": "FG5",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 0.0
+    },
+    "tonnesProduct": 49700,
+    "proteinPer100g": 8.8,
+    "plantProteinShare": 1.0,
+    "pricePerKg": 4.5,
+    "co2PerKg": 1.0
+  },
+  {
+    "id": "fruit_vegetables",
+    "label": {
+      "fr": "Fruits, légumes et pommes de terre",
+      "en": "Fruit, vegetables and potatoes"
+    },
+    "group": "noncore",
+    "proteinGroup": "plant_noncore",
+    "wwfGroup": "FG4",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 0.0
+    },
+    "tonnesProduct": 177660,
+    "proteinPer100g": 1.6,
+    "plantProteinShare": 0.99999,
+    "pricePerKg": 2.8,
+    "co2PerKg": 0.8
+  },
+  {
+    "id": "sweet_snacks",
+    "label": {
+      "fr": "Biscuits, snacks et confiseries végétaux",
+      "en": "Plant-based biscuits, snacks and sweets"
+    },
+    "group": "noncore",
+    "proteinGroup": "plant_noncore",
+    "wwfGroup": "FG7",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 0.0
+    },
+    "tonnesProduct": 127000,
+    "proteinPer100g": 3.2,
+    "plantProteinShare": 0.99612,
+    "pricePerKg": 9,
+    "co2PerKg": 3.0
+  },
+  {
+    "id": "drinks_other",
+    "label": {
+      "fr": "Boissons, petit-déjeuner et épicerie diverse",
+      "en": "Drinks, breakfast and other grocery"
+    },
+    "group": "noncore",
+    "proteinGroup": "plant_noncore",
+    "wwfGroup": "FG3",
+    "fg1": {
+      "plant": 0.0,
+      "animal": 2.6e-05
+    },
+    "tonnesProduct": 1770000,
+    "proteinPer100g": 0.3,
+    "plantProteinShare": 0.98644,
+    "pricePerKg": 2.0,
+    "co2PerKg": 0.6
+  }
+]

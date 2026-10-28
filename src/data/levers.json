@@ -8,9 +8,6 @@
     },
     "type": "central_stores",
     "storeDependency": 0.5,
-    "plots": [
-      "outside"
-    ],
     "deckEffort": 3.1,
     "deckImpact": 9.0,
     "provisional": false,
@@ -41,9 +38,9 @@
           "fr": "Part du haché et des burgers passée en hybride",
           "en": "Share of mince and burgers switched to hybrid"
         },
-        "value": 35,
+        "value": 45,
         "min": 0,
-        "max": 60,
+        "max": 70,
         "step": 5,
         "unit": "%",
         "note": {
@@ -57,7 +54,7 @@
           "fr": "Part végétale des protéines dans la recette hybride",
           "en": "Plant share of protein in the hybrid recipe"
         },
-        "value": 30,
+        "value": 40,
         "min": 10,
         "max": 50,
         "step": 5,
@@ -65,7 +62,8 @@
         "note": {
           "fr": "Ordre de grandeur à confirmer avec la R&D MDD et les tests consommateurs.",
           "en": "Order of magnitude to confirm with private-label R&D and consumer tests."
-        }
+        },
+        "dependsOn": "conversion"
       }
     ],
     "effects": [
@@ -88,7 +86,10 @@
       "low": 0.6,
       "high": 1.4
     },
-    "status": "draft"
+    "status": "draft",
+    "scope": [
+      "outside"
+    ]
   },
   {
     "id": "L02",
@@ -99,9 +100,6 @@
     },
     "type": "central_stores",
     "storeDependency": 0.5,
-    "plots": [
-      "outside"
-    ],
     "deckEffort": 4.5,
     "deckImpact": 7.1,
     "provisional": false,
@@ -148,15 +146,16 @@
           "fr": "Part des volumes MDD passée en recette hybride",
           "en": "Share of private-label volume switched to a hybrid recipe"
         },
-        "value": 60,
+        "value": 45,
         "min": 0,
-        "max": 70,
+        "max": 80,
         "step": 5,
         "unit": "%",
         "note": {
           "fr": "À pleine montée en charge.",
           "en": "At full ramp-up."
-        }
+        },
+        "dependsOn": "mddShare"
       },
       {
         "id": "plantShare",
@@ -172,7 +171,8 @@
         "note": {
           "fr": "Ordre de grandeur à confirmer avec la R&D MDD.",
           "en": "Order of magnitude to confirm with private-label R&D."
-        }
+        },
+        "dependsOn": "conversion"
       }
     ],
     "effects": [
@@ -195,7 +195,10 @@
       "low": 0.6,
       "high": 1.4
     },
-    "status": "draft"
+    "status": "draft",
+    "scope": [
+      "outside"
+    ]
   },
   {
     "id": "L03",
@@ -206,19 +209,16 @@
     },
     "type": "central",
     "storeDependency": 0,
-    "plots": [
-      "transverse"
-    ],
     "deckEffort": 1.1,
     "deckImpact": 6.0,
     "provisional": false,
     "description": {
-      "fr": "Mesurer chaque année le ratio sur l'ensemble des ventes, avec des données produit complètes (teneur en protéines, composition).",
-      "en": "Measure the ratio every year across all sales, with complete product data (protein content, composition)."
+      "fr": "Mesurer chaque année la répartition protéique sur l'ensemble des ventes, avec des données produit complètes (teneur en protéines, composition).",
+      "en": "Measure the protein split every year across all sales, with complete product data (protein content, composition)."
     },
     "whyForU": {
-      "fr": "Ce levier ne fait pas bouger le ratio, il rend la mesure plus fiable. Les autres leviers se pilotent alors sur une fourchette plus resserrée.",
-      "en": "This lever does not move the ratio, it makes the measurement more reliable. The other levers can then be steered on a narrower range."
+      "fr": "Ce levier ne fait pas bouger la répartition protéique, il rend la mesure plus fiable. Les autres leviers se pilotent alors sur une fourchette plus resserrée.",
+      "en": "This lever does not move the protein split, it makes the measurement more reliable. The other levers can then be steered on a narrower range."
     },
     "owner": {
       "fr": "RSE et études",
@@ -276,7 +276,10 @@
       "low": 1,
       "high": 1
     },
-    "status": "draft"
+    "status": "draft",
+    "scope": [
+      "transverse"
+    ]
   },
   {
     "id": "L04",
@@ -287,9 +290,6 @@
     },
     "type": "central_stores",
     "storeDependency": 0.5,
-    "plots": [
-      "3"
-    ],
     "deckEffort": 4.0,
     "deckImpact": 5.9,
     "provisional": false,
@@ -306,8 +306,8 @@
       "en": "Grocery category and in-store marketing"
     },
     "pilot": {
-      "fr": "Périmètre : un espace légumineuses et tofu dans 30 magasins volontaires. Durée : 4 mois. Indicateurs : ventes de {plot3}, ventes de viande des mêmes magasins. Go si la hausse dépasse le seuil fixé avec l'équipe études.",
-      "en": "Scope: a pulses and tofu area in 30 volunteer stores. Duration: 4 months. Indicators: sales of {plot3}, meat sales in the same stores. Go if the increase exceeds the threshold agreed with the insights team."
+      "fr": "Périmètre : un espace légumineuses et tofu dans 30 magasins volontaires. Durée : 4 mois. Indicateurs : ventes de {wholePlant}, ventes de viande des mêmes magasins. Go si la hausse dépasse le seuil fixé avec l'équipe études.",
+      "en": "Scope: a pulses and tofu area in 30 volunteer stores. Duration: 4 months. Indicators: sales of {wholePlant}, meat sales in the same stores. Go if the increase exceeds the threshold agreed with the insights team."
     },
     "economics": {
       "revenueEffect": 1,
@@ -317,10 +317,10 @@
       {
         "id": "salesGain",
         "label": {
-          "fr": "Hausse des ventes de {plot3}",
-          "en": "Sales increase of {plot3}"
+          "fr": "Hausse des ventes de {wholePlant}",
+          "en": "Sales increase of {wholePlant}"
         },
-        "value": 35,
+        "value": 25,
         "min": 0,
         "max": 80,
         "step": 5,
@@ -344,7 +344,8 @@
         "note": {
           "fr": "En volume : une portion de légumineuses remplace une portion de viande.",
           "en": "By volume: a portion of pulses replaces a portion of meat."
-        }
+        },
+        "dependsOn": "salesGain"
       },
       {
         "id": "pricePremium",
@@ -360,7 +361,8 @@
         "note": {
           "fr": "Montée en gamme de l'offre : bocaux, salades, plats à cuisiner.",
           "en": "Upgraded range: jars, salads, ready-to-cook dishes."
-        }
+        },
+        "dependsOn": "salesGain"
       }
     ],
     "effects": [
@@ -369,7 +371,8 @@
         "targets": [
           "pulses",
           "tofu",
-          "nuts_seeds"
+          "nuts",
+          "seeds"
         ],
         "x": "salesGain",
         "substitution": {
@@ -388,7 +391,8 @@
         "targets": [
           "pulses",
           "tofu",
-          "nuts_seeds"
+          "nuts",
+          "seeds"
         ],
         "x": "pricePremium"
       }
@@ -412,9 +416,6 @@
     },
     "type": "stores",
     "storeDependency": 1,
-    "plots": [
-      "transverse"
-    ],
     "deckEffort": 5.4,
     "deckImpact": 5.7,
     "provisional": false,
@@ -431,8 +432,8 @@
       "en": "Promotions and trade marketing"
     },
     "pilot": {
-      "fr": "Périmètre : deux vagues promotionnelles rééquilibrées dans 40 magasins volontaires. Durée : 6 mois. Indicateurs : volumes de viande et des 4 plots, chiffre d'affaires par magasin. Go si le chiffre d'affaires des magasins pilotes reste dans la marge fixée.",
-      "en": "Scope: two rebalanced promotional waves in 40 volunteer stores. Duration: 6 months. Indicators: meat and 4-plot volumes, revenue per store. Go if pilot store revenue stays within the agreed margin."
+      "fr": "Périmètre : deux vagues promotionnelles rééquilibrées dans 40 magasins volontaires. Durée : 6 mois. Indicateurs : volumes de viande et des catégories végétales, chiffre d'affaires par magasin. Go si le chiffre d'affaires des magasins pilotes reste dans la marge fixée.",
+      "en": "Scope: two rebalanced promotional waves in 40 volunteer stores. Duration: 6 months. Indicators: meat and plant category volumes, revenue per store. Go if pilot store revenue stays within the agreed margin."
     },
     "economics": {
       "revenueEffect": 1,
@@ -447,7 +448,7 @@
         },
         "value": 3,
         "min": 0,
-        "max": 10,
+        "max": 15,
         "step": 1,
         "unit": "%",
         "note": {
@@ -458,12 +459,12 @@
       {
         "id": "plantGain",
         "label": {
-          "fr": "Hausse des ventes des 4 plots grâce aux promotions",
-          "en": "Sales increase of the 4 plots from promotions"
+          "fr": "Hausse des ventes des catégories végétales grâce aux promotions",
+          "en": "Sales increase of the plant categories from promotions"
         },
         "value": 30,
         "min": 0,
-        "max": 60,
+        "max": 80,
         "step": 5,
         "unit": "%",
         "note": {
@@ -491,7 +492,8 @@
           "plant_ready_meals",
           "pulses",
           "tofu",
-          "nuts_seeds",
+          "nuts",
+          "seeds",
           "plant_drinks",
           "plant_yoghurts"
         ],
@@ -506,7 +508,10 @@
       "low": 0.5,
       "high": 1.5
     },
-    "status": "draft"
+    "status": "draft",
+    "scope": [
+      "transverse"
+    ]
   },
   {
     "id": "L06",
@@ -517,9 +522,6 @@
     },
     "type": "central",
     "storeDependency": 0,
-    "plots": [
-      "outside"
-    ],
     "deckEffort": 4.4,
     "deckImpact": 5.5,
     "provisional": false,
@@ -552,7 +554,7 @@
         },
         "value": 10,
         "min": 0,
-        "max": 25,
+        "max": 30,
         "step": 1,
         "unit": "%",
         "note": {
@@ -568,13 +570,14 @@
         },
         "value": 50,
         "min": 0,
-        "max": 80,
+        "max": 90,
         "step": 5,
         "unit": "%",
         "note": {
           "fr": "Viande fraîche et charcuterie en libre-service.",
           "en": "Self-service fresh meat and cooked meats."
-        }
+        },
+        "dependsOn": "gramCut"
       },
       {
         "id": "pricePremium",
@@ -590,7 +593,8 @@
         "note": {
           "fr": "1,5 : une barquette 10 % plus légère se vend 15 % plus cher au kilo.",
           "en": "1.5: a pack 10% lighter sells 15% dearer per kilo."
-        }
+        },
+        "dependsOn": "gramCut"
       }
     ],
     "effects": [
@@ -623,7 +627,10 @@
       "low": 0.6,
       "high": 1.4
     },
-    "status": "draft"
+    "status": "draft",
+    "scope": [
+      "outside"
+    ]
   },
   {
     "id": "L07",
@@ -634,9 +641,6 @@
     },
     "type": "central",
     "storeDependency": 0,
-    "plots": [
-      "2"
-    ],
     "deckEffort": 3.5,
     "deckImpact": 5.4,
     "provisional": false,
@@ -645,8 +649,8 @@
       "en": "Offer plant-based versions of the best-selling private-label ready meals (lasagne, bolognese, pizza, ravioli)."
     },
     "whyForU": {
-      "fr": "La centrale maîtrise la recette et l'implantation de la MDD : l'offre de {plot2} grandit sans attendre les marques.",
-      "en": "The central office controls private-label recipes and placement: the {plot2} range grows without waiting for brands."
+      "fr": "La centrale maîtrise la recette et l'implantation de la MDD : l'offre de {veganMeals} grandit sans attendre les marques.",
+      "en": "The central office controls private-label recipes and placement: the {veganMeals} range grows without waiting for brands."
     },
     "owner": {
       "fr": "Offre MDD traiteur",
@@ -683,15 +687,16 @@
           "fr": "Part des volumes MDD passée en version végétale",
           "en": "Share of private-label volume moved to plant-based versions"
         },
-        "value": 40,
+        "value": 30,
         "min": 0,
-        "max": 70,
+        "max": 80,
         "step": 5,
         "unit": "%",
         "note": {
           "fr": "Report depuis la version carnée, à pleine montée en charge.",
           "en": "Switching from the meat version, at full ramp-up."
-        }
+        },
+        "dependsOn": "mddShare"
       }
     ],
     "effects": [
@@ -724,10 +729,6 @@
     },
     "type": "central",
     "storeDependency": 0,
-    "plots": [
-      "1",
-      "4"
-    ],
     "deckEffort": 5.0,
     "deckImpact": 4.9,
     "provisional": true,
@@ -755,8 +756,8 @@
       {
         "id": "salesGain",
         "label": {
-          "fr": "Hausse des ventes après amélioration des recettes ({plot1}, {plot4})",
-          "en": "Sales increase after recipe improvement ({plot1}, {plot4})"
+          "fr": "Hausse des ventes après amélioration des recettes ({meatAlt}, {dairyAlt})",
+          "en": "Sales increase after recipe improvement ({meatAlt}, {dairyAlt})"
         },
         "value": 30,
         "min": 0,
@@ -782,7 +783,8 @@
         "note": {
           "fr": "En volume : un steak pour un steak, un litre pour un litre.",
           "en": "By volume: a steak for a steak, a litre for a litre."
-        }
+        },
+        "dependsOn": "salesGain"
       }
     ],
     "effects": [
@@ -839,10 +841,6 @@
     },
     "type": "central",
     "storeDependency": 0,
-    "plots": [
-      "3",
-      "other"
-    ],
     "deckEffort": 9.0,
     "deckImpact": 4.7,
     "provisional": false,
@@ -851,8 +849,8 @@
       "en": "Replace part of private-label pasta, rice and cereals with pulse-based or pulse-enriched versions, richer in protein."
     },
     "whyForU": {
-      "fr": "Les produits de base pèsent lourd dans les protéines végétales. Les enrichir fait monter le ratio sans changer les habitudes, mais demande un gros travail de développement.",
-      "en": "Staples weigh heavily in plant protein. Enriching them raises the ratio without changing habits, but takes substantial development work."
+      "fr": "Les produits de base pèsent lourd dans les protéines végétales. Les enrichir fait monter la part végétale sans changer les habitudes, mais demande un gros travail de développement.",
+      "en": "Staples weigh heavily in plant protein. Enriching them raises the plant share without changing habits, but takes substantial development work."
     },
     "owner": {
       "fr": "Offre MDD épicerie",
@@ -891,13 +889,14 @@
         },
         "value": 12,
         "min": 0,
-        "max": 40,
+        "max": 50,
         "step": 5,
         "unit": "%",
         "note": {
           "fr": "Teneur en protéines reprise de la catégorie « Produits de base aux légumineuses ».",
           "en": "Protein content taken from the \"Pulse-based staples\" category."
-        }
+        },
+        "dependsOn": "mddShare"
       }
     ],
     "effects": [
@@ -930,18 +929,12 @@
     },
     "type": "central_stores",
     "storeDependency": 0.5,
-    "plots": [
-      "1",
-      "2",
-      "3",
-      "4"
-    ],
     "deckEffort": 6.6,
     "deckImpact": 4.3,
     "provisional": true,
     "description": {
-      "fr": "Référencer plus d'alternatives végétales dans les 4 plots et les rendre disponibles dans tous les formats de magasins.",
-      "en": "List more plant-based alternatives across the 4 plots and make them available in every store format."
+      "fr": "Référencer plus d'alternatives végétales dans toutes les catégories végétales et les rendre disponibles dans tous les formats de magasins.",
+      "en": "List more plant-based alternatives across the plant categories and make them available in every store format."
     },
     "whyForU": {
       "fr": "La centrale référence, chaque magasin choisit ce qu'il met en rayon. Un assortiment de base commun limite les écarts entre magasins.",
@@ -952,8 +945,8 @@
       "en": "Buying and category management"
     },
     "pilot": {
-      "fr": "Périmètre : un assortiment végétal de base dans 50 magasins volontaires. Durée : 6 mois. Indicateurs : ventes des 4 plots, rotation par référence. Go si la rotation reste au-dessus du seuil de déréférencement.",
-      "en": "Scope: a core plant-based range in 50 volunteer stores. Duration: 6 months. Indicators: 4-plot sales, rotation per item. Go if rotation stays above the delisting threshold."
+      "fr": "Périmètre : un assortiment végétal de base dans 50 magasins volontaires. Durée : 6 mois. Indicateurs : ventes des catégories végétales, rotation par référence. Go si la rotation reste au-dessus du seuil de déréférencement.",
+      "en": "Scope: a core plant-based range in 50 volunteer stores. Duration: 6 months. Indicators: plant category sales, rotation per item. Go if rotation stays above the delisting threshold."
     },
     "economics": {
       "revenueEffect": 2,
@@ -963,8 +956,8 @@
       {
         "id": "salesGain",
         "label": {
-          "fr": "Hausse des ventes des 4 plots liée aux nouvelles références",
-          "en": "Sales increase of the 4 plots from new listings"
+          "fr": "Hausse des ventes des catégories végétales liée aux nouvelles références",
+          "en": "Sales increase of the plant categories from new listings"
         },
         "value": 12,
         "min": 0,
@@ -990,7 +983,8 @@
         "note": {
           "fr": "En volume.",
           "en": "By volume."
-        }
+        },
+        "dependsOn": "salesGain"
       }
     ],
     "effects": [
@@ -1002,7 +996,8 @@
           "plant_ready_meals",
           "pulses",
           "tofu",
-          "nuts_seeds"
+          "nuts",
+          "seeds"
         ],
         "x": "salesGain",
         "substitution": {
@@ -1052,9 +1047,6 @@
     },
     "type": "stores",
     "storeDependency": 1,
-    "plots": [
-      "4"
-    ],
     "deckEffort": 5.0,
     "deckImpact": 3.7,
     "provisional": false,
@@ -1109,7 +1101,8 @@
         "note": {
           "fr": "1,0 : une baisse de prix de 10 % donne environ 10 % de volume en plus. À estimer sur l'historique des ventes.",
           "en": "1.0: a 10% price cut gives about 10% more volume. To estimate from sales history."
-        }
+        },
+        "dependsOn": "priceCut"
       },
       {
         "id": "fromDairy",
@@ -1125,7 +1118,8 @@
         "note": {
           "fr": "En volume, un litre pour un litre. Le reste est de la consommation en plus.",
           "en": "By volume, litre for litre. The rest is extra consumption."
-        }
+        },
+        "dependsOn": "priceCut"
       }
     ],
     "effects": [
@@ -1168,32 +1162,28 @@
     "number": 12,
     "label": {
       "fr": "Implantation intégrée en rayon",
-      "en": "Integrated shelf placement"
+      "en": "Integrated aisle placement"
     },
     "type": "stores",
     "storeDependency": 1,
-    "plots": [
-      "1",
-      "4"
-    ],
     "deckEffort": 8.6,
     "deckImpact": 3.6,
     "provisional": false,
     "description": {
-      "fr": "Placer les alternatives végétales à côté de leurs équivalents animaux : steaks végétaux au rayon boucherie, boissons végétales au rayon lait.",
-      "en": "Place plant-based alternatives next to their animal equivalents: plant-based steaks in the meat aisle, plant-based drinks next to milk."
+      "fr": "Placer les {meatAlt} dans une baie signalée au cœur du rayon viande libre-service, en gardant le rayon végétarien pour qu'on les trouve aux deux endroits.",
+      "en": "Place {meatAlt} in a signed bay inside the self-service meat aisle, keeping the vegetarian shelf so shoppers find them in both places."
     },
     "whyForU": {
-      "fr": "L'implantation se décide en magasin et demande de revoir les planogrammes : l'effet dépend directement des magasins qui suivent.",
-      "en": "Shelf placement is decided in store and means redrawing planograms: the effect depends directly on the stores that follow."
+      "fr": "L'implantation se décide magasin par magasin. Les essais publiés montrent une hausse nette des ventes végétales, sans baisse mesurable de la viande : c'est un levier de croissance avant d'être un levier de substitution.",
+      "en": "Shelf layout is decided store by store. Published trials show a clear rise in plant-based sales with no measurable fall in meat: it is a growth lever before it is a substitution lever."
     },
     "owner": {
-      "fr": "Merchandising et magasins",
-      "en": "Merchandising and stores"
+      "fr": "Merchandising, marché boucherie libre-service et magasins",
+      "en": "Merchandising, self-service meat category and stores"
     },
     "pilot": {
-      "fr": "Périmètre : implantation intégrée dans 20 magasins, comparés à 20 magasins témoins. Durée : 6 mois. Indicateurs : ventes des alternatives ({plot1}, {plot4}), ventes des produits animaux voisins. Go si l'écart avec les témoins dépasse le seuil fixé.",
-      "en": "Scope: integrated placement in 20 stores, compared with 20 control stores. Duration: 6 months. Indicators: sales of the alternatives ({plot1}, {plot4}), sales of nearby animal products. Go if the gap with control stores exceeds the agreed threshold."
+      "fr": "Périmètre : une baie dans des magasins volontaires, comparés à des magasins témoins appariés. Durée : 6 mois. Indicateurs : ventes d'{meatAlt}, ventes de viande à côté de la baie, panier total. Go si la hausse végétale dépasse le seuil fixé et si la viande ne recule pas au-delà du seuil fixé avec l'équipe études.",
+      "en": "Scope: one bay in volunteer stores, compared with matched control stores. Duration: 6 months. Indicators: sales of {meatAlt}, meat sales next to the bay, total basket. Go if the plant-based rise exceeds the agreed threshold and meat does not fall beyond the threshold agreed with the insights team."
     },
     "economics": {
       "revenueEffect": 1,
@@ -1201,35 +1191,52 @@
     },
     "hypotheses": [
       {
-        "id": "salesGain",
+        "id": "uplift",
         "label": {
-          "fr": "Hausse des ventes des alternatives implantées",
-          "en": "Sales increase of the alternatives moved"
+          "fr": "Hausse des ventes d'{meatAlt} dans les magasins qui l'appliquent",
+          "en": "Sales increase of {meatAlt} in stores that apply it"
         },
-        "value": 35,
-        "min": 0,
-        "max": 60,
-        "step": 5,
+        "value": 16,
+        "min": 6,
+        "max": 24,
+        "step": 1,
         "unit": "%",
         "note": {
-          "fr": "Concerne les {plot1} et les {plot4}.",
-          "en": "Covers {plot1} and {plot4}."
+          "fr": "Bornes : essais publiés aux Pays-Bas (+6,3 %) et au Royaume-Uni (+24 %).",
+          "en": "Bounds: published trials in the Netherlands (+6.3%) and the United Kingdom (+24%)."
         }
       },
       {
-        "id": "substitution",
+        "id": "displacement",
         "label": {
-          "fr": "Part du gain prise sur les produits animaux voisins",
-          "en": "Share of the gain taken from nearby animal products"
+          "fr": "Protéines animales perdues par kg de protéines végétales gagné",
+          "en": "Animal protein lost per kg of plant protein gained"
         },
-        "value": 40,
+        "value": 0.1,
         "min": 0,
-        "max": 70,
-        "step": 5,
+        "max": 0.25,
+        "step": 0.01,
+        "unit": "",
+        "dependsOn": "uplift",
+        "note": {
+          "fr": "Substitution : 0,10 signifie que 10 % du gain végétal remplace de la viande. Aucun essai ne la mesure en France.",
+          "en": "Substitution: 0.10 means 10% of the plant gain replaces meat. No trial measures it in France."
+        }
+      },
+      {
+        "id": "meatEffect",
+        "label": {
+          "fr": "Variation des ventes de viande à côté de la baie",
+          "en": "Change in meat sales next to the bay"
+        },
+        "value": 0,
+        "min": -3,
+        "max": 1,
+        "step": 0.1,
         "unit": "%",
         "note": {
-          "fr": "En volume.",
-          "en": "By volume."
+          "fr": "La baie prend de la place à la viande. Bornes : -2,9 % (essai néerlandais) à +1 % (essai britannique).",
+          "en": "The bay takes shelf space from meat. Bounds: -2.9% (Dutch trial) to +1% (UK trial)."
         }
       }
     ],
@@ -1240,43 +1247,36 @@
           "plant_steaks",
           "plant_breaded"
         ],
-        "x": "salesGain",
+        "x": "uplift",
         "substitution": {
           "from": [
             "minced_meat",
             "red_meat",
-            "poultry",
-            "charcuterie"
+            "poultry"
           ],
-          "share": "substitution",
-          "basis": "product"
+          "share": "displacement",
+          "basis": "protein"
         }
       },
       {
         "op": "scale",
         "targets": [
-          "plant_drinks",
-          "plant_yoghurts"
+          "minced_meat",
+          "poultry"
         ],
-        "x": "salesGain",
-        "substitution": {
-          "from": [
-            "milk_yoghurt"
-          ],
-          "share": "substitution",
-          "basis": "product"
-        }
+        "x": "meatEffect"
       }
     ],
     "ramp": {
       "startYear": 2027,
-      "yearsToFull": 4
+      "yearsToFull": 3
     },
     "uncertainty": {
-      "low": 0.5,
-      "high": 1.5
+      "low": 0.45,
+      "high": 2.3
     },
-    "status": "draft"
+    "status": "draft",
+    "dossier": "i2"
   },
   {
     "id": "L13",
@@ -1287,10 +1287,6 @@
     },
     "type": "central",
     "storeDependency": 0,
-    "plots": [
-      "2",
-      "outside"
-    ],
     "deckEffort": 7.0,
     "deckImpact": 3.4,
     "provisional": false,
@@ -1339,13 +1335,14 @@
         },
         "value": 10,
         "min": 0,
-        "max": 25,
+        "max": 35,
         "step": 1,
         "unit": "pts",
         "note": {
           "fr": "En points : 10 points font passer la part végétale de 30 à 40 %.",
           "en": "In points: 10 points take the plant share from 30 to 40%."
-        }
+        },
+        "dependsOn": "mddShare"
       },
       {
         "id": "vegetarian",
@@ -1355,13 +1352,14 @@
         },
         "value": 5,
         "min": 0,
-        "max": 20,
+        "max": 30,
         "step": 1,
         "unit": "%",
         "note": {
-          "fr": "Ces volumes rejoignent les {plot2}.",
-          "en": "These volumes join {plot2}."
-        }
+          "fr": "Ces volumes rejoignent les {veganMeals}.",
+          "en": "These volumes join {veganMeals}."
+        },
+        "dependsOn": "mddShare"
       }
     ],
     "effects": [
@@ -1390,7 +1388,10 @@
       "low": 0.6,
       "high": 1.4
     },
-    "status": "draft"
+    "status": "draft",
+    "scope": [
+      "outside"
+    ]
   },
   {
     "id": "L14",
@@ -1401,9 +1402,6 @@
     },
     "type": "central_stores",
     "storeDependency": 0.5,
-    "plots": [
-      "1"
-    ],
     "deckEffort": 7.7,
     "deckImpact": 3.1,
     "provisional": false,
@@ -1458,7 +1456,8 @@
         "note": {
           "fr": "1,2 : une baisse de prix de 10 % donne environ 12 % de volume en plus.",
           "en": "1.2: a 10% price cut gives about 12% more volume."
-        }
+        },
+        "dependsOn": "priceCut"
       },
       {
         "id": "fromMeat",
@@ -1474,7 +1473,8 @@
         "note": {
           "fr": "En volume.",
           "en": "By volume."
-        }
+        },
+        "dependsOn": "priceCut"
       }
     ],
     "effects": [
@@ -1524,10 +1524,6 @@
     },
     "type": "central",
     "storeDependency": 0,
-    "plots": [
-      "1",
-      "4"
-    ],
     "deckEffort": 2.3,
     "deckImpact": 2.5,
     "provisional": false,
@@ -1555,8 +1551,8 @@
       {
         "id": "salesGain",
         "label": {
-          "fr": "Hausse des ventes ({plot1}, {plot4})",
-          "en": "Sales increase ({plot1}, {plot4})"
+          "fr": "Hausse des ventes ({meatAlt}, {dairyAlt})",
+          "en": "Sales increase ({meatAlt}, {dairyAlt})"
         },
         "value": 10,
         "min": 0,
@@ -1582,7 +1578,8 @@
         "note": {
           "fr": "En volume.",
           "en": "By volume."
-        }
+        },
+        "dependsOn": "salesGain"
       }
     ],
     "effects": [
@@ -1639,9 +1636,6 @@
     },
     "type": "central_stores",
     "storeDependency": 0.5,
-    "plots": [
-      "1"
-    ],
     "deckEffort": 3.8,
     "deckImpact": 2.1,
     "provisional": false,
@@ -1696,7 +1690,8 @@
         "note": {
           "fr": "Prix conseillé.",
           "en": "Recommended price."
-        }
+        },
+        "dependsOn": "mddShare"
       },
       {
         "id": "elasticity",
@@ -1712,7 +1707,8 @@
         "note": {
           "fr": "Hypothèse prudente : le gain s'ajoute aux ventes de viande sans les remplacer.",
           "en": "Cautious assumption: the gain adds to meat sales without replacing them."
-        }
+        },
+        "dependsOn": "priceCut"
       }
     ],
     "effects": [
@@ -1752,9 +1748,6 @@
     },
     "type": "central",
     "storeDependency": 0,
-    "plots": [
-      "transverse"
-    ],
     "deckEffort": 3.1,
     "deckImpact": 1.8,
     "provisional": false,
@@ -1807,9 +1800,10 @@
         "step": 5,
         "unit": "%",
         "note": {
-          "fr": "Sur les 4 plots.",
-          "en": "Across the 4 plots."
-        }
+          "fr": "Sur toutes les catégories végétales.",
+          "en": "Across all plant categories."
+        },
+        "dependsOn": "onlineShare"
       }
     ],
     "effects": [
@@ -1821,7 +1815,8 @@
           "plant_ready_meals",
           "pulses",
           "tofu",
-          "nuts_seeds",
+          "nuts",
+          "seeds",
           "plant_drinks",
           "plant_yoghurts"
         ],
@@ -1836,7 +1831,10 @@
       "low": 0.5,
       "high": 1.5
     },
-    "status": "draft"
+    "status": "draft",
+    "scope": [
+      "transverse"
+    ]
   },
   {
     "id": "L18",
@@ -1847,9 +1845,6 @@
     },
     "type": "central",
     "storeDependency": 0,
-    "plots": [
-      "transverse"
-    ],
     "deckEffort": 3.7,
     "deckImpact": 1.4,
     "provisional": false,
@@ -1904,7 +1899,8 @@
         "note": {
           "fr": "En volume.",
           "en": "By volume."
-        }
+        },
+        "dependsOn": "onlineShare"
       }
     ],
     "effects": [
@@ -1929,7 +1925,10 @@
       "low": 0.5,
       "high": 1.5
     },
-    "status": "draft"
+    "status": "draft",
+    "scope": [
+      "transverse"
+    ]
   },
   {
     "id": "L19",
@@ -1940,10 +1939,6 @@
     },
     "type": "stores",
     "storeDependency": 1,
-    "plots": [
-      "2",
-      "3"
-    ],
     "deckEffort": 1.5,
     "deckImpact": 1.1,
     "provisional": false,
@@ -1980,8 +1975,8 @@
         "step": 1,
         "unit": "%",
         "note": {
-          "fr": "Concerne les {plot2} et les {plot3}.",
-          "en": "Covers {plot2} and {plot3}."
+          "fr": "Concerne les {veganMeals} et les {wholePlant}.",
+          "en": "Covers {veganMeals} and {wholePlant}."
         }
       },
       {
@@ -1998,7 +1993,8 @@
         "note": {
           "fr": "En volume.",
           "en": "By volume."
-        }
+        },
+        "dependsOn": "salesGain"
       }
     ],
     "effects": [
@@ -2008,7 +2004,8 @@
           "plant_ready_meals",
           "pulses",
           "tofu",
-          "nuts_seeds"
+          "nuts",
+          "seeds"
         ],
         "x": "salesGain",
         "substitution": {
@@ -2042,9 +2039,6 @@
     },
     "type": "stores",
     "storeDependency": 1,
-    "plots": [
-      "outside"
-    ],
     "deckEffort": 3.0,
     "deckImpact": 1.0,
     "provisional": false,
@@ -2077,7 +2071,7 @@
         },
         "value": 1.5,
         "min": 0,
-        "max": 5,
+        "max": 8,
         "step": 0.5,
         "unit": "%",
         "note": {
@@ -2099,7 +2093,8 @@
         "note": {
           "fr": "Rayons à la coupe et libre-service.",
           "en": "Counters and self-service."
-        }
+        },
+        "dependsOn": "purchaseCut"
       },
       {
         "id": "markdown",
@@ -2115,7 +2110,8 @@
         "note": {
           "fr": "Moins de produits soldés ou jetés : le prix moyen réalisé remonte.",
           "en": "Fewer products discounted or thrown away: the average realised price goes up."
-        }
+        },
+        "dependsOn": "purchaseCut"
       }
     ],
     "effects": [
@@ -2150,6 +2146,9 @@
       "low": 0.5,
       "high": 1.5
     },
-    "status": "draft"
+    "status": "draft",
+    "scope": [
+      "outside"
+    ]
   }
 ]

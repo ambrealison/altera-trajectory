@@ -1,0 +1,458 @@
+{
+  "G.R0": {
+    "low": 0.32,
+    "central": 0.32,
+    "high": 0.335,
+    "tier": "J",
+    "status": "DERIVED",
+    "note": {
+      "fr": "Valeur fictive de démonstration.",
+      "en": "Fictitious demo value."
+    },
+    "url": null
+  },
+  "G.PBM_KG_FR": {
+    "low": 10.1,
+    "central": 10.1,
+    "high": 10.1,
+    "tier": "C",
+    "status": "VERIFIED",
+    "note": {
+      "fr": "GFI Europe, marché français des produits végétaux en grande distribution 2023-2025 (données Circana).",
+      "en": "GFI Europe, France plant-based food retail market 2023-2025 (Circana data)."
+    },
+    "url": "https://gfieurope.org/wp-content/uploads/2026/06/GFI-Europe_France-plant-based-food-retail-market-insights-2023-2025_EN.pdf"
+  },
+  "G.PBM_EUR_FR": {
+    "low": 171.3,
+    "central": 171.3,
+    "high": 171.3,
+    "tier": "C",
+    "status": "VERIFIED",
+    "note": {
+      "fr": "GFI Europe, marché français des produits végétaux en grande distribution 2023-2025 (données Circana).",
+      "en": "GFI Europe, France plant-based food retail market 2023-2025 (Circana data)."
+    },
+    "url": "https://gfieurope.org/wp-content/uploads/2026/06/GFI-Europe_France-plant-based-food-retail-market-insights-2023-2025_EN.pdf"
+  },
+  "G.PBM_GROWTH": {
+    "low": 0.0,
+    "central": 0.06,
+    "high": 0.13,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Fourchette ancrée sur GFI France : volumes +13,1 % en 2024 et +16,8 % en 2025. Le bas (0 %) et le central (6 %) relèvent du jugement.",
+      "en": "Range anchored on GFI France: volumes +13.1% in 2024 and +16.8% in 2025. Low (0%) and central (6%) are judgement."
+    },
+    "url": "https://gfieurope.org/wp-content/uploads/2026/06/GFI-Europe_France-plant-based-food-retail-market-insights-2023-2025_EN.pdf"
+  },
+  "G.VAT": {
+    "low": 0.055,
+    "central": 0.055,
+    "high": 0.055,
+    "tier": "G",
+    "status": "UNVERIFIED",
+    "note": {
+      "fr": "Taux réduit alimentaire (CGI, art. 278-0 bis A) ; son application aux alternatives végétales reste à confirmer.",
+      "en": "Reduced food rate (French tax code, art. 278-0 bis A); its use for plant-based alternatives is still to be confirmed."
+    },
+    "url": "https://bofip.impots.gouv.fr/"
+  },
+  "G.N_STORES_SCOPE": {
+    "low": 760.0,
+    "central": 760.0,
+    "high": 940.0,
+    "tier": "R",
+    "status": "PARTLY_VERIFIED",
+    "note": {
+      "fr": "Valeur fictive de démonstration.",
+      "en": "Fictitious demo value."
+    },
+    "url": null
+  },
+  "G.E_PBM": {
+    "low": 1.7,
+    "central": 2.05,
+    "high": 2.8,
+    "tier": "G",
+    "status": "VERIFIED",
+    "note": {
+      "fr": "ADEME, AGRIBALYSE 3.2, changement climatique de la ferme à l'assiette. Central : haché végétal au soja préemballé. Bas : nuggets et saucisse de tofu. Haut : galettes et saucisses végétales.",
+      "en": "ADEME, AGRIBALYSE 3.2, climate change from farm to fork. Central: prepacked soy plant mince. Low: nuggets and tofu sausage. High: plant patties and sausages."
+    },
+    "url": "https://doi.org/10.57745/XTENSJ"
+  },
+  "G.E_MEAT": {
+    "low": 6.58,
+    "central": 17.5,
+    "high": 35.7,
+    "tier": "G",
+    "status": "VERIFIED",
+    "note": {
+      "fr": "ADEME, AGRIBALYSE 3.2. Bas : haché de porc 80/20 cru (6,58). Central : préparation de viande hachée 15 % MG crue (17,5). Haut : steak haché de bœuf 15 % MG cru (35,7).",
+      "en": "ADEME, AGRIBALYSE 3.2. Low: raw 80/20 pork mince (6.58). Central: raw minced meat preparation, 15% fat (17.5). High: raw beef burger, 15% fat (35.7)."
+    },
+    "url": "https://doi.org/10.57745/XTENSJ"
+  },
+  "G.PBM_PROT": {
+    "low": 12.4,
+    "central": 13.6,
+    "high": 16.0,
+    "tier": "D",
+    "status": "DERIVED",
+    "note": {
+      "fr": "Densité protéique des analogues réfrigérés. Étiquettes du marché : 12,4 à 15,7 g pour 100 g.",
+      "en": "Protein density of chilled analogues. Market labels: 12.4 to 15.7 g per 100 g."
+    },
+    "url": null
+  },
+  "G.MEAT_PROT": {
+    "low": 15.8,
+    "central": 18.5,
+    "high": 20.2,
+    "tier": "C",
+    "status": "UNVERIFIED",
+    "note": {
+      "fr": "Étiquettes de steak haché 15 % MG (18 à 19 g pour 100 g) ; CIQUAL : 20,2 g cru, 15,8 g pour la préparation hachée.",
+      "en": "Labels of 15% fat beef burgers (18 to 19 g per 100 g); CIQUAL: 20.2 g raw, 15.8 g for minced preparation."
+    },
+    "url": "https://www.auchan.fr/charal-steaks-haches-pur-boeuf-15-mg/pr-C1159084"
+  },
+  "G.MEAT_PRICE_HT": {
+    "low": 11.0,
+    "central": 12.81,
+    "high": 15.0,
+    "tier": "D",
+    "status": "DERIVED",
+    "note": {
+      "fr": "GFI Europe : viande réfrigérée préemballée à 13,51 €/kg TTC en 2025, soit 12,81 € HT. Recoupement : 171,3 M€ / 10,1 M kg / 1,25 / 1,055 = 12,86 €.",
+      "en": "GFI Europe: chilled prepacked meat at €13.51/kg incl. VAT in 2025, so €12.81 excl. VAT. Cross-check: €171.3M / 10.1M kg / 1.25 / 1.055 = €12.86."
+    },
+    "url": "https://gfieurope.org/wp-content/uploads/2026/06/GFI-Europe_France-plant-based-food-retail-market-insights-2023-2025_EN.pdf"
+  },
+  "I2.V0_T": {
+    "low": 516.0,
+    "central": 716.0,
+    "high": 788.0,
+    "tier": "D",
+    "status": "DERIVED",
+    "note": {
+      "fr": "Valeur fictive de démonstration.",
+      "en": "Fictitious demo value."
+    },
+    "url": null
+  },
+  "I2.UPLIFT": {
+    "low": 0.063,
+    "central": 0.16,
+    "high": 0.24,
+    "tier": "P",
+    "status": "DERIVED",
+    "note": {
+      "fr": "Bas : van der Meer 2025, étude 2, période 1 (+6,3 %). Haut : Piernas 2021, différence de différences (+24 %). Central : moyenne géométrique de van der Meer période 2 (+8,55 %) et de Piernas (+24 %).",
+      "en": "Low: van der Meer 2025, study 2, period 1 (+6.3%). High: Piernas 2021, difference-in-differences (+24%). Central: geometric mean of van der Meer period 2 (+8.55%) and Piernas (+24%)."
+    },
+    "url": "https://doi.org/10.1016/j.jretconser.2025.104223"
+  },
+  "I2.DISPL": {
+    "low": 0.0,
+    "central": 0.1,
+    "high": 0.25,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Borné par l'effet de contrepartie de van der Meer 2025 (0,20 à 0,27 kg par kg, environ 0,25 en protéines), seule baisse significative côté viande ; Piernas (IRR 1,01 [0,95 ; 1,07]) laisse toutes les valeurs possibles.",
+      "en": "Bounded by the counterpart effect in van der Meer 2025 (0.20 to 0.27 kg per kg, about 0.25 in protein), the only significant fall on the meat side; Piernas (IRR 1.01 [0.95, 1.07]) leaves every value open."
+    },
+    "url": "https://doi.org/10.1016/j.jretconser.2025.104223"
+  },
+  "I2.ALPHA": {
+    "low": 1.0,
+    "central": 1.0,
+    "high": 1.0,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Fixé à 100 % : les résultats montrent le plein potentiel, qui varie en ligne droite. Une adoption plus faible se lit comme une part proportionnelle du résultat.",
+      "en": "Set to 100%: results show the full potential, which scales in a straight line. A lower adoption reads as a proportional share of the result."
+    },
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8321099/"
+  },
+  "I2.FID": {
+    "low": 1.0,
+    "central": 1.0,
+    "high": 1.0,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Fixé à 100 % : les effets des essais sont déjà mesurés tels que mis en œuvre.",
+      "en": "Set to 100%: trial effects are already measured as implemented."
+    },
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8321099/"
+  },
+  "I2.RET": {
+    "low": 1.0,
+    "central": 1.0,
+    "high": 1.0,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Fixé à 100 % : pas d'effacement, l'effet reste au niveau mesuré dans les essais.",
+      "en": "Set to 100%: no fade, the effect stays at its trial level."
+    },
+    "url": "https://doi.org/10.1016/j.jretconser.2025.104223"
+  },
+  "I2.W_SCOPE": {
+    "low": 1.0,
+    "central": 1.0,
+    "high": 1.0,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Fixé à 100 % : tout le volume est vendu dans des magasins qui appliquent l'implantation.",
+      "en": "Set to 100%: all volume is sold in stores that apply the layout."
+    },
+    "url": null
+  },
+  "I2.T_FIRST": {
+    "low": 2027.25,
+    "central": 2027.5,
+    "high": 2028.0,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Revue d'opportunité de six semaines, puis pilote avec groupe témoin apparié, puis déploiement.",
+      "en": "Six-week opportunity review, then a pilot with a matched control group, then rollout."
+    },
+    "url": "https://vegconomist.com/retail-e-commerce/lidl-netherlands-study-placing-meat-alternatives-conventional-meat/"
+  },
+  "I2.ROLLOUT_Y": {
+    "low": 1.0,
+    "central": 2.0,
+    "high": 3.0,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Jugement pour un réseau de magasins indépendants.",
+      "en": "Judgement for a network of independent stores."
+    },
+    "url": null
+  },
+  "I2.DAYS_HQ_ONEOFF": {
+    "low": 20.0,
+    "central": 40.0,
+    "high": 80.0,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Jugement.",
+      "en": "Judgement."
+    },
+    "url": null
+  },
+  "I2.DAYS_HQ_ANNUAL": {
+    "low": 5.0,
+    "central": 10.0,
+    "high": 20.0,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Jugement.",
+      "en": "Judgement."
+    },
+    "url": null
+  },
+  "I2.MAT_EUR_STORE": {
+    "low": 100.0,
+    "central": 200.0,
+    "high": 400.0,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Jugement. L'essai Piernas décrit un panneau de tête de rayon et deux joues ; aucun coût n'est publié.",
+      "en": "Judgement. The Piernas trial describes a header board and two aisle fins; no cost is published."
+    },
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8321099/"
+  },
+  "G.MEAT_GM": {
+    "low": 0.216,
+    "central": 0.248,
+    "high": 0.304,
+    "tier": "G",
+    "status": "VERIFIED",
+    "note": {
+      "fr": "OFPM, rapport au Parlement 2026 (données 2025). Bas : haché de bœuf en grande surface (21,6 %). Central : panier bœuf (24,8 %). Haut : enquête magasins, rayon volaille (30,4 %).",
+      "en": "French price and margin observatory, 2026 report (2025 data). Low: beef mince in supermarkets (21.6%). Central: beef basket (24.8%). High: store survey, poultry department (30.4%)."
+    },
+    "url": "https://observatoire-prixmarges.franceagrimer.fr/sites/default/files/pictures/07_2026_section_2_viande_bovine_v4.pdf"
+  },
+  "G.PBM_GM": {
+    "low": 0.2,
+    "central": 0.25,
+    "high": 0.4,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Aucune source mesurée. Bas : commerce non spécialisé, Insee (20,8 %, 2023). Central : égal à la viande (24,8 %), sans avantage présumé. Haut : 40 % cités pour certains produits végétaux (ProVeg, 2022).",
+      "en": "No measured source. Low: non-specialised retail, Insee (20.8%, 2023). Central: equal to meat (24.8%), no advantage presumed. High: 40% quoted for some plant-based products (ProVeg, 2022)."
+    },
+    "url": "https://proveg.org/article/5-marketing-fails-to-avoid-with-plant-based-foods/"
+  },
+  "G.LABOUR_EUR_H": {
+    "low": 30.34,
+    "central": 32.86,
+    "high": 37.02,
+    "tier": "G",
+    "status": "VERIFIED",
+    "note": {
+      "fr": "Eurostat, enquête sur le coût de la main-d'œuvre 2024, France, commerce de détail (NACE G47), entreprises de 10 salariés et plus.",
+      "en": "Eurostat labour cost survey 2024, France, retail (NACE G47), firms with 10 or more employees."
+    },
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/lc_ncost_r2/default/table?lang=en"
+  },
+  "G.HQ_EUR_DAY": {
+    "low": 286.0,
+    "central": 430.0,
+    "high": 600.0,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Bas : coût horaire Eurostat de 38,1 € (France 2025, commerce) × 7,5 h. Central : bas × 1,5 pour des cadres du siège (jugement). Haut : jugement.",
+      "en": "Low: Eurostat hourly cost of €38.1 (France 2025, trade) × 7.5 h. Central: low × 1.5 for head-office professionals (judgement). High: judgement."
+    },
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/lc_lci_lev/default/table?lang=en"
+  },
+  "I2.H_STORE_SETUP": {
+    "low": 2.0,
+    "central": 3.5,
+    "high": 7.0,
+    "tier": "I",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Une première réimplantation d'une catégorie de 150 références demande environ 20 heures ; ramenée à 26 références : 3,5 h (Supermarket News, 2015).",
+      "en": "A first reset of a 150-item category takes about 20 hours; scaled to 26 items: 3.5 h (Supermarket News, 2015)."
+    },
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8321099/"
+  },
+  "I2.H_STORE_WEEK": {
+    "low": 0.0,
+    "central": 0.1,
+    "high": 0.5,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Jugement. Dans l'essai Piernas, 4 magasins sur 20 étaient sous 80 % du stock prévu au planogramme.",
+      "en": "Judgement. In the Piernas trial, 4 stores out of 20 were below 80% of planned planogram stock."
+    },
+    "url": "https://journals.plos.org/plosmedicine/article/file?type=supplementary&id=10.1371/journal.pmed.1003715.s003"
+  },
+  "G.POOL_T": {
+    "low": 134334.0,
+    "central": 134334.0,
+    "high": 214935.0,
+    "tier": "D",
+    "status": "DERIVED",
+    "note": {
+      "fr": "Valeur fictive de démonstration.",
+      "en": "Fictitious demo value."
+    },
+    "url": null
+  },
+  "I2.MEAT_EFFECT": {
+    "low": -0.029,
+    "central": 0.0,
+    "high": 0.01,
+    "tier": "P",
+    "status": "PARTLY_VERIFIED",
+    "note": {
+      "fr": "Bornes des deux essais : van der Meer 2025 (rayon viande, période 2 : -2,9 %, p < 0,05) et Piernas 2021 (IRR 1,01, non significatif). Le central à 0 suit le résultat nul le mieux mesuré.",
+      "en": "Bounds from the two trials: van der Meer 2025 (meat shelf, period 2: -2.9%, p < 0.05) and Piernas 2021 (IRR 1.01, not significant). The central 0 follows the better-powered null result."
+    },
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8321099/"
+  },
+  "I2.MEAT_POOL_T": {
+    "low": 718.0,
+    "central": 5523.0,
+    "high": 5523.0,
+    "tier": "D",
+    "status": "DERIVED",
+    "note": {
+      "fr": "Valeur fictive de démonstration.",
+      "en": "Fictitious demo value."
+    },
+    "url": null
+  },
+  "RG.ETA": {
+    "low": 0.3,
+    "central": 0.5,
+    "high": 1.0,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Hypothèse sans source : 1,0 voudrait dire que chaque nouveau produit se vend comme la moyenne ; 0,5 tient compte d'une longue traîne de petites ventes.",
+      "en": "Hypothesis with no source: 1.0 would mean each new product sells like the average one; 0.5 allows for a long tail of slow sellers."
+    },
+    "url": null
+  },
+  "RG.TASTE": {
+    "low": 0.04,
+    "central": 0.08,
+    "high": 0.12,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Hypothèse d'Altera : environ 8 % sur cinq ans.",
+      "en": "Altera's hypothesis: about 8% over five years."
+    },
+    "url": null
+  },
+  "RG.T_FIRST": {
+    "low": 2026.92,
+    "central": 2027.0,
+    "high": 2027.5,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Hypothèse sans source.",
+      "en": "Hypothesis with no source."
+    },
+    "url": null
+  },
+  "RG.ROLLOUT_Y": {
+    "low": 3.0,
+    "central": 5.0,
+    "high": 7.0,
+    "tier": "J",
+    "status": "HYPOTHESIS",
+    "note": {
+      "fr": "Hypothèse : niveau d'un distributeur européen de référence atteint en environ cinq ans.",
+      "en": "Hypothesis: the level of a reference European retailer reached in about five years."
+    },
+    "url": null
+  },
+  "RG.N_NOW": {
+    "low": 88.0,
+    "central": 88.0,
+    "high": 88.0,
+    "tier": "D",
+    "status": "DERIVED",
+    "note": {
+      "fr": "Valeur fictive de démonstration.",
+      "en": "Fictitious demo value."
+    },
+    "url": null
+  },
+  "RG.N_TARGET": {
+    "low": 240.0,
+    "central": 300.0,
+    "high": 345.0,
+    "tier": "D",
+    "status": "DERIVED",
+    "note": {
+      "fr": "Valeur fictive de démonstration.",
+      "en": "Fictitious demo value."
+    },
+    "url": null
+  }
+}

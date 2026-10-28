@@ -23,30 +23,33 @@
     "adoption": 0.5,
     "hypotheses": {
       "L06": {
-        "gramCut": 11,
-        "shelfShare": 55,
-        "pricePremium": 1.6
+        "gramCut": 17,
+        "shelfShare": 65,
+        "pricePremium": 1.9
       },
       "L07": {
-        "conversion": 45
+        "conversion": 50
       },
       "L08": {
-        "salesGain": 35,
-        "substitution": 55
+        "salesGain": 50,
+        "substitution": 60
       },
       "L09": {
-        "conversion": 15
+        "conversion": 25
       },
       "L13": {
-        "plantShareGain": 11,
-        "vegetarian": 6
+        "plantShareGain": 19,
+        "vegetarian": 14
       },
       "L15": {
-        "salesGain": 11,
-        "substitution": 35
+        "salesGain": 15,
+        "substitution": 40
+      },
+      "L17": {
+        "nudgeGain": 35
       },
       "L18": {
-        "defaultShift": 4
+        "defaultShift": 8
       }
     },
     "target2030": 0.35,
@@ -75,32 +78,32 @@
     "adoption": 0.3,
     "hypotheses": {
       "L01": {
-        "conversion": 45,
-        "plantShare": 40
+        "conversion": 60,
+        "plantShare": 45
       },
       "L02": {
-        "conversion": 65,
+        "conversion": 70,
         "plantShare": 45
       },
       "L04": {
-        "salesGain": 55,
-        "fromMeat": 65,
-        "pricePremium": 35
+        "salesGain": 60,
+        "fromMeat": 70,
+        "pricePremium": 40
       },
       "L06": {
-        "gramCut": 16,
-        "shelfShare": 65,
-        "pricePremium": 1.9
+        "gramCut": 24,
+        "shelfShare": 75,
+        "pricePremium": 2.2
       },
       "L07": {
-        "conversion": 55
+        "conversion": 65
       },
       "L15": {
-        "salesGain": 16,
-        "substitution": 45
+        "salesGain": 20,
+        "substitution": 50
       },
       "L17": {
-        "nudgeGain": 35
+        "nudgeGain": 40
       }
     },
     "target2030": 0.375,
@@ -134,52 +137,52 @@
     "adoption": 0.6,
     "hypotheses": {
       "L01": {
-        "conversion": 40,
-        "plantShare": 35
+        "conversion": 60,
+        "plantShare": 45
       },
       "L02": {
-        "conversion": 65,
+        "conversion": 70,
         "plantShare": 45
       },
       "L04": {
-        "salesGain": 45,
-        "fromMeat": 60,
-        "pricePremium": 30
+        "salesGain": 60,
+        "fromMeat": 70,
+        "pricePremium": 40
       },
       "L05": {
-        "meatCut": 5,
-        "plantGain": 40
+        "meatCut": 11,
+        "plantGain": 65
       },
       "L06": {
-        "gramCut": 14,
-        "shelfShare": 60,
-        "pricePremium": 1.8
+        "gramCut": 23,
+        "shelfShare": 75,
+        "pricePremium": 2.2
       },
       "L07": {
-        "conversion": 50
+        "conversion": 65
       },
       "L08": {
-        "salesGain": 45,
-        "substitution": 60
+        "salesGain": 65,
+        "substitution": 70
       },
       "L09": {
-        "conversion": 20
+        "conversion": 40
       },
       "L10": {
-        "salesGain": 25,
-        "substitution": 35
+        "salesGain": 40,
+        "substitution": 50
       },
       "L11": {
-        "priceCut": 25,
-        "fromDairy": 60
+        "priceCut": 30,
+        "fromDairy": 70
       },
       "L14": {
-        "priceCut": 25,
-        "fromMeat": 60
+        "priceCut": 30,
+        "fromMeat": 70
       },
       "L15": {
-        "salesGain": 14,
-        "substitution": 40
+        "salesGain": 20,
+        "substitution": 50
       }
     },
     "target2030": 0.4,
@@ -220,83 +223,83 @@
     "adoption": 1,
     "hypotheses": {
       "L01": {
-        "conversion": 50,
-        "plantShare": 40
+        "conversion": 70,
+        "plantShare": 50
       },
       "L02": {
-        "conversion": 65,
-        "plantShare": 45
+        "conversion": 80,
+        "plantShare": 50
       },
       "L04": {
-        "salesGain": 65,
-        "fromMeat": 70,
-        "pricePremium": 40
+        "salesGain": 80,
+        "fromMeat": 80,
+        "pricePremium": 50
       },
       "L05": {
-        "meatCut": 7,
-        "plantGain": 50
+        "meatCut": 15,
+        "plantGain": 80
       },
       "L06": {
-        "gramCut": 19,
-        "shelfShare": 70,
-        "pricePremium": 2.1
+        "gramCut": 30,
+        "shelfShare": 90,
+        "pricePremium": 2.5
       },
       "L07": {
-        "conversion": 60
+        "conversion": 80
       },
       "L08": {
-        "salesGain": 60,
-        "substitution": 70
+        "salesGain": 80,
+        "substitution": 80
       },
       "L09": {
-        "conversion": 30
+        "conversion": 50
       },
       "L10": {
-        "salesGain": 35,
-        "substitution": 45
-      },
-      "L11": {
-        "priceCut": 30,
-        "elasticity": 1.7,
-        "fromDairy": 70
-      },
-      "L12": {
         "salesGain": 50,
         "substitution": 60
       },
+      "L11": {
+        "priceCut": 35,
+        "elasticity": 2,
+        "fromDairy": 80
+      },
+      "L12": {
+        "uplift": 24,
+        "displacement": 0.25
+      },
       "L13": {
-        "plantShareGain": 19,
-        "vegetarian": 14
+        "plantShareGain": 35,
+        "vegetarian": 30
       },
       "L14": {
-        "priceCut": 30,
-        "elasticity": 2.1,
-        "fromMeat": 70
+        "priceCut": 35,
+        "elasticity": 2.5,
+        "fromMeat": 80
       },
       "L15": {
-        "salesGain": 19,
-        "substitution": 50
+        "salesGain": 25,
+        "substitution": 60
       },
       "L16": {
-        "priceCut": 30,
-        "elasticity": 2.1
+        "priceCut": 35,
+        "elasticity": 2.5
       },
       "L17": {
-        "onlineShare": 16,
-        "nudgeGain": 40
+        "onlineShare": 20,
+        "nudgeGain": 50
       },
       "L18": {
-        "onlineShare": 16,
-        "defaultShift": 13
+        "onlineShare": 20,
+        "defaultShift": 20
       },
       "L19": {
-        "salesGain": 14,
-        "substitution": 40
+        "salesGain": 20,
+        "substitution": 50
       },
       "L20": {
-        "purchaseCut": 3.5,
-        "covered": 80,
-        "markdown": 170
+        "purchaseCut": 8,
+        "covered": 100,
+        "markdown": 200
       }
     },
     "target2030": 0.45,

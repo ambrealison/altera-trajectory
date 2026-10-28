@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { config, categories, levers, model, scenarios } from "../data";
+import { config, categories, groups, levers, model, scenarios } from "../data";
 import type { Lever, Scenario } from "../data/types";
 import { baseline, runYear, simulate, type ScenarioState } from "./simulate";
 import { contributions, isolatedEffect } from "./contributions";
@@ -180,11 +180,11 @@ describe("calibration against the deck", () => {
     expect(effects.sort((a, b) => b.e - a.e)[0].n).toBe(1);
   });
 
-  it("the 4 plots weigh between 3 and 6 points and other plant protein carries most of the rest", () => {
-    const plots = (["1", "2", "3", "4"] as const).reduce((a, k) => a + ref.plots[k], 0) / ref.proteinTotal;
-    expect(plots).toBeGreaterThanOrEqual(0.03);
-    expect(plots).toBeLessThanOrEqual(0.06);
-    expect(ref.plots.other / ref.proteinTotal).toBeGreaterThan(0.32 - plots - ref.plots.composite / ref.proteinTotal - 0.001);
-    expect(ref.plots.other).toBeGreaterThan(ref.plots["1"] + ref.plots["2"] + ref.plots["3"] + ref.plots["4"]);
+  it("the core plant categories weigh between 3 and 6 points and the rest of plant protein carries most of the split", () => {
+    const share = (kind: string) => groups.filter((g) => g.kind === kind).reduce((a, g) => a + (ref.groups[g.id] ?? 0), 0) / ref.proteinTotal;
+    expect(share("core")).toBeGreaterThanOrEqual(0.03);
+    expect(share("core")).toBeLessThanOrEqual(0.06);
+    expect(share("other")).toBeGreaterThan(share("core"));
+    expect(share("core") + share("composite") + share("other")).toBeLessThanOrEqual(ref.pt + 1e-9);
   });
 });

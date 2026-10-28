@@ -1,9 +1,9 @@
-// Types of the fictitious demo data. Every figure in src/data is illustrative.
+// Types of the tool's data. The public demo ships a fictitious dataset; the private version for the
+// retailer injects its own dataset through the "@dataset" alias (vite.config.ts, mode "u").
 
 export type Lang = "fr" | "en";
 export type Text = { fr: string; en: string };
 
-export type PlotId = "1" | "2" | "3" | "4";
 export type ProteinGroup = "animal_core" | "composite" | "plant_core" | "plant_noncore";
 export type WwfGroup = "FG1" | "FG2" | "FG3" | "FG4" | "FG5" | "FG6" | "FG7";
 
@@ -17,9 +17,6 @@ export interface Config {
   /** Beyond fromYear, lever effects keep growing by ratePerYear (diffusion assumption). */
   extension: Extension;
   defaultAdoption: number;
-  plots: Record<PlotId, Text> & { other: Text; composite: Text; animal: Text };
-  plotDetails: Record<PlotId, Text>;
-  rayons: Record<string, Text>;
   animalGroups: Record<string, Text>;
   benchmark: { text: Text; source: Text; pointsPerYear: number };
 }
@@ -32,15 +29,17 @@ export interface Extension {
 export interface Category {
   id: string;
   label: Text;
-  rayon: string;
-  /** 1 to 4 for the retailer's plant "plots", "other_plant" for the rest of plant protein, null otherwise. */
-  plot: 1 | 2 | 3 | 4 | "other_plant" | null;
+  /** Display group of the dataset (see Dataset.groups); "animal" for animal products. */
+  group: string;
   proteinGroup: ProteinGroup;
   /** Display group for the animal side of the baseline screen. */
   animalGroup?: string;
   wwfGroup: WwfGroup;
   /** Multi-ingredient products are set apart from the WWF food-group ratios, as in the Altera tool. */
   wwfComposite?: boolean;
+  /** Shares of the category's tonnes that are whole FG1 products of plant and of animal origin
+   *  (override wwfGroup and wwfComposite when present). */
+  fg1?: { plant: number; animal: number };
   tonnesProduct: number;
   proteinPer100g: number;
   plantProteinShare: number;
@@ -51,7 +50,8 @@ export interface Category {
 }
 
 export type LeverType = "central" | "central_stores" | "stores";
-export type LeverPlot = PlotId | "other" | "transverse" | "outside";
+/** Levers that act across every category, or only outside the plant categories, say so. */
+export type LeverScope = "transverse" | "outside";
 
 export interface Hypothesis {
   id: string;
@@ -63,6 +63,8 @@ export interface Hypothesis {
   /** "%" values enter the effect expressions as fractions (30 means 0.30). */
   unit: "%" | "pts" | "";
   note: Text;
+  /** Id of the hypothesis this one acts on: it has no effect while that one is at 0. */
+  dependsOn?: string;
 }
 
 /** Effect values are small expressions over the lever's hypothesis ids, e.g. "priceCut * elasticity". */
@@ -94,7 +96,7 @@ export interface Lever {
   label: Text;
   type: LeverType;
   storeDependency: number;
-  plots: LeverPlot[];
+  scope?: LeverScope[];
   deckEffort: number;
   deckImpact: number;
   provisional: boolean;
@@ -110,6 +112,8 @@ export interface Lever {
   ramp: { startYear: number; yearsToFull: number };
   uncertainty: { low: number; high: number };
   status: "draft";
+  /** Id of the full evidence dossier, when one exists (only "i2" so far). */
+  dossier?: string;
 }
 
 export type GuardrailState = "within" | "above" | "well_above";
@@ -125,4 +129,37 @@ export interface Scenario {
   hypotheses: Record<string, Record<string, number>>;
   target2030: number;
   expectedGuardrail: GuardrailState;
+}
+
+/** A block of the plant breakdown: a plant category of the retailer (or of the method), the plant part
+ *  of composite products, or the rest of plant protein. */
+export interface Group {
+  id: string;
+  kind: "core" | "other" | "composite";
+  label: Text;
+  /** Short note under the label, for instance the matching Protein Tracker and WWF groups. */
+  detail?: Text;
+  /** Shown as one line, without its categories. */
+  collapsed?: boolean;
+}
+
+export interface RayonRow { id: string; label: Text; protein: number; plantShare: number; points: number }
+
+/** Inputs of the integrated aisle placement model (lever 12), as in the Altera register. */
+export interface I2Value { low: number; central: number; high: number; tier: string; status: string; note: Text; url: string | null }
+export type I2Values = Record<string, I2Value>;
+
+export interface Dataset {
+  kind: "public" | "u";
+  categories: Category[];
+  scenarios: Scenario[];
+  groups: Group[];
+  /** Running-text names of the plant categories that lever texts cite as {meatAlt}, {veganMeals}, {wholePlant}, {dairyAlt}. */
+  roles: Record<"meatAlt" | "veganMeals" | "wholePlant" | "dairyAlt", Text>;
+  /** Interface strings that differ in this version, by i18n key. */
+  texts: Record<string, Text>;
+  rayonTable: RayonRow[];
+  /** Scope 3 emissions of the retailer and its reduction target. */
+  scope3: { baseKt: number; targetCut: number; targetYear: number; source: Text };
+  i2: I2Values;
 }

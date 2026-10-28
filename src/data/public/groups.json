@@ -1,0 +1,110 @@
+[
+  {
+    "id": "meat_alt",
+    "kind": "core",
+    "label": {
+      "fr": "Alternatives végétales à la viande",
+      "en": "Plant-based meat alternatives"
+    },
+    "detail": {
+      "fr": "Protein Tracker : végétal cœur · WWF : alternative products",
+      "en": "Protein Tracker: plant-based core · WWF: alternative products"
+    }
+  },
+  {
+    "id": "pulses_g",
+    "kind": "core",
+    "label": {
+      "fr": "Légumineuses",
+      "en": "Pulses"
+    },
+    "detail": {
+      "fr": "Protein Tracker : végétal cœur · WWF : pulses",
+      "en": "Protein Tracker: plant-based core · WWF: pulses"
+    }
+  },
+  {
+    "id": "nuts_g",
+    "kind": "core",
+    "label": {
+      "fr": "Fruits à coque",
+      "en": "Nuts"
+    },
+    "detail": {
+      "fr": "Protein Tracker : végétal cœur · WWF : nuts",
+      "en": "Protein Tracker: plant-based core · WWF: nuts"
+    }
+  },
+  {
+    "id": "seeds_g",
+    "kind": "core",
+    "label": {
+      "fr": "Graines",
+      "en": "Seeds"
+    },
+    "detail": {
+      "fr": "Protein Tracker : végétal cœur · WWF : seeds",
+      "en": "Protein Tracker: plant-based core · WWF: seeds"
+    }
+  },
+  {
+    "id": "tofu_g",
+    "kind": "core",
+    "label": {
+      "fr": "Tofu, tempeh et seitan",
+      "en": "Tofu, tempeh and seitan"
+    },
+    "detail": {
+      "fr": "Protein Tracker : végétal cœur · WWF : tofu, tempeh et seitan",
+      "en": "Protein Tracker: plant-based core · WWF: tofu, tempeh and seitan"
+    }
+  },
+  {
+    "id": "dairy_alt",
+    "kind": "core",
+    "label": {
+      "fr": "Alternatives laitières végétales",
+      "en": "Plant-based dairy alternatives"
+    },
+    "detail": {
+      "fr": "Protein Tracker : végétal cœur · WWF : dairy alternatives (FG2)",
+      "en": "Protein Tracker: plant-based core · WWF: dairy alternatives (FG2)"
+    }
+  },
+  {
+    "id": "other_core_g",
+    "kind": "core",
+    "label": {
+      "fr": "Autres végétaux cœur",
+      "en": "Other plant-based core"
+    },
+    "detail": {
+      "fr": "Protein Tracker : végétal cœur, autres",
+      "en": "Protein Tracker: plant-based core, other"
+    }
+  },
+  {
+    "id": "composite",
+    "kind": "composite",
+    "label": {
+      "fr": "Part végétale des produits composites",
+      "en": "Plant part of composite products"
+    },
+    "detail": {
+      "fr": "Protein Tracker : composites animal et végétal",
+      "en": "Protein Tracker: animal and plant composites"
+    }
+  },
+  {
+    "id": "noncore",
+    "kind": "other",
+    "label": {
+      "fr": "Végétal hors cœur",
+      "en": "Plant-based non-core"
+    },
+    "detail": {
+      "fr": "Protein Tracker : végétal non cœur (céréales, pain, fruits et légumes, snacks)",
+      "en": "Protein Tracker: plant-based non-core (cereals, bread, fruit and vegetables, snacks)"
+    }
+  }
+]

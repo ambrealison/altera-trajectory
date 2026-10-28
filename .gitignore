@@ -3,3 +3,6 @@ dist
 *.tsbuildinfo
 .DS_Store
 screenshots/
+
+# the retailer version's dataset is injected by the private repository, never committed here
+src/data/u/

@@ -35,7 +35,7 @@ describe("scenario in the URL hash", () => {
   it("ignores unknown levers, assumptions and out-of-range values", () => {
     const back = fromHash("#v=levers&l=1.99.3&hy=L01.conversion:500,L77.x:1,L02.nope:3")!;
     expect(back.activeLevers).toEqual([1, 3]);
-    expect(back.hypotheses?.L01?.conversion).toBe(60);
+    expect(back.hypotheses?.L01?.conversion).toBe(70);
     expect(back.hypotheses?.L77).toBeUndefined();
   });
 });

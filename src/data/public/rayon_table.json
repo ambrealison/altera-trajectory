@@ -1,0 +1,92 @@
+[
+  {
+    "id": "dairy",
+    "label": {
+      "fr": "Crèmerie",
+      "en": "Dairy"
+    },
+    "protein": 37293,
+    "plantShare": 0.0139,
+    "points": 0.39
+  },
+  {
+    "id": "grocery",
+    "label": {
+      "fr": "Épicerie",
+      "en": "Grocery"
+    },
+    "protein": 25404,
+    "plantShare": 0.8135,
+    "points": 15.38
+  },
+  {
+    "id": "deli",
+    "label": {
+      "fr": "Charcuterie-traiteur",
+      "en": "Cooked meats and deli"
+    },
+    "protein": 24530,
+    "plantShare": 0.1796,
+    "points": 3.28
+  },
+  {
+    "id": "butchery",
+    "label": {
+      "fr": "Boucherie-volaille",
+      "en": "Butchery and poultry"
+    },
+    "protein": 19944,
+    "plantShare": 0.0046,
+    "points": 0.07
+  },
+  {
+    "id": "bakery",
+    "label": {
+      "fr": "Boulangerie-viennoiserie",
+      "en": "Bakery and pastries"
+    },
+    "protein": 9878,
+    "plantShare": 0.8544,
+    "points": 6.28
+  },
+  {
+    "id": "frozen",
+    "label": {
+      "fr": "Surgelés",
+      "en": "Frozen"
+    },
+    "protein": 6700,
+    "plantShare": 0.2782,
+    "points": 1.39
+  },
+  {
+    "id": "produce",
+    "label": {
+      "fr": "Fruits et légumes",
+      "en": "Fruit and vegetables"
+    },
+    "protein": 5493,
+    "plantShare": 0.9758,
+    "points": 3.99
+  },
+  {
+    "id": "seafood",
+    "label": {
+      "fr": "Marée",
+      "en": "Fish counter"
+    },
+    "protein": 3574,
+    "plantShare": 0.04,
+    "points": 0.11
+  },
+  {
+    "id": "drinks",
+    "label": {
+      "fr": "Boissons",
+      "en": "Drinks"
+    },
+    "protein": 1518,
+    "plantShare": 0.9881,
+    "points": 1.12
+  }
+]
