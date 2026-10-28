@@ -11,7 +11,7 @@
   "cover": {
     "eyebrow": "Coopérative U · Démonstration",
     "title": "Trajectoire protéique",
-    "lead": "Partez de votre ratio protéique, activez des leviers et voyez jusqu'où ils vous mènent, levier par levier et année après année.",
+    "lead": "Partez de votre répartition protéique, activez des leviers et voyez jusqu'où ils vous mènent, levier par levier et année après année.",
     "cta": "Let's go",
     "meta": "4 étapes · données fictives",
     "peekRef": "Référence {year}",
@@ -41,22 +41,17 @@
     "central_stores": "Centrale et magasins",
     "stores": "Dépend des magasins"
   },
-  "plots": {
-    "outside": "Hors 4 plots",
-    "transverse": "Transverse",
-    "other": "Autres"
-  },
   "baseline": {
     "title": "Point de départ",
-    "desc": "Le ratio protéique de référence, décomposé sur vos 4 plots et sur le reste des protéines vendues.",
+    "desc": "La répartition protéique de référence, décomposée par catégorie végétale et sur le reste des protéines vendues.",
     "status": "Référence 2025",
     "kpiNote": "Référence 2025, données fictives",
-    "keyMessage": "Vos 4 plots pèsent {x} sur {total}",
-    "keyMessageText": "L'essentiel des protéines végétales vendues vient des pâtes, du pain et des céréales. Les 4 plots sont le levier d'action, pas encore le volume.",
-    "keyMessageFg1": "En WWF FG1, seules les {plot1} et les {plot3} comptent\u00a0: les {plot2} sont des produits mixtes, mis à part, et les {plot4} relèvent du groupe FG2.",
-    "plantTitle": "Décomposition du végétal",
-    "plantNotePt": "En points de ratio et en tonnes de protéines",
-    "plantNoteFg1": "En points de ratio et en tonnes de produit, aliments riches en protéines (FG1)",
+    "keyMessage": "Vos catégories végétales cœur pèsent {x} sur {total}",
+    "keyMessageText": "L'essentiel des protéines végétales vendues vient des pâtes, du pain et des céréales. Les catégories cœur sont le levier d'action, pas encore le volume.",
+    "keyMessageFg1": "En WWF FG1, seuls les aliments riches en protéines comptent, en tonnes de produit : les produits composites sont mis à part et les alternatives laitières relèvent d'un autre groupe.",
+    "plantTitle": "Décomposition du végétal par catégorie",
+    "plantNotePt": "En points de répartition et en tonnes de protéines",
+    "plantNoteFg1": "En points de répartition et en tonnes de produit, aliments riches en protéines (FG1)",
     "animalTitle": "Protéines animales par grands groupes",
     "animalNotePt": "Part de toutes les protéines vendues",
     "animalNoteFg1": "Part des aliments riches en protéines, en tonnes de produit",
@@ -68,15 +63,16 @@
     "colPoints": "Points",
     "outFg1": "hors FG1",
     "apartFg1": "mis à part",
-    "total": "Total"
+    "total": "Total",
+    "rayonNote": "En protéines (Protein Tracker)",
+    "animalPlant": "Part végétale des produits animaux"
   },
   "levers": {
     "title": "Les leviers",
-    "desc": "Vingt leviers, chiffrés à partir d'hypothèses explicites. Cliquez sur un levier pour ouvrir sa fiche et modifier ses hypothèses.",
+    "desc": "Vingt leviers comparés selon leur effet sur la répartition protéique, le carbone et la marge. Cliquez sur la ligne d'un levier pour ouvrir sa fiche détaillée.",
     "status": "{n} leviers actifs sur {total}",
     "viewList": "Liste",
     "viewMatrix": "Matrice impact / effort",
-    "filterPlots": "Plots",
     "filterTypes": "Type",
     "all": "Tous",
     "isolated": "Effet isolé en {year}",
@@ -94,7 +90,7 @@
     "legendActive": "Actif",
     "legendInactive": "Inactif",
     "colLever": "Levier",
-    "colRatio": "Ratio protéique",
+    "colRatio": "Répartition protéique",
     "colCo2": "CO2",
     "colMargin": "Marge",
     "colActive": "Actif",
@@ -106,28 +102,29 @@
     "statusInactive": "Inactifs",
     "shown": "{n} leviers affichés",
     "kpiActive": "Leviers actifs",
-    "kpiRatio": "Effet combiné sur le ratio en {year}",
+    "kpiRatio": "Effet combiné sur la répartition en {year}",
     "kpiCo2": "CO2 en {year}",
     "kpiCo2Note": "Leviers actifs, ordre de grandeur",
     "kpiTopCo2": "Plus fort levier CO2",
-    "tableNote": "Chaque levier seul en {year}, avec vos hypothèses et {adoption} des magasins qui suivent. Marge\u00a0: appréciation qualitative. Cliquez sur un en-tête pour trier."
+    "tableNote": "Chaque levier seul en {year}, avec vos hypothèses et {adoption} des magasins qui suivent. Marge : appréciation qualitative. Cliquez sur un en-tête pour trier.",
+    "filterCategories": "Catégorie",
+    "allCategories": "Toutes les catégories"
   },
   "trajectory": {
     "title": "Trajectoire",
-    "desc": "Activez des leviers, choisissez la part des magasins qui suivent, et lisez l'effet par levier ou dans le temps.",
-    "scenarios": "Scénarios",
+    "desc": "Choisissez un scénario ou composez le vôtre, réglez la part des magasins qui suivent, et lisez l'effet sur la répartition protéique, le CO2 et le chiffre d'affaires.",
     "custom": "Personnalisé",
     "adoption": "Part des magasins qui suivent",
-    "adoptionNote": "Dans un réseau coopératif, la centrale recommande et chaque magasin décide. Ce curseur fixe la part des magasins qui appliquent les leviers concernés.",
-    "adoptionNoEffect": "Sans effet ici\u00a0: les leviers actifs sont tous décidés par la centrale.",
+    "adoptionNote": "Ce curseur ne touche que les pilotes et les leviers décidés en magasin. Les leviers de la centrale s'appliquent quel que soit le réglage.",
+    "adoptionNoEffect": "Sans effet ici : les leviers actifs sont tous décidés par la centrale.",
     "horizon": "Horizon",
     "leversTitle": "Leviers",
     "leversCount": "{n} sur {total}",
     "pin": "Épingler ce scénario",
     "unpin": "Retirer",
-    "pinned": "Épinglé\u00a0: {name}, {value}",
-    "kpiRatio": "Ratio en {year}",
-    "kpiRange": "Fourchette\u00a0: {low} à {high}",
+    "pinned": "Épinglé : {name}, {value}",
+    "kpiRatio": "Répartition protéique en {year}",
+    "kpiRange": "Fourchette : {low} à {high}",
     "kpiCo2": "CO2 en {year}",
     "kpiCo2Note": "Ordre de grandeur",
     "kpiRevenue": "Chiffre d'affaires en {year}",
@@ -140,19 +137,41 @@
     "sumIsolated": "Somme des effets isolés",
     "combined": "Effet combiné",
     "overlap": "Recouvrement entre leviers",
-    "overlapNote": "Les leviers touchent en partie les mêmes produits\u00a0: leurs effets ne s'additionnent pas.",
+    "overlapNote": "Les leviers touchent en partie les mêmes produits : leurs effets ne s'additionnent pas.",
     "dutchPace": "Rythme observé aux Pays-Bas",
     "band": "Fourchette basse et haute",
-    "stackTitle": "Protéines végétales par plot",
-    "stackNotePt": "En points de ratio\u00a0: la hauteur totale est le ratio",
-    "stackNoteFg1": "En points de ratio FG1",
-    "stackComposite": "Produits mixtes, part végétale",
+    "stackTitle": "Protéines végétales par catégorie",
+    "stackNotePt": "En points de répartition : la hauteur totale est la répartition protéique",
+    "stackNoteFg1": "En points de répartition FG1",
     "chartTitleLever": "De la référence {from} à {to}, levier par levier",
-    "chartTitleTime": "Ratio année par année",
+    "chartTitleTime": "Répartition protéique année par année",
     "noLever": "Aucun levier actif. Choisissez un scénario ou cochez des leviers.",
     "ghost": "Scénario épinglé",
-    "extensionNote": "Au-delà de {year}\u00a0: hypothèse de diffusion, les effets des leviers progressent de {rate} par an.",
-    "dutchSource": "Rythme observé aux Pays-Bas\u00a0: {text} Source\u00a0: {source}."
+    "extensionNote": "Au-delà de {year} : hypothèse de diffusion, les effets des leviers progressent de {rate} par an.",
+    "dutchSource": "Rythme observé aux Pays-Bas : {text} Source : {source}.",
+    "splitTitle": "D'où vient l'effet en {year}",
+    "splitCentral": "Décidé par la centrale",
+    "splitStores": "Magasins qui suivent ({adoption})",
+    "splitLeft": "Potentiel restant en magasin",
+    "splitNote": "À 0 % des magasins, il reste {x} : tout ne dépend pas des magasins.",
+    "kpiSplit": "Répartition protéique",
+    "kpiScope3": "{share} de l'objectif scope 3 ({cut} d'ici {year})",
+    "kpiShow": "Afficher dans les graphiques",
+    "kpiShown": "Affiché dans les graphiques",
+    "kpiGroup": "Indicateur des graphiques",
+    "co2TitleLever": "CO2 de {from} à {to}, levier par levier",
+    "co2TitleTime": "Variation du CO2 année par année, par rapport à 2025",
+    "co2Note": "CO2 des produits du périmètre, de la ferme à l'assiette, en kilotonnes de CO2e : un ordre de grandeur.",
+    "co2Line": "Variation du CO2",
+    "revTitleLever": "Chiffre d'affaires de {from} à {to}, levier par levier",
+    "revTitleTime": "Variation du chiffre d'affaires année par année",
+    "revNote": "Volumes × prix au kilo, à périmètre constant, en millions d'euros : variation indicative.",
+    "revLine": "Variation du chiffre d'affaires",
+    "yourTrajectoryShort": "Votre trajectoire",
+    "s3Title": "Objectif scope 3 : {cut} d'ici {year}",
+    "s3Value": "{saved} évitées sur {target} visées, soit {share}",
+    "s3Note": "Base scope 3 : {base}. Source : {source}. Ordre de grandeur : le CO2 du simulateur ne couvre que les produits du périmètre.",
+    "dutchExtended": "Au-delà de {year}, le rythme néerlandais est prolongé à l'identique."
   },
   "data": {
     "title": "Avec vos données",
@@ -165,7 +184,7 @@
     "storesGet": "les magasins où lancer les pilotes, et une adoption estimée magasin par magasin",
     "marginTitle": "Marge réelle",
     "marginWith": "marges par famille de produits",
-    "marginGet": "un arbitrage chiffré entre marge et ratio, levier par levier",
+    "marginGet": "un arbitrage chiffré entre marge et répartition protéique, levier par levier",
     "carbonTitle": "Empreinte carbone propre",
     "carbonWith": "facteurs d'émission de vos produits et de vos fournisseurs",
     "carbonGet": "un CO2 calibré sur votre offre, au lieu d'un ordre de grandeur",
@@ -185,11 +204,11 @@
     "why": "Pourquoi pour U",
     "hypotheses": "Hypothèses",
     "reset": "Réinitialiser",
-    "default": "Par défaut\u00a0: {v}",
+    "default": "Par défaut : {v}",
     "range": "de {min} à {max}",
     "effect": "Effet en {year}",
     "effectNote": "Levier seul, avec ces hypothèses et {adoption} des magasins qui suivent",
-    "ratio": "Ratio",
+    "ratio": "Répartition protéique",
     "co2": "CO2",
     "revenue": "Chiffre d'affaires",
     "margin": "Marge",
@@ -199,9 +218,9 @@
     "owner": "Qui le porte",
     "pilot": "Pilote proposé",
     "ramp": "Montée en charge de {start} à {end}",
-    "storeShare": "Dépendance aux magasins {dep}\u00a0: avec {adoption} des magasins qui suivent, {factor} de l'effet plein.",
+    "storeShare": "Dépendance aux magasins {dep} : avec {adoption} des magasins qui suivent, {factor} de l'effet plein.",
     "provisional": "Position provisoire dans le dossier",
-    "noRatioEffect": "Ne fait pas bouger le ratio, rend la mesure plus fiable.",
+    "noRatioEffect": "Ne fait pas bouger la répartition protéique, rend la mesure plus fiable.",
     "tightening": "Écart entre bornes basse et haute de tous les autres leviers multiplié par {k}.",
     "footer": "Chaque hypothèse est une question à valider avec l'équipe concernée.",
     "draft": "Texte de travail",
@@ -209,7 +228,10 @@
     "harveyM1": "Plutôt négatif",
     "harvey0": "Neutre",
     "harveyP1": "Plutôt positif",
-    "harveyP2": "Nettement positif"
+    "harveyP2": "Nettement positif",
+    "open": "Ouvrir la fiche complète",
+    "openDossier": "Hypothèses, modèle, preuves et lacunes, en pleine page.",
+    "openTemplate": "Hypothèses, effets et état du dossier, en pleine page."
   },
   "tour": {
     "next": "Suivant",
@@ -217,15 +239,453 @@
     "skip": "Passer",
     "done": "Terminer",
     "stepOf": "{n} sur {total}",
-    "s1Title": "Le point de départ",
-    "s1Text": "Le ratio protéique de référence en 2025\u00a0: la part végétale des protéines vendues. Données fictives.",
-    "s2Title": "Vos 4 plots",
-    "s2Text": "Les 4 plots pèsent quelques points\u00a0: l'essentiel du végétal vient des pâtes, du pain et des céréales.",
-    "s3Title": "Les leviers",
-    "s3Text": "Chaque levier est chiffré par des hypothèses explicites. Cliquez sur un levier pour les modifier.",
-    "s4Title": "Les magasins qui suivent",
-    "s4Text": "La centrale recommande, les magasins décident\u00a0: ce curseur règle la part qui applique les leviers.",
-    "s5Title": "Par levier ou dans le temps",
-    "s5Text": "La cascade montre ce que chaque levier apporte, la courbe montre le rythme année par année."
+    "buttonTitle": "Visite guidée de l'écran affiché",
+    "name": {
+      "welcome": "Visite d'accueil",
+      "baseline": "Visite · Point de départ",
+      "levers": "Visite · Les leviers",
+      "trajectory": "Visite · Trajectoire",
+      "data": "Visite · Avec vos données",
+      "lever": "Visite · Fiche levier",
+      "i2": "Visite · Dossier du levier 12"
+    },
+    "w1": {
+      "title": "Le point de départ",
+      "text": "La répartition protéique de référence en 2025 : la part végétale des protéines vendues."
+    },
+    "w2": {
+      "title": "Vos catégories végétales",
+      "text": "Chaque catégorie pèse quelques points ; l'essentiel du végétal vient des pâtes, du pain et des céréales."
+    },
+    "w3": {
+      "title": "Les leviers",
+      "text": "Vingt leviers chiffrés par des hypothèses explicites. Cliquez sur une ligne pour ouvrir la fiche du levier."
+    },
+    "w4": {
+      "title": "Ce qui compte pour vous",
+      "text": "Répartition protéique, CO2 face à l'objectif scope 3, chiffre d'affaires : cliquez sur une carte pour changer les graphiques."
+    },
+    "w5": {
+      "title": "Les magasins qui suivent",
+      "text": "La centrale recommande, les magasins décident. Une part de l'effet ne dépend pas d'eux."
+    },
+    "w6": {
+      "title": "Une visite par écran",
+      "text": "Ce bouton lance la visite détaillée de l'écran affiché, y compris la fiche complète d'un levier."
+    },
+    "b1": {
+      "title": "La répartition de référence",
+      "text": "Part végétale des protéines vendues en 2025. Le sélecteur passe à l'indicateur WWF FG1, en tonnes de produit."
+    },
+    "b2": {
+      "title": "Le message clé",
+      "text": "Ce que pèsent les catégories végétales cœur dans la répartition, et ce qui fait le volume."
+    },
+    "b3": {
+      "title": "Le végétal par catégorie",
+      "text": "Chaque bloc et ses catégories, en points de répartition et en tonnes. Les produits composites comptent pour leur part végétale."
+    },
+    "b4": {
+      "title": "Le côté animal",
+      "text": "Les protéines animales par grands groupes, en part de toutes les protéines vendues."
+    },
+    "b5": {
+      "title": "Par rayon",
+      "text": "Protéines, part végétale et points apportés, rayon par rayon."
+    },
+    "b6": {
+      "title": "Étape suivante",
+      "text": "Passez aux leviers quand vous voulez ; la navigation reste libre."
+    },
+    "l1": {
+      "title": "Vue d'ensemble",
+      "text": "Leviers actifs, effet combiné sur la répartition, CO2 des leviers actifs et plus fort levier carbone."
+    },
+    "l2": {
+      "title": "Liste ou matrice",
+      "text": "Le tableau compare les effets ; la matrice place chaque levier selon l'impact et l'effort du dossier."
+    },
+    "l3": {
+      "title": "Filtres",
+      "text": "Recherche, statut, type de levier et catégorie concernée."
+    },
+    "l4": {
+      "title": "Le tableau",
+      "text": "Triez par répartition, CO2 ou marge en cliquant sur un en-tête. L'interrupteur active un levier ; un clic sur la ligne ouvre sa fiche."
+    },
+    "l5": {
+      "title": "La matrice",
+      "text": "Impact et effort selon le dossier, sur 10. Les leviers inactifs sont grisés."
+    },
+    "t1": {
+      "title": "Trois indicateurs",
+      "text": "Répartition protéique, CO2 et chiffre d'affaires à l'horizon. Cliquez sur une carte : les graphiques passent sur cet indicateur."
+    },
+    "t2": {
+      "title": "Levier par levier",
+      "text": "De la référence à votre trajectoire, ce que chaque levier apporte. Le recouvrement entre leviers est montré à part."
+    },
+    "t3": {
+      "title": "Dans le temps",
+      "text": "La répartition année par année avec sa fourchette, le rythme observé aux Pays-Bas et les catégories empilées."
+    },
+    "t4": {
+      "title": "Le CO2",
+      "text": "Le même découpage en kilotonnes de CO2e, levier par levier."
+    },
+    "t5": {
+      "title": "L'objectif scope 3",
+      "text": "La part de l'objectif de réduction du scope 3 que couvre la trajectoire."
+    },
+    "t6": {
+      "title": "Scénarios suggérés",
+      "text": "Quatre scénarios préparés par Altera, de la centrale seule au plafond théorique."
+    },
+    "t7": {
+      "title": "Vos scénarios",
+      "text": "Composez le vôtre, puis enregistrez-le, renommez-le ou partagez-le par lien."
+    },
+    "t8": {
+      "title": "Les magasins qui suivent",
+      "text": "Ce curseur ne touche que les pilotes et les leviers décidés en magasin."
+    },
+    "t9": {
+      "title": "D'où vient l'effet",
+      "text": "Ce que décide la centrale, ce qu'apportent les magasins qui suivent, et ce qu'il reste à gagner en magasin."
+    },
+    "t10": {
+      "title": "Horizon",
+      "text": "2028, 2030 ou 2035. Au-delà de 2030, une hypothèse de diffusion prolonge les effets."
+    },
+    "t11": {
+      "title": "Les leviers",
+      "text": "Activez ou coupez un levier ; son nom ouvre sa fiche."
+    },
+    "d1": {
+      "title": "Ce que vos données permettraient",
+      "text": "Chaque module dit ce qu'il faut et ce que vous obtenez."
+    },
+    "d2": {
+      "title": "Le cadre",
+      "text": "Chaque module se construit sur vos données, dans un cadre défini ensemble."
+    },
+    "p1": {
+      "title": "La fiche du levier",
+      "text": "Type, catégories concernées, état du dossier et interrupteur d'activation."
+    },
+    "p2": {
+      "title": "Les sections",
+      "text": "Chaque onglet ouvre une partie de la fiche."
+    },
+    "g3": {
+      "title": "Ce que fait le levier",
+      "text": "Description et intérêt pour vous."
+    },
+    "g4": {
+      "title": "Mise en œuvre",
+      "text": "Qui le porte, montée en charge, dépendance aux magasins et pilote proposé."
+    },
+    "g5": {
+      "title": "Effets à l'horizon",
+      "text": "Le levier seul, avec vos hypothèses : répartition, CO2, chiffre d'affaires et marge."
+    },
+    "p5": {
+      "title": "Hypothèses liées",
+      "text": "Une hypothèse qui agit sur une autre est placée dessous, reliée, et grisée tant que la première est à 0. Les effets se recalculent en direct."
+    },
+    "g6": {
+      "title": "Preuves",
+      "text": "L'état du dossier et ce qu'il contiendra."
+    },
+    "p4": {
+      "title": "Deux versions",
+      "text": "A : la gamme actuelle. B : la gamme élargie au niveau d'un distributeur européen de référence, avec un meilleur goût."
+    },
+    "p3": {
+      "title": "Les résultats",
+      "text": "Répartition, marge, carbone et effort : valeur centrale, médiane et fourchette P10 à P90 de 10 000 tirages."
+    },
+    "i5": {
+      "title": "Le scénario en chiffres",
+      "text": "Ce qui change en magasin, combien de références, quels magasins, quel calendrier, et d'où vient chaque chiffre."
+    },
+    "p6": {
+      "title": "Le modèle pas à pas",
+      "text": "Les 14 étapes du calcul de la répartition, en direct, pour les deux versions."
+    },
+    "p7": {
+      "title": "La marge",
+      "text": "Marge gagnée, marge perdue, coût, puis ce qui fait varier le résultat."
+    },
+    "p8": {
+      "title": "Le carbone",
+      "text": "Émissions ajoutées et évitées : le signe dépend de la viande remplacée."
+    },
+    "i8": {
+      "title": "L'effort",
+      "text": "Jours-personne en magasin et au siège, année par année."
+    },
+    "p9": {
+      "title": "L'incertitude",
+      "text": "Médiane et fourchette des tirages, avec et sans effet côté viande."
+    },
+    "i9": {
+      "title": "Ce qui fait varier le résultat",
+      "text": "Chaque entrée à son bas puis à son haut, le reste au central."
+    },
+    "p10": {
+      "title": "Le registre",
+      "text": "Les 38 entrées du modèle, avec fourchette, niveau de preuve, statut et source. Chaque curseur recalcule toute la fiche."
+    },
+    "i10": {
+      "title": "Les constats",
+      "text": "Neuf conclusions, chacune avec sa confiance et ses sources."
+    },
+    "p11": {
+      "title": "L'explorateur des sources",
+      "text": "Filtrez par niveau, pays ou variante, cherchez, et dépliez une source."
+    },
+    "i11": {
+      "title": "Les distributeurs",
+      "text": "Ce que font les distributeurs, pays par pays."
+    },
+    "p12": {
+      "title": "Les lacunes",
+      "text": "Ce qui reste à vérifier avant de citer un chiffre à l'extérieur."
+    }
+  },
+  "scope": {
+    "outside": "Hors catégories végétales",
+    "transverse": "Transverse"
+  },
+  "scenario": {
+    "title": "Scénarios",
+    "suggested": "Scénarios suggérés par Altera",
+    "yours": "Vos scénarios",
+    "none": "Aucun scénario enregistré. Composez le vôtre (leviers, hypothèses, magasins), puis enregistrez-le.",
+    "saveCurrent": "Enregistrer le scénario actuel",
+    "name": "Nom du scénario",
+    "namePlaceholder": "Nom du scénario",
+    "defaultName": "Scénario {n}",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "ok": "Valider",
+    "rename": "Renommer",
+    "delete": "Supprimer",
+    "confirmDelete": "Supprimer le scénario « {name} » ?",
+    "update": "Mettre à jour « {name} »",
+    "shared": "Scénario partagé : « {name} »",
+    "saveShared": "L'enregistrer",
+    "storageNote": "Vos scénarios restent dans ce navigateur. Le lien copié rouvre le scénario affiché.",
+    "copyLink": "Copier le lien",
+    "copied": "Lien copié"
+  },
+  "lever": {
+    "back": "Retour à « {screen} »",
+    "position": "Levier {n} sur {total}",
+    "kicker": "Fiche levier {n}",
+    "dossierReady": "Dossier complet",
+    "dossierDraft": "Dossier en préparation",
+    "tabs": "Sections de la fiche",
+    "implementation": "Mise en œuvre",
+    "ramp": "Montée en charge",
+    "stores": "Magasins",
+    "storesNone": "Décidé par la centrale : ne dépend pas des magasins.",
+    "deck": "Dossier des 20 leviers",
+    "deckScores": "Effort {effort} / 10, impact {impact} / 10 (scores indicatifs)",
+    "dependsOn": "Dépend de « {name} »",
+    "noEffectWhile": "Sans effet tant que « {name} » est à 0.",
+    "evidenceTitle": "Preuves et sources",
+    "draftText": "Le dossier de ce levier est en préparation. Il suivra le même gabarit que le levier 12 :",
+    "seeExample": "Voir le dossier complet du levier {n}",
+    "tab": {
+      "summary": "Synthèse",
+      "assumptions": "Hypothèses",
+      "evidence": "Preuves",
+      "model": "Modèle pas à pas",
+      "margin": "Marge",
+      "carbonEffort": "Carbone et effort",
+      "uncertainty": "Incertitude",
+      "register": "Registre",
+      "gaps": "Lacunes"
+    },
+    "draftItem": {
+      "model": "un modèle chiffré, formule par formule, avec ses résultats année par année ;",
+      "register": "le registre des hypothèses, chacune avec sa fourchette, sa source et son statut ;",
+      "evidence": "la revue des preuves (études, données de distributeurs, contre-preuves) ;",
+      "gaps": "les lacunes et les points à vérifier."
+    }
+  },
+  "i2": {
+    "version": "Version",
+    "year": "Année",
+    "resetRegister": "Réinitialiser le registre ({n})",
+    "median": "Médiane : {v}",
+    "p10p90": "P10 à P90 : {lo} à {hi}",
+    "tilePp": "Répartition protéique, {year}",
+    "tilePpNote": "Soit {t} de protéines végétales en plus",
+    "tileNet": "Marge brute nette, {year}",
+    "tileNetNote": "{share} des tirages sous zéro",
+    "tileCo2": "Carbone, {year}",
+    "tileCo2Up": "Par an. À valeurs centrales, une légère hausse : peu de viande remplacée.",
+    "tileCo2Down": "Par an. Une baisse : la viande remplacée l'emporte.",
+    "tileEffort": "Effort cumulé jusqu'en {year}",
+    "tileEffortNote": "Heures en magasin / 7,5 et jours siège",
+    "keyMessage": "À retenir",
+    "yearTitle": "Répartition protéique année par année",
+    "yearNote": "Écart à l'implantation actuelle, en points. La ligne pointillée est l'autre version.",
+    "whatTitle": "Ce qu'est I2, et à quoi on le compare",
+    "scenarioTitle": "Le scénario en chiffres",
+    "assumptionsIntro": "Ces trois hypothèses sont celles du levier 12 dans la trajectoire : les changer ici change aussi la trajectoire. Les autres valeurs du modèle se règlent dans l'onglet « Registre ».",
+    "modelTitle": "Répartition protéique en {year}, pas à pas",
+    "modelNote": "Chaque ligne est calculée en direct à partir du registre. En tonnes, sauf mention contraire.",
+    "colStep": "Étape",
+    "colA": "A. Gamme actuelle",
+    "colB": "B. Gamme élargie",
+    "colFormula": "Entrée ou formule",
+    "formulaTitle": "La formule",
+    "formula": "variation (pts) = 100 × [ (R0 × T + dP) / (T + dP + dA) - R0 ]\ndP = kg de viande végétale ajoutés × densité protéique\ndA = - substitution × dP + effet viande × protéines voisines × magasins actifs",
+    "formulaNote": "R0 : répartition de départ ; T : protéines du périmètre ; dP : protéines végétales ajoutées ; dA : variation des protéines animales (négative si la viande baisse). Les magasins passent en ligne selon une courbe en S, trimestre par trimestre.",
+    "yearTable": "Année par année (valeurs centrales)",
+    "rowAddedA": "A. Viande végétale ajoutée (t)",
+    "rowPpA": "A. Répartition (pts)",
+    "rowAddedB": "B. Viande végétale ajoutée (t)",
+    "rowPpB": "B. Répartition (pts)",
+    "rowStores": "Magasins actifs en fin d'année",
+    "marginSteps": "Marge en {year}, pas à pas",
+    "marginFormula": "Marge sur la viande végétale ajoutée, moins la marge perdue sur la viande, moins le coût de mise en œuvre.",
+    "colLine": "Ligne",
+    "marginInputs": "Entrées de marge",
+    "marginByYear": "Marge brute nette par année",
+    "tornadoNet": "Ce qui fait varier la marge en {year}",
+    "tornadoCo2": "Ce qui fait varier le carbone en {year}",
+    "tornadoEffort": "Ce qui fait varier l'effort jusqu'en {year}",
+    "tornadoTitle": "Ce qui fait varier « {metric} » en {year}",
+    "tornadoNote": "Une entrée à la fois à sa valeur basse puis haute, tout le reste au central.",
+    "central": "Central",
+    "low": "Bas",
+    "high": "Haut",
+    "atLow": "Entrée au bas de sa fourchette",
+    "atHigh": "Entrée au haut de sa fourchette",
+    "carbonSteps": "Carbone en {year}, pas à pas",
+    "carbonFormula": "Émissions de la viande végétale ajoutée, moins les émissions de la viande évitée (facteurs ADEME, de la ferme à l'assiette).",
+    "effortTitle": "Effort jusqu'en {year}",
+    "effortFormula": "Jours-personne = heures en magasin / 7,5 + jours siège.",
+    "colComponent": "Composante",
+    "colDays": "Jours-personne",
+    "effortSetupNote": "{stores} magasins × {h} h",
+    "effortUpkeepNote": "{h} h par magasin et par semaine",
+    "effortHqOnceNote": "Réservés en {year}, l'année avant la première mise en rayon",
+    "effortHqYearNote": "{d} jours par an ensuite",
+    "co2ByYear": "Carbone par année (kt CO2e)",
+    "effortByYear": "Jours-personne par année",
+    "mcTitle": "Résultats en {year} sur l'ensemble des tirages",
+    "mcNote": "{draws} tirages, loi triangulaire sur le bas, le central et le haut de chaque entrée (graine fixe). Médiane en gras, P10 et P90 dessous.",
+    "colVersion": "Version",
+    "meatZero": "effet viande à 0",
+    "belowZero": "{share} sous zéro",
+    "saving": "{share} avec une baisse",
+    "histTitle": "Distribution des tirages",
+    "metricLabel": "Indicateur",
+    "histNote": "Médiane {median}, valeur centrale {central} : les deux diffèrent quand une fourchette est déséquilibrée.",
+    "registerTitle": "Registre des hypothèses",
+    "registerNote": "Chaque curseur change la valeur centrale ; toute la fiche se recalcule. Les tirages restent dans la fourchette basse et haute.",
+    "registerSearch": "Rechercher une entrée",
+    "registerLegend": "Niveaux : P relu par les pairs, C données d'entreprise, G public, I industrie ou association, R rapport de distributeur ou presse, J jugement, D dérivé.",
+    "linked": "Lié au levier 12",
+    "fixed": "Valeur fixe",
+    "source": "Source",
+    "rgOff": "Version A affichée : les entrées d'élargissement de gamme n'ont pas d'effet.",
+    "findingsTitle": "Constats",
+    "findingsNote": "Conclusions seulement ; les chiffres sont dans les sources citées. Le niveau de confiance est le jugement d'Altera.",
+    "confidence": "Confiance :",
+    "explorerTitle": "Explorateur des sources ({n} sur {total})",
+    "explorerNote": "Plus le niveau est élevé, plus la source pèse en cas de désaccord. Cliquez sur une source pour la déplier.",
+    "tier": "Niveau",
+    "country": "Pays",
+    "allCountries": "Tous les pays",
+    "variant": "Variante",
+    "allVariants": "Toutes les variantes",
+    "search": "Rechercher dans les sources",
+    "noEvidence": "Aucune source ne correspond à ces filtres.",
+    "flags": "Réserves :",
+    "openSource": "Ouvrir la source",
+    "counterTitle": "Contre-preuves",
+    "risksTitle": "Risques pour le distributeur",
+    "barriersTitle": "Freins",
+    "retailersTitle": "Ce que font les distributeurs, par pays",
+    "retailersNote": "« Aucune trace » veut dire que la recherche n'a rien trouvé, pas que rien n'existe.",
+    "retailer": "Distributeur",
+    "activity": "Ce qui est connu",
+    "records": "Sources",
+    "none": "Aucune trace",
+    "scoreTitle": "Grilles d'évaluation",
+    "framing": "Cadrage",
+    "promising": "Potentiel",
+    "neglected": "Négligé",
+    "commercialTitle": "Points commerciaux pour un distributeur",
+    "variantsTitle": "Variantes d'implantation",
+    "gapsTitle": "Lacunes et points à vérifier",
+    "notHeldTitle": "Affirmations qui n'ont pas tenu",
+    "notHeldNote": "Chiffres repris dans des documents antérieurs et corrigés à la lecture des sources.",
+    "step": {
+      "s1": "Protéines du périmètre T (t par an)",
+      "s2": "Répartition de départ R0",
+      "s3": "Protéines végétales aujourd'hui P0",
+      "s4": "Protéines animales aujourd'hui A0",
+      "s5": "Viande végétale sur laquelle agit le levier (t)",
+      "s6": "Viande végétale ajoutée (t)",
+      "s7": "Protéines végétales ajoutées dP",
+      "s8": "Variation des protéines animales dA",
+      "s9": "Protéines après le changement",
+      "s10": "Protéines végétales après",
+      "s11": "Nouvelle répartition",
+      "s12": "Variation de la répartition (pts)",
+      "s13": "Protéines végétales pour +1 pt, sans baisse animale",
+      "s14": "Ce besoin rapporté à l'apport du levier"
+    },
+    "line": {
+      "marginPlant": "Marge sur la viande végétale ajoutée",
+      "marginMeat": "Marge perdue sur la viande",
+      "cost": "Coût de mise en œuvre",
+      "net": "Marge brute nette"
+    },
+    "carbon": {
+      "added": "Viande végétale ajoutée (t)",
+      "plantEm": "Émissions de la viande végétale (t CO2e)",
+      "meatT": "Viande remplacée (t)",
+      "meatEm": "Émissions de viande évitées (t CO2e)",
+      "net": "Variation nette (kt CO2e par an)"
+    },
+    "effort": {
+      "setup": "Mise en place en magasin",
+      "upkeep": "Entretien de la baie",
+      "hqOnce": "Siège, une fois",
+      "hqYear": "Siège, chaque année",
+      "total": "Total"
+    },
+    "metric": {
+      "pp": "Répartition protéique",
+      "net": "Marge brute nette",
+      "co2kt": "Carbone",
+      "cumPersonDays": "Effort cumulé"
+    },
+    "metricShort": {
+      "pp": "Répartition",
+      "net": "Marge",
+      "co2kt": "Carbone",
+      "cumPersonDays": "Effort"
+    },
+    "score": {
+      "volume": "Volume de preuves",
+      "quality": "Qualité des preuves"
+    },
+    "status": {
+      "VERIFIED": "Vérifié",
+      "PARTLY_VERIFIED": "Vérifié en partie",
+      "UNVERIFIED": "Non vérifié",
+      "HYPOTHESIS": "Hypothèse",
+      "DERIVED": "Dérivé"
+    }
   }
 }

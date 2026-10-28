@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
-import { levers } from "../data";
-import type { Lever, LeverPlot, LeverType } from "../data/types";
+import { groups, levers } from "../data";
+import type { Lever, LeverType } from "../data/types";
 import { fmtPct, fmtPoints, fmtRangePoints, fmtSignedPct, fmtSignedTonnes } from "../engine/format";
 import { useApp, useResults, REFERENCE } from "../state/store";
 import { useT } from "../i18n/useT";
@@ -10,9 +10,11 @@ import { Segmented } from "../components/Segmented";
 import { Toggle } from "../components/Toggle";
 import { Matrix } from "../components/Matrix";
 import { HarveyBall } from "../components/HarveyBall";
-import { LeverNumber, PlotTags, StatusPill, TypeBadge, plotLabel } from "../components/LeverBits";
+import { CategoryTags, LeverNumber, StatusPill, TypeBadge, leverTags, tagLabel } from "../components/LeverBits";
 
-const PLOT_FILTERS: LeverPlot[] = ["1", "2", "3", "4", "transverse", "outside"];
+// category filter: the plant groups some lever acts on, then the two scopes
+const TAGS = new Set(levers.flatMap(leverTags));
+const TAG_FILTERS = [...groups.map((g) => g.id).filter((id) => TAGS.has(id)), "transverse", "outside"];
 const TYPE_FILTERS: LeverType[] = ["central", "central_stores", "stores"];
 type SortKey = "number" | "ratio" | "co2" | "margin";
 type Status = "all" | "active" | "inactive";
@@ -21,7 +23,7 @@ export function Levers() {
   const { state, dispatch } = useApp();
   const { t, tx, lang } = useT();
   const R = useResults();
-  const [plot, setPlot] = useState<LeverPlot | "all">("all");
+  const [tag, setTag] = useState<string>("all");
   const [type, setType] = useState<LeverType | "all">("all");
   const [status, setStatus] = useState<Status>("all");
   const [query, setQuery] = useState("");
@@ -30,7 +32,7 @@ export function Levers() {
 
   const q = query.trim().toLocaleLowerCase();
   const shown = levers.filter((l) =>
-    (plot === "all" || l.plots.includes(plot)) &&
+    (tag === "all" || leverTags(l).includes(tag)) &&
     (type === "all" || l.type === type) &&
     (status === "all" || (status === "active") === state.activeLevers.includes(l.number)) &&
     (!q || `${l.number} ${tx(l.label)}`.toLocaleLowerCase().includes(q)),
@@ -63,7 +65,7 @@ export function Levers() {
     <>
       <ScreenHead id="levers" status={<StatusPill tone="lav">{t("levers.status", { n: state.activeLevers.length, total: levers.length })}</StatusPill>} />
 
-      <div className="lever-kpis">
+      <div className="lever-kpis" data-tour="levers-kpis">
         <div className="lkpi">
           <span className="m">{t("levers.kpiActive")}</span>
           <b className="num">{state.activeLevers.length}<small> / {levers.length}</small></b>
@@ -90,8 +92,8 @@ export function Levers() {
         </div>
       </div>
 
-      <div className="toolbar">
-        <Segmented label={t("levers.viewList")} value={state.leverView} onChange={(v) => dispatch({ type: "leverView", view: v })}
+      <div className="toolbar" data-tour="levers-toolbar">
+        <Segmented tour="levers-view" label={t("levers.viewList")} value={state.leverView} onChange={(v) => dispatch({ type: "leverView", view: v })}
           options={[{ value: "list", label: t("levers.viewList") }, { value: "matrix", label: t("levers.viewMatrix") }]} />
         <input type="search" className="lsearch" placeholder={t("levers.search")} aria-label={t("levers.search")} value={query} onChange={(e) => setQuery(e.target.value)} />
         <div className="filters" role="group" aria-label={t("levers.filterStatus")}>
@@ -109,17 +111,17 @@ export function Levers() {
             <button key={ty} type="button" className={`fchip type t-${ty} ${type === ty ? "on" : ""}`} onClick={() => setType(ty)}><i />{t(`types.${ty}`)}</button>
           ))}
         </div>
-        <div className="filters" role="group" aria-label={t("levers.filterPlots")}>
-          <span className="flabel">{t("levers.filterPlots")}</span>
-          <button type="button" className={`fchip ${plot === "all" ? "on" : ""}`} onClick={() => setPlot("all")}>{t("levers.all")}</button>
-          {PLOT_FILTERS.map((p) => (
-            <button key={p} type="button" className={`fchip ${plot === p ? "on" : ""} ${p === "outside" ? "outside" : ""}`} onClick={() => setPlot(p)}>{plotLabel(p, t, lang)}</button>
-          ))}
-        </div>
+        <label className="filters fselect">
+          <span className="flabel">{t("levers.filterCategories")}</span>
+          <select value={tag} onChange={(e) => setTag(e.target.value)}>
+            <option value="all">{t("levers.allCategories")}</option>
+            {TAG_FILTERS.map((p) => <option key={p} value={p}>{tagLabel(p, t, lang)}</option>)}
+          </select>
+        </label>
       </div>
 
       {state.leverView === "list" ? (
-        <Card className="lever-table-card" data-tour="levers" fictitious
+        <Card className="lever-table-card" data-tour="levers-table" fictitious
           title={t("levers.shown", { n: sorted.length })}
           note={t("levers.tableNote", { year: state.horizon, adoption: fmtPct(state.adoption, lang, 0) })}>
           {sorted.length === 0 && <p className="empty">{t("levers.empty")}</p>}
@@ -147,7 +149,7 @@ export function Levers() {
                       <b>{tx(l.label)}</b>
                       <span className="lmeta">
                         <TypeBadge type={l.type} />
-                        <PlotTags plots={l.plots} />
+                        <CategoryTags lever={l} />
                         {l.provisional && <span className="chip warn">{t("levers.provisional")}</span>}
                       </span>
                     </td>
@@ -187,7 +189,7 @@ export function Levers() {
           </table>
         </Card>
       ) : (
-        <Card className="matrix-card" data-tour="levers" note={t("levers.matrixNote")} fictitious
+        <Card className="matrix-card" data-tour="levers-table" note={t("levers.matrixNote")} fictitious
           right={
             <span className="legend">
               {TYPE_FILTERS.map((ty) => <span key={ty}><i className={`sw dot t-${ty}`} />{t(`types.${ty}`)}</span>)}

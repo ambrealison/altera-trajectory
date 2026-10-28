@@ -11,7 +11,7 @@
   "cover": {
     "eyebrow": "Coopérative U · Demonstration",
     "title": "Protein trajectory",
-    "lead": "Start from your protein ratio, switch levers on and see how far they take you, lever by lever and year by year.",
+    "lead": "Start from your protein split, switch levers on and see how far they take you, lever by lever and year by year.",
     "cta": "Let's go",
     "meta": "4 steps · illustrative data",
     "peekRef": "{year} reference",
@@ -41,22 +41,17 @@
     "central_stores": "Central and stores",
     "stores": "Depends on stores"
   },
-  "plots": {
-    "outside": "Outside the 4 plots",
-    "transverse": "Cross-cutting",
-    "other": "Other"
-  },
   "baseline": {
     "title": "Starting point",
-    "desc": "The reference protein ratio, broken down over your 4 plots and the rest of the protein sold.",
+    "desc": "The reference protein split, broken down by plant category and across the rest of the protein sold.",
     "status": "2025 reference",
     "kpiNote": "2025 reference, illustrative data",
-    "keyMessage": "Your 4 plots weigh {x} out of {total}",
-    "keyMessageText": "Most of the plant protein sold comes from pasta, bread and cereals. The 4 plots are where action happens, not yet where the volume is.",
-    "keyMessageFg1": "In WWF FG1, only {plot1} and {plot3} count: {plot2} are mixed products, set apart, and {plot4} belong to group FG2.",
-    "plantTitle": "Plant protein breakdown",
-    "plantNotePt": "In ratio points and tonnes of protein",
-    "plantNoteFg1": "In ratio points and tonnes of product, protein-rich foods (FG1)",
+    "keyMessage": "Your core plant categories weigh {x} out of {total}",
+    "keyMessageText": "Most plant protein sold comes from pasta, bread and cereals. The core categories are where to act, not yet where the volume is.",
+    "keyMessageFg1": "In WWF FG1, only protein-rich foods count, in tonnes of product: composite products are set apart and dairy alternatives belong to another group.",
+    "plantTitle": "Plant protein by category",
+    "plantNotePt": "In split points and tonnes of protein",
+    "plantNoteFg1": "In split points and tonnes of product, protein-rich foods (FG1)",
     "animalTitle": "Animal protein by main group",
     "animalNotePt": "Share of all protein sold",
     "animalNoteFg1": "Share of protein-rich foods, in tonnes of product",
@@ -68,21 +63,22 @@
     "colPoints": "Points",
     "outFg1": "outside FG1",
     "apartFg1": "set apart",
-    "total": "Total"
+    "total": "Total",
+    "rayonNote": "In protein (Protein Tracker)",
+    "animalPlant": "Plant part of animal products"
   },
   "levers": {
     "title": "Levers",
-    "desc": "Twenty levers, each quantified from explicit assumptions. Click a lever to open its sheet and change its assumptions.",
+    "desc": "Twenty levers compared by their protein split, carbon and margin impact. Click a lever's row to open its individual card for more details.",
     "status": "{n} active levers of {total}",
     "viewList": "List",
     "viewMatrix": "Impact / effort matrix",
-    "filterPlots": "Plots",
     "filterTypes": "Type",
     "all": "All",
     "isolated": "Isolated effect in {year}",
     "isolatedNote": "Each lever alone, with your assumptions and {adoption} of stores following.",
     "provisional": "Provisional",
-    "noRatio": "Makes the measurement more reliable",
+    "noRatio": "Makes the measure more reliable",
     "empty": "No lever matches these filters.",
     "active": "Active",
     "inactive": "Inactive",
@@ -94,7 +90,7 @@
     "legendActive": "Active",
     "legendInactive": "Inactive",
     "colLever": "Lever",
-    "colRatio": "Protein ratio",
+    "colRatio": "Protein split",
     "colCo2": "CO2",
     "colMargin": "Margin",
     "colActive": "Active",
@@ -106,32 +102,33 @@
     "statusInactive": "Inactive",
     "shown": "{n} levers shown",
     "kpiActive": "Active levers",
-    "kpiRatio": "Combined effect on the ratio in {year}",
+    "kpiRatio": "Combined effect on the split in {year}",
     "kpiCo2": "CO2 in {year}",
     "kpiCo2Note": "Active levers, order of magnitude",
     "kpiTopCo2": "Strongest CO2 lever",
-    "tableNote": "Each lever alone in {year}, with your assumptions and {adoption} of stores following. Margin: qualitative assessment. Click a header to sort."
+    "tableNote": "Each lever alone in {year}, with your assumptions and {adoption} of stores following. Margin: qualitative assessment. Click a header to sort.",
+    "filterCategories": "Category",
+    "allCategories": "All categories"
   },
   "trajectory": {
     "title": "Trajectory",
-    "desc": "Switch levers on, set the share of stores that follow, and read the effect by lever or over time.",
-    "scenarios": "Scenarios",
+    "desc": "Pick a scenario or build your own, set the share of stores that follow, and read the effect on the protein split, CO2 and revenue.",
     "custom": "Custom",
     "adoption": "Share of stores that follow",
-    "adoptionNote": "In a cooperative network, the central office recommends and each store decides. This slider sets the share of stores that apply the levers concerned.",
-    "adoptionNoEffect": "No effect here: the active levers are all decided centrally.",
+    "adoptionNote": "This slider only moves the pilots and the levers decided in store. Central levers apply whatever the setting.",
+    "adoptionNoEffect": "No effect here: the active levers are all decided by the central office.",
     "horizon": "Horizon",
     "leversTitle": "Levers",
     "leversCount": "{n} of {total}",
     "pin": "Pin this scenario",
     "unpin": "Remove",
     "pinned": "Pinned: {name}, {value}",
-    "kpiRatio": "Ratio in {year}",
+    "kpiRatio": "Protein split in {year}",
     "kpiRange": "Range: {low} to {high}",
     "kpiCo2": "CO2 in {year}",
     "kpiCo2Note": "Order of magnitude",
     "kpiRevenue": "Revenue in {year}",
-    "kpiRevenueNote": "Indicative change, constant scope",
+    "kpiRevenueNote": "Indicative change, like for like",
     "vsRef": "compared with 2025",
     "byLever": "By lever",
     "overTime": "Over time",
@@ -143,16 +140,38 @@
     "overlapNote": "Levers partly touch the same products: their effects do not add up.",
     "dutchPace": "Pace observed in the Netherlands",
     "band": "Low and high range",
-    "stackTitle": "Plant protein by plot",
-    "stackNotePt": "In ratio points: the total height is the ratio",
-    "stackNoteFg1": "In FG1 ratio points",
-    "stackComposite": "Mixed products, plant part",
+    "stackTitle": "Plant protein by category",
+    "stackNotePt": "In split points: the total height is the protein split",
+    "stackNoteFg1": "In FG1 split points",
     "chartTitleLever": "From the {from} reference to {to}, lever by lever",
-    "chartTitleTime": "Ratio year by year",
+    "chartTitleTime": "Protein split year by year",
     "noLever": "No active lever. Choose a scenario or tick some levers.",
     "ghost": "Pinned scenario",
     "extensionNote": "Beyond {year}: diffusion assumption, lever effects grow by {rate} a year.",
-    "dutchSource": "Pace observed in the Netherlands: {text} Source: {source}."
+    "dutchSource": "Pace observed in the Netherlands: {text} Source: {source}.",
+    "splitTitle": "Where the effect comes from in {year}",
+    "splitCentral": "Decided by the central office",
+    "splitStores": "Stores that follow ({adoption})",
+    "splitLeft": "Store potential left",
+    "splitNote": "At 0% of stores, {x} remain: not everything depends on the stores.",
+    "kpiSplit": "Protein split",
+    "kpiScope3": "{share} of the scope 3 target ({cut} by {year})",
+    "kpiShow": "Show in the charts",
+    "kpiShown": "Shown in the charts",
+    "kpiGroup": "Chart indicator",
+    "co2TitleLever": "CO2 from {from} to {to}, lever by lever",
+    "co2TitleTime": "CO2 change year by year, against 2025",
+    "co2Note": "CO2 of the products in scope, farm to fork, in kilotonnes of CO2e: an order of magnitude.",
+    "co2Line": "CO2 change",
+    "revTitleLever": "Revenue from {from} to {to}, lever by lever",
+    "revTitleTime": "Revenue change year by year",
+    "revNote": "Volumes × price per kilo, like for like, in millions of euros: an indicative change.",
+    "revLine": "Revenue change",
+    "yourTrajectoryShort": "Your trajectory",
+    "s3Title": "Scope 3 target: {cut} by {year}",
+    "s3Value": "{saved} avoided out of {target} targeted, {share}",
+    "s3Note": "Scope 3 base: {base}. Source: {source}. Order of magnitude: the simulator's CO2 only covers the products in scope.",
+    "dutchExtended": "Beyond {year}, the Dutch pace is extended unchanged."
   },
   "data": {
     "title": "With your data",
@@ -165,7 +184,7 @@
     "storesGet": "the stores where pilots should start, and adoption estimated store by store",
     "marginTitle": "Actual margin",
     "marginWith": "margins by product family",
-    "marginGet": "a quantified trade-off between margin and ratio, lever by lever",
+    "marginGet": "a quantified trade-off between margin and protein split, lever by lever",
     "carbonTitle": "Your own carbon footprint",
     "carbonWith": "emission factors for your products and suppliers",
     "carbonGet": "CO2 calibrated on your range, instead of an order of magnitude",
@@ -189,7 +208,7 @@
     "range": "from {min} to {max}",
     "effect": "Effect in {year}",
     "effectNote": "Lever alone, with these assumptions and {adoption} of stores following",
-    "ratio": "Ratio",
+    "ratio": "Protein split",
     "co2": "CO2",
     "revenue": "Revenue",
     "margin": "Margin",
@@ -201,7 +220,7 @@
     "ramp": "Ramp-up from {start} to {end}",
     "storeShare": "Store dependency {dep}: with {adoption} of stores following, {factor} of the full effect.",
     "provisional": "Provisional position in the deck",
-    "noRatioEffect": "Does not move the ratio, makes the measurement more reliable.",
+    "noRatioEffect": "Does not move the protein split, makes the measure more reliable.",
     "tightening": "Gap between low and high bounds of every other lever multiplied by {k}.",
     "footer": "Each assumption is a question to check with the team concerned.",
     "draft": "Working draft",
@@ -209,23 +228,464 @@
     "harveyM1": "Rather negative",
     "harvey0": "Neutral",
     "harveyP1": "Rather positive",
-    "harveyP2": "Clearly positive"
+    "harveyP2": "Clearly positive",
+    "open": "Open the full card",
+    "openDossier": "Assumptions, model, evidence and gaps, full screen.",
+    "openTemplate": "Assumptions, effects and dossier status, full screen."
   },
   "tour": {
     "next": "Next",
     "prev": "Back",
     "skip": "Skip",
-    "done": "Finish",
+    "done": "Done",
     "stepOf": "{n} of {total}",
-    "s1Title": "The starting point",
-    "s1Text": "The 2025 reference protein ratio: the plant share of protein sold. Illustrative data.",
-    "s2Title": "Your 4 plots",
-    "s2Text": "The 4 plots weigh a few points: most plant protein comes from pasta, bread and cereals.",
-    "s3Title": "The levers",
-    "s3Text": "Each lever is quantified by explicit assumptions. Click a lever to change them.",
-    "s4Title": "Stores that follow",
-    "s4Text": "The central office recommends, stores decide: this slider sets the share that applies the levers.",
-    "s5Title": "By lever or over time",
-    "s5Text": "The waterfall shows what each lever brings, the curve shows the pace year by year."
+    "buttonTitle": "Guided tour of the screen shown",
+    "name": {
+      "welcome": "Welcome tour",
+      "baseline": "Tour · Starting point",
+      "levers": "Tour · Levers",
+      "trajectory": "Tour · Trajectory",
+      "data": "Tour · With your data",
+      "lever": "Tour · Lever card",
+      "i2": "Tour · Lever 12 dossier"
+    },
+    "w1": {
+      "title": "The starting point",
+      "text": "The reference protein split in 2025: the plant share of protein sold."
+    },
+    "w2": {
+      "title": "Your plant categories",
+      "text": "Each category weighs a few points; most plant protein comes from pasta, bread and cereals."
+    },
+    "w3": {
+      "title": "The levers",
+      "text": "Twenty levers quantified from explicit assumptions. Click a row to open the lever's card."
+    },
+    "w4": {
+      "title": "What matters to you",
+      "text": "Protein split, CO2 against the scope 3 target, revenue: click a card to switch the charts."
+    },
+    "w5": {
+      "title": "The stores that follow",
+      "text": "The central office recommends, stores decide. Part of the effect does not depend on them."
+    },
+    "w6": {
+      "title": "One tour per screen",
+      "text": "This button starts the detailed tour of the screen shown, including a lever's full card."
+    },
+    "b1": {
+      "title": "The reference split",
+      "text": "Plant share of protein sold in 2025. The switch moves to the WWF FG1 indicator, in tonnes of product."
+    },
+    "b2": {
+      "title": "The key message",
+      "text": "What the core plant categories weigh in the split, and what makes the volume."
+    },
+    "b3": {
+      "title": "Plant protein by category",
+      "text": "Every block and its categories, in split points and tonnes. Composite products count for their plant share."
+    },
+    "b4": {
+      "title": "The animal side",
+      "text": "Animal protein by main group, as a share of all protein sold."
+    },
+    "b5": {
+      "title": "By department",
+      "text": "Protein, plant share and points contributed, department by department."
+    },
+    "b6": {
+      "title": "Next step",
+      "text": "Move on to the levers whenever you like; navigation stays free."
+    },
+    "l1": {
+      "title": "Overview",
+      "text": "Active levers, combined effect on the split, CO2 of the active levers and the strongest carbon lever."
+    },
+    "l2": {
+      "title": "List or matrix",
+      "text": "The table compares effects; the matrix places each lever by the deck's impact and effort."
+    },
+    "l3": {
+      "title": "Filters",
+      "text": "Search, status, lever type and category concerned."
+    },
+    "l4": {
+      "title": "The table",
+      "text": "Sort by split, CO2 or margin by clicking a header. The switch turns a lever on; a click on the row opens its card."
+    },
+    "l5": {
+      "title": "The matrix",
+      "text": "Impact and effort from the deck, out of 10. Inactive levers are greyed out."
+    },
+    "t1": {
+      "title": "Three indicators",
+      "text": "Protein split, CO2 and revenue at the horizon. Click a card: the charts switch to that indicator."
+    },
+    "t2": {
+      "title": "Lever by lever",
+      "text": "From the reference to your trajectory, what each lever brings. Overlap between levers is shown apart."
+    },
+    "t3": {
+      "title": "Over time",
+      "text": "The split year by year with its range, the pace observed in the Netherlands and the stacked categories."
+    },
+    "t4": {
+      "title": "CO2",
+      "text": "The same breakdown in kilotonnes of CO2e, lever by lever."
+    },
+    "t5": {
+      "title": "The scope 3 target",
+      "text": "The share of the scope 3 reduction target that the trajectory covers."
+    },
+    "t6": {
+      "title": "Suggested scenarios",
+      "text": "Four scenarios prepared by Altera, from central office only to the theoretical ceiling."
+    },
+    "t7": {
+      "title": "Your scenarios",
+      "text": "Build your own, then save, rename or share it as a link."
+    },
+    "t8": {
+      "title": "The stores that follow",
+      "text": "This slider only moves the pilots and the levers decided in store."
+    },
+    "t9": {
+      "title": "Where the effect comes from",
+      "text": "What the central office decides, what following stores bring, and what is left to gain in store."
+    },
+    "t10": {
+      "title": "Horizon",
+      "text": "2028, 2030 or 2035. Beyond 2030, a diffusion assumption extends the effects."
+    },
+    "t11": {
+      "title": "The levers",
+      "text": "Switch a lever on or off; its name opens its card."
+    },
+    "d1": {
+      "title": "What your data would allow",
+      "text": "Each module says what it needs and what you get."
+    },
+    "d2": {
+      "title": "The framework",
+      "text": "Each module is built on your data, in a framework agreed together."
+    },
+    "p1": {
+      "title": "The lever card",
+      "text": "Type, categories concerned, dossier status and on and off switch."
+    },
+    "p2": {
+      "title": "The sections",
+      "text": "Each tab opens one part of the card."
+    },
+    "g3": {
+      "title": "What the lever does",
+      "text": "Description and why it matters for you."
+    },
+    "g4": {
+      "title": "Implementation",
+      "text": "Who carries it, ramp-up, store dependence and proposed pilot."
+    },
+    "g5": {
+      "title": "Effects at the horizon",
+      "text": "The lever alone, with your assumptions: split, CO2, revenue and margin."
+    },
+    "p5": {
+      "title": "Linked assumptions",
+      "text": "An assumption that acts on another sits under it, linked, and is greyed while the first is at 0. Effects recompute live."
+    },
+    "g6": {
+      "title": "Evidence",
+      "text": "The dossier status and what it will hold."
+    },
+    "p4": {
+      "title": "Two versions",
+      "text": "A: today's range. B: the range grown to a reference European retailer's level, with better taste."
+    },
+    "p3": {
+      "title": "The results",
+      "text": "Split, margin, carbon and effort: central value, median and P10 to P90 range of 10,000 draws."
+    },
+    "i5": {
+      "title": "The scenario in numbers",
+      "text": "What changes in store, how many products, which stores, what timing, and where each figure comes from."
+    },
+    "p6": {
+      "title": "The model step by step",
+      "text": "The 14 steps of the split calculation, live, for both versions."
+    },
+    "p7": {
+      "title": "Margin",
+      "text": "Margin gained, margin lost, cost, then what drives the result."
+    },
+    "p8": {
+      "title": "Carbon",
+      "text": "Emissions added and avoided: the sign depends on the meat replaced."
+    },
+    "i8": {
+      "title": "Effort",
+      "text": "Person-days in stores and at head office, year by year."
+    },
+    "p9": {
+      "title": "Uncertainty",
+      "text": "Median and range of the draws, with and without the meat-side effect."
+    },
+    "i9": {
+      "title": "What drives the result",
+      "text": "Each input at its low then its high value, the rest central."
+    },
+    "p10": {
+      "title": "The register",
+      "text": "The model's 38 inputs, with range, evidence tier, status and source. Each slider recomputes the whole card."
+    },
+    "i10": {
+      "title": "The findings",
+      "text": "Nine conclusions, each with its confidence and records."
+    },
+    "p11": {
+      "title": "The evidence explorer",
+      "text": "Filter by tier, country or variant, search, and expand a record."
+    },
+    "i11": {
+      "title": "Retailers",
+      "text": "What retailers do, country by country."
+    },
+    "p12": {
+      "title": "The gaps",
+      "text": "What is still to check before quoting a figure outside."
+    }
+  },
+  "scope": {
+    "outside": "Outside plant categories",
+    "transverse": "Cross-cutting"
+  },
+  "scenario": {
+    "title": "Scenarios",
+    "suggested": "Scenarios suggested by Altera",
+    "yours": "Your scenarios",
+    "none": "No saved scenario. Build your own (levers, assumptions, stores), then save it.",
+    "saveCurrent": "Save the current scenario",
+    "name": "Scenario name",
+    "namePlaceholder": "Scenario name",
+    "defaultName": "Scenario {n}",
+    "save": "Save",
+    "cancel": "Cancel",
+    "ok": "Confirm",
+    "rename": "Rename",
+    "delete": "Delete",
+    "confirmDelete": "Delete the scenario '{name}'?",
+    "update": "Update '{name}'",
+    "shared": "Shared scenario: '{name}'",
+    "saveShared": "Save it",
+    "storageNote": "Your scenarios stay in this browser. The copied link reopens the scenario shown.",
+    "copyLink": "Copy link",
+    "copied": "Link copied"
+  },
+  "lever": {
+    "back": "Back to '{screen}'",
+    "position": "Lever {n} of {total}",
+    "kicker": "Lever card {n}",
+    "dossierReady": "Full dossier",
+    "dossierDraft": "Dossier in preparation",
+    "tabs": "Card sections",
+    "implementation": "Implementation",
+    "ramp": "Ramp-up",
+    "stores": "Stores",
+    "storesNone": "Decided by the central office: does not depend on the stores.",
+    "deck": "20-lever deck",
+    "deckScores": "Effort {effort} / 10, impact {impact} / 10 (indicative scores)",
+    "dependsOn": "Depends on '{name}'",
+    "noEffectWhile": "No effect while '{name}' is at 0.",
+    "evidenceTitle": "Evidence and sources",
+    "draftText": "This lever's dossier is in preparation. It will follow the same template as lever 12:",
+    "seeExample": "See the full dossier of lever {n}",
+    "tab": {
+      "summary": "Summary",
+      "assumptions": "Assumptions",
+      "evidence": "Evidence",
+      "model": "Model step by step",
+      "margin": "Margin",
+      "carbonEffort": "Carbon and effort",
+      "uncertainty": "Uncertainty",
+      "register": "Register",
+      "gaps": "Gaps"
+    },
+    "draftItem": {
+      "model": "a quantified model, formula by formula, with year-by-year results;",
+      "register": "the assumption register, each with its range, source and status;",
+      "evidence": "the evidence review (studies, retailer data, counter-evidence);",
+      "gaps": "the gaps and the points to check."
+    }
+  },
+  "i2": {
+    "version": "Version",
+    "year": "Year",
+    "resetRegister": "Reset the register ({n})",
+    "median": "Median: {v}",
+    "p10p90": "P10 to P90: {lo} to {hi}",
+    "tilePp": "Protein split, {year}",
+    "tilePpNote": "That is {t} more plant protein",
+    "tileNet": "Net gross margin, {year}",
+    "tileNetNote": "{share} of draws below zero",
+    "tileCo2": "Carbon, {year}",
+    "tileCo2Up": "A year. At central values, a slight increase: little meat replaced.",
+    "tileCo2Down": "A year. A fall: the meat replaced outweighs.",
+    "tileEffort": "Cumulative effort to {year}",
+    "tileEffortNote": "Store hours / 7.5 and head-office days",
+    "keyMessage": "Key message",
+    "yearTitle": "Protein split year by year",
+    "yearNote": "Difference to today's layout, in points. The dotted line is the other version.",
+    "whatTitle": "What I2 is and what it is compared with",
+    "scenarioTitle": "The scenario in numbers",
+    "assumptionsIntro": "These three assumptions are lever 12's in the trajectory: changing them here also changes the trajectory. The model's other values are set in the 'Register' tab.",
+    "modelTitle": "Protein split in {year}, step by step",
+    "modelNote": "Every line is computed live from the register. In tonnes unless stated.",
+    "colStep": "Step",
+    "colA": "A. Today's range",
+    "colB": "B. Grown range",
+    "colFormula": "Input or formula",
+    "formulaTitle": "The formula",
+    "formula": "change (pp) = 100 × [ (R0 × T + dP) / (T + dP + dA) - R0 ]\ndP = added plant-meat kg × protein density\ndA = - displacement × dP + meat effect × neighbouring protein × live stores",
+    "formulaNote": "R0: starting split; T: protein in scope; dP: plant protein added; dA: animal protein change (negative when meat falls). Stores go live along an S-curve, quarter by quarter.",
+    "yearTable": "Year by year (central values)",
+    "rowAddedA": "A. Added plant meat (t)",
+    "rowPpA": "A. Split (pp)",
+    "rowAddedB": "B. Added plant meat (t)",
+    "rowPpB": "B. Split (pp)",
+    "rowStores": "Stores live at year end",
+    "marginSteps": "Margin in {year}, step by step",
+    "marginFormula": "Margin on the added plant meat, minus the margin lost on meat, minus the implementation cost.",
+    "colLine": "Line",
+    "marginInputs": "Margin inputs",
+    "marginByYear": "Net gross margin by year",
+    "tornadoNet": "What drives the margin in {year}",
+    "tornadoCo2": "What drives carbon in {year}",
+    "tornadoEffort": "What drives the effort to {year}",
+    "tornadoTitle": "What drives '{metric}' in {year}",
+    "tornadoNote": "One input at a time to its low then its high value, everything else central.",
+    "central": "Central",
+    "low": "Low",
+    "high": "High",
+    "atLow": "Input at its low value",
+    "atHigh": "Input at its high value",
+    "carbonSteps": "Carbon in {year}, step by step",
+    "carbonFormula": "Emissions of the added plant meat, minus the emissions of the meat avoided (ADEME factors, farm to fork).",
+    "effortTitle": "Effort to {year}",
+    "effortFormula": "Person-days = store hours / 7.5 + head-office days.",
+    "colComponent": "Component",
+    "colDays": "Person-days",
+    "effortSetupNote": "{stores} stores × {h} h",
+    "effortUpkeepNote": "{h} h per store per week",
+    "effortHqOnceNote": "Booked in {year}, the year before first shelf",
+    "effortHqYearNote": "{d} days a year afterwards",
+    "co2ByYear": "Carbon by year (kt CO2e)",
+    "effortByYear": "Person-days by year",
+    "mcTitle": "Results in {year} across all draws",
+    "mcNote": "{draws} draws, triangular on each input's low, central and high value (fixed seed). Median in bold, P10 and P90 below.",
+    "colVersion": "Version",
+    "meatZero": "meat effect at 0",
+    "belowZero": "{share} below zero",
+    "saving": "{share} with a fall",
+    "histTitle": "Distribution of the draws",
+    "metricLabel": "Metric",
+    "histNote": "Median {median}, central value {central}: the two differ when a range is lopsided.",
+    "registerTitle": "Assumption register",
+    "registerNote": "Each slider changes the central value; the whole card recomputes. Draws stay within the low and high range.",
+    "registerSearch": "Search an input",
+    "registerLegend": "Tiers: P peer-reviewed, C company data, G government, I industry or NGO, R retailer report or press, J judgement, D derived.",
+    "linked": "Linked to lever 12",
+    "fixed": "Fixed value",
+    "source": "Source",
+    "rgOff": "Version A shown: the range build inputs have no effect.",
+    "findingsTitle": "Key findings",
+    "findingsNote": "Conclusions only; numbers are in the cited records. Confidence is Altera's judgement.",
+    "confidence": "Confidence:",
+    "explorerTitle": "Evidence explorer ({n} of {total})",
+    "explorerNote": "Higher tiers outrank lower ones when sources disagree. Click a record to expand it.",
+    "tier": "Tier",
+    "country": "Country",
+    "allCountries": "All countries",
+    "variant": "Variant",
+    "allVariants": "All variants",
+    "search": "Search the records",
+    "noEvidence": "No record matches these filters.",
+    "flags": "Caveats:",
+    "openSource": "Open the source",
+    "counterTitle": "Counter-evidence",
+    "risksTitle": "Risks for the retailer",
+    "barriersTitle": "Barriers",
+    "retailersTitle": "What retailers do, by country",
+    "retailersNote": "'None found' means the research found nothing, not that nothing exists.",
+    "retailer": "Retailer",
+    "activity": "What is known",
+    "records": "Records",
+    "none": "None found",
+    "scoreTitle": "Scorecards",
+    "framing": "Framing",
+    "promising": "Promise",
+    "neglected": "Neglect",
+    "commercialTitle": "Commercial points for a retailer",
+    "variantsTitle": "Placement variants",
+    "gapsTitle": "Gaps and points to check",
+    "notHeldTitle": "Claims that did not hold",
+    "notHeldNote": "Figures from earlier documents, corrected on reading the sources.",
+    "step": {
+      "s1": "Protein pool T (t a year)",
+      "s2": "Starting split R0",
+      "s3": "Plant protein today P0",
+      "s4": "Animal protein today A0",
+      "s5": "Plant meat the lever acts on (t)",
+      "s6": "Added plant meat (t)",
+      "s7": "Plant protein added dP",
+      "s8": "Animal protein change dA",
+      "s9": "Pool after the change",
+      "s10": "Plant protein after",
+      "s11": "New split",
+      "s12": "Change in the split (pp)",
+      "s13": "Plant protein for +1 pp, no animal change",
+      "s14": "That need as a multiple of what the lever adds"
+    },
+    "line": {
+      "marginPlant": "Margin on added plant meat",
+      "marginMeat": "Margin lost on meat",
+      "cost": "Implementation cost",
+      "net": "Net gross margin"
+    },
+    "carbon": {
+      "added": "Added plant meat (t)",
+      "plantEm": "Plant-meat emissions (t CO2e)",
+      "meatT": "Meat replaced (t)",
+      "meatEm": "Meat emissions avoided (t CO2e)",
+      "net": "Net change (kt CO2e a year)"
+    },
+    "effort": {
+      "setup": "Store set-up",
+      "upkeep": "Bay upkeep",
+      "hqOnce": "Head office, one-off",
+      "hqYear": "Head office, yearly",
+      "total": "Total"
+    },
+    "metric": {
+      "pp": "Protein split",
+      "net": "Net gross margin",
+      "co2kt": "Carbon",
+      "cumPersonDays": "Cumulative effort"
+    },
+    "metricShort": {
+      "pp": "Split",
+      "net": "Margin",
+      "co2kt": "Carbon",
+      "cumPersonDays": "Effort"
+    },
+    "score": {
+      "volume": "Evidence volume",
+      "quality": "Evidence quality"
+    },
+    "status": {
+      "VERIFIED": "Verified",
+      "PARTLY_VERIFIED": "Partly verified",
+      "UNVERIFIED": "Unverified",
+      "HYPOTHESIS": "Hypothesis",
+      "DERIVED": "Derived"
+    }
   }
 }
