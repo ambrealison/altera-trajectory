@@ -10,7 +10,6 @@ export type WwfGroup = "FG1" | "FG2" | "FG3" | "FG4" | "FG5" | "FG6" | "FG7";
 export interface Config {
   client: string;
   title: Text;
-  coBranding: string;
   footer: { left: Text; right: string };
   baseYear: number;
   horizons: number[];

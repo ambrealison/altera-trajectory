@@ -15,7 +15,6 @@ export function Header() {
         <b>{config.client}</b><span aria-hidden>·</span><span>{tx(config.title)}</span>
       </div>
       <div className="top-r">
-        <span className="cobrand">{config.coBranding}</span>
         <DemoBadge />
         <button type="button" className="ghost" onClick={() => dispatch({ type: "tour", step: 0 })}>
           <Icon name="play" size={12} />{t("app.tour")}

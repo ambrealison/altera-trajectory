@@ -81,7 +81,6 @@ export function Cover() {
     <div className="cover-page">
       <header className="cover-top">
         <div className="logo"><b>Altera<em>.ai</em></b></div>
-        <span className="cobrand">{config.coBranding}</span>
         <span className="spacer" />
         <DemoBadge />
         <Segmented label={t("app.language")} size="sm" value={state.lang} onChange={(lang) => dispatch({ type: "lang", lang })}
