@@ -17,12 +17,17 @@ interface Props {
   horizon: number;
   pinned?: { name: string; value: number } | null;
   onOpen: (leverId: string) => void;
+  /** Formats for levels (axis, reference and final bars) and for lever steps; the protein split by default. */
+  fmtLevel?: (v: number) => string;
+  fmtStep?: (v: number) => string;
+  /** Value domain; by default whole ratio points around the bars. */
+  domain?: [number, number];
 }
 
 /** Waterfall from the reference to the horizon: one step per active lever in its type colour,
  *  dotted connectors, a peach final bar with its range. The value axis does not start at zero:
  *  the two bars that rest on it carry a break mark. */
-export function Waterfall({ contrib, low, high, baseYear, horizon, pinned, onOpen }: Props) {
+export function Waterfall({ contrib, low, high, baseYear, horizon, pinned, onOpen, fmtLevel, fmtStep, domain }: Props) {
   const { t, tx, lang } = useT();
   const [ref, width] = useWidth<HTMLDivElement>();
   const H = 300;
@@ -49,15 +54,18 @@ export function Waterfall({ contrib, low, high, baseYear, horizon, pinned, onOpe
 
   const values = [contrib.base, contrib.final, low, high, ...items.map((i) => i.to), ...(pinned ? [pinned.value] : [])];
   const lo = Math.min(...values), hi = Math.max(...values);
-  const yMin = Math.floor(lo * 100 - 1.5) / 100;
-  const yMax = Math.ceil(hi * 100 + 0.6) / 100;
+  const [yMin, yMax] = domain ?? [Math.floor(lo * 100 - 1.5) / 100, Math.ceil(hi * 100 + 0.6) / 100];
   const y = scaleLinear().domain([yMin, yMax]).range([H - m.bottom, m.top]);
-  const ticks = y.ticks(Math.min(6, Math.round((yMax - yMin) * 100)));
-  const small = (v: number) => Math.abs(v) < 0.001 - 1e-12;
-  const ptsLabel = (v: number) => {
+  const ticks = domain ? y.ticks(5) : y.ticks(Math.min(6, Math.round((yMax - yMin) * 100)));
+  const span = Math.abs(yMax - yMin);
+  const small = (v: number) => (domain ? Math.abs(v) < span * 0.004 : Math.abs(v) < 0.001 - 1e-12);
+  const level = fmtLevel ?? ((v: number) => fmtPct(v, lang));
+  const axis = fmtLevel ?? ((v: number) => fmtPct(v, lang, 0));
+  const ptsLabel = fmtStep ?? ((v: number) => {
     const s = fmtPoints(v, lang, Math.abs(v) < 0.001 ? 2 : 1);
-    return s.replace(/\s?pts?$/, "").replace(/ pts?$/, "");
-  };
+    return s.replace(/\s?pts?$/, "").replace(/\u00a0pts?$/, "");
+  });
+  const stepTitle = fmtStep ?? ((v: number) => fmtPoints(v, lang, 2));
 
   return (
     <div className="chart" ref={ref}>
@@ -66,7 +74,7 @@ export function Waterfall({ contrib, low, high, baseYear, horizon, pinned, onOpe
           {ticks.map((v) => (
             <g key={v}>
               <line x1={0} x2={innerW} y1={y(v)} y2={y(v)} className="grid" />
-              <text x={-8} y={y(v)} dy="0.32em" textAnchor="end" className="axis">{fmtPct(v, lang, 0)}</text>
+              <text x={-8} y={y(v)} dy="0.32em" textAnchor="end" className="axis">{axis(v)}</text>
             </g>
           ))}
           {items.map((it, i) => {
@@ -81,7 +89,7 @@ export function Waterfall({ contrib, low, high, baseYear, horizon, pinned, onOpe
           {pinned && (
             <g className="ghost">
               <line x1={0} x2={innerW} y1={y(pinned.value)} y2={y(pinned.value)} />
-              <text x={4} y={y(pinned.value) - 6}>{t("trajectory.pinned", { name: pinned.name, value: fmtPct(pinned.value, lang) })}</text>
+              <text x={4} y={y(pinned.value) - 6}>{t("trajectory.pinned", { name: pinned.name, value: level(pinned.value) })}</text>
             </g>
           )}
           {items.map((it) => {
@@ -103,7 +111,7 @@ export function Waterfall({ contrib, low, high, baseYear, horizon, pinned, onOpe
                       <line x1={cx - 6} x2={cx + 6} y1={y(low)} y2={y(low)} />
                     </g>
                   )}
-                  <text x={cx} y={Math.min(top, isFinal ? y(high) : top) - 8} textAnchor="middle" className={`val ${isFinal ? "big" : ""}`}>{fmtPct(it.to, lang)}</text>
+                  <text x={cx} y={Math.min(top, isFinal ? y(high) : top) - 8} textAnchor="middle" className={`val ${isFinal ? "big" : ""}`}>{level(it.to)}</text>
                   <text x={isFinal ? bx + w : bx} y={H - m.bottom + (steps.length ? 44 : 18)} textAnchor={isFinal ? "end" : "start"} className="xlab strong">
                     {isFinal ? t("trajectory.yourTrajectory", { year: horizon }) : t("trajectory.reference", { year: baseYear })}
                   </text>
@@ -118,8 +126,8 @@ export function Waterfall({ contrib, low, high, baseYear, horizon, pinned, onOpe
             return (
               <g key={it.key} className="wstep" onClick={() => onOpen(l.id)} role="button" tabIndex={0}
                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onOpen(l.id); } }}
-                aria-label={`${l.number} · ${tx(l.label)} : ${fmtPoints(v, lang)}`}>
-                <title>{`${l.number} · ${tx(l.label)} : ${fmtPoints(v, lang, 2)}`}</title>
+                aria-label={`${l.number} · ${tx(l.label)} : ${stepTitle(v)}`}>
+                <title>{`${l.number} · ${tx(l.label)} : ${stepTitle(v)}`}</title>
                 <rect x={it.x} y={m.top} width={it.w} height={H - m.top - m.bottom + 30} fill="transparent" />
                 <rect x={bx} y={top} width={w} height={h} rx={3} fill={TYPE_FILL[l.type]} stroke={TYPE_STROKE[l.type]} strokeWidth={l.type === "stores" ? 1.5 : 0} />
                 {!small(v) && it.w >= 18 && (

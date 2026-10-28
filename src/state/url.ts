@@ -3,11 +3,16 @@
 // #v=trajectory&sc=committed&l=1.2.3&a=30&h=2030&m=pt&lang=fr&hy=L01.conversion:45,L02.plantShare:45
 import { config, levers, scenarios } from "../data";
 import type { Lang } from "../data/types";
-import { SCREENS, type ScenarioFields, type ScreenId } from "./types";
+import { KPIS, SCREENS, type KpiKey, type ScenarioFields, type ScreenId } from "./types";
 
 export interface Snapshot extends ScenarioFields {
   screen: ScreenId;
   lang?: Lang;
+  leverPage?: string | null;
+  leverTab?: string;
+  kpi?: KpiKey;
+  /** Name of a saved scenario, so that a shared link can be saved under the same name. */
+  customName?: string | null;
 }
 
 /** Hypothesis overrides of a preset scenario, as stored in the app state (relative to lever defaults). */
@@ -79,6 +84,10 @@ export function toHash(s: Snapshot): string {
   }
   if (s.horizon !== config.defaultHorizon) p.push(`h=${s.horizon}`);
   if (s.metric !== "pt") p.push(`m=${s.metric}`);
+  if (s.kpi && s.kpi !== "split") p.push(`k=${s.kpi}`);
+  if (s.leverPage) p.push(`lp=${s.leverPage}`);
+  if (s.leverPage && s.leverTab && s.leverTab !== "summary") p.push(`lt=${s.leverTab}`);
+  if (s.customName) p.push(`cn=${encodeURIComponent(s.customName)}`);
   if (s.lang) p.push(`lang=${s.lang}`);
   return `#${p.join("&")}`;
 }
@@ -119,6 +128,16 @@ export function fromHash(hash: string): Partial<Snapshot> | null {
   if (m === "pt" || m === "fg1") out.metric = m;
   const lang = q.get("lang");
   if (lang === "fr" || lang === "en") out.lang = lang;
+  const k = q.get("k");
+  if (k && (KPIS as string[]).includes(k)) out.kpi = k as KpiKey;
+  const lp = q.get("lp");
+  if (lp && levers.some((x) => x.id === lp)) {
+    out.leverPage = lp;
+    const lt = q.get("lt");
+    if (lt && /^\w+$/.test(lt)) out.leverTab = lt;
+  }
+  const cn = q.get("cn");
+  if (cn) out.customName = cn.slice(0, 60);
   if (!base && (out.activeLevers || out.hypotheses)) out.preset = null;
   return out;
 }

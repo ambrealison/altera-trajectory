@@ -4,9 +4,9 @@ import { createContext, useContext, useEffect, useMemo, useReducer, type Dispatc
 import { config, levers, model, scenarios } from "../data";
 import type { Lang } from "../data/types";
 import { baseline, runYear, simulate, type Metrics, type YearResult } from "../engine/simulate";
-import { contributions, isolatedEffect, type Contributions, type Range } from "../engine/contributions";
-import { fromHash, matchingPreset, presetFields, toHash, type Snapshot } from "./url";
-import type { AppState, MetricKey, Pinned, ScenarioFields, ScreenId } from "./types";
+import { contributionsMulti, isolatedEffect, type Contributions, type Range } from "../engine/contributions";
+import { clean, fromHash, matchingPreset, presetFields, sameHypotheses, toHash, type Snapshot } from "./url";
+import type { AppState, CustomScenario, KpiKey, MetricKey, Pinned, ScenarioFields, ScreenId } from "./types";
 
 const KEY = "altera-trajectory:";
 export const storage = {
@@ -20,6 +20,24 @@ export const storage = {
 
 const DEFAULT_PRESET = "committed";
 
+function loadCustoms(): CustomScenario[] {
+  try {
+    const raw = JSON.parse(storage.get("customs") ?? "[]");
+    if (!Array.isArray(raw)) return [];
+    const valid = new Set(levers.map((l) => l.number));
+    return raw
+      .filter((c) => c && typeof c.id === "string" && typeof c.name === "string" && Array.isArray(c.activeLevers))
+      .map((c) => ({ id: c.id, name: String(c.name).slice(0, 60), activeLevers: c.activeLevers.filter((n: number) => valid.has(n)), adoption: Number(c.adoption) || 0, hypotheses: clean(c.hypotheses ?? {}) }));
+  } catch {
+    return [];
+  }
+}
+
+/** True when the scenario fields equal the saved scenario. */
+export function sameAsCustom(f: Pick<ScenarioFields, "activeLevers" | "adoption" | "hypotheses">, c: CustomScenario) {
+  return f.adoption === c.adoption && f.activeLevers.length === c.activeLevers.length && f.activeLevers.every((n, i) => n === c.activeLevers[i]) && sameHypotheses(f.hypotheses, c.hypotheses);
+}
+
 function initialState(): AppState {
   const fromUrl = fromHash(window.location.hash);
   // the last scenario comes back without its horizon, indicator or screen: arrivals start on the defaults
@@ -30,8 +48,12 @@ function initialState(): AppState {
   const lang: Lang = snap.lang ?? (query === "en" || query === "fr" ? query : null) ?? ((storage.get("lang") as Lang | null) ?? "fr");
   const fields: ScenarioFields = { ...presetFields(DEFAULT_PRESET), ...Object.fromEntries(Object.entries(snap).filter(([, v]) => v !== undefined)) };
   const screen: ScreenId = fromUrl?.screen ?? "baseline";
+  const customs = loadCustoms();
+  const shared = fromUrl?.customName ?? null;
+  const match = shared ? customs.find((c) => c.name === shared && sameAsCustom(fields, c)) : undefined;
   return {
     ...fields,
+    preset: shared ? null : fields.preset,
     lang: lang === "en" ? "en" : "fr",
     screen,
     visited: [screen],
@@ -39,8 +61,16 @@ function initialState(): AppState {
     leverView: "list",
     drawer: null,
     pinned: null,
-    cover: true,
+    cover: !fromUrl?.leverPage,
     tour: null,
+    tourId: "welcome",
+    leverPage: fromUrl?.leverPage ?? null,
+    leverTab: fromUrl?.leverTab ?? "summary",
+    kpi: fromUrl?.kpi ?? "split",
+    customs,
+    custom: match?.id ?? null,
+    sharedName: shared && !match ? shared : null,
+    i2: { rangeBuild: true, overrides: {} },
   };
 }
 
@@ -59,14 +89,29 @@ export type Action =
   | { type: "drawer"; lever: string | null }
   | { type: "pin" }
   | { type: "unpin" }
-  | { type: "tour"; step: number | null }
+  | { type: "tour"; step: number | null; id?: string }
   | { type: "enter" }
-  | { type: "load"; snap: Partial<Snapshot> };
+  | { type: "load"; snap: Partial<Snapshot> }
+  | { type: "openLever"; lever: string; tab?: string }
+  | { type: "closeLever" }
+  | { type: "leverTab"; tab: string }
+  | { type: "kpi"; kpi: KpiKey }
+  | { type: "saveCustom"; name: string }
+  | { type: "updateCustom"; id: string }
+  | { type: "renameCustom"; id: string; name: string }
+  | { type: "deleteCustom"; id: string }
+  | { type: "loadCustom"; id: string }
+  | { type: "i2Version"; rangeBuild: boolean }
+  | { type: "i2Param"; key: string; value: number | null }
+  | { type: "i2Reset" };
+
+const fieldsOf = (s: AppState) => ({ activeLevers: s.activeLevers, adoption: s.adoption, hypotheses: clean(s.hypotheses) });
+const newId = () => `c${Date.now().toString(36)}${Math.floor(Math.random() * 1296).toString(36)}`;
 
 function reducer(s: AppState, a: Action): AppState {
   switch (a.type) {
     case "lang": return { ...s, lang: a.lang };
-    case "go": return { ...s, screen: a.screen, visited: s.visited.includes(a.screen) ? s.visited : [...s.visited, a.screen] };
+    case "go": return { ...s, screen: a.screen, leverPage: null, visited: s.visited.includes(a.screen) ? s.visited : [...s.visited, a.screen] };
     case "metric": return { ...s, metric: a.metric };
     case "horizon": return { ...s, horizon: a.horizon };
     case "adoption": return { ...s, adoption: a.adoption };
@@ -91,8 +136,32 @@ function reducer(s: AppState, a: Action): AppState {
     }
     case "preset": {
       const p = presetFields(a.id);
-      return { ...s, preset: p.preset, activeLevers: p.activeLevers, adoption: p.adoption, hypotheses: p.hypotheses };
+      return { ...s, preset: p.preset, custom: null, sharedName: null, activeLevers: p.activeLevers, adoption: p.adoption, hypotheses: p.hypotheses };
     }
+    case "openLever": return { ...s, drawer: null, leverPage: a.lever, leverTab: a.tab ?? "summary" };
+    case "closeLever": return { ...s, leverPage: null };
+    case "leverTab": return { ...s, leverTab: a.tab };
+    case "kpi": return { ...s, kpi: a.kpi };
+    case "saveCustom": {
+      const c: CustomScenario = { id: newId(), name: a.name.trim().slice(0, 60) || "?", ...fieldsOf(s) };
+      return { ...s, customs: [...s.customs, c], custom: c.id, preset: null, sharedName: null };
+    }
+    case "updateCustom": return { ...s, customs: s.customs.map((c) => (c.id === a.id ? { ...c, ...fieldsOf(s) } : c)), custom: a.id, preset: null };
+    case "renameCustom": return { ...s, customs: s.customs.map((c) => (c.id === a.id ? { ...c, name: a.name.trim().slice(0, 60) || c.name } : c)) };
+    case "deleteCustom": return { ...s, customs: s.customs.filter((c) => c.id !== a.id), custom: s.custom === a.id ? null : s.custom };
+    case "loadCustom": {
+      const c = s.customs.find((x) => x.id === a.id);
+      if (!c) return s;
+      return { ...s, custom: c.id, preset: null, sharedName: null, activeLevers: [...c.activeLevers], adoption: c.adoption, hypotheses: structuredClone(c.hypotheses) };
+    }
+    case "i2Version": return { ...s, i2: { ...s.i2, rangeBuild: a.rangeBuild } };
+    case "i2Param": {
+      const overrides = { ...s.i2.overrides };
+      if (a.value === null) delete overrides[a.key];
+      else overrides[a.key] = a.value;
+      return { ...s, i2: { ...s.i2, overrides } };
+    }
+    case "i2Reset": return { ...s, i2: { ...s.i2, overrides: {} } };
     case "chartView": return { ...s, chartView: a.view };
     case "leverView": return { ...s, leverView: a.view };
     case "drawer": return { ...s, drawer: a.lever };
@@ -101,16 +170,22 @@ function reducer(s: AppState, a: Action): AppState {
       return { ...s, pinned: { preset: matchingPreset(fields), fields } satisfies Pinned };
     }
     case "unpin": return { ...s, pinned: null };
-    case "tour": return { ...s, tour: a.step };
+    case "tour": return { ...s, tour: a.step, tourId: a.id ?? s.tourId };
     case "enter": {
       // the guided tour starts by itself on the first visit only
       const seen = storage.get("tour") === "off" || storage.get("tour") === "seen";
-      return { ...s, cover: false, tour: seen ? null : 0 };
+      return { ...s, cover: false, tour: seen ? null : 0, tourId: "welcome" };
     }
     case "load": {
-      const { screen, lang, ...fields } = a.snap;
-      const next = { ...s, ...fields, lang: lang ?? s.lang };
-      return screen ? reducer(next, { type: "go", screen }) : next;
+      const { screen, lang, leverPage, leverTab, kpi, customName, ...fields } = a.snap;
+      let next: AppState = { ...s, ...fields, lang: lang ?? s.lang, kpi: kpi ?? "split" };
+      if (screen && screen !== s.screen) next = reducer(next, { type: "go", screen });
+      next = { ...next, leverPage: leverPage ?? null, leverTab: leverTab ?? (leverPage === s.leverPage ? s.leverTab : "summary"), cover: leverPage ? false : next.cover };
+      if (customName !== undefined && customName !== null) {
+        const match = next.customs.find((c) => c.name === customName && sameAsCustom(next, c));
+        next = { ...next, preset: null, custom: match?.id ?? null, sharedName: match ? null : customName };
+      }
+      return next;
     }
   }
 }
@@ -127,10 +202,15 @@ export function AppProvider({ children }: { children: ReactNode }) {
   }, [state.lang]);
 
   useEffect(() => {
-    const hash = toHash({ ...state, lang: state.lang });
+    const custom = state.customs.find((c) => c.id === state.custom);
+    const name = custom && sameAsCustom(state, custom) ? custom.name : state.sharedName;
+    const hash = toHash({ ...state, lang: state.lang, customName: name });
     if (window.location.hash !== hash) window.history.replaceState(null, "", hash);
-    storage.set("last", hash);
+    // the stored "last" scenario never reopens a lever page
+    storage.set("last", toHash({ ...state, lang: state.lang, leverPage: null, customName: null }));
   }, [state]);
+
+  useEffect(() => { storage.set("customs", JSON.stringify(state.customs)); }, [state.customs]);
 
   useEffect(() => {
     const onHash = () => {
@@ -156,7 +236,12 @@ export const REFERENCE: Metrics = baseline(model);
 export interface Results {
   series: YearResult[];
   final: YearResult;
+  /** Waterfall of the selected split indicator, of CO2 (t) and of revenue (EUR). */
   contrib: Contributions;
+  contribCo2: Contributions;
+  contribRevenue: Contributions;
+  /** Split indicator at the horizon with no store following and with every store following. */
+  storeSplit: { at0: number; at1: number };
   isolated: Record<number, Range>;
   /** Each lever alone at the horizon: CO2 and revenue changes against 2025 (shares and tonnes). */
   leverImpact: Record<number, { co2: number; co2t: number; revenue: number }>;
@@ -180,10 +265,17 @@ export function useResults(): Results {
       const m = runYear(model, scen, horizon, "mid", l.number).metrics;
       leverImpact[l.number] = { co2: m.co2 / REFERENCE.co2 - 1, co2t: m.co2 - REFERENCE.co2, revenue: m.revenue / REFERENCE.revenue - 1 };
     }
+    const c = contributionsMulti(model, scen, horizon, [metric, "co2", "revenue"]);
     return {
       series,
       final,
-      contrib: contributions(model, scen, horizon, metric),
+      contrib: c[metric],
+      contribCo2: c.co2,
+      contribRevenue: c.revenue,
+      storeSplit: {
+        at0: runYear(model, { ...scen, adoption: 0 }, horizon).metrics[metric],
+        at1: runYear(model, { ...scen, adoption: 1 }, horizon).metrics[metric],
+      },
       isolated,
       leverImpact,
       pinnedSeries: pinned ? simulate(model.categories, model.levers, scenarioOf(pinned.fields), { horizon, baseYear: config.baseYear, extension: config.extension }) : null,

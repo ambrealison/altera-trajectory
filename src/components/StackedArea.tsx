@@ -11,7 +11,8 @@ export interface Layer { key: string; label: string; color: string }
 export function StackedArea({ rows, layers }: { rows: ({ year: number } & Record<string, number>)[]; layers: Layer[] }) {
   const { lang } = useT();
   const [ref, width] = useWidth<HTMLDivElement>();
-  const H = 220;
+  // room for one label line per layer on the right
+  const H = Math.max(220, 38 + layers.length * 16);
   const m = { top: 10, right: 235, bottom: 28, left: 44 };
   const x0 = rows[0].year, x1 = rows[rows.length - 1].year;
   const x = scaleLinear().domain([x0, x1]).range([m.left, Math.max(m.left + 200, width - m.right)]);
@@ -23,9 +24,13 @@ export function StackedArea({ rows, layers }: { rows: ({ year: number } & Record
     .x((d) => x(d.data.year)).y0((d) => y(d[0])).y1((d) => y(d[1])).curve(curveMonotoneX);
   const endX = x(x1);
   // right-hand labels at the middle of each layer in the last year, pushed apart when crowded
-  const lab = series.map((s, i) => ({ i, y: y((s[s.length - 1][0] + s[s.length - 1][1]) / 2) }));
-  const ordered = [...lab].sort((a, b) => b.y - a.y);
-  for (let k = 1; k < ordered.length; k++) if (ordered[k - 1].y - ordered[k].y < 14) ordered[k].y = ordered[k - 1].y - 14;
+  const GAP = 15;
+  const lab = series.map((s, i) => { const at = y((s[s.length - 1][0] + s[s.length - 1][1]) / 2); return { i, y: at, at }; });
+  const ordered = [...lab].sort((a, b) => a.y - b.y);
+  for (let k = 1; k < ordered.length; k++) ordered[k].y = Math.max(ordered[k].y, ordered[k - 1].y + GAP);
+  const overflow = ordered.length ? ordered[ordered.length - 1].y - (H - m.bottom) : 0;
+  if (overflow > 0) for (const l of ordered) l.y -= overflow;
+  for (let k = 0; k < ordered.length; k++) ordered[k].y = Math.max(ordered[k].y, m.top + 4 + k * GAP);
 
   return (
     <div className="chart" ref={ref}>
@@ -44,11 +49,12 @@ export function StackedArea({ rows, layers }: { rows: ({ year: number } & Record
             <title>{layers[i].label}</title>
           </path>
         ))}
-        {lab.map(({ i, y: ly }) => {
+        {lab.map(({ i, y: ly, at }) => {
           const s = series[i];
           const v = s[s.length - 1][1] - s[s.length - 1][0];
           return (
             <g key={layers[i].key}>
+              {Math.abs(ly - at) > 2 && <path d={`M ${endX + 1} ${at} L ${endX + 6} ${at} L ${endX + 8} ${ly}`} className="leader" />}
               <circle cx={endX + 12} cy={ly} r={4} fill={layers[i].color} />
               <text x={endX + 21} y={ly} dy="0.32em" className="stack-lab">
                 <tspan className="num">{fmtNum(v, lang, 1)}</tspan> {layers[i].label}
