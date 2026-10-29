@@ -2,7 +2,7 @@
 
 Démonstration d'un simulateur de trajectoire protéique pour un distributeur coopératif, présentée par Altera.
 
-**Toutes les données de ce dépôt sont fictives.** Les volumes, les prix, le CO2, les leviers et leurs hypothèses servent à illustrer la démarche ; ils sont réalistes mais mis à l'échelle et perturbés, sans aucune donnée réelle de distributeur. La version de travail avec les vraies données de Coopérative U est construite à partir de ce même code par un dépôt privé distinct (voir « Deux versions »).
+**Toutes les données de ce dépôt sont fictives.** Les volumes, les prix, le CO2, les leviers et leurs hypothèses servent à illustrer la démarche ; ils sont réalistes mais mis à l'échelle et perturbés, sans aucune donnée réelle de distributeur. Une version client, avec de vraies données, peut être construite à partir de ce même code par un dépôt privé distinct (voir « Deux versions »).
 
 En ligne : https://ambrealison.github.io/altera-trajectory/ (non indexé par les moteurs de recherche). `?lang=en` ouvre la version anglaise.
 
@@ -42,7 +42,7 @@ npm run screenshots  # captures de chaque écran et des fiches en FR et EN (serv
 ## Deux versions
 
 - **Démo publique** (ce dépôt) : jeu de données fictif `src/data/public/`, assemblé par `src/data/publicDataset.ts`.
-- **Version Coopérative U** (dépôt privé `ambrealison/altera-trajectory-U`, servie sur https://ambrealison.github.io/altera-trajectory-U/) : le même code construit avec `vite build --mode u`. L'alias `@dataset` (voir `vite.config.ts`) pointe alors vers `src/data/u/dataset.ts`, un dossier ignoré par git que le workflow du dépôt privé remplit avant le build. Les vraies données n'entrent jamais dans ce dépôt.
+- **Version client** (dépôt privé distinct) : le même code construit avec `vite build --mode client`. L'alias `@dataset` (voir `vite.config.ts`) pointe alors vers `src/data/client/dataset.ts`, un dossier ignoré par git que le workflow du dépôt privé remplit avant le build. Les vraies données n'entrent jamais dans ce dépôt, et la version publique ne nomme jamais le client : son nom, le pied de page, les textes et les libellés de leviers qui lui sont propres viennent du jeu de données (`client`, `footer`, `texts`, `leverTexts`).
 
 Un jeu de données (`Dataset` dans `src/data/types.ts`) fournit les catégories, leurs groupes d'affichage, les noms des catégories cités dans les textes des leviers (`{meatAlt}`, `{veganMeals}`, `{wholePlant}`, `{dairyAlt}`), les textes d'interface propres à la version, le tableau par rayon, l'objectif scope 3, les scénarios suggérés et le registre du modèle I2.
 
@@ -85,6 +85,6 @@ Après une modification, `npm test` vérifie la cohérence des données (catégo
 
 ## Déployer
 
-Chaque push sur `main` lance `.github/workflows/deploy.yml` : tests, build, puis publication sur GitHub Pages (source « GitHub Actions » dans les réglages Pages du dépôt). Le chemin de base `/altera-trajectory/` est fixé dans `vite.config.ts`. Après un push, relancez aussi le workflow du dépôt privé pour mettre à jour la version Coopérative U. Pages garde les fichiers en cache une dizaine de minutes : forcez le rechargement si une modification n'apparaît pas.
+Chaque push sur `main` lance `.github/workflows/deploy.yml` : tests, build, puis publication sur GitHub Pages (source « GitHub Actions » dans les réglages Pages du dépôt). Le chemin de base `/altera-trajectory/` est fixé dans `vite.config.ts`. Après un push, relancez aussi le workflow du dépôt privé pour mettre à jour la version client. Pages garde les fichiers en cache une dizaine de minutes : forcez le rechargement si une modification n'apparaît pas.
 
 L'application est entièrement statique : aucune requête réseau à l'exécution, polices embarquées. `localStorage` garde seulement la langue, la visite guidée déjà vue, le dernier scénario et vos scénarios enregistrés.

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { config } from "../data";
+import { config, dataset } from "../data";
 import { useT } from "../i18n/useT";
 import { Header } from "./Header";
 import { Sidebar } from "./Sidebar";
@@ -15,7 +15,7 @@ export function Layout({ children }: { children: ReactNode }) {
       </div>
       <footer className="foot">
         <span>{tx(config.footer.left)}</span>
-        <span>{config.footer.right}</span>
+        <span>{dataset.footer}</span>
       </footer>
     </div>
   );

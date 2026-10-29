@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { config, leverByNumber, model, scenarios } from "../data";
+import { config, dataset, leverByNumber, model, scenarios } from "../data";
 import type { Lever } from "../data/types";
 import { contributions } from "../engine/contributions";
 import { fmtPct } from "../engine/format";
@@ -42,7 +42,7 @@ function Peek() {
         <div className="peek-win">
           <div className="peek-bar">
             <span className="wlogo">Altera<em>.ai</em></span>
-            <span className="crumb"><b>{config.client}</b> · {tx(config.title)}</span>
+            <span className="crumb"><b>{tx(dataset.client)}</b> · {tx(config.title)}</span>
             <span className="mini-badge">{t("app.fictitious")}</span>
           </div>
           <div className="peek-body">
@@ -111,7 +111,7 @@ export function Cover() {
 
       <footer className="foot">
         <span>{tx(config.footer.left)}</span>
-        <span>{config.footer.right}</span>
+        <span>{dataset.footer}</span>
       </footer>
     </div>
   );

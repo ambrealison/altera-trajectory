@@ -5,4 +5,4 @@ dist
 screenshots/
 
 # the retailer version's dataset is injected by the private repository, never committed here
-src/data/u/
+src/data/client/

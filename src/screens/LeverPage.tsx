@@ -102,7 +102,7 @@ export function Summary({ lever }: { lever: Lever }) {
         <Card title={t("drawer.description")} data-tour="lp-summary">
           <p>{tx(lever.description)}</p>
           <h3 className="sub-h">{t("drawer.why")}</h3>
-          <p>{tx(lever.whyForU)}</p>
+          <p>{tx(lever.why)}</p>
         </Card>
         <Card title={t("lever.implementation")} data-tour="lp-implementation">
           <dl className="facts">

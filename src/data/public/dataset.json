@@ -1,15 +1,35 @@
 {
+  "client": {
+    "fr": "Distributeur coopératif",
+    "en": "Cooperative retailer"
+  },
+  "footer": "Altera · 2026",
   "roles": {
-    "meatAlt": { "fr": "alternatives végétales à la viande", "en": "plant-based meat alternatives" },
-    "veganMeals": { "fr": "plats végétaliens", "en": "vegan ready meals" },
-    "wholePlant": { "fr": "légumineuses, fruits à coque, graines et tofu", "en": "pulses, nuts, seeds and tofu" },
-    "dairyAlt": { "fr": "alternatives laitières végétales", "en": "plant-based dairy alternatives" }
+    "meatAlt": {
+      "fr": "alternatives végétales à la viande",
+      "en": "plant-based meat alternatives"
+    },
+    "veganMeals": {
+      "fr": "plats végétaliens",
+      "en": "vegan ready meals"
+    },
+    "wholePlant": {
+      "fr": "légumineuses, fruits à coque, graines et tofu",
+      "en": "pulses, nuts, seeds and tofu"
+    },
+    "dairyAlt": {
+      "fr": "alternatives laitières végétales",
+      "en": "plant-based dairy alternatives"
+    }
   },
   "texts": {},
   "scope3": {
     "baseKt": 9800,
     "targetCut": 0.25,
     "targetYear": 2030,
-    "source": { "fr": "Valeur fictive de démonstration, sur le modèle d'un objectif scope 3 aligné SBTi", "en": "Fictitious demo value, modelled on an SBTi-aligned scope 3 target" }
+    "source": {
+      "fr": "Valeur fictive de démonstration, sur le modèle d'un objectif scope 3 aligné SBTi",
+      "en": "Fictitious demo value, modelled on an SBTi-aligned scope 3 target"
+    }
   }
 }

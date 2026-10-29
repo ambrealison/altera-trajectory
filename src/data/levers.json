@@ -15,7 +15,7 @@
       "fr": "Remplacer une partie de la viande des hachés et des burgers par des protéines végétales (légumineuses, protéines texturées), pour un produit au goût et à l'usage comparables.",
       "en": "Replace part of the meat in mince and burgers with plant protein (pulses, textured protein), for a product that tastes and cooks much the same."
     },
-    "whyForU": {
+    "why": {
       "fr": "Le haché pèse lourd dans les protéines animales vendues. Une recette hybride change le contenu du panier sans demander au client de changer ses habitudes.",
       "en": "Mince weighs heavily in the animal protein sold. A hybrid recipe changes what is in the basket without asking shoppers to change their habits."
     },
@@ -107,7 +107,7 @@
       "fr": "Proposer en MDD des versions hybrides de charcuterie et de traiteur (saucisses, knacks, cordons bleus, boulettes) où une partie de la viande est remplacée par des protéines végétales.",
       "en": "Offer private-label hybrid versions of cooked meats and deli (sausages, frankfurters, breaded escalopes, meatballs) where part of the meat is replaced with plant protein."
     },
-    "whyForU": {
+    "why": {
       "fr": "La MDD donne la main sur la recette, et les produits élaborés se prêtent mieux à l'hybridation que la viande piécée.",
       "en": "Private label gives control over the recipe, and processed products lend themselves to blending better than whole cuts."
     },
@@ -216,7 +216,7 @@
       "fr": "Mesurer chaque année la répartition protéique sur l'ensemble des ventes, avec des données produit complètes (teneur en protéines, composition).",
       "en": "Measure the protein split every year across all sales, with complete product data (protein content, composition)."
     },
-    "whyForU": {
+    "why": {
       "fr": "Ce levier ne fait pas bouger la répartition protéique, il rend la mesure plus fiable. Les autres leviers se pilotent alors sur une fourchette plus resserrée.",
       "en": "This lever does not move the protein split, it makes the measurement more reliable. The other levers can then be steered on a narrower range."
     },
@@ -297,7 +297,7 @@
       "fr": "Élargir et rendre visible l'offre de légumineuses, de tofu et de fruits à coque : têtes de gondole, signalétique, formats prêts à l'emploi.",
       "en": "Widen and showcase the range of pulses, tofu and nuts: end caps, signage, ready-to-use formats."
     },
-    "whyForU": {
+    "why": {
       "fr": "Les légumineuses sont déjà en rayon et peu chères. Les rendre visibles et faciles à cuisiner demande peu de développement produit.",
       "en": "Pulses are already on the shelf and inexpensive. Making them visible and easy to cook needs little product development."
     },
@@ -423,7 +423,7 @@
       "fr": "Réorienter une partie des promotions de la viande vers les alternatives végétales et les légumineuses, et associer les deux dans les mêmes opérations.",
       "en": "Redirect part of meat promotions towards plant-based alternatives and pulses, and pair both in the same campaigns."
     },
-    "whyForU": {
+    "why": {
       "fr": "Les promotions se décident en grande partie en magasin. La centrale peut proposer un plan, chaque magasin choisit de le suivre.",
       "en": "Promotions are largely decided in store. The central office can propose a plan, each store chooses whether to follow it."
     },
@@ -529,7 +529,7 @@
       "fr": "Réduire le grammage des barquettes de viande MDD et proposer des portions plus petites, mieux valorisées au kilo.",
       "en": "Reduce the weight of private-label meat packs and offer smaller portions, priced higher per kilo."
     },
-    "whyForU": {
+    "why": {
       "fr": "C'est une décision de la centrale sur la MDD, sans dépendre des magasins, qui touche directement les volumes de protéines animales.",
       "en": "It is a central decision on private label, independent of stores, and it acts directly on animal protein volumes."
     },
@@ -648,7 +648,7 @@
       "fr": "Proposer des versions végétales des plats cuisinés MDD les plus vendus (lasagnes, bolognaises, pizzas, raviolis).",
       "en": "Offer plant-based versions of the best-selling private-label ready meals (lasagne, bolognese, pizza, ravioli)."
     },
-    "whyForU": {
+    "why": {
       "fr": "La centrale maîtrise la recette et l'implantation de la MDD : l'offre de {veganMeals} grandit sans attendre les marques.",
       "en": "The central office controls private-label recipes and placement: the {veganMeals} range grows without waiting for brands."
     },
@@ -736,7 +736,7 @@
       "fr": "Améliorer les recettes MDD des alternatives végétales jusqu'à la parité de goût avec les produits animaux, tests consommateurs à l'appui.",
       "en": "Improve private-label plant-based recipes up to taste parity with animal products, backed by consumer tests."
     },
-    "whyForU": {
+    "why": {
       "fr": "Le goût reste un frein fréquent au réachat. La MDD permet de travailler la recette sans dépendre des fournisseurs de marque.",
       "en": "Taste remains a common barrier to repeat purchase. Private label allows work on the recipe without depending on branded suppliers."
     },
@@ -848,7 +848,7 @@
       "fr": "Remplacer une partie des pâtes, riz et céréales MDD par des versions à base de légumineuses ou enrichies en légumineuses, plus riches en protéines.",
       "en": "Replace part of private-label pasta, rice and cereals with pulse-based or pulse-enriched versions, richer in protein."
     },
-    "whyForU": {
+    "why": {
       "fr": "Les produits de base pèsent lourd dans les protéines végétales. Les enrichir fait monter la part végétale sans changer les habitudes, mais demande un gros travail de développement.",
       "en": "Staples weigh heavily in plant protein. Enriching them raises the plant share without changing habits, but takes substantial development work."
     },
@@ -936,7 +936,7 @@
       "fr": "Référencer plus d'alternatives végétales dans toutes les catégories végétales et les rendre disponibles dans tous les formats de magasins.",
       "en": "List more plant-based alternatives across the plant categories and make them available in every store format."
     },
-    "whyForU": {
+    "why": {
       "fr": "La centrale référence, chaque magasin choisit ce qu'il met en rayon. Un assortiment de base commun limite les écarts entre magasins.",
       "en": "The central office lists, each store chooses what goes on its shelves. A common core range limits gaps between stores."
     },
@@ -1054,7 +1054,7 @@
       "fr": "Rapprocher le prix au litre ou au kilo des boissons et yaourts végétaux de celui de leurs équivalents laitiers, en commençant par la MDD.",
       "en": "Bring the price per litre or kilo of plant-based drinks and yoghurts closer to their dairy equivalents, starting with private label."
     },
-    "whyForU": {
+    "why": {
       "fr": "Dans un réseau d'indépendants, le prix en rayon se décide en magasin. Une recommandation de parité suivie magasin par magasin permet de mesurer ce que le prix change vraiment.",
       "en": "In a network of independent stores, shelf prices are set in store. A parity recommendation tracked store by store shows what price really changes."
     },
@@ -1173,7 +1173,7 @@
       "fr": "Placer les {meatAlt} dans une baie signalée au cœur du rayon viande libre-service, en gardant le rayon végétarien pour qu'on les trouve aux deux endroits.",
       "en": "Place {meatAlt} in a signed bay inside the self-service meat aisle, keeping the vegetarian shelf so shoppers find them in both places."
     },
-    "whyForU": {
+    "why": {
       "fr": "L'implantation se décide magasin par magasin. Les essais publiés montrent une hausse nette des ventes végétales, sans baisse mesurable de la viande : c'est un levier de croissance avant d'être un levier de substitution.",
       "en": "Shelf layout is decided store by store. Published trials show a clear rise in plant-based sales with no measurable fall in meat: it is a growth lever before it is a substitution lever."
     },
@@ -1294,7 +1294,7 @@
       "fr": "Baisser la part de viande dans les recettes MDD de plats cuisinés au profit de légumineuses et de légumes, et passer certaines recettes en version végétarienne.",
       "en": "Lower the meat content of private-label ready-meal recipes in favour of pulses and vegetables, and move some recipes to a vegetarian version."
     },
-    "whyForU": {
+    "why": {
       "fr": "Une évolution progressive de recette passe souvent inaperçue pour le client et reste entre les mains de la centrale.",
       "en": "A gradual recipe change often goes unnoticed by shoppers and stays in the hands of the central office."
     },
@@ -1409,7 +1409,7 @@
       "fr": "Aligner le prix au kilo des alternatives végétales à la viande, MDD et marques, sur celui des produits carnés équivalents.",
       "en": "Align the price per kilo of plant-based meat alternatives, private label and brands, with equivalent meat products."
     },
-    "whyForU": {
+    "why": {
       "fr": "La centrale négocie avec les marques et fixe les prix conseillés, les magasins décident du prix final.",
       "en": "The central office negotiates with brands and sets recommended prices, stores decide the final price."
     },
@@ -1531,7 +1531,7 @@
       "fr": "Présenter les alternatives par leur usage et leur goût plutôt que par la mention « vegan », qui peut éloigner une partie des clients.",
       "en": "Present alternatives by use and taste rather than with the word \"vegan\", which can put off some shoppers."
     },
-    "whyForU": {
+    "why": {
       "fr": "Un changement d'emballage MDD, rapide et peu coûteux, décidé par la centrale.",
       "en": "A quick, low-cost private-label packaging change, decided by the central office."
     },
@@ -1631,8 +1631,8 @@
     "id": "L16",
     "number": 16,
     "label": {
-      "fr": "Baisse de prix, alternatives à la viande MDD U seules",
-      "en": "Price cut, U private-label meat alternatives only"
+      "fr": "Baisse de prix, alternatives à la viande MDD seules",
+      "en": "Price cut, private-label meat alternatives only"
     },
     "type": "central_stores",
     "storeDependency": 0.5,
@@ -1643,7 +1643,7 @@
       "fr": "Baisser le prix des seules alternatives à la viande MDD, sans toucher aux marques.",
       "en": "Cut the price of private-label meat alternatives only, leaving brands unchanged."
     },
-    "whyForU": {
+    "why": {
       "fr": "La centrale maîtrise le prix conseillé de sa MDD : c'est une version plus ciblée et moins coûteuse de la parité prix.",
       "en": "The central office controls its private-label recommended price: this is a narrower, cheaper version of price parity."
     },
@@ -1755,7 +1755,7 @@
       "fr": "Suggérer des alternatives végétales dans le parcours en ligne : recherche, fiches produit, paniers types.",
       "en": "Suggest plant-based alternatives along the online journey: search, product pages, ready-made baskets."
     },
-    "whyForU": {
+    "why": {
       "fr": "Le site est géré par la centrale : une modification touche tous les clients en ligne d'un coup.",
       "en": "The website is run centrally: one change reaches every online shopper at once."
     },
@@ -1852,7 +1852,7 @@
       "fr": "Proposer par défaut une option végétale ou hybride dans les recettes et paniers en ligne, le client gardant le choix.",
       "en": "Offer a plant-based or hybrid option by default in online recipes and baskets, with shoppers keeping the choice."
     },
-    "whyForU": {
+    "why": {
       "fr": "Un réglage du site, décidé par la centrale, sans coût de production.",
       "en": "A website setting, decided centrally, with no production cost."
     },
@@ -1946,7 +1946,7 @@
       "fr": "Mettre à disposition des magasins des fiches recettes et des lots associant légumineuses, plats végétaux et légumes.",
       "en": "Provide stores with recipe cards and bundles combining pulses, plant-based meals and vegetables."
     },
-    "whyForU": {
+    "why": {
       "fr": "La centrale fournit les supports, chaque magasin choisit de les utiliser.",
       "en": "The central office provides the material, each store chooses whether to use it."
     },
@@ -2046,7 +2046,7 @@
       "fr": "Aider les clients à acheter au plus près de leurs besoins : vente à la coupe, petits formats, conseils de conservation.",
       "en": "Help shoppers buy closer to their needs: cut-to-order counters, small formats, storage advice."
     },
-    "whyForU": {
+    "why": {
       "fr": "Ces actions se mènent au rayon, magasin par magasin.",
       "en": "These actions happen at the counter, store by store."
     },

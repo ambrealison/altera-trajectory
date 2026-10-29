@@ -1,4 +1,4 @@
-import { config } from "../data";
+import { config, dataset } from "../data";
 import { useApp } from "../state/store";
 import { useT } from "../i18n/useT";
 import { DemoBadge } from "./DemoBadge";
@@ -13,7 +13,7 @@ export function Header() {
     <header className="top">
       <div className="logo"><b>Altera<em>.ai</em></b></div>
       <div className="crumb">
-        <b>{config.client}</b><span aria-hidden>·</span><span>{tx(config.title)}</span>
+        <b>{tx(dataset.client)}</b><span aria-hidden>·</span><span>{tx(config.title)}</span>
       </div>
       <div className="top-r">
         <DemoBadge />

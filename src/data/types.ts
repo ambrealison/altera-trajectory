@@ -1,5 +1,5 @@
-// Types of the tool's data. The public demo ships a fictitious dataset; the private version for the
-// retailer injects its own dataset through the "@dataset" alias (vite.config.ts, mode "u").
+// Types of the tool's data. The public demo ships a fictitious dataset; a client version injects its
+// own dataset through the "@dataset" alias (vite.config.ts, mode "client").
 
 export type Lang = "fr" | "en";
 export type Text = { fr: string; en: string };
@@ -8,9 +8,8 @@ export type ProteinGroup = "animal_core" | "composite" | "plant_core" | "plant_n
 export type WwfGroup = "FG1" | "FG2" | "FG3" | "FG4" | "FG5" | "FG6" | "FG7";
 
 export interface Config {
-  client: string;
   title: Text;
-  footer: { left: Text; right: string };
+  footer: { left: Text };
   baseYear: number;
   horizons: number[];
   defaultHorizon: number;
@@ -101,7 +100,8 @@ export interface Lever {
   deckImpact: number;
   provisional: boolean;
   description: Text;
-  whyForU: Text;
+  /** Why the lever matters for the retailer. */
+  why: Text;
   owner: Text;
   pilot: Text;
   economics: { revenueEffect: number; marginEffect: number };
@@ -150,7 +150,12 @@ export interface I2Value { low: number; central: number; high: number; tier: str
 export type I2Values = Record<string, I2Value>;
 
 export interface Dataset {
-  kind: "public" | "u";
+  kind: "public" | "client";
+  /** Retailer name shown in the header, and the right-hand footer line. */
+  client: Text;
+  footer: string;
+  /** Lever texts that differ in this version, by lever id. */
+  leverTexts?: Record<string, Partial<Pick<Lever, "label" | "description" | "why" | "owner" | "pilot">>>;
   categories: Category[];
   scenarios: Scenario[];
   groups: Group[];

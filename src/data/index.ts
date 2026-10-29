@@ -1,5 +1,5 @@
-// Typed access to the data. The public build uses the fictitious dataset; the private version for
-// the retailer points the "@dataset" alias at its own dataset (vite.config.ts, mode "u").
+// Typed access to the data. The public build uses the fictitious dataset; a client version points
+// the "@dataset" alias at its own dataset (vite.config.ts, mode "client").
 import type { Config, Lever } from "./types";
 import configJson from "./config.json";
 import leversJson from "./levers.json";
@@ -8,7 +8,10 @@ import { dataset } from "@dataset";
 export { dataset };
 export const config = configJson as Config;
 export const categories = dataset.categories;
-export const levers = (leversJson as Lever[]).slice().sort((a, b) => a.number - b.number);
+// a dataset can reword some lever texts (dataset.leverTexts)
+export const levers = (leversJson as Lever[])
+  .map((l) => ({ ...l, ...dataset.leverTexts?.[l.id] }))
+  .sort((a, b) => a.number - b.number);
 export const scenarios = dataset.scenarios;
 export const groups = dataset.groups;
 export const model = { categories, levers, extension: config.extension };

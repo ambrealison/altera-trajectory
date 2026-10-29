@@ -33,6 +33,6 @@
     "vite.config.ts"
   ],
   "exclude": [
-    "src/data/u"
+    "src/data/client"
   ]
 }

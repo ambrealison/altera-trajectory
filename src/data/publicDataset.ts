@@ -10,6 +10,8 @@ import i2 from "./public/i2_values.json";
 
 export const dataset: Dataset = {
   kind: "public",
+  client: meta.client,
+  footer: meta.footer,
   categories: categories as Category[],
   scenarios: scenarios as Scenario[],
   groups: groups as Group[],

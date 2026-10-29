@@ -9,7 +9,7 @@
     "of": "sur"
   },
   "cover": {
-    "eyebrow": "Coopérative U · Démonstration",
+    "eyebrow": "Altera · Démonstration",
     "title": "Trajectoire protéique",
     "lead": "Partez de votre répartition protéique, activez des leviers et voyez jusqu'où ils vous mènent, levier par levier et année après année.",
     "cta": "Let's go",
@@ -201,7 +201,7 @@
     "title": "Fiche levier",
     "active": "Levier actif",
     "description": "Description",
-    "why": "Pourquoi pour U",
+    "why": "Pourquoi pour vous",
     "hypotheses": "Hypothèses",
     "reset": "Réinitialiser",
     "default": "Par défaut : {v}",

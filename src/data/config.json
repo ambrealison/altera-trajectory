@@ -1,5 +1,4 @@
 {
-  "client": "Coopérative U",
   "title": {
     "fr": "Trajectoire protéique",
     "en": "Protein trajectory"
@@ -8,8 +7,7 @@
     "left": {
       "fr": "Confidentiel / ne pas diffuser",
       "en": "Confidential / do not circulate"
-    },
-    "right": "Coopérative U · 2026"
+    }
   },
   "baseYear": 2025,
   "horizons": [

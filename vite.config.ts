@@ -4,22 +4,22 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 // Public demo: fictitious dataset, served from ambrealison.github.io/altera-trajectory/.
-// Retailer version (mode "u"): the private repository copies its dataset into src/data/u/ (never
-// committed here) and serves the build from /altera-trajectory-U/.
+// Client version (mode "client"): a private repository copies its dataset into src/data/client/
+// (never committed here); relative asset paths let it be served from any address.
 export default defineConfig(({ mode }) => {
-  const u = mode === "u";
+  const client = mode === "client";
   return {
-    base: u ? "/altera-trajectory-U/" : "/altera-trajectory/",
+    base: client ? "./" : "/altera-trajectory/",
     plugins: [react()],
     resolve: {
       alias: {
-        "@dataset": fileURLToPath(new URL(u ? "./src/data/u/dataset.ts" : "./src/data/publicDataset.ts", import.meta.url)),
+        "@dataset": fileURLToPath(new URL(client ? "./src/data/client/dataset.ts" : "./src/data/publicDataset.ts", import.meta.url)),
       },
     },
     build: { outDir: "dist", assetsInlineLimit: 0 },
-    // The retailer version runs its own checks only; the public tests assume the fictitious dataset.
-    test: u
-      ? { include: ["src/data/u/**/*.test.ts"] }
-      : { include: ["src/**/*.test.ts"], exclude: ["src/data/u/**", "node_modules/**"] },
+    // The client version runs its own checks only; the public tests assume the fictitious dataset.
+    test: client
+      ? { include: ["src/data/client/**/*.test.ts"] }
+      : { include: ["src/**/*.test.ts"], exclude: ["src/data/client/**", "node_modules/**"] },
   };
 });
